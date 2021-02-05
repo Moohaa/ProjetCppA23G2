@@ -1,0 +1,48 @@
+fedi//Gestion d'utilisateur   <- user <- statistique(personnel) + recherche + tri <- comptage de visite des clients
+aziz//Gestion de menu   <- menu <-  pagination + recherche + tri <- ordre en ligne ( + notification pour le serveur )
+mahmoud//Gestion de produit(stock) <- stock <- statistique + recherche + tri <- *****
+fadwa//Gestion de commande   <- commande <- statistique + recherche + tri + map <- service de fedelite chaque 10 visite le restaurant offre un caffe gratuit
+mariem//Gestion de services  <-  serveur + client (volet smart:interaction entre le client et serveur) <- mail + recherche + tri(*) + calendrier <- 
+ahmed//Gestion de facturation  <- panier <- imprimer paiement (PDF) + recherche + tri <- feedback pour le services plats et hygienne + payement en ligne
+--------------------------------------------------
+*Menu-> plat + categories + ordre
+*User-> gestion client + personnel(serveur, chef , admin, gérant, livreur)
+*Commande-> livraison
+*Panier-> facturation + paiement
+*Services-> serveur + client
+{*Stock-> produit 
+*Fournisseur->table approvisionnement}
+ ----------------------------------------------
+Métiers:
+statistiques 
+recherche
+tri
+calendrier
+map
+imprimer(paiment)
+-----------------------------------------------------
+Les Utilisateurs :
+admin : ajoute modife supprime => utilisateurs
+gérant : ajoute modife supprime => personnel
+client : ajoute modife supprime => reservation en ligne
+serveur : consuler + valider => reservation + commande
+chef : ajoute modife supprime  => plats (au menu)
+livreur : validation de mission => commande
+fournisseur : valider => produits
+---------------------------------------------------------------
+Valeurs Ajoutées:
+*comptage de visite des clients
+*service de fedelite chaque 10 visite le restaurant offre un caffe gratuit
+*reservation de table en ligne : online booking + notification par mail/SMS : votre table est prete
+*ordre en ligne ( + notification pour le serveur )
+*feedback pour le services plats et hygienne
+*payement en ligne 
+-----------------------------------------------------------------
+Volet Smart:
+*le chef alert le serveur que le plat est pret
+*detecteur de chaleur pour garder la conservation des aliments
+*interaction entre le client et serveur : bouton sur la table du client pour
+demander un serveur
+
+
+
