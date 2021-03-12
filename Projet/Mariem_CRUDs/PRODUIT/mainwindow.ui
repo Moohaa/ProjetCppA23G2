@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -42,24 +42,11 @@
       <property name="title">
        <string>Gestion des Produits</string>
       </property>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>40</y>
-         <width>101</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>ID PRODUIT</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>80</y>
+         <y>40</y>
          <width>111</width>
          <height>21</height>
         </rect>
@@ -81,21 +68,11 @@
         <string>CATEGORIE PRODUIT</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>40</y>
-         <width>113</width>
-         <height>20</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLineEdit" name="lineEdit_2">
        <property name="geometry">
         <rect>
          <x>140</x>
-         <y>80</y>
+         <y>40</y>
          <width>113</width>
          <height>20</height>
         </rect>
@@ -124,6 +101,42 @@
         <string>Ajouter</string>
        </property>
       </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>180</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Modifier</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>180</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>180</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID PRODUIT</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -174,19 +187,6 @@
       </property>
       <property name="text">
        <string>ID</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>240</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>modifier</string>
       </property>
      </widget>
     </widget>

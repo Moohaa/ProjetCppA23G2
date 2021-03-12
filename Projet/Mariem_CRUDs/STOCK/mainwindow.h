@@ -19,11 +19,15 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    //void on_pushButton_4_clicked();
-
     void on_pushButton_5_clicked();
 
-    void on_pushButton_6_clicked();
+    void on_pushButton_4_clicked();
+
+    //void on_tabWidget_currentChanged(int index);
+
+    //void on_radioButton_clicked();
+
+    //void on_radioButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;

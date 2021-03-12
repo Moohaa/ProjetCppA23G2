@@ -1,7 +1,7 @@
 #include "produit.h"
 #include <QSqlQuery>
 #include <QVariant>
-
+#include <QMessageBox>
 produit::produit(){}
 
 
@@ -40,13 +40,11 @@ produit::produit(QString NOM_PRODUIT,QString CATEGORIE_PRODUIT){
     bool produit::ajouter(){
         QSqlQuery query;
 
-
+        int l=lastId();
         QString stringId = QString::number(this->ID_PRODUIT);
-        //QString NOM_PRODUIT = QString(this->NOM_PRODUIT);
-       //QString CATEGORIE_PRODUIT = QString(this->CATEGORIE_PRODUIT);
 
         query.prepare("INSERT INTO PRODUIT (ID_PRODUIT,NOM_PRODUIT,CATEGORIE_PRODUIT) VALUES (?, ?, ?)");
-        query.addBindValue(stringId);
+        query.addBindValue(l);
         query.addBindValue(this->NOM_PRODUIT);
         query.addBindValue(this->CATEGORIE_PRODUIT);
 
@@ -78,18 +76,20 @@ QSqlQueryModel * produit::afficher(){
 
 
 
+
 bool produit::update()
 {
-    QString stringId = QString::number(ID_PRODUIT);
-
+    QString res=QString::number(ID_PRODUIT);
+    QString res1= QString(NOM_PRODUIT);
+    QString res2= QString(CATEGORIE_PRODUIT);
     QSqlQuery edit;
 
 
-                      edit.prepare("update PRODUIT set NOM_PRODUIT = :NOM_PRODUIT where ID_PRODUIT = :ID_PRODUIT");
-                      edit.addBindValue(this->NOM_PRODUIT);
-                      edit.addBindValue(this->CATEGORIE_PRODUIT);
+                      edit.prepare("update PRODUIT set NOM_PRODUIT = :NOM_PRODUIT, CATEGORIE_PRODUIT = :CATEGORIE_PRODUIT WHERE ID_PRODUIT = :ID_PRODUIT");
 
-                      //edit.bindValue(":ID_PRODUIT",res);
+                      edit.bindValue(":ID_PRODUIT",res);
+                      edit.bindValue(":NOM_PRODUIT",res1);
+                      edit.bindValue(":CATEGORIE_PRODUIT",res2);
                       return    edit.exec();
 }
 
