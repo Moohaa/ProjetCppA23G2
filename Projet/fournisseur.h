@@ -2,6 +2,7 @@
 #define FOURNISSEUR_H
 #include <QString>
 #include <QSqlQueryModel>
+
 class Fournisseur
 {
     int id;
@@ -29,6 +30,7 @@ public:
 
     bool ajouter();
     bool supprimer();
+    bool modifier();
     QSqlQueryModel * afficher();
 
     int lastId();

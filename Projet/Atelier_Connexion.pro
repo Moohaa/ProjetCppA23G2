@@ -26,15 +26,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    commandefournisseur.cpp \
     fournisseur.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp
+    connection.cpp \
+    offrefournisseur.cpp
 
 HEADERS += \
+    commandefournisseur.h \
     fournisseur.h \
         mainwindow.h \
-    connection.h
+    connection.h \
+    offrefournisseur.h
 
 FORMS += \
         mainwindow.ui

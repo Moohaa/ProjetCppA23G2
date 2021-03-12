@@ -1,6 +1,7 @@
 #include "fournisseur.h"
 #include <QSqlQuery>
 #include <QVariant>
+#include <QDebug>
 
 Fournisseur::Fournisseur(){}
 
@@ -77,3 +78,18 @@ QSqlQueryModel * Fournisseur::afficher(){
     return model;
     }
 
+bool Fournisseur::modifier(){
+    QSqlQuery query;
+
+    QString stringTelephone = QString::number(this->telephone);
+    QString stringId = QString::number(this->id);
+
+    query.prepare("UPDATE FOURNISSEUR SET NOM=?, TELEPHONE=?, ADRESSE=?, MAIL=? WHERE ID_FOURNISSEUR=?");
+    query.addBindValue(this->nom);
+    query.addBindValue(stringTelephone);
+    query.addBindValue(this->adresse);
+    query.addBindValue(this->mail);
+    query.addBindValue(stringId);
+
+    return query.exec();
+}
