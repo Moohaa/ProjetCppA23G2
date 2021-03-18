@@ -45,6 +45,8 @@ private slots:
    // void sendMail();
     //void mailSent(QString status);
 
+    void on_stackedWidget_currentChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
 

@@ -4,6 +4,7 @@
 #include <QString>
 #include <QSqlQueryModel>
 #include <QSqlTableModel>
+#include <QDate>
 
 class stock
 {
@@ -11,7 +12,7 @@ class stock
     QString CATEGORIE_STOCK;
     int TEMPERATURE;
     QString EMPLACEMENT;
-    QString DATE_STOCK;
+    QDate DATE_STOCK;
     int QUANTITE;
     int ID_PRODUIT;
 
@@ -19,13 +20,13 @@ class stock
 public:
     stock();
     stock(int);
-    stock(QString,int,QString,QString,int,int);
+    stock(QString,int,QString,QDate,int,int);
 
     int getID_STOCK();
     QString getCATEGORIE_STOCK();
     int getTEMPERATURE();
     QString getEMPLACEMENT();
-    QString getDATE_STOCK();
+    QDate getDATE_STOCK();
     int getQUANTITE();
     int getID_PRODUIT();
 
@@ -34,7 +35,7 @@ public:
     void setCATEGORIE_STOCK(QString);
     void setTEMPERATURE(int);
     void setEMPLACEMENT(QString);
-    void setDATE_STOCK(QString);
+    void setDATE_STOCK(QDate);
     void setQUANTITE(int);
     void setID_PRODUIT(int);
 

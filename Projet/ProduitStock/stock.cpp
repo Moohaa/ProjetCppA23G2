@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QSqlTableModel>
 #include <QDebug>
+#include <QDate>
 
 stock::stock(){}
 
@@ -11,7 +12,7 @@ stock::stock(){}
 stock::stock(int ID_STOCK){
     this->ID_STOCK = ID_STOCK;
 }
-stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QString DATE_STOCK, int QUANTITE, int ID_PRODUIT){
+stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QDate DATE_STOCK, int QUANTITE, int ID_PRODUIT){
     this->ID_STOCK = lastId();
     this->CATEGORIE_STOCK = CATEGORIE_STOCK;
     this->TEMPERATURE = TEMPERATURE;
@@ -26,7 +27,7 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QStri
     QString stock::getCATEGORIE_STOCK(){return this->CATEGORIE_STOCK;}
     int stock::getTEMPERATURE(){return this->TEMPERATURE;}
     QString stock::getEMPLACEMENT(){return this->EMPLACEMENT;}
-    QString stock::getDATE_STOCK(){return this->DATE_STOCK;}
+    QDate stock::getDATE_STOCK(){return this->DATE_STOCK;}
     int stock::getQUANTITE(){return this->QUANTITE;}
     int stock::getID_PRODUIT(){return this->ID_PRODUIT;}
 
@@ -35,7 +36,7 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QStri
     void stock::setCATEGORIE_STOCK(QString CATEGORIE_STOCK){this->CATEGORIE_STOCK = CATEGORIE_STOCK;}
     void stock::setTEMPERATURE(int TEMPERATURE){this->TEMPERATURE = TEMPERATURE;}
     void stock::setEMPLACEMENT(QString EMPLACEMENT){this->EMPLACEMENT = EMPLACEMENT;}
-    void stock::setDATE_STOCK(QString DATE_STOCK){this->DATE_STOCK = DATE_STOCK;}
+    void stock::setDATE_STOCK(QDate DATE_STOCK){this->DATE_STOCK = DATE_STOCK;}
     void stock::setQUANTITE(int QUANTITE){this->QUANTITE = QUANTITE;}
     void stock::setID_PRODUIT(int ID_PRODUIT){this->ID_PRODUIT = ID_PRODUIT;}
 
@@ -118,7 +119,7 @@ bool stock::update_stock()
     QString res1= QString(CATEGORIE_STOCK);
     QString res2= QString::number(TEMPERATURE);
     QString res3= QString(EMPLACEMENT);
-    QString res4= QString(DATE_STOCK);
+    QDate res4= QDate(DATE_STOCK);
     QString res5= QString::number(QUANTITE);
     QString res6= QString::number(ID_PRODUIT);
 
