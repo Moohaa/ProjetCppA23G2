@@ -1,27 +1,27 @@
 #include "menu.h"
 #include <QSqlQuery>
 #include <QVariant>
-
+#include<QDateEdit>
 menu::menu(){}
 
 
 menu::menu(int ID_MENU){this->ID_MENU = ID_MENU;}
 
-menu::menu(QString DATE_MENU,QString NOM_MENU,QString CATEGORIE_MENU){
+menu::menu(QDate DATE_MENU,QString NOM_MENU,QString CATEGORIE_MENU){
     this->ID_MENU = lastId();
-    this->DATE_MENU = DATE_MENU;
+    this->DATE_MENU=DATE_MENU;
     this->NOM_MENU =NOM_MENU;
     this->CATEGORIE_MENU = CATEGORIE_MENU;
 
 }
     int menu::getID_MENU(){return this->ID_MENU;}
-    QString menu::getDATE_MENU(){return this->DATE_MENU;}
+    QDate menu::getDATE_MENU(){return this->DATE_MENU;}
     QString menu::getNOM_MENU(){return this->NOM_MENU;}
     QString menu::getCATEGORIE_MENU(){return this->CATEGORIE_MENU;}
 
 
     void menu::setID_MENU(int ID_MENU){this->ID_MENU = ID_MENU;}
-     void menu::setDATE_MENU(QString DATE_MENU){this->DATE_MENU = DATE_MENU;}
+     void menu::setDATE_MENU(QDate DATE_MENU){this->DATE_MENU = DATE_MENU;}
     void menu::setNOM_MENU(QString NOM_MENU){this->NOM_MENU = NOM_MENU;}
     void menu::setCATEGORIE_MENU(QString CATEGORIE_MENU){this->CATEGORIE_MENU = CATEGORIE_MENU;}
 
@@ -75,7 +75,7 @@ QSqlQueryModel * menu::afficher(){
     }
 bool menu::modifier(){
     QString res=QString::number(ID_MENU);
-     QString res1=QString (DATE_MENU);
+     QDate res1=QDate (DATE_MENU);
      QString res2=QString (NOM_MENU);
 QString res3=QString (CATEGORIE_MENU);
 

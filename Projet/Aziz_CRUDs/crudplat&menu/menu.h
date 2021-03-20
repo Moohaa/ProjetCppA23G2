@@ -1,11 +1,12 @@
-#ifndef FOURNISSEUR_H
-#define FOURNISSEUR_H
+#ifndef MENU_H
+#define MENU_H
 #include <QString>
 #include <QSqlQueryModel>
+#include<QDateEdit>
 class menu
 {
     int ID_MENU;
-    QString DATE_MENU;
+    QDate DATE_MENU;
     QString NOM_MENU;
     QString CATEGORIE_MENU;
 
@@ -13,16 +14,16 @@ class menu
 public:
     menu();
     menu(int);
-    menu(QString,QString,QString);
+    menu(QDate,QString,QString);
 
     int getID_MENU();
-    QString getDATE_MENU();
+    QDate getDATE_MENU();
     QString getNOM_MENU();
     QString getCATEGORIE_MENU();
 
 
     void setID_MENU(int);
-    void setDATE_MENU(QString);
+    void setDATE_MENU(QDate);
     void setNOM_MENU(QString);
     void setCATEGORIE_MENU(QString);
 

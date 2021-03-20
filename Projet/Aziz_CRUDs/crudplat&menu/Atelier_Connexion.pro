@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql \
+    quick
 QT+= sql
 CONFIG += console
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -29,12 +30,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
-    menu.cpp
+    menu.cpp \
+    plat.cpp
 
 HEADERS += \
         mainwindow.h \
     connection.h \
-    menu.h
+    menu.h \
+    plat.h
 
 FORMS += \
         mainwindow.ui
