@@ -18,13 +18,26 @@
 #include <QTableView>
 #include <QLabel>
 #include <QDate>
+#include <QtWidgets/QMessageBox>
+#include <QMainWindow>
+#include <QPixmap>
+#include <QMediaPlayer>
+
 
 using namespace std;
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
-                                          ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+
+    ui(new Ui::MainWindow)
+
 {
     ui->setupUi(this);
+
+    media = new QMediaPlayer (this);
+    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/Projet C++/lumina.mp3"));
+    //QDebug << media->errorString();
+    media->play();
 
     QPixmap pix("C:/Users/PC/Desktop/Projet C++/Photos/hhhhhh.png");
     QPixmap pix1("C:/Users/PC/Desktop/Projet C++/Calque 0.png");
@@ -34,11 +47,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
-    //ui->tableView_A->setModel(test.tri(ui->tableView_A->currentIndex().column()));
+    ui->tableView_A->setModel(test.tri(ui->tableView_A->currentIndex().column()));
 
     stock test1;
    ui->tableView_B->setModel(test1.afficher_stock());//Afficher Stock
-   //ui->tableView_B->setModel(test1.tri(ui->tableView_B->currentIndex().column()));
+   ui->tableView_B->setModel(test1.tri(ui->tableView_B->currentIndex().column()));
 
 
 }
@@ -72,7 +85,16 @@ void MainWindow::on_pushButton_6_clicked()//suuprimer Produit
     ui->tableView_A->setModel(produit.afficher());
 }
 
+void MainWindow::on_tableView_A_doubleClicked(const QModelIndex &index)
+{
 
+    int row =ui->tableView_A->selectionModel()->currentIndex().row();
+    //ui->stackedWidget->setCurrentIndex(2);
+    ui->lineEdit->setText(ui->tableView_A->model()->index(row,0).data().toString());
+    ui->comboBox_3->setCurrentText(ui->tableView_A->model()->index(row,1).data().toString());
+    ui->lineEdit_2->setText(ui->tableView_A->model()->index(row,2).data().toString());
+
+}
 void MainWindow::on_pushButton_4_clicked()//modifier produit
 {
     produit p;
@@ -123,6 +145,19 @@ void MainWindow::on_pushButton_7_clicked()//suuprimer Stock
     ui->tableView_B->setModel(s.afficher_stock());
 }
 
+void MainWindow::on_tableView_B_doubleClicked(const QModelIndex &index)
+{
+
+    int row =ui->tableView_B->selectionModel()->currentIndex().row();
+    //ui->stackedWidget->setCurrentIndex(2);
+    ui->lineEdit_21->setText(ui->tableView_B->model()->index(row,0).data().toString());
+    ui->comboBox->setCurrentText(ui->tableView_B->model()->index(row,1).data().toString());
+    ui->spinBox->setPrefix(ui->tableView_B->model()->index(row,2).data().toString());
+    ui->comboBox_2->setCurrentText(ui->tableView_B->model()->index(row,3).data().toString());
+    ui->dateTimeEdit->setDate(ui->tableView_B->model()->index(row,4).data().toDate());
+    ui->lineEdit_22->setText(ui->tableView_B->model()->index(row,5).data().toString());
+    ui->lineEdit_23->setText(ui->tableView_B->model()->index(row,6).data().toString());
+}
 
 void MainWindow::on_pushButton_5_clicked()//modifier Stock
 {
@@ -138,6 +173,8 @@ void MainWindow::on_pushButton_5_clicked()//modifier Stock
 
  s.update_stock();
 
+
+
     ui->tableView_B->setModel(s.afficher_stock());
 
 }
@@ -150,8 +187,20 @@ void MainWindow::on_TRI_2_clicked()//tri stock
   ui->tableView_B->setModel(s.tri(ui->tableView_B->currentIndex().column()));
 
 }
+//------------------------------------------------------------------------------------------------------------------
 
-void MainWindow::on_stackedWidget_currentChanged(int arg1)
+void MainWindow::on_play_clicked()
 {
-
+    media->play() ;
 }
+
+void MainWindow::on_pause_clicked()
+{
+    media->pause();
+}
+
+void MainWindow::on_mute_clicked()
+{
+    media->setMuted(true);
+}
+

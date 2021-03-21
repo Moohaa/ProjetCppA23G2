@@ -125,18 +125,29 @@ bool stock::update_stock()
 
     QSqlQuery edit;
 
+    CATEGORIE_STOCK=CATEGORIE_STOCK.toLower();
+    CATEGORIE_STOCK[0]=CATEGORIE_STOCK[0].toUpper();
 
-                      edit.prepare("update STOCKAGE set CATEGORIE_STOCK =:CATEGORIE_STOCK, TEMPERATURE =:TEMPERATURE, EMPLACEMENT =:EMPLACEMENT, DATE_STOCK =:DATE_STOCK, QUANTITE =:QUANTITE, ID_PRODUIT =:ID_PRODUIT where ID_STOCK =:ID_STOCK");
 
-                      edit.bindValue(":ID_STOCK",res);
-                      edit.bindValue(":CATEGORIE_STOCK",res1);
-                      edit.bindValue(":TEMPERATURE",res2);
-                      edit.bindValue(":EMPLACEMENT",res3);
-                      edit.bindValue(":DATE_STOCK",res4);
-                      edit.bindValue(":QUANTITE",res5);
-                      edit.bindValue(":ID_PRODUIT",res6);
+     EMPLACEMENT=EMPLACEMENT.toLower();
+            EMPLACEMENT[0]= EMPLACEMENT[0].toUpper();
+
+
+
+
+                      edit.prepare("update STOCKAGE set CATEGORIE_STOCK =(?), TEMPERATURE =(?), EMPLACEMENT =(?), DATE_STOCK =(?), QUANTITE =(?), ID_PRODUIT =(?) where ID_STOCK =(?)");
+
+                      edit.addBindValue(res);
+                      edit.addBindValue(res1);
+                      edit.addBindValue(res2);
+                      edit.addBindValue(res3);
+                      edit.addBindValue(res4);
+                      edit.addBindValue(res5);
+                      edit.addBindValue(res6);
 
                       return edit.exec();
+
+
 }
 
 
