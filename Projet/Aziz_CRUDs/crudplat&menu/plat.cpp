@@ -7,6 +7,7 @@
 #include <QSqlTableModel>
 #include<QSqlRecord>
 #include <QtWidgets>
+
 plat::plat(){}
 
 
@@ -125,24 +126,24 @@ bool plat::modifier()
 
                           return    edit.exec();
     }
-/*void plat::recherche(QTableView* table,QString spec){
+void plat::recherche(QTableView* table,QString spec){
 
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from PLAT where regexp_like(SPECIALITE_PLAT,:spec);");
+    query->prepare("select * from PLAT  where SPECIALITE_PLAT='"+spec+"'");
     query->bindValue(":SPECIALITE_PLAT",spec);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
     table->show();
-}*/
-/*void plat::cleartable_C(QTableView * table)
-{
-    QSqlQueryModel *model= new QSqlQueryModel();
-    model->clear();
-    table->setModel(model);
-
 }
-*/
+void plat::trie(QTableView* table){
 
-
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PLAT  ORDER BY PRIX_PLAT ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}

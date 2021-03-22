@@ -35,9 +35,9 @@ public:
     bool supprimer();
     QSqlQueryModel * afficher();
     bool modifier();
-   // void recherche(QTableView* table,QString);
+    void recherche(QTableView* table,QString);
     int lastId();
-
+void trie(QTableView* table);
 
 };
 

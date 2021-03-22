@@ -549,7 +549,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -767,6 +767,11 @@
          <string>Supprimer</string>
         </property>
        </widget>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>Génération du menu</string>
+       </attribute>
       </widget>
      </widget>
     </widget>

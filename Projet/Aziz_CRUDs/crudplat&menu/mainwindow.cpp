@@ -8,6 +8,7 @@
 #include "menu.h"
 #include<QTableView>
 #include<QDateEdit>
+#include<QDate>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
@@ -19,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->tableView_2->setModel(test.afficher());
     ui->tableView_3->setModel(test1.afficher());
 }
+
+
 
 MainWindow::~MainWindow()
 {
@@ -46,8 +49,12 @@ void MainWindow::on_pushButton_6_clicked()//modifier plat
       p.setPRIX_PLAT(ui->lineEdit_9->text().toFloat());
       p.setID_MENU(ui->lineEdit_10->text().toUInt());
       p.modifier();
-
       ui->tableView_2->setModel(p.afficher());
+      if(ui->lineEdit7_2->text()==p.getNOM_PLAT()){
+          QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
+      else
+
+          QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Nom plat introuvable"),  QMessageBox::Cancel);
 }
 
 void MainWindow::on_pushButton_7_clicked()//supprimer plat
@@ -56,14 +63,15 @@ void MainWindow::on_pushButton_7_clicked()//supprimer plat
      plat p;
         plat plat(ui->textDelete_3->text());
 
-       bool test= plat.supprimer();
+         plat.supprimer();
 
-       ui->tableView_2->setModel(plat.afficher());
-        if(test){
-            QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
-        else
+        ui->tableView_2->setModel(plat.afficher());
+        /* if(ui->textDelete_3->text()!=p.getNOM_PLAT()){
+             QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
+         else
 
-            QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
+             QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);*/
+
 }
 
 void MainWindow::on_pushButton_9_clicked()//ajouter menu
@@ -105,12 +113,42 @@ void MainWindow::on_pushButton_11_clicked()
 void MainWindow::on_pushButton_10_clicked()
 {
     menu m;
-
-    m.setID_MENU(ui->lineEdit7_3->text().toUInt());
+   m.setID_MENU(ui->lineEdit7_3->text().toUInt());
    m.setDATE_MENU(ui->lineEdit_11->date());
    m.setNOM_MENU(ui->lineEdit_12->text());
    m.setCATEGORIE_MENU(ui->comboBox->currentText());
 m.modifier();
   ui->tableView_3->setModel(m.afficher());
-QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("modification effectuée"),  QMessageBox::Cancel);
+
+}
+
+void MainWindow::on_pushButton_8_clicked()//rechercher plat
+{
+    QString findText;
+        QString text = ui->lineEdit_13->text();
+    plat p;
+    QTableView* table=ui->tableView_2;
+        if (text.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entrez une specialité a rechercher."));
+            ui->tableView_2->setModel(p.afficher());
+            return;
+        } else {
+            findText = text;
+            p.recherche(table,findText);
+
+
+}
+}
+
+void MainWindow::on_pushButton_4_clicked()//trier plat
+{
+    plat p;
+     QTableView* table=ui->tableView_2;
+    p.trie(table);
+}
+
+void MainWindow::on_pushButton_5_clicked()//reinitialiser plat
+{ plat p;
+    ui->tableView_2->setModel(p.afficher());
 }
