@@ -5,6 +5,7 @@
 #include <QSqlQueryModel>
 #include <QSqlTableModel>
 #include <QDate>
+#include <QTableView>
 
 class stock
 {
@@ -45,8 +46,8 @@ public:
     bool update_stock();
     QSqlQueryModel * afficher_stock();
 
-    bool recherche(int ID_STOCK);
-    QSqlTableModel * tri(int num);
+    void recherche(QTableView* table,QString CATEGORIE_STOCK);
+    void tri(QTableView* table);
 
     int lastId();
 

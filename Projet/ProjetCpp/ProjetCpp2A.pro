@@ -5,7 +5,9 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+
 QT       += core gui multimedia
+
 CONFIG += stl
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Atelier_Connexion
@@ -25,17 +27,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-    connection.cpp \
-    produit.cpp \
-    stock.cpp
+    stock.cpp\
+    produit.cpp\
+    connection.cpp\
+    main.cpp \
+    mainwindow.cpp
+
+
+
+
 
 HEADERS += \
-        mainwindow.h \
-    connection.h \
-    produit.h \
-    stock.h
+    stock.h\
+    produit.h\
+    mainwindow.h \
+    connection.h
+
+
+
+
+
 
 FORMS += \
         mainwindow.ui

@@ -4,8 +4,9 @@
 #include <QMainWindow>
 #include "stock.h"
 #include "produit.h"
-//#include "smtp.h"
 #include <QMediaPlayer>
+#include <QTableView>
+
 
 namespace Ui {
 class MainWindow;
@@ -42,15 +43,17 @@ private slots:
     void on_TRI_2_clicked();
 
 
+
+
    // void sendMail();
     //void mailSent(QString status);
 
-   // void on_stackedWidget_currentChanged(int arg1);
+    //void on_stackedWidget_currentChanged(int arg1);
 
 
-    void on_tableView_B_doubleClicked(const QModelIndex &index);
+    void on_tableView_B_doubleClicked();
 
-    void on_tableView_A_doubleClicked(const QModelIndex &index);
+    void on_tableView_A_doubleClicked();
 
     void on_play_clicked();
 
@@ -59,11 +62,30 @@ private slots:
     void on_mute_clicked();
 
 
+    //void on_sendBtn_clicked();
+
+    //void sendMail();
+
+   // void mailSent(QString);
+
+    void on_tableView_B_clicked(const QModelIndex &index);
+
+    void on_tableView_A_clicked(const QModelIndex &index);
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
 
 private:
     Ui::MainWindow *ui;
-
     QMediaPlayer *media;
+
 
 };
 

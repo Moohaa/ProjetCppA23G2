@@ -4,6 +4,8 @@
 #include <QVariant>
 #include <QMessageBox>
 #include <QSqlTableModel>
+#include <QTableView>
+
 produit::produit(){}
 
 
@@ -95,33 +97,16 @@ bool produit::update()
                       return    edit.exec();
 }
 
-bool produit::recherche(int ID_PRODUIT)
-{
+void produit::recherche(QTableView* table,QString ID_PRODUIT){
 
-    QString resid =  QString::number(ID_PRODUIT);
-
-    QSqlQuery qry;
-
-if (qry.exec("select * from PRODUIT where ID_PRODUIT='"+resid+"'"))
-{
-
-    int n=0;
-    while (qry.next())
-    {
-n++;
-    }
-    qDebug () <<n;
-    if (n==1)
- {qDebug () <<"il existe ";
-
-    }
-    else
-    {
-     qDebug () <<"il n'existe pas ";
-    }
-}
-
-      return qry.exec();
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PRODUIT  where ID_PRODUIT='"+ID_PRODUIT+"'");
+    query->bindValue(":ID_PRODUIT",ID_PRODUIT);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
 }
 
 QSqlTableModel *produit::tri(int num)

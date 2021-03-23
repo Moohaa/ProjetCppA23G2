@@ -151,48 +151,30 @@ bool stock::update_stock()
 }
 
 
-bool stock::recherche(int ID_STOCK)
-{
+void stock::recherche(QTableView* table,QString CATEGORIE_STOCK){
 
-    QString resid =  QString::number(ID_STOCK);
-
-    QSqlQuery qry;
-
-if (qry.exec("select * from PRODUIT where ID_STOCK='"+resid+"'"))
-{
-
-    int n=0;
-    while (qry.next())
-    {
-n++;
-    }
-    qDebug () <<n;
-    if (n==1)
- {qDebug () <<"il existe ";
-
-    }
-    else
-    {
-     qDebug () <<"il n'existe pas ";
-    }
-}
-
-      return qry.exec();
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from STOCKAGE  where CATEGORIE_STOCK='"+CATEGORIE_STOCK+"'");
+    query->bindValue(":CATEGORIE_STOCK",CATEGORIE_STOCK);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
 }
 
 
 
-QSqlTableModel *stock::tri(int num )
+void stock::tri(QTableView* table)
 {
 
-   QSqlTableModel *mmodel = new QSqlTableModel();
-    mmodel->setTable("STOCKAGE");
-
-   mmodel->setSort(num,Qt::DescendingOrder);
-   mmodel->select();
-   return mmodel;
-
-
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from STOCKAGE  ORDER BY QUANTITE ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
 
 }
 

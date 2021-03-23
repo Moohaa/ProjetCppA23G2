@@ -3,6 +3,7 @@
 #include <QString>
 #include <QSqlQueryModel>
 #include <QSqlTableModel>
+#include <QTableView>
 class produit
 {
     int ID_PRODUIT;
@@ -30,7 +31,7 @@ public:
     bool update();
     QSqlQueryModel * afficher();
 
-    bool recherche(int ID_PRODUIT);
+    void recherche(QTableView* table,QString ID_PRODUIT);
     QSqlTableModel * tri(int num);
 
     int lastId();
