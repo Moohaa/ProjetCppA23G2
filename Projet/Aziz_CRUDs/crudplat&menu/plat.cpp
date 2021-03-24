@@ -126,6 +126,17 @@ bool plat::modifier()
 
                           return    edit.exec();
     }
+
+void plat::trie(QTableView* table){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PLAT  ORDER BY PRIX_PLAT ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
 void plat::recherche(QTableView* table,QString spec){
 
     QSqlQueryModel *model= new QSqlQueryModel();
@@ -137,11 +148,12 @@ void plat::recherche(QTableView* table,QString spec){
     table->setModel(model);
     table->show();
 }
-void plat::trie(QTableView* table){
+void plat::recherche1(QTableView* table,int spec){
 
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from PLAT  ORDER BY PRIX_PLAT ASC");
+    query->prepare("select * from PLAT  where ID_MENU=:ID_MENU");
+    query->bindValue(":ID_MENU",spec);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);

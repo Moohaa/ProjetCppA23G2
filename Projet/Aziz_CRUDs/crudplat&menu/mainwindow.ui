@@ -310,7 +310,7 @@
         <widget class="QPushButton" name="pushButton_2">
          <property name="geometry">
           <rect>
-           <x>190</x>
+           <x>140</x>
            <y>200</y>
            <width>75</width>
            <height>23</height>
@@ -320,43 +320,17 @@
           <string>Ajouter</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit7_2">
-         <property name="geometry">
-          <rect>
-           <x>430</x>
-           <y>80</y>
-           <width>113</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
         <widget class="QPushButton" name="pushButton_6">
          <property name="geometry">
           <rect>
-           <x>450</x>
-           <y>120</y>
+           <x>230</x>
+           <y>200</y>
            <width>75</width>
            <height>23</height>
           </rect>
          </property>
          <property name="text">
           <string>modifier</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_10">
-         <property name="geometry">
-          <rect>
-           <x>370</x>
-           <y>80</y>
-           <width>91</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Nom PLAT</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_9">
@@ -516,7 +490,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>trier selon l'order croissant du prix des plats:</string>
+         <string>trier selon l'ordre croissant du prix des plats:</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_5">
@@ -549,7 +523,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -765,6 +739,67 @@
         </property>
         <property name="text">
          <string>Supprimer</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>Génération du menu</string>
+       </attribute>
+       <widget class="QLineEdit" name="lineEdit_14">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_12">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>111</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Générer le menu</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>10</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>10</y>
+          <width>451</width>
+          <height>121</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView_4">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>150</y>
+          <width>451</width>
+          <height>221</height>
+         </rect>
         </property>
        </widget>
       </widget>

@@ -2,6 +2,8 @@
 #include <QSqlQuery>
 #include <QVariant>
 #include<QDateEdit>
+#include<QTableView>
+
 menu::menu(){}
 
 
@@ -92,5 +94,16 @@ QString res3=QString (CATEGORIE_MENU);
 
 
 
+}
+void menu::recherche(QTableView* table,int n){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from MENU  where ID_MENU=:ID_MENU");
+    query->bindValue(":ID_MENU",n);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
 }
 

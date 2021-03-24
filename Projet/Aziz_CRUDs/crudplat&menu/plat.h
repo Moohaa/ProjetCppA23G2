@@ -36,6 +36,7 @@ public:
     QSqlQueryModel * afficher();
     bool modifier();
     void recherche(QTableView* table,QString);
+     void recherche1(QTableView* table,int);
     int lastId();
 void trie(QTableView* table);
 

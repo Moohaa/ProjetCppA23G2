@@ -36,6 +36,12 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_12_clicked();
+
+    void on_tableView_2_clicked(const QModelIndex &index);
+
+    void on_tableView_3_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
 };

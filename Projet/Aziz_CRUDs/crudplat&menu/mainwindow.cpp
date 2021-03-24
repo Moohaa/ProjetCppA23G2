@@ -42,15 +42,15 @@ void MainWindow::on_pushButton_6_clicked()//modifier plat
 {
     plat p;
 
-      p.setNOM_PLAT(ui->lineEdit7_2->text());
+     // p.setNOM_PLAT(ui->lineEdit7_2->text());
       p.setNOM_PLAT(ui->lineEdit_6->text());
       p.setINGREDIENTS_PLAT(ui->lineEdit_7->text());
       p.setSPECIALITE_PLAT(ui->lineEdit_8->text());
       p.setPRIX_PLAT(ui->lineEdit_9->text().toFloat());
       p.setID_MENU(ui->lineEdit_10->text().toUInt());
-      p.modifier();
+      bool test=p.modifier();
       ui->tableView_2->setModel(p.afficher());
-      if(ui->lineEdit7_2->text()==p.getNOM_PLAT()){
+      if(test){
           QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
       else
 
@@ -94,7 +94,7 @@ void MainWindow::on_pushButton_9_clicked()//ajouter menu
 
 }
 
-void MainWindow::on_pushButton_11_clicked()
+void MainWindow::on_pushButton_11_clicked()//supprimer menu
 {
     QSqlQuery query;
     menu m;
@@ -110,7 +110,7 @@ void MainWindow::on_pushButton_11_clicked()
            QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
 }
 
-void MainWindow::on_pushButton_10_clicked()
+void MainWindow::on_pushButton_10_clicked()//modifier menu
 {
     menu m;
    m.setID_MENU(ui->lineEdit7_3->text().toUInt());
@@ -151,4 +151,42 @@ void MainWindow::on_pushButton_4_clicked()//trier plat
 void MainWindow::on_pushButton_5_clicked()//reinitialiser plat
 { plat p;
     ui->tableView_2->setModel(p.afficher());
+}
+
+void MainWindow::on_pushButton_12_clicked()//generation menu
+{
+    int text = ui->lineEdit_14->text().toUInt();
+    int findText;
+menu m;
+plat p;
+QTableView* table=ui->tableView;
+QTableView* table1=ui->tableView_4;
+        ui->tableView->setModel(m.afficher());
+        findText = text;
+        m.recherche(table,text);
+        p.recherche1(table1,text);
+
+}
+
+void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//recuperation des données au niveau de modiff plat
+{
+    int row =ui->tableView_2->selectionModel()->currentIndex().row();
+     //ui->stackedWidget->setCurrentIndex(2);
+     ui->lineEdit_6->setText(ui->tableView_2->model()->index(row,0).data().toString());
+     ui->lineEdit_7->setText(ui->tableView_2->model()->index(row,1).data().toString());
+     ui->lineEdit_8->setText(ui->tableView_2->model()->index(row,2).data().toString());
+      ui->lineEdit_9->setText(ui->tableView_2->model()->index(row,3).data().toString());
+     ui->lineEdit_10->setText(ui->tableView_2->model()->index(row,4).data().toString());
+
+}
+
+void MainWindow::on_tableView_3_clicked(const QModelIndex &index)//recuperation donnée menu
+{
+    int row =ui->tableView_3->selectionModel()->currentIndex().row();
+       //ui->stackedWidget->setCurrentIndex(2);
+       ui->lineEdit7_3->setText(ui->tableView_3->model()->index(row,0).data().toString());
+       ui->lineEdit_11->setDate(ui->tableView_3->model()->index(row,1).data().toDate());
+       ui->lineEdit_12->setText(ui->tableView_3->model()->index(row,2).data().toString());
+       ui->comboBox->setCurrentText(ui->tableView_3->model()->index(row,3).data().toString());
+
 }

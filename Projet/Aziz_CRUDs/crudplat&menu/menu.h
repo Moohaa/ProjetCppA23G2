@@ -3,6 +3,7 @@
 #include <QString>
 #include <QSqlQueryModel>
 #include<QDateEdit>
+#include<QTableView>
 class menu
 {
     int ID_MENU;
@@ -32,6 +33,7 @@ public:
     bool supprimer();
     QSqlQueryModel * afficher();
     bool modifier();
+    void recherche(QTableView* table,int n);
     int lastId();
 
 };
