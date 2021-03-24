@@ -1,0 +1,12 @@
+release/commande.o
+release/evaluation.o
+release/menu.o
+release/plat.o
+release/stock.o
+release/produit.o
+release/connection.o
+release/main.o
+release/mainwindow.o
+release/table.o
+release/transaction.o
+release/moc_mainwindow.o

@@ -33,10 +33,13 @@ produit::produit(QString NOM_PRODUIT,QString CATEGORIE_PRODUIT){
         int lastId = 0;
         QSqlQuery qry3 ;
         qry3.prepare("select ID_PRODUIT from PRODUIT");
-        if (qry3.exec()){
-            while(qry3.next()){
-            lastId = qry3.value(0).toInt();}
-        }
+        if (qry3.exec())
+        {
+            while(qry3.next())
+            {
+            lastId = qry3.value(0).toInt();
+            }
+         }
         return lastId+1;
     }
 
@@ -97,12 +100,12 @@ bool produit::update()
                       return    edit.exec();
 }
 
-void produit::recherche(QTableView* table,QString ID_PRODUIT){
+void produit::recherche(QTableView* table,QString CATEGORIE_PRODUIT){
 
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from PRODUIT  where ID_PRODUIT='"+ID_PRODUIT+"'");
-    query->bindValue(":ID_PRODUIT",ID_PRODUIT);
+    query->prepare("select * from PRODUIT where CATEGORIE_PRODUIT='"+CATEGORIE_PRODUIT+"'");
+    query->bindValue(":CATEGORIE_PRODUIT",CATEGORIE_PRODUIT);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
@@ -113,7 +116,7 @@ QSqlTableModel *produit::tri(int num)
 {
 
    QSqlTableModel *mmodel = new QSqlTableModel();
-   //mmodel->setTable("set PRODUIT WHERE ID_PRODUIT = :ID_PRODUIT");
+   mmodel->setTable("set PRODUIT WHERE ID_PRODUIT = :ID_PRODUIT");
    mmodel->setTable("PRODUIT");
 
    mmodel->setSort(num,Qt::DescendingOrder);
