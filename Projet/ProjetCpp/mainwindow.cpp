@@ -336,7 +336,34 @@ void MainWindow::on_pushButton_15_clicked()// trier Transaction
 {
     Transaction t;
 
+<<<<<<< Updated upstream
   ui->tableView_2->setModel(t.tri(ui->tableView_2->currentIndex().column()));
+=======
+    //ui->tableView_2->setModel(t.tri(ui->tableView_2->currentIndex().column()));
+
+    QTableView* table=ui->tableView;
+   t.tri(table);
+
+}
+
+void MainWindow::on_tableView_2_clicked(const QModelIndex &index)// recherche transaction
+{
+
+    QString findText;
+        QString text = ui->comboBox->currentText();
+    Transaction t;
+    QTableView* table=ui->tableView_B;
+        if (text.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entrez une categorie a rechercher."));
+            ui->tableView_2->setModel(t.afficher());
+            return;
+        }
+        else {
+            findText = text;
+            t.recherche(table,findText);
+            }
+>>>>>>> Stashed changes
 }
 
 //-----------------------------------~Evaluation~--------------------------------------
