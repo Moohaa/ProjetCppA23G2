@@ -4,6 +4,8 @@
 #include <QString>
 #include <QSqlQueryModel>
 #include <QDate>
+#include <QTableView>
+
 #include <QSqlTableModel>
 class Transaction
 {
@@ -41,9 +43,12 @@ public:
     bool supprimer();
     QSqlQueryModel * afficher();
 
-    QSqlTableModel * tri(int num);
+    void recherche(QTableView* table,QString ID_FACTURE);
+    void tri(QTableView* table);
+
 
     int lastId();
+
 
 };
 
