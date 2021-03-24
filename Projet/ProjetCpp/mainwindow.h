@@ -22,7 +22,7 @@ public:
 
 
 private slots:
-
+//---------------------------------------------~MARIEM~-----------------------------------------------------
     void on_pushButton_clicked();
 
     void on_pushButton_3_clicked();
@@ -105,7 +105,29 @@ private slots:
 
     void on_tableView_4_clicked(const QModelIndex &index);
 
-//---------------------------------------------------------------------------------------------------------------
+//--------------------------------------------FADWA-------------------------------------------------------------------
+
+    void on_pushButton_31_clicked();
+
+    void on_pushButton_32_clicked();
+
+    void on_pushButton_33_clicked();
+
+    void on_pushButton_34_clicked();
+
+    void on_pushButton_35_clicked();
+
+    void on_pushButton_36_clicked();
+
+
+
+    void on_pushButton_37_clicked();
+
+    void on_pushButton_38_clicked();
+
+    void on_pushButton_39_clicked();
+
+//-------------------------------------------------------------------------------------------------------------------------
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;

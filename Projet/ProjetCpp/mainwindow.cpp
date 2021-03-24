@@ -12,6 +12,8 @@
 #include "evaluation.h"
 #include "plat.h"
 #include "menu.h"
+#include "table.h"
+#include "commande.h"
 
 #include <QDebug>
 #include "connection.h"
@@ -530,4 +532,133 @@ void MainWindow::on_tableView_4_clicked(const QModelIndex &index)//recuperation 
        ui->lineEdit_25->setText(ui->tableView_4->model()->index(row,2).data().toString());
        ui->comboBox_7->setCurrentText(ui->tableView_4->model()->index(row,3).data().toString());
 
+}
+//------------------------------------------FADWA--------------------------------------------------------------------
+void MainWindow::on_pushButton_31_clicked()//AJOUTER TAB
+{
+
+ Table t(ui->lineEdit_28->text().toInt(), ui->lineEdit_29->text().toInt(),
+        ui->comboBox_8->currentText(),ui->comboBox_9->currentText(),ui->lineEdit_30->text().toInt());
+t.ajouter();
+ui->tableView_7->setModel(t.afficher());
+}
+
+void MainWindow::on_pushButton_33_clicked()//supprimer tab
+{
+    Table t1;
+    t1.setNUM_TABLE(ui->lineEdit_32->text().toInt());
+    bool test =t1.supprimer(t1.get_NUM_TABLE());
+    QMessageBox msgBox;
+    if(test)
+    {msgBox.setText("supression avec succés");
+      ui->tableView_7->setModel(t1.afficher());
+    }
+    else
+        msgBox.setText("Echec de suppression");
+    msgBox.exec();
+}
+
+void MainWindow::on_pushButton_32_clicked()//modifier table
+{/*
+
+    Table t2;
+  int a;
+          a=ui->lineEdit_5->text().toInt();
+
+
+      QString b=QString ::number(t2.get_NUM_TABLE());
+      t2.setNUM_TABLE(b.toInt());
+      t2.setNB_CHAISES(ui->lineEdit_2->text().toInt());
+      t2.setEMPLACEMENT( ui->comboBox->currentText());
+      t2.setDISPONIBILITE(ui->comboBox_2->currentText());
+      t2.setDEBARRASSAGE(ui->lineEdit_3->text().toInt());
+    t2.modifier();
+      ui->tableView->setModel(t2.afficher());
+    QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);
+     ui->toupdate->setText("");
+
+            ui->lineEdit_17->setText("");
+            ui->lineEdit_9->setText("");
+            ui->lineEdit_10->setText("");
+            ui->lineEdit_11->setText("");
+            ui->lineEdit_12->setText("");
+            ui->lineEdit_13->setText("");
+            ui->lineEdit_14->setText("");
+            ui->lineEdit_15->setText("");
+  */  }
+
+
+void MainWindow::on_pushButton_37_clicked()//AJOUTER COMMANDE
+{
+    Commande c(ui->lineEdit_33->text().toUInt(), ui->lineEdit_38->text().toUInt(),
+        ui->lineEdit_37->text(),ui->lineEdit_36->text(),ui->lineEdit_35->text().toFloat(),ui->lineEdit_34->text().toUInt());
+c.ajouter();
+ui->tableView_8->setModel(c.afficher());
+}
+
+void MainWindow::on_pushButton_39_clicked()//SUPPRIMER UNE COMMANDE
+{
+    Commande c1;
+    c1.setID_COMMANDE(ui->lineEdit_40->text().toInt());
+    bool test =c1.supprimer(c1.get_ID_COMMANDE());
+    QMessageBox msgBox;
+    if(test)
+    {msgBox.setText("supression avec succés");
+      ui->tableView_8->setModel(c1.afficher());
+    }
+    else
+        msgBox.setText("Echec de suppression");
+    msgBox.exec();
+}
+
+void MainWindow::on_pushButton_38_clicked()//modifier com
+{
+
+
+    Commande c2;
+
+   c2.setID_COMMANDE(ui->lineEdit_33->text().toUInt());
+      c2.setQUANTITE(ui->lineEdit_38->text().toUInt());
+      c2.setLIBELLE(  ui->lineEdit_37->text());
+      c2.setDESCRIPTION( ui->lineEdit_36->text());
+      c2.setPRIX(ui->lineEdit_35->text().toFloat());
+      c2.setNUM_TABLE(ui->lineEdit_34->text().toUInt());
+    c2.modifier();
+      ui->tableView_8->setModel(c2.afficher());
+    QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);
+}
+
+
+
+
+void MainWindow::on_pushButton_34_clicked()//trier par num
+{
+    Table t;
+    QTableView* table=ui->tableView_7;
+    t.tri_Num(table);
+}
+
+void MainWindow::on_pushButton_35_clicked()//trier par nbr chaises
+{
+    Table t;
+    QTableView* table=ui->tableView_7;
+    t.tri_NB(table);
+}
+
+void MainWindow::on_pushButton_36_clicked()//chercher table
+{
+    QString NUM_TABLE;
+    QString find =ui->find->text();
+Table t;
+    QTableView* table=ui->tableView_7;
+        if (find.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entrez une specialité a rechercher."));
+            ui->tableView_7->setModel(t.afficher());
+            return;
+        } else {
+            NUM_TABLE = find;
+            t.recherche(table,NUM_TABLE.toInt());
+
+}
 }

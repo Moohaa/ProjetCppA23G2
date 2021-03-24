@@ -1,4 +1,5 @@
 INPUT(
+./debug/commande.o
 ./debug/evaluation.o
 ./debug/menu.o
 ./debug/plat.o
@@ -7,6 +8,7 @@ INPUT(
 ./debug/connection.o
 ./debug/main.o
 ./debug/mainwindow.o
+./debug/table.o
 ./debug/transaction.o
 ./debug/moc_mainwindow.o
 );
