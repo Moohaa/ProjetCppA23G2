@@ -6,7 +6,7 @@
 #include "produit.h"
 #include <QMediaPlayer>
 #include <QTableView>
-
+#include "transactionmain.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,8 +25,6 @@ private slots:
 
     void on_pushButton_clicked();
 
-    //void on_pushButton_2_clicked();
-
     void on_pushButton_3_clicked();
 
     void on_pushButton_4_clicked();
@@ -37,19 +35,9 @@ private slots:
 
     void on_pushButton_7_clicked();
 
-
-
     void on_TRI_clicked();
+
     void on_TRI_2_clicked();
-
-
-
-
-   // void sendMail();
-    //void mailSent(QString status);
-
-    //void on_stackedWidget_currentChanged(int arg1);
-
 
     void on_tableView_B_doubleClicked();
 
@@ -61,16 +49,9 @@ private slots:
 
     void on_mute_clicked();
 
+    void on_tableView_B_clicked();
 
-    //void on_sendBtn_clicked();
-
-    //void sendMail();
-
-   // void mailSent(QString);
-
-    void on_tableView_B_clicked(const QModelIndex &index);
-
-    void on_tableView_A_clicked(const QModelIndex &index);
+    void on_tableView_A_clicked();
 
     void on_pushButton_2_clicked();
 
@@ -82,6 +63,20 @@ private slots:
 
     void on_pushButton_11_clicked();
 
+//----------------------------------------AHMED------------------------------------------------
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_13_clicked();
+
+    void on_pushButton_14_clicked();
+
+    void on_pushButton_15_clicked();
+
+    void on_pushButton_16_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_18_clicked();
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;

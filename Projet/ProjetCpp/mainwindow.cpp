@@ -8,6 +8,8 @@
 
 #include "produit.h"
 #include "stock.h"
+#include "transaction.h"
+#include "evaluation.h"
 
 #include <QDebug>
 #include "connection.h"
@@ -21,6 +23,7 @@
 #include <QMainWindow>
 #include <QPixmap>
 #include <QMediaPlayer>
+
 
 
 
@@ -52,6 +55,12 @@ MainWindow::MainWindow(QWidget *parent) :
    ui->tableView_B->setModel(test1.afficher_stock());//Afficher Stock
    //ui->tableView_B->setModel(test1.tri(ui->tableView_B->currentIndex().column()));
 
+//-----------------------------------AHMED AFFICHAGE----------------------------------------------------
+
+   Transaction test3;
+   Evaluation test4;
+  ui->tableView_2->setModel(test3.afficher());
+  ui->tableView->setModel(test4.afficher());
 
 }
 
@@ -137,7 +146,7 @@ void MainWindow::on_TRI_clicked()//tri Produit
 
 }
 
-void MainWindow::on_tableView_A_clicked(const QModelIndex &index)//rechercher un produit
+void MainWindow::on_tableView_A_clicked()//rechercher un produit
 {
     QString findText;
         QString text = ui->comboBox_3->currentText();
@@ -154,60 +163,6 @@ void MainWindow::on_tableView_A_clicked(const QModelIndex &index)//rechercher un
             p.recherche(table,findText);
             }
 }
-
-//-----------------------------------------------~MAILING~--------------------------------------------------------
-/*void MainWindow::on_sendBtn_clicked()
-{
-    //QApplication a(argc, argv);
-
-    // This is a first demo application of the SmtpClient for Qt project
-
-    // First we need to create an SmtpClient object
-    // We will use the Gmail's smtp server (smtp.gmail.com, port 465, ssl)
-
-    SmtpClient smtp("smtp.gmail.com", 465, SmtpClient::SslConnection);
-
-    // We need to set the username (your email address) and the password
-    // for smtp authentification.
-
-    smtp.setUser("rajianacib@gmail.com");
-    smtp.setPassword("nbvcxwnbvcxw");
-
-    // Now we create a MimeMessage object. This will be the email.
-
-    MimeMessage message;
-
-    message.setSender(new EmailAddress("rajianacib@gmail.com", "Mariem Nacib"));
-    message.addRecipient(new EmailAddress("rajianacib@gmail.com", "Stockage"));
-    message.setSubject("STOCK LIMITE");
-
-    // Now add some text to the email.
-    // First we create a MimeText object.
-
-    MimeText text;
-
-    text.setText("Votre stock est limite veuillez commandez des neauveau produits\n");
-
-    // Now add it to the mail
-
-    message.addPart(&text);
-
-    // Now we can send the mail
-
-    smtp.connectToHost();
-    smtp.login();
-    if(smtp.sendMail(message))
-    {
-        QMessageBox::information(this,"C'est bien", "Votre E-mail est bien envoyé!");
-    }
-    else
-    {
-        QMessageBox::critical(this,"Error", "E-Mail non envoyé!");
-    }
-
-    smtp.quit();
-
-}*/
 
 //---------------------------------~STOCK~----------------------------------------------
 void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
@@ -293,7 +248,7 @@ void MainWindow::on_TRI_2_clicked()//tri stock
 
 }
 
-void MainWindow::on_tableView_B_clicked(const QModelIndex &index)//rechercher un stock
+void MainWindow::on_tableView_B_clicked()//rechercher un stock
 {
     QString findText;
         QString text = ui->comboBox->currentText();
@@ -326,4 +281,90 @@ void MainWindow::on_pause_clicked()
 void MainWindow::on_mute_clicked()
 {
     media->setMuted(true);
+}
+//------------------------------------------------5EDMET AHMED----------------------------------------------------------------
+void MainWindow::on_pushButton_12_clicked()//Ajouter Transaction
+{
+    Transaction t;
+
+    t.setNOM_CLIENT(ui->lineEdit_3->text());
+    t.setNUM_CLIENT(ui->lineEdit_4->text().toInt());
+    t.setADRESSE_CLIENT(ui->comboBox_4->currentText());
+    t.setDATE_HEURE(ui->dateTimeEdit_2->date());
+    t.setPRIX(ui->lineEdit_5->text().toInt());
+    t.setID_UTILISATEUR(ui->lineEdit_7->text().toInt());
+
+        t.ajouter();
+
+
+            ui->tableView_2->setModel(t.afficher());
+}
+
+void MainWindow::on_pushButton_14_clicked()//Supprimer Transaction
+{
+    Transaction Transaction(ui->textDelete_3->text().toUInt());
+    Transaction.supprimer();
+    ui->tableView_2->setModel(Transaction.afficher());
+}
+
+
+void MainWindow::on_pushButton_13_clicked() // ModifierTransaction
+{
+
+    Transaction t;
+
+      t.setID_FACTURE(ui->textEdit_2->text().toInt());
+      t.setNOM_CLIENT(ui->lineEdit_3->text());
+      t.setNUM_CLIENT(ui->lineEdit_4->text().toInt());
+      t.setADRESSE_CLIENT(ui->comboBox_4->currentText());
+      t.setDATE_HEURE(ui->dateTimeEdit_2->date());
+      t.setPRIX(ui->lineEdit_5->text().toInt());
+      t.setID_UTILISATEUR(ui->lineEdit_7->text().toInt());
+
+      t.update();
+
+      ui->tableView_2->setModel(t.afficher());
+}
+
+void MainWindow::on_pushButton_15_clicked()// trier Transaction
+{
+    Transaction t;
+
+  ui->tableView_2->setModel(t.tri(ui->tableView_2->currentIndex().column()));
+}
+
+//-----------------------------------~Evaluation~--------------------------------------
+void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
+{
+    Evaluation e(ui->lineEdit_8->text(), ui->comboBox_5->currentText().toUInt(),
+                  ui->comboBox_6->currentText(),ui->lineEdit_9->text().toUInt());
+
+        e.ajouter();
+
+
+            ui->tableView->setModel(e.afficher());
+}
+
+void MainWindow::on_pushButton_18_clicked()//Supprimer Evaluation
+{
+    Evaluation Evaluation(ui->textDelete_4->text().toUInt());
+    Evaluation.supprimer();
+    ui->tableView->setModel(Evaluation.afficher());
+}
+
+
+void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
+{
+
+    Evaluation e;
+
+      e.setID_NOTE(ui->textEdit_4->text().toInt());
+      e.setNOM_CLIENT(ui->lineEdit_8->text());
+      e.setNOTE_CLIENT(ui->comboBox_5->currentText().toUInt());
+      e.setREMARQUE_CLIENT(ui->comboBox_6->currentText());
+      e.setID_FACTURE(ui->lineEdit_9->text().toInt());
+
+      e.update();
+
+      ui->tableView->setModel(e.afficher());
 }
