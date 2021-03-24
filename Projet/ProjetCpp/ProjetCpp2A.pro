@@ -27,12 +27,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    commande.cpp \
     evaluation.cpp \
+    menu.cpp \
+    plat.cpp \
     stock.cpp\
     produit.cpp\
     connection.cpp\
     main.cpp \
     mainwindow.cpp \
+    table.cpp \
     transaction.cpp
 
 
@@ -40,11 +44,15 @@ SOURCES += \
 
 
 HEADERS += \
+    commande.h \
     evaluation.h \
+    menu.h \
+    plat.h \
     stock.h\
     produit.h\
     mainwindow.h \
     connection.h \
+    table.h \
     transaction.h
 
 

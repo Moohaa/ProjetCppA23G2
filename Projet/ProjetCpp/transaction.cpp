@@ -126,30 +126,15 @@ QSqlQueryModel * Transaction::afficher(){
     }
 
 
-void Transaction::tri(QTableView* table)
+QSqlTableModel *Transaction::tri(int num)
 {
 
-    QSqlQueryModel *model= new QSqlQueryModel();
-    QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from TRANSACTION  ORDER BY ID_FACTURE ASC");
-    query->exec();
-    model->setQuery(*query);
-    table->setModel(model);
-    table->show();
+   QSqlTableModel *mmodel = new QSqlTableModel();
+   //mmodel->setTable("set TRANSACTION WHERE ID_FACTURE = :ID_FACTURE");
+   mmodel->setTable("TRANSACTION");
+
+   mmodel->setSort(num,Qt::DescendingOrder);
+   mmodel->select();
+   return mmodel;
 
 }
-
-
-void Transaction::recherche(QTableView* table,QString ID_FACTURE){
-
-    QSqlQueryModel *model= new QSqlQueryModel();
-    QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from TRANSACTION  where ID_FACTURE='"+ID_FACTURE+"'");
-    query->bindValue(":ID_FACTURE",ID_FACTURE);
-    query->exec();
-    model->setQuery(*query);
-    table->setModel(model);
-    table->show();
-}
-
-
