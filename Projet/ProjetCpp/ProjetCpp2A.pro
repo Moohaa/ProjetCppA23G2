@@ -28,6 +28,8 @@ CONFIG += c++11
 
 SOURCES += \
     evaluation.cpp \
+    menu.cpp \
+    plat.cpp \
     stock.cpp\
     produit.cpp\
     connection.cpp\
@@ -41,6 +43,8 @@ SOURCES += \
 
 HEADERS += \
     evaluation.h \
+    menu.h \
+    plat.h \
     stock.h\
     produit.h\
     mainwindow.h \

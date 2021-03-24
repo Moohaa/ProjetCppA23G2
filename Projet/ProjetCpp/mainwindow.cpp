@@ -10,6 +10,8 @@
 #include "stock.h"
 #include "transaction.h"
 #include "evaluation.h"
+#include "plat.h"
+#include "menu.h"
 
 #include <QDebug>
 #include "connection.h"
@@ -367,4 +369,165 @@ void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
       e.update();
 
       ui->tableView->setModel(e.afficher());
+}
+//-----------------------------------------AZIZ------------------------------------------------
+void MainWindow::on_pushButton_21_clicked()//ajouter plat
+{
+    plat p(ui->lineEdit_16->text(), ui->lineEdit_17->text(),
+         ui->lineEdit_18->text(),ui->lineEdit_19->text().toFloat(),ui->lineEdit_20->text().toUInt());
+p.ajouter();
+ ui->tableView_2->setModel(p.afficher());
+
+}
+void MainWindow::on_pushButton_22_clicked()//modifier plat
+{
+    plat p;
+
+     // p.setNOM_PLAT(ui->lineEdit7_2->text());
+      p.setNOM_PLAT(ui->lineEdit_16->text());
+      p.setINGREDIENTS_PLAT(ui->lineEdit_17->text());
+      p.setSPECIALITE_PLAT(ui->lineEdit_18->text());
+      p.setPRIX_PLAT(ui->lineEdit_19->text().toFloat());
+      p.setID_MENU(ui->lineEdit_20->text().toUInt());
+      bool test=p.modifier();
+      ui->tableView_3->setModel(p.afficher());
+      if(test){
+          QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
+      else
+
+          QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Nom plat introuvable"),  QMessageBox::Cancel);
+}
+
+void MainWindow::on_pushButton_23_clicked()//supprimer plat
+{
+    QSqlQuery query;
+     plat p;
+        plat plat(ui->textDelete_5->text());
+
+         plat.supprimer();
+
+        ui->tableView_3->setModel(plat.afficher());
+        /* if(ui->textDelete_3->text()!=p.getNOM_PLAT()){
+             QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
+         else
+
+             QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);*/
+
+}
+
+void MainWindow::on_pushButton_27_clicked()//ajouter menu
+{
+    //QSqlQuery req;
+    menu m;
+    QDate d=QDate::currentDate();
+  //req.prepare("INSERT INTO MENU VALUES(4,:DATE_MENU,:NOM_MENU,:CATEGORIE_MENU");
+    m.setDATE_MENU(d);
+    m.setNOM_MENU(ui->lineEdit_25->text());
+    m.setCATEGORIE_MENU(ui->comboBox_7->currentText());
+    /*req.bindValue(":DATE_MENU",m.getDATE_MENU());
+    req.bindValue(":NOM_MENU",m.getNOM_MENU());
+    req.bindValue(":CATEGORIE_MENU",m.getCATEGORIE_MENU());
+    */
+    m.ajouter();
+    ui->tableView_4->setModel(m.afficher());
+    QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);
+    //req.exec();
+
+}
+
+void MainWindow::on_pushButton_29_clicked()//supprimer menu
+{
+    QSqlQuery query;
+    menu m;
+       menu menu(ui->textDelete_6->text().toUInt());
+
+      bool test= menu.supprimer();
+
+      ui->tableView_4->setModel(menu.afficher());
+       if(test){
+           QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
+       else
+
+           QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
+}
+
+void MainWindow::on_pushButton_28_clicked()//modifier menu
+{
+    menu m;
+   m.setID_MENU(ui->lineEdit7_3->text().toUInt());
+   m.setDATE_MENU(ui->lineEdit_26->date());
+   m.setNOM_MENU(ui->lineEdit_25->text());
+   m.setCATEGORIE_MENU(ui->comboBox_7->currentText());
+m.modifier();
+  ui->tableView_4->setModel(m.afficher());
+
+}
+
+void MainWindow::on_pushButton_24_clicked()//rechercher plat
+{
+    QString findText;
+        QString text = ui->lineEdit_24->text();
+    plat p;
+    QTableView* table=ui->tableView_3;
+        if (text.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entrez une specialité a rechercher."));
+            ui->tableView_3->setModel(p.afficher());
+            return;
+        } else {
+            findText = text;
+            p.recherche(table,findText);
+
+
+}
+}
+
+void MainWindow::on_pushButton_25_clicked()//trier plat
+{
+    plat p;
+     QTableView* table=ui->tableView_3;
+    p.trie(table);
+}
+
+void MainWindow::on_pushButton_26_clicked()//reinitialiser plat
+{ plat p;
+    ui->tableView_3->setModel(p.afficher());
+}
+
+void MainWindow::on_pushButton_30_clicked()//generation menu
+{
+    int text = ui->lineEdit_27->text().toUInt();
+    int findText;
+menu m;
+plat p;
+QTableView* table=ui->tableView_5;
+QTableView* table1=ui->tableView_6;
+        ui->tableView_5->setModel(m.afficher());
+        findText = text;
+        m.recherche(table,text);
+        p.recherche1(table1,text);
+
+}
+
+void MainWindow::on_tableView_3_clicked(const QModelIndex &index)//recuperation des données au niveau de modiff plat
+{
+    int row =ui->tableView_3->selectionModel()->currentIndex().row();
+     //ui->stackedWidget->setCurrentIndex(2);
+     ui->lineEdit_16->setText(ui->tableView_3->model()->index(row,0).data().toString());
+     ui->lineEdit_17->setText(ui->tableView_3->model()->index(row,1).data().toString());
+     ui->lineEdit_18->setText(ui->tableView_3->model()->index(row,2).data().toString());
+      ui->lineEdit_19->setText(ui->tableView_3->model()->index(row,3).data().toString());
+     ui->lineEdit_20->setText(ui->tableView_3->model()->index(row,4).data().toString());
+
+}
+
+void MainWindow::on_tableView_4_clicked(const QModelIndex &index)//recuperation donnée menu
+{
+    int row =ui->tableView_4->selectionModel()->currentIndex().row();
+       //ui->stackedWidget->setCurrentIndex(2);
+       ui->lineEdit7_3->setText(ui->tableView_4->model()->index(row,0).data().toString());
+       ui->lineEdit_26->setDate(ui->tableView_4->model()->index(row,1).data().toDate());
+       ui->lineEdit_25->setText(ui->tableView_4->model()->index(row,2).data().toString());
+       ui->comboBox_7->setCurrentText(ui->tableView_4->model()->index(row,3).data().toString());
+
 }

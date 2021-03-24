@@ -53,6 +53,8 @@ private slots:
 
     void on_tableView_A_clicked();
 
+//----------------------------------------MENU---------------------------------------------------
+
     void on_pushButton_2_clicked();
 
     void on_pushButton_8_clicked();
@@ -77,6 +79,33 @@ private slots:
     void on_pushButton_17_clicked();
 
     void on_pushButton_18_clicked();
+
+//------------------------------------------AZIZ----------------------------------------------------
+    void on_pushButton_21_clicked();
+
+    void on_pushButton_22_clicked();
+
+    void on_pushButton_23_clicked();
+
+    void on_pushButton_24_clicked();
+
+    void on_pushButton_25_clicked();
+
+    void on_pushButton_26_clicked();
+
+    void on_pushButton_27_clicked();
+
+    void on_pushButton_28_clicked();
+
+    void on_pushButton_29_clicked();
+
+    void on_pushButton_30_clicked();
+
+    void on_tableView_3_clicked(const QModelIndex &index);
+
+    void on_tableView_4_clicked(const QModelIndex &index);
+
+//---------------------------------------------------------------------------------------------------------------
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
