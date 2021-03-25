@@ -5,6 +5,7 @@
 #include <QSqlQueryModel>
 #include <QDate>
 #include <QSqlTableModel>
+#include<QTableView>
 class Transaction
 {
     int ID_FACTURE;
@@ -41,7 +42,8 @@ public:
     bool supprimer();
     QSqlQueryModel * afficher();
 
-    QSqlTableModel * tri(int num);
+    void trie(QTableView* table);
+    void recherche1(QTableView* table,int);
 
     int lastId();
 

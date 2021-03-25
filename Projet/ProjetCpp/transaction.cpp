@@ -3,8 +3,15 @@
 #include <QSqlQuery>
 #include <QVariant>
 #include <QDate>
-
+#include<QTableView>
 #include <QSqlTableModel>
+
+//PDF
+#include <QPdfWriter>
+#include <QPainter>
+#include <QMessageBox>
+#include <QDesktopServices>
+#include <QUrl>
 
 Transaction::Transaction(){}
 
@@ -126,15 +133,27 @@ QSqlQueryModel * Transaction::afficher(){
     }
 
 
-QSqlTableModel *Transaction::tri(int num)
-{
+void Transaction::trie(QTableView* table){
 
-   QSqlTableModel *mmodel = new QSqlTableModel();
-   //mmodel->setTable("set TRANSACTION WHERE ID_FACTURE = :ID_FACTURE");
-   mmodel->setTable("TRANSACTION");
-
-   mmodel->setSort(num,Qt::DescendingOrder);
-   mmodel->select();
-   return mmodel;
-
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from TRANSACTION  ORDER BY PRIX ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
 }
+
+void Transaction::recherche1(QTableView* table,int spec){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from TRANSACTION  where ID_FACTURE=:ID_FACTURE");
+    query->bindValue(":ID_FACTURE",spec);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+
+

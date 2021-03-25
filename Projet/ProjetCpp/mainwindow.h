@@ -128,6 +128,16 @@ private slots:
     void on_pushButton_39_clicked();
 
 //-------------------------------------------------------------------------------------------------------------------------
+    void on_rechercher_clicked();
+
+    void on_lineEdit_10_cursorPositionChanged(int arg1, int arg2);
+
+    void on_rechercher_2_clicked();
+
+    void on_pushButton_40_clicked();
+
+    void on_pushButton_41_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;

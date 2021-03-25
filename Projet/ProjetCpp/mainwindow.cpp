@@ -332,40 +332,39 @@ void MainWindow::on_pushButton_13_clicked() // ModifierTransaction
       ui->tableView_2->setModel(t.afficher());
 }
 
-void MainWindow::on_pushButton_15_clicked()// trier Transaction
+void MainWindow::on_pushButton_40_clicked()// trier Transaction
 {
     Transaction t;
-
-<<<<<<< Updated upstream
-  ui->tableView_2->setModel(t.tri(ui->tableView_2->currentIndex().column()));
-=======
-    //ui->tableView_2->setModel(t.tri(ui->tableView_2->currentIndex().column()));
-
-    QTableView* table=ui->tableView;
-   t.tri(table);
+       QTableView* table=ui->tableView_2;
+      t.trie(table);
 
 }
 
-void MainWindow::on_tableView_2_clicked(const QModelIndex &index)// recherche transaction
+void MainWindow::on_rechercher_clicked()//Rechercher Transaction
 {
-
     QString findText;
-        QString text = ui->comboBox->currentText();
-    Transaction t;
-    QTableView* table=ui->tableView_B;
-        if (text.isEmpty()) {
-            QMessageBox::information(this, tr("Empty Field"),
-                tr("Entrez une categorie a rechercher."));
-            ui->tableView_2->setModel(t.afficher());
-            return;
-        }
-        else {
-            findText = text;
-            t.recherche(table,findText);
-            }
->>>>>>> Stashed changes
-}
+          QString text = ui->lineEdit_6->text();
+      Transaction t;
+      QTableView* table=ui->tableView_2;
+          if (text.isEmpty()) {
+              QMessageBox::information(this, tr("Empty Field"),
+                  tr("Entrez une specialité a rechercher."));
+              ui->tableView_2->setModel(t.afficher());
+              return;
+          } else {
+              findText = text;
+              t.recherche1(table,findText.toUInt());
 
+
+  }
+  }
+
+void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
+{
+    Transaction t;
+        ui->tableView_2->setModel(t.afficher());
+
+}
 //-----------------------------------~Evaluation~--------------------------------------
 void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
 {
@@ -401,6 +400,26 @@ void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
 
       ui->tableView->setModel(e.afficher());
 }
+
+void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation
+{
+    QString findText;
+          QString text = ui->lineEdit_10->text();
+      Evaluation e;
+      QTableView* table=ui->tableView;
+          if (text.isEmpty()) {
+              QMessageBox::information(this, tr("Empty Field"),
+                  tr("Entrez une specialité a rechercher."));
+              ui->tableView->setModel(e.afficher());
+              return;
+          } else {
+              findText = text;
+              e.recherche2(table,findText.toUInt());
+
+
+  }
+}
+
 //-----------------------------------------AZIZ------------------------------------------------
 void MainWindow::on_pushButton_21_clicked()//ajouter plat
 {
@@ -691,3 +710,10 @@ Table t;
 
 }
 }
+
+
+
+
+
+
+

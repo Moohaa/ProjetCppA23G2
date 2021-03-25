@@ -2,6 +2,8 @@
 #include "evaluation.h"
 #include <QSqlQuery>
 #include <QVariant>
+#include<QTableView>
+#include <QSqlTableModel>
 
 Evaluation::Evaluation(){}
 
@@ -109,3 +111,14 @@ QSqlQueryModel * Evaluation::afficher(){
   return model;
     }
 
+void Evaluation::recherche2(QTableView* table,int spec){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from EVALUATION  where NOTE_CLIENT=:NOTE_CLIENT");
+    query->bindValue(":NOTE_CLIENT",spec);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}

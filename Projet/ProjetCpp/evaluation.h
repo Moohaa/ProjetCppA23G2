@@ -4,6 +4,8 @@
 
 #include <QString>
 #include <QSqlQueryModel>
+#include<QTableView>
+
 class Evaluation
 {
     int ID_NOTE;
@@ -35,6 +37,8 @@ public:
     QSqlQueryModel * afficher();
 
     int lastId();
+    void recherche2(QTableView* table,int);
+
 
 };
 
