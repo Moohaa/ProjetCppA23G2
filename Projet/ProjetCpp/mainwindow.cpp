@@ -42,16 +42,42 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/brave.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/hhhhhh.png");
-    QPixmap pix1("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/Calque 0.png");
-    QPixmap pix2("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/stock.png");
+    QPixmap pix("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp2/hhhhhh.png");
+    QPixmap pix1("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
+    QPixmap pix3("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
+    QPixmap pix4("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
+    QPixmap pix5("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stars");
+    QPixmap pix6("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cor");
+    QPixmap pix7("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/modi");
+    QPixmap pix8("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/mui");
+
 
     ui->label_5->setPixmap(pix);
     ui->label_3->setPixmap(pix1);
     ui->label_28->setPixmap(pix2);
+    ui->label_85->setPixmap(pix3);
+    ui->label_87->setPixmap(pix3);
+    ui->label_42->setPixmap(pix4);
+    ui->label_84->setPixmap(pix5);
+    ui->label_89->setPixmap(pix5);
+    ui->label_90->setPixmap(pix4);
+    ui->label_48->setPixmap(pix6);
+    ui->label_91->setPixmap(pix6);
+    ui->label_92->setPixmap(pix7);
+    ui->label_93->setPixmap(pix7);
+    ui->label_94->setPixmap(pix8);
+
+
+
+
+
+
+    //ui->label_84->setPixmap(pix4.scaled(100,100,Qt::KeepAspectRatio));
+
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
