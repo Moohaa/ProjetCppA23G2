@@ -543,6 +543,8 @@ void MainWindow::on_pushButton_31_clicked()//AJOUTER TAB
         ui->comboBox_8->currentText(),ui->comboBox_9->currentText(),ui->lineEdit_30->text().toInt());
 t.ajouter();
 ui->tableView_7->setModel(t.afficher());
+QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectué"),  QMessageBox::Cancel);
+
 }
 
 void MainWindow::on_pushButton_33_clicked()//supprimer tab
@@ -594,6 +596,8 @@ void MainWindow::on_pushButton_37_clicked()//AJOUTER COMMANDE
         ui->lineEdit_37->text(),ui->lineEdit_36->text(),ui->lineEdit_35->text().toFloat(),ui->lineEdit_34->text().toUInt());
 c.ajouter();
 ui->tableView_8->setModel(c.afficher());
+QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectué"),  QMessageBox::Cancel);
+
 }
 
 void MainWindow::on_pushButton_39_clicked()//SUPPRIMER UNE COMMANDE
@@ -605,6 +609,7 @@ void MainWindow::on_pushButton_39_clicked()//SUPPRIMER UNE COMMANDE
     if(test)
     {msgBox.setText("supression avec succés");
       ui->tableView_8->setModel(c1.afficher());
+      ui->lineEdit_40->setText("");
     }
     else
         msgBox.setText("Echec de suppression");
@@ -626,6 +631,12 @@ void MainWindow::on_pushButton_38_clicked()//modifier commande
     c2.modifier();
       ui->tableView_8->setModel(c2.afficher());
     QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);
+     ui->lineEdit_33->setText("");
+     ui->lineEdit_38->setText("");
+     ui->lineEdit_37->setText("");
+     ui->lineEdit_36->setText("");
+     ui->lineEdit_35->setText("");
+     ui->lineEdit_34->setText("");
 }
 
 
