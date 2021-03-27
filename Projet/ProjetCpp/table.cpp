@@ -79,75 +79,37 @@ bool Table::supprimer(int NUM_TABLE){
     }
 bool Table ::modifier()
     {
-        int res1= int (NUM_TABLE);
-       int res2= int(NB_CHAISES);
+     QString res1 = QString::number(NUM_TABLE);
+       QString  res2= QString::number(NB_CHAISES);
         QString res3= QString(EMPLACEMENT);
         QString res4= QString(DISPONIBILITE);
-      int res5= int(DEBARRASSAGE);
+      QString res5 = QString::number(DEBARRASSAGE);
 
         QSqlQuery edit;
 
 
-                          edit.prepare("updateTABLES set NUM_TABLE=:NUM_TABLE, NB_CHAISES=: NB_CHAISES , EMPLACEMENT=:EMPLACEMENT , DISPONIBILITE=:DISPONIBILITE ,DEBARRASSAGE=:DEBARRASSAGE   WHERE NUM_TABLE=:a");
-                          edit.bindValue(":a",res1);
+                          edit.prepare("update TABLES set NUM_TABLE=:NUM_TABLE, NB_CHAISES=:NB_CHAISES , EMPLACEMENT=:EMPLACEMENT , DISPONIBILITE=:DISPONIBILITE ,DEBARRASSAGE=:DEBARRASSAGE   WHERE NUM_TABLE=:NUM_TABLE");
+
+                          edit.bindValue(":NUM_TABLE",res1);
                           edit.bindValue(":NB_CHAISES",res2);
-                          edit.bindValue(": EMPLACEMENT",res3);
-                          edit.bindValue(": DISPONIBILITE",res4);
+                          edit.bindValue(":EMPLACEMENT",res3);
+                          edit.bindValue(":DISPONIBILITE",res4);
                           edit.bindValue(":DEBARRASSAGE",res5);
 
                           return    edit.exec();
     }
-/* QSqlQueryModel * Table::recherche(int NUM_TABLE){
-     QSqlQueryModel *model= new QSqlQueryModel();  //'"+ide+"%'  '"+spec+"'
-        QSqlQuery *query=new QSqlQuery;
-        query->prepare("select * from TABLES  where NUM_TABLE=NUM_TABLE");
-        //QString stringInt = QString::number(this->NUM_TABLE);
-        query->bindValue(":NUM_TABLE",NUM_TABLE);
-        query->exec();
-        model->setQuery(*query);
-        model->setHeaderData(0, Qt::Horizontal,QObject::tr("NUM_TABLE"));
-        model->setHeaderData(1, Qt::Horizontal,QObject::tr("NB_CHAISES"));
-        model->setHeaderData(2, Qt::Horizontal,QObject::tr("EMPLACEMENT"));
-        model->setHeaderData(3, Qt::Horizontal,QObject::tr("DISPONIBILITE"));
-        model->setHeaderData(4, Qt::Horizontal,QObject::tr("DEBARRASSAGE"));
-        return model;
-}*/
- void Table::recherche(QTableView* table,int NUM_TABLE)
+
+ void Table::recherche(QTableView* table,int NUM_TABLE)//recherche table
  {
   QSqlQueryModel *model= new QSqlQueryModel();  //'"+ide+"%'  '"+spec+"'
     QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from TABLES  where NUM_TABLE=NUM_TABLE");
+    query->prepare("select * from TABLES  where NUM_TABLE=:NUM_TABLE");
     query->bindValue(":NUM_TABLE",NUM_TABLE);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
     table->show();}
-/*
-  QSqlQueryModel * client::recherche_client(int ID_CLIENT)
-   {
-   QSqlQuery q;
-   q.prepare("select * from client where ID_CLIENT=:ID_CLIENT");
-   q.bindValue(":ID_CLIENT", ID_CLIENT);
-   q.exec();
-   QSqlQueryModel * model = new QSqlQueryModel;
-   model->setQuery(q);
-   model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_CLIENT"));
-   model->setHeaderData(1, Qt::Horizontal, QObject::tr("QUANTITE_ARTICLES"));
-   model->setHeaderData(2, Qt::Horizontal, QObject::tr("STATUT"));
-   model->setHeaderData(3, Qt::Horizontal, QObject::tr("PRODUIT_ACHETE"));
-   QSqlRecord rec = model->record(0);
-   int id = rec.value("ID_CLIENT").toInt();
-   if( id == ID_CLIENT){
-       return model;
-     }
-   return nullptr;
-   }
- QSqlQueryModel *Table::tri()
- {
-     QSqlQueryModel * model=new QSqlQueryModel();
-     model->setQuery("select * from TABLES order by  NUM_TABLE");
-      return model;
- }*/
+
 
 void Table::tri_Num(QTableView* table){
 

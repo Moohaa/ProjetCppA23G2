@@ -128,6 +128,16 @@ private slots:
     void on_pushButton_39_clicked();
 
 //-------------------------------------------------------------------------------------------------------------------------
+    void on_tableView_7_clicked(const QModelIndex &index);
+
+    void on_recher_clicked();
+
+    void on_pushButton_40_clicked();
+
+    void on_pushButton_41_clicked();
+
+    void on_tableView_8_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;

@@ -41,22 +41,23 @@ Commande::Commande(int ID_COMMANDE,int QUANTITE,QString LIBELLE,QString DESCRIPT
 
 }
  bool Commande ::ajouter(){
-    QSqlQuery query;
- QString stringInt = QString::number(this->ID_COMMANDE);
-    query.prepare("INSERT INTO COMMANDE(ID_COMMANDE, QUANTITE, LIBELLE, DESCRIPTION,PRIX,NUM_TABLE) "
-"VALUES ( :ID_COMMANDE,  :QUANTITE, :LIBELLE, :DESCRIPTION, :PRIX, :NUM_TABLE)");
-    query.bindValue(":ID_COMMANDE",stringInt);
-     QString stringIntQ = QString::number(this->QUANTITE);
-   query.bindValue(":QUANTITE",stringIntQ);
-   query.bindValue(":LIBELLE",LIBELLE);
-    query.bindValue(":DESCRIPTION",DESCRIPTION);
-    QString stringIntP = QString::number(this->PRIX);
- query.bindValue( "PRIX",stringIntP);
- QString stringIntN = QString::number(this->NUM_TABLE);
-    query.bindValue("NUM_TABLE",stringIntN);
+     QSqlQuery query;
+  QString stringInt = QString::number(this->NUM_TABLE);
+     query.prepare("INSERT INTO COMMANDE VALUES (?,?,?,?,?,?)");
+ QString id = QString::number(this->ID_COMMANDE);
+ QString prix = QString::number(this->PRIX);
 
 
-    return query.exec();
+
+    query.addBindValue(id);
+      query.addBindValue(this->QUANTITE);
+       query.addBindValue(this->LIBELLE);
+       query.addBindValue(this->DESCRIPTION);
+      query.addBindValue(prix);
+       query.addBindValue(this->NUM_TABLE);
+       //query.addBindValue(stringInt);
+       qDebug() << id << prix ;
+       return query.exec();
 }
 QSqlQueryModel *Commande::afficher(){
     QSqlQueryModel* model   = new QSqlQueryModel();
@@ -80,23 +81,54 @@ bool Commande::supprimer(int ID_COMMANDE){
 
 bool Commande ::modifier()
     {
-        int res1= int (ID_COMMANDE);
-       int res2= int(QUANTITE);
+        QString res1 = QString::number(ID_COMMANDE);
+       QString res2 = QString::number(QUANTITE);
         QString res3= QString(LIBELLE);
         QString res4= QString(DESCRIPTION);
-      float res5= int(PRIX);
-      int res6= int(NUM_TABLE);
+     QString res5 = QString::number(PRIX);
+      QString res6 = QString::number(NUM_TABLE);
 
         QSqlQuery edit;
 
 
-                          edit.prepare("updateCOMMANDE set ID_COMMANDE=: ID_COMMANDE, QUANTITE=: QUANTITE , LIBELLE=:LIBELLE , DESCRIPTION=:DESCRIPTION ,PRIX=:PRIX ,NUM_TABLE=:NUM_TABLE   WHERE ID_COMMANDE=:ID_COMMANDE");
+                          edit.prepare("update COMMANDE set ID_COMMANDE=:ID_COMMANDE, QUANTITE=:QUANTITE , LIBELLE=:LIBELLE , DESCRIPTION=:DESCRIPTION ,PRIX=:PRIX ,NUM_TABLE=:NUM_TABLE   WHERE ID_COMMANDE=:ID_COMMANDE");
                           edit.bindValue(":ID_COMMANDE",res1);
                           edit.bindValue(":QUANTITE",res2);
-                          edit.bindValue(": LIBELLE",res3);
+                          edit.bindValue(":LIBELLE",res3);
                           edit.bindValue(":DESCRIPTION",res4);
                           edit.bindValue(":PRIX",res5);
                           edit.bindValue(":NUM_TABLE",res6);
 
                           return    edit.exec();
 }
+void Commande::recherche(QTableView* table,int ID_COMMANDE)
+{
+ QSqlQueryModel *model= new QSqlQueryModel();
+   QSqlQuery *query=new QSqlQuery;
+   query->prepare("select * from COMMANDE  where ID_COMMANDE=:ID_COMMANDE");
+   query->bindValue(":ID_COMMANDE",ID_COMMANDE);
+   query->exec();
+   model->setQuery(*query);
+   table->setModel(model);
+   table->show();}
+void Commande::tri_ID(QTableView* table){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from COMMANDE ORDER BY ID_COMMANDE ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+void Commande::tri_LIBELLE(QTableView* table){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from COMMANDE  ORDER BY LIBELLE ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+

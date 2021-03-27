@@ -41,6 +41,9 @@ public:
        QSqlQueryModel * afficher();
       bool supprimer(int);
       bool modifier();
+      void recherche(QTableView* table,int ID_COMMANDE);
+      void tri_ID(QTableView* table);
+      void tri_LIBELLE(QTableView* table);
 };
 
 #endif // COMMANDE_H

@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/brave.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/brave  ,.mp3"));
     media->play();
 
     QPixmap pix("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/hhhhhh.png");
@@ -561,33 +561,31 @@ void MainWindow::on_pushButton_33_clicked()//supprimer tab
 }
 
 void MainWindow::on_pushButton_32_clicked()//modifier table
-{/*
+{
 
     Table t2;
-  int a;
-          a=ui->lineEdit_5->text().toInt();
 
 
-      QString b=QString ::number(t2.get_NUM_TABLE());
-      t2.setNUM_TABLE(b.toInt());
-      t2.setNB_CHAISES(ui->lineEdit_2->text().toInt());
-      t2.setEMPLACEMENT( ui->comboBox->currentText());
-      t2.setDISPONIBILITE(ui->comboBox_2->currentText());
-      t2.setDEBARRASSAGE(ui->lineEdit_3->text().toInt());
+
+        t2.setNUM_TABLE(ui->lineEdit_28->text().toInt());
+      t2.setNB_CHAISES(ui->lineEdit_29->text().toInt());
+      t2.setEMPLACEMENT( ui->comboBox_8->currentText());
+      t2.setDISPONIBILITE(ui->comboBox_9->currentText());
+      t2.setDEBARRASSAGE(ui->lineEdit_30->text().toInt());
     t2.modifier();
-      ui->tableView->setModel(t2.afficher());
+      ui->tableView_7->setModel(t2.afficher());
     QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);
-     ui->toupdate->setText("");
 
-            ui->lineEdit_17->setText("");
-            ui->lineEdit_9->setText("");
-            ui->lineEdit_10->setText("");
-            ui->lineEdit_11->setText("");
-            ui->lineEdit_12->setText("");
-            ui->lineEdit_13->setText("");
+
+           ui->lineEdit_28->setText("");
+            ui->lineEdit_29->setText("");
+            ui->comboBox_8->setCurrentText("");
+            ui->comboBox_9->setCurrentText("");
+            ui->lineEdit_30->setText("");
+           /* ui->lineEdit_13->setText("");
             ui->lineEdit_14->setText("");
-            ui->lineEdit_15->setText("");
-  */  }
+            ui->lineEdit_15->setText("");*/
+    }
 
 
 void MainWindow::on_pushButton_37_clicked()//AJOUTER COMMANDE
@@ -613,13 +611,13 @@ void MainWindow::on_pushButton_39_clicked()//SUPPRIMER UNE COMMANDE
     msgBox.exec();
 }
 
-void MainWindow::on_pushButton_38_clicked()//modifier com
+void MainWindow::on_pushButton_38_clicked()//modifier commande
 {
 
 
     Commande c2;
 
-   c2.setID_COMMANDE(ui->lineEdit_33->text().toUInt());
+     c2.setID_COMMANDE(ui->lineEdit_33->text().toUInt());
       c2.setQUANTITE(ui->lineEdit_38->text().toUInt());
       c2.setLIBELLE(  ui->lineEdit_37->text());
       c2.setDESCRIPTION( ui->lineEdit_36->text());
@@ -655,7 +653,7 @@ Table t;
     QTableView* table=ui->tableView_7;
         if (find.isEmpty()) {
             QMessageBox::information(this, tr("Empty Field"),
-                tr("Entrez une specialité a rechercher."));
+                tr("Entr//."));
             ui->tableView_7->setModel(t.afficher());
             return;
         } else {
@@ -663,4 +661,64 @@ Table t;
             t.recherche(table,NUM_TABLE.toInt());
 
 }
+}
+
+void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer donnee table
+{
+
+
+        int row =ui->tableView_7->selectionModel()->currentIndex().row();
+            //ui->stackedWidget->setCurrentIndex(2);
+            ui->lineEdit_28->setText(ui->tableView_7->model()->index(row,0).data().toString());
+            ui->lineEdit_29->setText(ui->tableView_7->model()->index(row,1).data().toString());
+            ui->comboBox_8->setCurrentText(ui->tableView_7->model()->index(row,2).data().toString());
+             ui->comboBox_9->setCurrentText(ui->tableView_7->model()->index(row,3).data().toString());
+            ui->lineEdit_30->setText(ui->tableView_7->model()->index(row,4).data().toString());
+
+
+}
+
+void MainWindow::on_recher_clicked()
+{
+    QString ID_COMMANDE;
+QString find = ui->lineEdit_31->text();
+
+Commande c;;
+    QTableView* table=ui->tableView_8;
+        if (find.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entr//."));
+            ui->tableView_8->setModel(c.afficher());
+            return;
+        } else {
+          ID_COMMANDE= find;
+            c.recherche(table,ID_COMMANDE.toInt());
+
+}
+}
+
+void MainWindow::on_pushButton_40_clicked()//trier commande par id
+{
+  Commande c;
+    QTableView* table=ui->tableView_8;
+    c.tri_ID(table);
+}
+
+void MainWindow::on_pushButton_41_clicked()//trier commande par libelle
+{
+    Commande c;
+      QTableView* table=ui->tableView_8;
+      c.tri_LIBELLE(table);
+}
+
+void MainWindow::on_tableView_8_clicked(const QModelIndex &index)//recupereer donnee commande
+{
+    int row =ui->tableView_8->selectionModel()->currentIndex().row();
+        //ui->stackedWidget->setCurrentIndex(2);
+        ui->lineEdit_33->setText(ui->tableView_8->model()->index(row,0).data().toString());
+        ui->lineEdit_38->setText(ui->tableView_8->model()->index(row,1).data().toString());
+        ui->lineEdit_37->setText(ui->tableView_8->model()->index(row,2).data().toString());
+         ui->lineEdit_36->setText(ui->tableView_8->model()->index(row,3).data().toString());
+        ui->lineEdit_35->setText(ui->tableView_8->model()->index(row,4).data().toString());
+          ui->lineEdit_34->setText(ui->tableView_8->model()->index(row,4).data().toString());
 }
