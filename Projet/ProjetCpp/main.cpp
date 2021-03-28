@@ -2,12 +2,16 @@
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
+#include <QDebug>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
     Connection c;
+    qDebug() << "Projet C++, Application Desktop:";
     bool test=c.createconnect();
+    qDebug() << "Smart Restaurant";
+
     if(test)
     {w.show();
         QMessageBox::information(nullptr, QObject::tr("database is open"),

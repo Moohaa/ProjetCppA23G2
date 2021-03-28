@@ -31,7 +31,7 @@ public:
     bool update();
     QSqlQueryModel * afficher();
 
-    void recherche(QTableView* table,QString ID_PRODUIT);
+    void recherche(QTableView* table,QString CATEGORIE_PRODUIT);
     QSqlTableModel * tri(int num);
 
     int lastId();
