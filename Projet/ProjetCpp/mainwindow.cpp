@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
     media->setMedia( QUrl::fromLocalFile("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp2/hhhhhh.png");
+    QPixmap pix150("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
     QPixmap pix1("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
     QPixmap pix2("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
     QPixmap pix3("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
@@ -54,9 +54,19 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap pix6("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cor");
     QPixmap pix7("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/modi");
     QPixmap pix8("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/mui");
+    QPixmap pix9("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
+    QPixmap pix10("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/casic");
+    QPixmap pix11("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/food");
+    QPixmap pix12("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/table");
+    QPixmap pix13("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/prod");
+    QPixmap pix14("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/prov");
 
 
-    ui->label_5->setPixmap(pix);
+
+
+
+
+    ui->label_102->setPixmap(pix150);
     ui->label_3->setPixmap(pix1);
     ui->label_28->setPixmap(pix2);
     ui->label_85->setPixmap(pix3);
@@ -70,6 +80,22 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_92->setPixmap(pix7);
     ui->label_93->setPixmap(pix7);
     ui->label_94->setPixmap(pix8);
+    ui->label_95->setPixmap(pix6);
+    ui->label_27->setPixmap(pix9);
+    ui->label_96->setPixmap(pix9);
+    ui->label_97->setPixmap(pix10);
+    ui->label_98->setPixmap(pix11);
+    ui->label_99->setPixmap(pix12);
+    ui->label_100->setPixmap(pix13);
+    ui->label_101->setPixmap(pix14);
+
+
+
+
+
+
+
+
 
 
 

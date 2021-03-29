@@ -102,31 +102,6 @@ background: rgb(175, 31, 36);
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>-10</y>
-      <width>191</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::StrongFocus</enum>
-    </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::NoContextMenu</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../hhhhhh.png</pixmap>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
@@ -278,7 +253,7 @@ border-radius:10px;
       <x>30</x>
       <y>210</y>
       <width>261</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -321,7 +296,7 @@ border-radius:10px;
       <x>30</x>
       <y>280</y>
       <width>261</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -364,7 +339,7 @@ border-radius:10px;
       <x>30</x>
       <y>350</y>
       <width>261</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -407,7 +382,7 @@ border-radius:10px;
       <x>30</x>
       <y>420</y>
       <width>261</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -441,7 +416,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Gestionnaires des Fournisseurs</string>
+     <string>Gest des Fournisseurs</string>
     </property>
    </widget>
    <widget class="QStackedWidget" name="stackedWidget">
@@ -1382,7 +1357,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_14">
        <attribute name="title">
@@ -1881,7 +1856,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_18">
          <attribute name="title">
@@ -2089,14 +2064,30 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_29">
           <property name="geometry">
            <rect>
-            <x>510</x>
-            <y>300</y>
+            <x>380</x>
+            <y>330</y>
             <width>111</width>
             <height>31</height>
            </rect>
           </property>
           <property name="text">
            <string>Supprimer</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_95">
+          <property name="geometry">
+           <rect>
+            <x>500</x>
+            <y>300</y>
+            <width>71</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>cor.png</pixmap>
           </property>
          </widget>
         </widget>
@@ -2892,7 +2883,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_8">
        <attribute name="title">
@@ -2908,7 +2899,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -3470,6 +3461,22 @@ color : white;</string>
            <pixmap>cor.png</pixmap>
           </property>
          </widget>
+         <widget class="QLabel" name="label_96">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>0</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>icons8-search-client-48.png</pixmap>
+          </property>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -3487,7 +3494,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_12">
          <attribute name="title">
@@ -3829,7 +3836,7 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>50</y>
+            <y>100</y>
             <width>791</width>
             <height>201</height>
            </rect>
@@ -3861,8 +3868,8 @@ color : white;</string>
          <widget class="QPushButton" name="rechercher_2">
           <property name="geometry">
            <rect>
-            <x>530</x>
-            <y>10</y>
+            <x>440</x>
+            <y>70</y>
             <width>111</width>
             <height>22</height>
            </rect>
@@ -3874,8 +3881,8 @@ color : white;</string>
          <widget class="QLineEdit" name="lineEdit_10">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>10</y>
+            <x>20</x>
+            <y>70</y>
             <width>411</width>
             <height>21</height>
            </rect>
@@ -3950,6 +3957,22 @@ color : white;</string>
            <pixmap>cor.png</pixmap>
           </property>
          </widget>
+         <widget class="QLabel" name="label_27">
+          <property name="geometry">
+           <rect>
+            <x>550</x>
+            <y>40</y>
+            <width>51</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>icons8-search-client-48.png</pixmap>
+          </property>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -3962,7 +3985,7 @@ color : white;</string>
       <x>30</x>
       <y>490</y>
       <width>261</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -4015,13 +4038,124 @@ border-radius:10px;
      <pixmap>mui.png</pixmap>
     </property>
    </widget>
+   <widget class="QLabel" name="label_98">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>220</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>food.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_99">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>280</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>table.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_100">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>360</y>
+      <width>47</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>prod.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_101">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>423</y>
+      <width>47</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>prov.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>20</y>
+      <width>121</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>koujniti_logo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_102">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>20</y>
+      <width>121</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>koujniti_logo.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_97">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>495</y>
+      <width>61</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>casic.png</pixmap>
+    </property>
+   </widget>
    <zorder>label_3</zorder>
    <zorder>label</zorder>
    <zorder>label_4</zorder>
    <zorder>label_2</zorder>
    <zorder>label_6</zorder>
    <zorder>label_7</zorder>
-   <zorder>label_5</zorder>
    <zorder>play</zorder>
    <zorder>mute</zorder>
    <zorder>pause</zorder>
@@ -4032,6 +4166,13 @@ border-radius:10px;
    <zorder>stackedWidget</zorder>
    <zorder>pushButton_11</zorder>
    <zorder>label_94</zorder>
+   <zorder>label_98</zorder>
+   <zorder>label_99</zorder>
+   <zorder>label_100</zorder>
+   <zorder>label_101</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_102</zorder>
+   <zorder>label_97</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="mainToolBar">
