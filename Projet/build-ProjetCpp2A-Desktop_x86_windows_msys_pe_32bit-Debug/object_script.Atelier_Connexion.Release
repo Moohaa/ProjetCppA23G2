@@ -1,0 +1,17 @@
+INPUT(
+./release\commande.o
+./release\commandefournisseur.o
+./release\evaluation.o
+./release\fournisseur.o
+./release\menu.o
+./release\offrefournisseur.o
+./release\plat.o
+./release\stock.o
+./release\produit.o
+./release\connection.o
+./release\main.o
+./release\mainwindow.o
+./release\table.o
+./release\transaction.o
+./release\moc_mainwindow.o
+);

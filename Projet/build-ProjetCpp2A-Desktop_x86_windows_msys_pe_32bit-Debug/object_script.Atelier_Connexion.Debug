@@ -1,0 +1,17 @@
+INPUT(
+./debug\commande.o
+./debug\commandefournisseur.o
+./debug\evaluation.o
+./debug\fournisseur.o
+./debug\menu.o
+./debug\offrefournisseur.o
+./debug\plat.o
+./debug\stock.o
+./debug\produit.o
+./debug\connection.o
+./debug\main.o
+./debug\mainwindow.o
+./debug\table.o
+./debug\transaction.o
+./debug\moc_mainwindow.o
+);
