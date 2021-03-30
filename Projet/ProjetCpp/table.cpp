@@ -99,12 +99,22 @@ bool Table ::modifier()
                           return    edit.exec();
     }
 
- void Table::recherche(QTableView* table,int NUM_TABLE)//recherche table
+ void Table::recherche(QTableView* table,int NUM_TABLE)//recherche table PAR SON NUM
  {
   QSqlQueryModel *model= new QSqlQueryModel();  //'"+ide+"%'  '"+spec+"'
     QSqlQuery *query=new QSqlQuery;
     query->prepare("select * from TABLES  where NUM_TABLE=:NUM_TABLE");
     query->bindValue(":NUM_TABLE",NUM_TABLE);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();}
+ void Table::rechercheC(QTableView* table,int NB_CHAISES)//recherche table PAR NBR CHAISES
+ {
+  QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from TABLES  where NB_CHAISES=:NB_CHAISES");
+    query->bindValue(":NB_CHAISES",NB_CHAISES);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);

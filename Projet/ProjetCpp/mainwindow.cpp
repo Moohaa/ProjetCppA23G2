@@ -733,3 +733,40 @@ void MainWindow::on_tableView_8_clicked(const QModelIndex &index)//recupereer do
         ui->lineEdit_35->setText(ui->tableView_8->model()->index(row,4).data().toString());
           ui->lineEdit_34->setText(ui->tableView_8->model()->index(row,4).data().toString());
 }
+
+void MainWindow::on_pushButton_42_clicked()
+{
+    QString NB_CHAISES;
+    QString find =ui->find->text();
+Table t;
+    QTableView* table=ui->tableView_7;
+        if (find.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entr//."));
+            ui->tableView_7->setModel(t.afficher());
+            return;
+        } else {
+          NB_CHAISES = find;
+            t.rechercheC(table,NB_CHAISES.toInt());
+
+}
+}
+
+void MainWindow::on_recher_2_clicked()
+{
+    QString LIBELLE;
+QString find = ui->lineEdit_31->text();
+
+Commande c;;
+    QTableView* table=ui->tableView_8;
+        if (find.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entr//."));
+            ui->tableView_8->setModel(c.afficher());
+            return;
+        } else {
+         LIBELLE= find;
+            c.rechercheL(table,LIBELLE);
+
+}
+}

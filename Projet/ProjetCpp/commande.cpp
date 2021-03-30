@@ -101,12 +101,22 @@ bool Commande ::modifier()
 
                           return    edit.exec();
 }
-void Commande::recherche(QTableView* table,int ID_COMMANDE)
+void Commande::recherche(QTableView* table,int ID_COMMANDE)//CHERCHER PAR ID COMMANDE
 {
  QSqlQueryModel *model= new QSqlQueryModel();
    QSqlQuery *query=new QSqlQuery;
    query->prepare("select * from COMMANDE  where ID_COMMANDE=:ID_COMMANDE");
    query->bindValue(":ID_COMMANDE",ID_COMMANDE);
+   query->exec();
+   model->setQuery(*query);
+   table->setModel(model);
+   table->show();}
+void Commande::rechercheL(QTableView* table,QString LIBELLE)//CHERCHER PAR LIBELLE
+{
+ QSqlQueryModel *model= new QSqlQueryModel();
+   QSqlQuery *query=new QSqlQuery;
+   query->prepare("select * from COMMANDE  where LIBELLE=:LIBELLE");
+   query->bindValue(":LIBELLE",LIBELLE);
    query->exec();
    model->setQuery(*query);
    table->setModel(model);

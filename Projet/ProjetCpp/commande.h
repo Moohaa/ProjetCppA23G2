@@ -42,6 +42,7 @@ public:
       bool supprimer(int);
       bool modifier();
       void recherche(QTableView* table,int ID_COMMANDE);
+       void rechercheL(QTableView* table,QString LIBELLE);
       void tri_ID(QTableView* table);
       void tri_LIBELLE(QTableView* table);
 };
