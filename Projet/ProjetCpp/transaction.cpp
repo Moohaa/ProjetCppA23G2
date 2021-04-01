@@ -3,7 +3,7 @@
 #include <QSqlQuery>
 #include <QVariant>
 #include <QDate>
-#include<QTableView>
+#include <QTableView>
 #include <QSqlTableModel>
 
 //PDF

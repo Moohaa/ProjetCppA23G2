@@ -1,11 +1,12 @@
 #ifndef COMMANDE_H
 #define COMMANDE_H
+
 #include <QString>
-#include"table.h"
+#include "table.h"
 #include <QSqlQueryModel>
 #include <QString>
 #include <QSqlQueryModel>
-#include<QTableView>
+#include <QTableView>
 
 
 class Commande

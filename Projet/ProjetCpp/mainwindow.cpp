@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QLineEdit>
+#include <QSortFilterProxyModel>
 
 #include "produit.h"
 #include "stock.h"
@@ -39,6 +40,7 @@
 #include <string>
 #include <iostream>
 #include <QThread>
+#include "smtp.h"
 
 #include <QDebug>
 #include "connection.h"
@@ -50,8 +52,13 @@
 #include <QDate>
 #include <QtWidgets/QMessageBox>
 #include <QMainWindow>
+
 #include <QPixmap>
 #include <QMediaPlayer>
+#include <QMovie>
+#include <QSsl>
+#include <QSslSocket>
+#include <QNetworkAccessManager>
 
 using namespace std;
 QT_CHARTS_USE_NAMESPACE
@@ -85,6 +92,17 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod");
     QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov");
 
+
+     setFixedSize(1296,801);  //fixe la taille de la fenêtre
+
+    myMoviebg = new QMovie("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
+
+       ui->gif->setMovie(myMoviebg);
+
+       myMoviebg->start();
+
+ui->label_94->setToolTip("Music");
+
     ui->label_102->setPixmap(pix150);
     ui->label_3->setPixmap(pix1);
     ui->label_28->setPixmap(pix2);
@@ -116,6 +134,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tabFournisseur->setModel(fournisseur.afficher());
 
     //ui->label_84->setPixmap(pix4.scaled(100,100,Qt::KeepAspectRatio));
+
+
+   // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
@@ -248,11 +269,18 @@ void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
 
     if (s.getQUANTITE() > 500)
     {
+    Smtp* smtp = new Smtp("rajianacib@gmail.com", "nbvcxwnbvcxw", "smtp.gmail.com", 465);
 
-   // Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771:)", "smtp.gmail.com", 465);
+         smtp->sendMail("rajianacib@gmail.com", "mariem.nacib@esprit.tn", "STOCK LIMITE", "vous ne pouvez pas stocker plus de 500 produits");
+          QMessageBox::information(this,"message envoyee", "stock saturé verifier votre mail");//fonctionne
+    }
+    if (s.getQUANTITE() < 50)
+    {
 
-         //smtp->sendMail("mariem.nacib@esprit.tn", "ahmedelmoez.noomen@esprit.tn" , "STOCK LIMITE","vous ne pouvez pas stocker plus de 500 produits");
-          QMessageBox::information(this,"message envoye", "verifier votre mail ");
+   Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771", "smtp.gmail.com", 465);
+
+         smtp->sendMail("mariem.nacib@esprit.tn", "ahmedelmoez.noomen@esprit.tn" , "STOCK LIMITE","vous n'avez plus de stock c'est moin de 50 produits");
+          QMessageBox::information(this,"message envoyee", "stock en déficite verifier votre mail");/// fonctionne
     }
 }
 
@@ -296,8 +324,12 @@ void MainWindow::on_pushButton_5_clicked()//modifier Stock
 
  s.update_stock();
 
+    QSqlQueryModel * modelS =s.afficher_stock();
 
-
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
+    proxyModel->setSourceModel(modelS);
+    ui->tableView_B->setSortingEnabled(true);
+     ui->tableView_B->setModel(proxyModel);
     ui->tableView_B->setModel(s.afficher_stock());
 
 }
@@ -317,12 +349,12 @@ void MainWindow::on_TRI_2_clicked()//tri stock
 void MainWindow::on_tableView_B_clicked()//rechercher un stock
 {
     QString findText;
-        QString text = ui->comboBox->currentText();
+        QString text = ui->lineEdit_22->text();
     stock s;
     QTableView* table=ui->tableView_B;
         if (text.isEmpty()) {
             QMessageBox::information(this, tr("Empty Field"),
-                tr("Entrez une categorie a rechercher."));
+                tr("selectionné qlq chose a rechercher."));
             ui->tableView_B->setModel(s.afficher_stock());
             return;
         }
@@ -348,7 +380,7 @@ void MainWindow::on_mute_clicked()
 {
     media->setMuted(true);
 }
-//------------------------------------------------5EDMET AHMED----------------------------------------------------------------
+//------------------------------------------------~AHMED~----------------------------------------------------------------
 void MainWindow::on_pushButton_12_clicked()//Ajouter Transaction
 {
     Transaction t;
@@ -619,7 +651,7 @@ QTableView* table1=ui->tableView_6;
 
 }
 
-void MainWindow::on_tableView_3_clicked(const QModelIndex &index)//recuperation des données au niveau de modiff plat
+void MainWindow::on_tableView_3_clicked()//recuperation des données au niveau de modiff plat
 {
     int row =ui->tableView_3->selectionModel()->currentIndex().row();
      //ui->stackedWidget->setCurrentIndex(2);
@@ -631,7 +663,7 @@ void MainWindow::on_tableView_3_clicked(const QModelIndex &index)//recuperation 
 
 }
 
-void MainWindow::on_tableView_4_clicked(const QModelIndex &index)//recuperation donnée menu
+void MainWindow::on_tableView_4_clicked()//recuperation donnée menu
 {
     int row =ui->tableView_4->selectionModel()->currentIndex().row();
        //ui->stackedWidget->setCurrentIndex(2);

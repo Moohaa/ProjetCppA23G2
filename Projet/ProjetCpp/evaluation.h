@@ -4,7 +4,7 @@
 
 #include <QString>
 #include <QSqlQueryModel>
-#include<QTableView>
+#include <QTableView>
 
 class Evaluation
 {

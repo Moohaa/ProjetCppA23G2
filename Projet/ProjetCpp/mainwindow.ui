@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1296</width>
-    <height>880</height>
+    <width>1290</width>
+    <height>891</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,9 +34,9 @@ color : white;</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>90</x>
       <y>100</y>
-      <width>111</width>
+      <width>151</width>
       <height>21</height>
      </rect>
     </property>
@@ -53,9 +53,9 @@ font: 12pt &quot;Sitka Text&quot;;
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>100</x>
       <y>120</y>
-      <width>211</width>
+      <width>121</width>
       <height>20</height>
      </rect>
     </property>
@@ -313,7 +313,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Tables et Commandes</string>
+     <string>            Tables et Commandes</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_9">
@@ -356,7 +356,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Produits et Stocks</string>
+     <string>     Produits et Stocks</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
@@ -399,7 +399,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Gest des Fournisseurs</string>
+     <string>        Gest des Fournisseurs</string>
     </property>
    </widget>
    <widget class="QStackedWidget" name="stackedWidget">
@@ -412,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -430,18 +430,22 @@ background-color: rgb(43, 43, 43);
 color: rgb(255, 170, 127);
 }
 
-QtabWidget :hover {
+QTabWidget :hover {
 background-color: rgb(43, 43, 43);
+color:rgb(175, 31, 36) ;
 }
-QtabWidget :focus
+QTabWidget :focus
 {
 color: rgb(255, 170, 127);
 
 background:rgb(175, 31, 36);
 
+background-color: rgb(75, 75, 75);
+
 border-radius:10px;
 }
 
+/**************BUTTONS********************/
 QPushButton{
     color: rgb(255, 170, 127);
 	font: 63 10pt &quot;Yu Gothic UI Semibold&quot;;
@@ -457,8 +461,6 @@ color: rgb(255, 170, 127);
 
 background:rgb(175, 31, 36);
 
-
-
 border-radius:10px;
 }
 
@@ -472,7 +474,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -734,7 +736,7 @@ border-radius:10px;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../../stocks1.png</pixmap>
+         <pixmap>../../stock.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="label_35">
@@ -889,12 +891,12 @@ color : white;</string>
            </property>
            <item>
             <property name="text">
-             <string>Fruit</string>
+             <string>Liquide</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Liquide</string>
+             <string>Fruit</string>
             </property>
            </item>
            <item>
@@ -1839,7 +1841,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_18">
          <attribute name="title">
@@ -2197,7 +2199,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_21">
        <attribute name="title">
@@ -2794,7 +2796,22 @@ border-radius:10px;
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QTabWidget" name="tabWidget_13">
+     <widget class="QLabel" name="gif">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>881</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QTabWidget" name="tabWidget_4">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -2851,7 +2868,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -5524,8 +5541,8 @@ border-radius:10px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1296</width>
-     <height>22</height>
+     <width>1290</width>
+     <height>29</height>
     </rect>
    </property>
   </widget>

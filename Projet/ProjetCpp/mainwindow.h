@@ -2,11 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "stock.h"
-#include "produit.h"
 #include <QMediaPlayer>
-#include <QTableView>
-#include "transactionmain.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,6 +18,18 @@ public:
 
 
 private slots:
+
+//----------------------------------------MENU---------------------------------------------------
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
+
 //---------------------------------------------~MARIEM~-----------------------------------------------------
     void on_pushButton_clicked();
 
@@ -53,18 +61,6 @@ private slots:
 
     void on_tableView_A_clicked();
 
-//----------------------------------------MENU---------------------------------------------------
-
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_8_clicked();
-
-    void on_pushButton_9_clicked();
-
-    void on_pushButton_10_clicked();
-
-    void on_pushButton_11_clicked();
-
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -72,13 +68,23 @@ private slots:
 
     void on_pushButton_14_clicked();
 
-   // void on_pushButton_15_clicked();
+    //void on_pushButton_15_clicked();
 
     void on_pushButton_16_clicked();
 
     void on_pushButton_17_clicked();
 
     void on_pushButton_18_clicked();
+
+    void on_rechercher_clicked();
+
+    //void on_lineEdit_10_cursorPositionChanged(int arg1, int arg2);
+
+    void on_rechercher_2_clicked();
+
+    void on_pushButton_40_clicked();
+
+    void on_pushButton_41_clicked();
 
 //------------------------------------------AZIZ----------------------------------------------------
     void on_pushButton_21_clicked();
@@ -101,9 +107,9 @@ private slots:
 
     void on_pushButton_30_clicked();
 
-    void on_tableView_3_clicked(const QModelIndex &index);
+    void on_tableView_3_clicked();
 
-    void on_tableView_4_clicked(const QModelIndex &index);
+    void on_tableView_4_clicked();
 
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
@@ -119,8 +125,6 @@ private slots:
 
     void on_pushButton_36_clicked();
 
-
-
     void on_pushButton_37_clicked();
 
     void on_pushButton_38_clicked();
@@ -128,15 +132,7 @@ private slots:
     void on_pushButton_39_clicked();
 
 //-------------------------------------------------------------------------------------------------------------------------
-    void on_rechercher_clicked();
 
-   // void on_lineEdit_10_cursorPositionChanged(int arg1, int arg2);
-
-    void on_rechercher_2_clicked();
-
-    void on_pushButton_40_clicked();
-
-    void on_pushButton_41_clicked();
 
     void on_F_ADD_clicked();
 
@@ -183,7 +179,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
-
+    QMovie *myMoviebg;
 
 };
 

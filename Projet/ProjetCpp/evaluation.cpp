@@ -2,7 +2,7 @@
 #include "evaluation.h"
 #include <QSqlQuery>
 #include <QVariant>
-#include<QTableView>
+#include <QTableView>
 #include <QSqlTableModel>
 
 Evaluation::Evaluation(){}

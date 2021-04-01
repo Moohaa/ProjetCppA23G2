@@ -5,7 +5,7 @@
 #include <QSqlQueryModel>
 #include <QDate>
 #include <QSqlTableModel>
-#include<QTableView>
+#include <QTableView>
 class Transaction
 {
     int ID_FACTURE;
