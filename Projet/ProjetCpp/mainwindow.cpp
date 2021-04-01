@@ -5,7 +5,6 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QLineEdit>
-#include <QSortFilterProxyModel>
 
 #include "produit.h"
 #include "stock.h"
@@ -15,7 +14,31 @@
 #include "menu.h"
 #include "table.h"
 #include "commande.h"
-#include "smtp.h"
+#include "fournisseur.h"
+#include "offrefournisseur.h"
+#include "commandefournisseur.h"
+
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+
+#include <string>
+#include <iostream>
+#include <QThread>
 
 #include <QDebug>
 #include "connection.h"
@@ -27,18 +50,12 @@
 #include <QDate>
 #include <QtWidgets/QMessageBox>
 #include <QMainWindow>
-
 #include <QPixmap>
 #include <QMediaPlayer>
-#include <QMovie>
-#include <QSsl>
-#include <QSslSocket>
-#include <QNetworkAccessManager>
-
-
-
 
 using namespace std;
+QT_CHARTS_USE_NAMESPACE
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -49,34 +66,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix150("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
-    QPixmap pix1("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
-    QPixmap pix2("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
-    QPixmap pix3("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
-    QPixmap pix4("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
-    QPixmap pix5("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stars");
-    QPixmap pix6("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cor");
-    QPixmap pix7("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/modi");
-    QPixmap pix8("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/mui");
-    QPixmap pix9("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
-    QPixmap pix10("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/casic");
-    QPixmap pix11("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/food");
-    QPixmap pix12("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/table");
-    QPixmap pix13("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/prod");
-    QPixmap pix14("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/prov");
-
-     setFixedSize(1296,801);  //fixe la taille de la fenêtre
-
-    myMoviebg = new QMovie("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
-
-       ui->gif->setMovie(myMoviebg);
-
-       myMoviebg->start();
-
-ui->label_94->setToolTip("Music");
+    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
+    QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
+    QPixmap pix3("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
+    QPixmap pix4("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
+    QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stars");
+    QPixmap pix6("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cor");
+    QPixmap pix7("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/modi");
+    QPixmap pix8("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui");
+    QPixmap pix9("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
+    QPixmap pix10("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/casic");
+    QPixmap pix11("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/food");
+    QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table");
+    QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod");
+    QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov");
 
     ui->label_102->setPixmap(pix150);
     ui->label_3->setPixmap(pix1);
@@ -101,10 +108,14 @@ ui->label_94->setToolTip("Music");
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
 
+    OffreFournisseur offreFournisseur;
+    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+    CommandeFournisseur commandeFournisseur;
+    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+    Fournisseur fournisseur;
+    ui->tabFournisseur->setModel(fournisseur.afficher());
 
-
-   // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
-
+    //ui->label_84->setPixmap(pix4.scaled(100,100,Qt::KeepAspectRatio));
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
@@ -155,15 +166,11 @@ void MainWindow::on_pushButton_clicked()//Ajouter Produit
 {
     produit p;
 
-
     p.setNOM_PRODUIT(ui->lineEdit_2->text());
     p.setCATEGORIE_PRODUIT(ui->comboBox_3->currentText());
 
     p.ajouter();
     ui->tableView_A->setModel(p.afficher());
-
-
-
 }
 
 void MainWindow::on_pushButton_6_clicked()//suuprimer Produit
@@ -241,18 +248,11 @@ void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
 
     if (s.getQUANTITE() > 500)
     {
-    Smtp* smtp = new Smtp("rajianacib@gmail.com", "nbvcxwnbvcxw", "smtp.gmail.com", 465);
 
-         smtp->sendMail("rajianacib@gmail.com", "mariem.nacib@esprit.tn", "STOCK LIMITE", "vous ne pouvez pas stocker plus de 500 produits");
-          QMessageBox::information(this,"message envoyee", "stock saturé verifier votre mail");//fonctionne
-    }
-    if (s.getQUANTITE() < 50)
-    {
+   // Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771:)", "smtp.gmail.com", 465);
 
-   Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771", "smtp.gmail.com", 465);
-
-         smtp->sendMail("mariem.nacib@esprit.tn", "ahmedelmoez.noomen@esprit.tn" , "STOCK LIMITE","vous n'avez plus de stock c'est moin de 50 produits");
-          QMessageBox::information(this,"message envoyee", "stock en déficite verifier votre mail");/// fonctionne
+         //smtp->sendMail("mariem.nacib@esprit.tn", "ahmedelmoez.noomen@esprit.tn" , "STOCK LIMITE","vous ne pouvez pas stocker plus de 500 produits");
+          QMessageBox::information(this,"message envoye", "verifier votre mail ");
     }
 }
 
@@ -296,12 +296,8 @@ void MainWindow::on_pushButton_5_clicked()//modifier Stock
 
  s.update_stock();
 
-    QSqlQueryModel * modelS =s.afficher_stock();
 
-    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
-    proxyModel->setSourceModel(modelS);
-    ui->tableView_B->setSortingEnabled(true);
-     ui->tableView_B->setModel(proxyModel);
+
     ui->tableView_B->setModel(s.afficher_stock());
 
 }
@@ -321,12 +317,12 @@ void MainWindow::on_TRI_2_clicked()//tri stock
 void MainWindow::on_tableView_B_clicked()//rechercher un stock
 {
     QString findText;
-        QString text = ui->lineEdit_22->text();
+        QString text = ui->comboBox->currentText();
     stock s;
     QTableView* table=ui->tableView_B;
         if (text.isEmpty()) {
             QMessageBox::information(this, tr("Empty Field"),
-                tr("selectionné qlq chose a rechercher."));
+                tr("Entrez une categorie a rechercher."));
             ui->tableView_B->setModel(s.afficher_stock());
             return;
         }
@@ -352,7 +348,7 @@ void MainWindow::on_mute_clicked()
 {
     media->setMuted(true);
 }
-//------------------------------------------------~AHMED~----------------------------------------------------------------
+//------------------------------------------------5EDMET AHMED----------------------------------------------------------------
 void MainWindow::on_pushButton_12_clicked()//Ajouter Transaction
 {
     Transaction t;
@@ -623,7 +619,7 @@ QTableView* table1=ui->tableView_6;
 
 }
 
-void MainWindow::on_tableView_3_clicked()//recuperation des données au niveau de modiff plat
+void MainWindow::on_tableView_3_clicked(const QModelIndex &index)//recuperation des données au niveau de modiff plat
 {
     int row =ui->tableView_3->selectionModel()->currentIndex().row();
      //ui->stackedWidget->setCurrentIndex(2);
@@ -635,7 +631,7 @@ void MainWindow::on_tableView_3_clicked()//recuperation des données au niveau d
 
 }
 
-void MainWindow::on_tableView_4_clicked()//recuperation donnée menu
+void MainWindow::on_tableView_4_clicked(const QModelIndex &index)//recuperation donnée menu
 {
     int row =ui->tableView_4->selectionModel()->currentIndex().row();
        //ui->stackedWidget->setCurrentIndex(2);
@@ -774,10 +770,170 @@ Table t;
 
 }
 }
+//--------------------MAHMOUD-----------------------------
+//----Ajouter Fournisseur
+void MainWindow::on_F_ADD_clicked()
+{
+    Fournisseur fournisseur(ui->F_NOM->text(),
+                            ui->F_TEL->text(),
+                            ui->F_ADRESSE->text(),
+                            ui->F_MAIL->text().toInt());
+    fournisseur.ajouter();
+    QSortFilterProxyModel *proxyModel = fournisseur.afficher();
+    ui->tabFournisseur->setSortingEnabled(true);
+    ui->tabFournisseur->setModel(proxyModel);
+}
+//-- Modifier Fournisseur
+void MainWindow::on_F_UPDATE_clicked()
+{
+    Fournisseur fournisseur(ui->F_NOM->text(),ui->F_TEL->text(),
+                            ui->F_ADRESSE->text(),ui->F_MAIL->text().toUInt());
+    fournisseur.setId(ui->F_UPDATE_ID->text().toUInt());
+    fournisseur.modifier();
+    ui->tabFournisseur->setSortingEnabled(true);
+    ui->tabFournisseur->setModel(fournisseur.afficher());
+}
+//--- Supprimer Fournisseur
+void MainWindow::on_pushButton_44_clicked()
+{
+    Fournisseur fournisseur(ui->textDelete_7->text().toUInt());
+    fournisseur.supprimer();
+    ui->tabFournisseur->setSortingEnabled(true);
+    ui->tabFournisseur->setModel(fournisseur.afficher());
+}
 
+//-- Ajouter Commande Fournisseur
+void MainWindow::on_CF_ADD_clicked()
+{
+    CommandeFournisseur commandeFournisseur(ui->CF_ID_F->text().toInt(),
+                                            ui->CF_ID_P->text().toUInt(),ui->CF_QTE->text().toUInt(),
+                                            ui->CF_DATE_E->text(),ui->CF_DATE_R->text());
+    commandeFournisseur.ajouter();
+    ui->tabCommandeFournisseur->setSortingEnabled(true);
+    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+}
+//-- Modifier Commande Fournisseur
+void MainWindow::on_pushButton_46_clicked()
+{
+    CommandeFournisseur commandeFournisseur(ui->CF_ID_F->text().toInt(),ui->CF_ID_P->text().toUInt(),
+                                            ui->CF_QTE->text().toUInt(),ui->CF_DATE_E->text(),ui->CF_DATE_R->text());
 
+    commandeFournisseur.setidCommande(ui->CF_UPDATE->text().toUInt());
+    commandeFournisseur.modifier();
+    ui->tabCommandeFournisseur->setSortingEnabled(true);
+    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+}
+//-- Supprimer Commande Fournisseur
+void MainWindow::on_pushButton_47_clicked()
+{
+    CommandeFournisseur commandeFournisseur(ui->CF_DELETE->text().toUInt());
+    commandeFournisseur.supprimer();
+    ui->tabCommandeFournisseur->setSortingEnabled(true);
+    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+}
 
+//-- Send Mail
+void MainWindow::on_sendBtn_2_clicked()
+{
 
+}
+//-- Ajouter Stock Fournisseur
+void MainWindow::on_OF_ADD_clicked()
+{
+    OffreFournisseur offreFournisseur(ui->OF_ID_P->text().toUInt(),ui->OF_ID_F->text().toUInt(),ui->OF_PRIX->text().toUInt());
+    offreFournisseur.ajouter();
+    ui->tabOffreFournisseur->setSortingEnabled(true);
+    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+}
+//-- Modifier Stock Fournisseur
+void MainWindow::on_OF_UPDATE_clicked()
+{
+    OffreFournisseur offreFournisseur(ui->OF_ID_P->text().toInt(),ui->OF_ID_F->text().toUInt(),ui->OF_PRIX->text().toUInt());
+    offreFournisseur.modifier();
+    ui->tabOffreFournisseur->setSortingEnabled(true);
+    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+}
+//-- Supprimer Stock Fournisseur
+void MainWindow::on_pushButton_50_clicked()
+{
+    OffreFournisseur offreFournisseur(ui->OF_DELETE_F->text().toUInt(), ui->OF_DELETE_P->text().toUInt());
+    offreFournisseur.supprimer();
+    ui->tabOffreFournisseur->setSortingEnabled(true);
+    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+}
 
+void MainWindow::on_pushButton_45_clicked()
+{
+    delete ui->widget->layout();
+    OffreFournisseur offre;
+    QVBoxLayout * mainLayout = offre.stat();
+    ui->widget->setLayout(mainLayout);
+}
 
+void MainWindow::on_pushButton_51_clicked()
+{
+    OffreFournisseur offre;
+    ui->tabOffreFournisseur->setSortingEnabled(true);
+    int x =ui->OF_RECHERCHE_P->text().toInt();
 
+    QSortFilterProxyModel * model =  offre.searchProduit(x);
+    ui->tabOffreFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_52_clicked()
+{
+    OffreFournisseur offre;
+        ui->tabOffreFournisseur->setSortingEnabled(true);
+        int x =ui->OF_RECHERCHE_F->text().toInt();
+
+        QSortFilterProxyModel * model =  offre.searchFournisseur(x);
+       ui->tabOffreFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_49_clicked()
+{
+    CommandeFournisseur c;
+        ui->tabOffreFournisseur->setSortingEnabled(true);
+        int x =ui->CF_S_P->text().toInt();
+
+        QSortFilterProxyModel * model =  c.searchP(x);
+       ui->tabCommandeFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_48_clicked()
+{
+    CommandeFournisseur c;
+        ui->tabOffreFournisseur->setSortingEnabled(true);
+        int x =ui->CF_S_F->text().toInt();
+
+        QSortFilterProxyModel * model =  c.searchF(x);
+       ui->tabCommandeFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_53_clicked()
+{
+    Fournisseur f;
+    QSortFilterProxyModel * model =  f.searchNom(ui->FSN->text());
+    ui->tabFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_54_clicked()
+{
+    Fournisseur f;
+    QSortFilterProxyModel * model =  f.searchTelephone(ui->FST->text());
+    ui->tabFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_55_clicked()
+{
+    Fournisseur f;
+    QSortFilterProxyModel * model =  f.searchMail(ui->FSE->text());
+    ui->tabFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_56_clicked()
+{
+    Fournisseur f;
+    QSortFilterProxyModel * model =  f.searchAdresse(ui->FSA->text());
+    ui->tabFournisseur->setModel(model );
+}

@@ -4,6 +4,24 @@
 #include <QSqlQueryModel>
 #include <QSortFilterProxyModel>
 
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+
 class OffreFournisseur
 {
     int idProduit;
@@ -29,7 +47,11 @@ public:
     bool modifier();
     QSortFilterProxyModel * afficher();
 
-
+    int lastIdFournisseur();
+    int lastIdProduit();
+    QVBoxLayout * stat();
+    QSortFilterProxyModel * searchProduit(int);
+    QSortFilterProxyModel * searchFournisseur(int);
 
 };
 #endif // OFFREFOURNISSEUR_H

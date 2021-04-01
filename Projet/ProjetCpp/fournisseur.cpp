@@ -94,3 +94,61 @@ QSortFilterProxyModel * Fournisseur::afficher(){
     proxyModel->setSourceModel(model);
     return proxyModel;
     }
+
+
+QSortFilterProxyModel * Fournisseur::searchNom(QString f){
+            QSqlQueryModel* model   = new QSqlQueryModel();
+            QSqlQuery query;
+            QString string ="SELECT * FROM FOURNISSEUR WHERE NOM LIKE "+f;
+            model->setQuery(string);
+            model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
+            model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM"));
+            model->setHeaderData(2, Qt::Horizontal,QObject::tr("TELEPHONE"));
+            model->setHeaderData(3, Qt::Horizontal,QObject::tr("ADRESSE"));
+            model->setHeaderData(4, Qt::Horizontal,QObject::tr("MAIL"));
+            QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+            proxyModel->setSourceModel(model);
+            return proxyModel;
+}
+QSortFilterProxyModel * Fournisseur::searchTelephone(QString f){
+    QSqlQueryModel* model   = new QSqlQueryModel();
+    QSqlQuery query;
+    QString string ="SELECT * FROM FOURNISSEUR WHERE TELEPHONE LIKE "+f;
+    model->setQuery(string);
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM"));
+    model->setHeaderData(2, Qt::Horizontal,QObject::tr("TELEPHONE"));
+    model->setHeaderData(3, Qt::Horizontal,QObject::tr("ADRESSE"));
+    model->setHeaderData(4, Qt::Horizontal,QObject::tr("MAIL"));
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+    proxyModel->setSourceModel(model);
+    return proxyModel;
+}
+QSortFilterProxyModel * Fournisseur::searchMail(QString f){
+    QSqlQueryModel* model   = new QSqlQueryModel();
+    QSqlQuery query;
+    QString string ="SELECT * FROM FOURNISSEUR WHERE MAIL LIKE "+f;
+    model->setQuery(string);
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM"));
+    model->setHeaderData(2, Qt::Horizontal,QObject::tr("TELEPHONE"));
+    model->setHeaderData(3, Qt::Horizontal,QObject::tr("ADRESSE"));
+    model->setHeaderData(4, Qt::Horizontal,QObject::tr("MAIL"));
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+    proxyModel->setSourceModel(model);
+    return proxyModel;
+}
+QSortFilterProxyModel * Fournisseur::searchAdresse(QString f){
+    QSqlQueryModel* model   = new QSqlQueryModel();
+    QSqlQuery query;
+    QString string ="SELECT * FROM FOURNISSEUR WHERE ADRESSE LIKE "+f;
+    model->setQuery(string);
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM"));
+    model->setHeaderData(2, Qt::Horizontal,QObject::tr("TELEPHONE"));
+    model->setHeaderData(3, Qt::Horizontal,QObject::tr("ADRESSE"));
+    model->setHeaderData(4, Qt::Horizontal,QObject::tr("MAIL"));
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+    proxyModel->setSourceModel(model);
+    return proxyModel;
+}
