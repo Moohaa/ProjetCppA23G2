@@ -37,11 +37,37 @@ private slots:
 
     void on_inscription_inscrit_clicked();
 
+    void on_liste_droit_currentIndexChanged(const QString &arg1);
+
+    void on_ajoute_droit_clicked();
+
+    void on_supp_droit_clicked();
+
+    void on_modifier_droit_clicked();
+
+    void on_tab_droit_doubleClicked(const QModelIndex &index);
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_supprimer_droit_clicked();
+
+    void on_ajout_droit_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_tri_clicked();
+
+    void on_recherche_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation *animation,*animation1;
     Inscri *ins;
-    Utilisateur tmputilisateur;
+    Utilisateur tmputilisateur,tmpdroit_u;
     droit_acces tmpdroit;
 };
 #endif // MAINWINDOW_H

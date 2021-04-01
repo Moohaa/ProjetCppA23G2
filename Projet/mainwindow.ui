@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1143</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,14 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>801</width>
-      <height>571</height>
+      <x>10</x>
+      <y>50</y>
+      <width>1091</width>
+      <height>641</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QGroupBox" name="groupBox">
@@ -267,7 +267,7 @@ QComboBox { color: red }</string>
        <property name="geometry">
         <rect>
          <x>230</x>
-         <y>280</y>
+         <y>270</y>
          <width>101</width>
          <height>23</height>
         </rect>
@@ -292,7 +292,7 @@ QComboBox { color: red }</string>
        </property>
        <item>
         <property name="text">
-         <string>Gérant</string>
+         <string>Gerant</string>
         </property>
        </item>
        <item>
@@ -320,29 +320,6 @@ QComboBox { color: red }</string>
          <string>Gestionnaire fournisseur</string>
         </property>
        </item>
-      </widget>
-      <widget class="QComboBox" name="droit">
-       <property name="geometry">
-        <rect>
-         <x>230</x>
-         <y>250</y>
-         <width>62</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_22">
-       <property name="geometry">
-        <rect>
-         <x>160</x>
-         <y>250</y>
-         <width>47</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Droit</string>
-       </property>
       </widget>
      </widget>
     </widget>
@@ -571,14 +548,131 @@ QComboBox { color: red }</string>
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_9"/>
+    <widget class="QWidget" name="page_10"/>
+    <widget class="QWidget" name="page_9">
+     <widget class="QComboBox" name="liste_droit">
+      <property name="geometry">
+       <rect>
+        <x>261</x>
+        <y>70</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="codedroit_inscri">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>70</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ajoute_droit">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>70</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ajouter</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tab_droit">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>141</y>
+        <width>401</width>
+        <height>361</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="supp_droit">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>350</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Supprimer</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>230</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>code_droit</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>270</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>libelle_droit</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="modif_code">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>230</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="modif_lib">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>270</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="modifier_droit">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>320</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Modifier</string>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="page_5">
      <widget class="QTableView" name="tab_affiche">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>90</y>
-        <width>771</width>
+        <width>561</width>
         <height>381</height>
        </rect>
       </property>
@@ -620,6 +714,119 @@ QComboBox { color: red }</string>
       </property>
       <property name="text">
        <string>Afficher droit acces</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="tri_asc">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>130</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ascendant</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="tri_des">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>130</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>descandant</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tri">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>180</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Trier</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radio_id">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>120</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Par ID</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radio_role">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>160</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PAR ROLE</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radio_nom">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>200</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PAR NOM</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="recherche">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>270</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recherche</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="rech_line">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>270</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_11">
+     <widget class="QTableView" name="aff_droitutilisateur">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>40</y>
+        <width>631</width>
+        <height>371</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -868,7 +1075,7 @@ QComboBox { color: red }</string>
        </property>
        <item>
         <property name="text">
-         <string>Gérant</string>
+         <string>Gerant</string>
         </property>
        </item>
        <item>
@@ -927,6 +1134,19 @@ QComboBox { color: red }</string>
        <string>Afficher droits</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>220</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ajout droit</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_30"/>
     <widget class="QWidget" name="page_7">
@@ -942,16 +1162,6 @@ QComboBox { color: red }</string>
       <property name="title">
        <string>Affiche droit</string>
       </property>
-      <widget class="QListView" name="listView">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>30</y>
-         <width>621</width>
-         <height>341</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QPushButton" name="supprimer_droit">
        <property name="geometry">
         <rect>
@@ -965,8 +1175,31 @@ QComboBox { color: red }</string>
         <string>Supprimer</string>
        </property>
       </widget>
+      <widget class="QTableView" name="affiche_droit">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>40</y>
+         <width>611</width>
+         <height>341</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Retour</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -974,7 +1207,7 @@ QComboBox { color: red }</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1143</width>
      <height>22</height>
     </rect>
    </property>
