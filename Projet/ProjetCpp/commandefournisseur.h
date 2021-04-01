@@ -2,6 +2,7 @@
 #define COMMANDEFOURNISSEUR_H
 #include <QString>
 #include <QSqlQueryModel>
+#include <QSortFilterProxyModel>
 
 class CommandeFournisseur
 {
@@ -35,7 +36,7 @@ public:
     bool ajouter();
     bool supprimer();
     bool modifier();
-    QSqlQueryModel * afficher();
+    QSortFilterProxyModel * afficher();
 
     int lastId();
 

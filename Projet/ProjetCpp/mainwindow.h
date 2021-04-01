@@ -144,7 +144,6 @@ private slots:
 
     void on_pushButton_44_clicked();
 
-    void on_TRI_3_clicked();
 
     void on_CF_ADD_clicked();
 
@@ -152,7 +151,6 @@ private slots:
 
     void on_pushButton_47_clicked();
 
-    void on_TRI_4_clicked();
 
     void on_sendBtn_2_clicked();
 
@@ -162,7 +160,6 @@ private slots:
 
     void on_pushButton_50_clicked();
 
-    void on_TRI_5_clicked();
 
 
 private:

@@ -78,7 +78,7 @@ qDebug() << stringId;
         return query.exec();
     }
 
-    QSqlQueryModel * CommandeFournisseur::afficher(){
+    QSortFilterProxyModel * CommandeFournisseur::afficher(){
         QSqlQueryModel* model   = new QSqlQueryModel();
 
         model->setQuery("select * from COMMANDE_FOURNISSEUR");
@@ -89,7 +89,9 @@ qDebug() << stringId;
         model->setHeaderData(4, Qt::Horizontal,QObject::tr("DATE_ENVOI"));
         model->setHeaderData(5, Qt::Horizontal,QObject::tr("DATE_RECEPTION"));
 
-        return model;
+        QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+        proxyModel->setSourceModel(model);
+        return proxyModel;
     }
 
     int CommandeFournisseur::lastId(){

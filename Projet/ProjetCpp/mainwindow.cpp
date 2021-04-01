@@ -42,29 +42,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix150("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
-    QPixmap pix1("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
-    QPixmap pix2("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
-    QPixmap pix3("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
-    QPixmap pix4("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
-    QPixmap pix5("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stars");
-    QPixmap pix6("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cor");
-    QPixmap pix7("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/modi");
-    QPixmap pix8("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/mui");
-    QPixmap pix9("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
-    QPixmap pix10("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/casic");
-    QPixmap pix11("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/food");
-    QPixmap pix12("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/table");
-    QPixmap pix13("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/prod");
-    QPixmap pix14("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/prov");
-
-
-
-
-
+    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
+    QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
+    QPixmap pix3("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
+    QPixmap pix4("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
+    QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stars");
+    QPixmap pix6("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cor");
+    QPixmap pix7("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/modi");
+    QPixmap pix8("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui");
+    QPixmap pix9("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
+    QPixmap pix10("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/casic");
+    QPixmap pix11("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/food");
+    QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table");
+    QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod");
+    QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov");
 
     ui->label_102->setPixmap(pix150);
     ui->label_3->setPixmap(pix1);
@@ -89,16 +84,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
 
-
-
-
-
-
-
-
-
-
-
     OffreFournisseur offreFournisseur;
     ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
     CommandeFournisseur commandeFournisseur;
@@ -106,9 +91,7 @@ MainWindow::MainWindow(QWidget *parent) :
     Fournisseur fournisseur;
     ui->tabFournisseur->setModel(fournisseur.afficher());
 
-
     //ui->label_84->setPixmap(pix4.scaled(100,100,Qt::KeepAspectRatio));
-
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
@@ -772,7 +755,9 @@ void MainWindow::on_F_ADD_clicked()
                             ui->F_ADRESSE->text(),
                             ui->F_MAIL->text().toInt());
     fournisseur.ajouter();
-    ui->tabFournisseur->setModel(fournisseur.afficher());
+    QSortFilterProxyModel *proxyModel = fournisseur.afficher();
+    ui->tabFournisseur->setSortingEnabled(true);
+    ui->tabFournisseur->setModel(proxyModel);
 }
 //-- Modifier Fournisseur
 void MainWindow::on_F_UPDATE_clicked()
@@ -781,6 +766,7 @@ void MainWindow::on_F_UPDATE_clicked()
                             ui->F_ADRESSE->text(),ui->F_MAIL->text().toUInt());
     fournisseur.setId(ui->F_UPDATE_ID->text().toUInt());
     fournisseur.modifier();
+    ui->tabFournisseur->setSortingEnabled(true);
     ui->tabFournisseur->setModel(fournisseur.afficher());
 }
 //--- Supprimer Fournisseur
@@ -788,13 +774,10 @@ void MainWindow::on_pushButton_44_clicked()
 {
     Fournisseur fournisseur(ui->textDelete_7->text().toUInt());
     fournisseur.supprimer();
+    ui->tabFournisseur->setSortingEnabled(true);
     ui->tabFournisseur->setModel(fournisseur.afficher());
 }
-//--- Trier Fournisseurs
-void MainWindow::on_TRI_3_clicked()
-{
 
-}
 //-- Ajouter Commande Fournisseur
 void MainWindow::on_CF_ADD_clicked()
 {
@@ -802,6 +785,7 @@ void MainWindow::on_CF_ADD_clicked()
                                             ui->CF_ID_P->text().toUInt(),ui->CF_QTE->text().toUInt(),
                                             ui->CF_DATE_E->text(),ui->CF_DATE_R->text());
     commandeFournisseur.ajouter();
+    ui->tabCommandeFournisseur->setSortingEnabled(true);
     ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
 }
 //-- Modifier Commande Fournisseur
@@ -812,20 +796,18 @@ void MainWindow::on_pushButton_46_clicked()
 
     commandeFournisseur.setidCommande(ui->CF_UPDATE->text().toUInt());
     commandeFournisseur.modifier();
-     ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+    ui->tabCommandeFournisseur->setSortingEnabled(true);
+    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
 }
 //-- Supprimer Commande Fournisseur
 void MainWindow::on_pushButton_47_clicked()
 {
     CommandeFournisseur commandeFournisseur(ui->CF_DELETE->text().toUInt());
     commandeFournisseur.supprimer();
-     ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+    ui->tabCommandeFournisseur->setSortingEnabled(true);
+    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
 }
-//-- Trier Commande Fournisseur
-void MainWindow::on_TRI_4_clicked()
-{
 
-}
 //-- Send Mail
 void MainWindow::on_sendBtn_2_clicked()
 {
@@ -836,6 +818,7 @@ void MainWindow::on_OF_ADD_clicked()
 {
     OffreFournisseur offreFournisseur(ui->OF_ID_P->text().toUInt(),ui->OF_ID_F->text().toUInt(),ui->OF_PRIX->text().toUInt());
     offreFournisseur.ajouter();
+    ui->tabOffreFournisseur->setSortingEnabled(true);
     ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
 }
 //-- Modifier Stock Fournisseur
@@ -843,18 +826,14 @@ void MainWindow::on_OF_UPDATE_clicked()
 {
     OffreFournisseur offreFournisseur(ui->OF_ID_P->text().toInt(),ui->OF_ID_F->text().toUInt(),ui->OF_PRIX->text().toUInt());
     offreFournisseur.modifier();
-     ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+    ui->tabOffreFournisseur->setSortingEnabled(true);
+    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
 }
 //-- Supprimer Stock Fournisseur
 void MainWindow::on_pushButton_50_clicked()
 {
     OffreFournisseur offreFournisseur(ui->OF_DELETE_F->text().toUInt(), ui->OF_DELETE_P->text().toUInt());
     offreFournisseur.supprimer();
+    ui->tabOffreFournisseur->setSortingEnabled(true);
     ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
-}
-
-//-- Trier Stock Fournisseur
-void MainWindow::on_TRI_5_clicked()
-{
-
 }

@@ -63,7 +63,7 @@
         query.addBindValue(stringIdProduit);
         return query.exec();
     }
-    QSqlQueryModel * OffreFournisseur::afficher(){
+    QSortFilterProxyModel * OffreFournisseur::afficher(){
 
         QSqlQueryModel* model   = new QSqlQueryModel();
 
@@ -72,5 +72,7 @@
         model->setHeaderData(1, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
         model->setHeaderData(2, Qt::Horizontal,QObject::tr("PRIX"));
 
-        return model;
+        QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+        proxyModel->setSourceModel(model);
+        return proxyModel;
     }

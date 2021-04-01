@@ -2,6 +2,7 @@
 #define FOURNISSEUR_H
 #include <QString>
 #include <QSqlQueryModel>
+#include <QSortFilterProxyModel>
 class Fournisseur
 {
     int id;
@@ -30,7 +31,7 @@ public:
     bool ajouter();
     bool modifier();
     bool supprimer();
-    QSqlQueryModel * afficher();
+    QSortFilterProxyModel * afficher();
 
     int lastId();
 

@@ -2,6 +2,7 @@
 #define OFFREFOURNISSEUR_H
 #include <QString>
 #include <QSqlQueryModel>
+#include <QSortFilterProxyModel>
 
 class OffreFournisseur
 {
@@ -26,7 +27,7 @@ public:
     bool ajouter();
     bool supprimer();
     bool modifier();
-    QSqlQueryModel * afficher();
+    QSortFilterProxyModel * afficher();
 
 
 

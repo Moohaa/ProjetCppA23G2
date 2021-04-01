@@ -31,23 +31,6 @@ color : white;</string>
      <string>K O U J I N T I </string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>311</width>
-      <height>801</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">*{
-background : rgb(239, 198, 168);}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
@@ -429,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -489,7 +472,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -786,7 +769,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
@@ -2884,7 +2867,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_29">
          <attribute name="title">
@@ -2913,7 +2896,7 @@ border-radius:10px;
            </rect>
           </property>
          </widget>
-         <widget class="QLabel" name="label_27">
+         <widget class="QLabel" name="label_271">
           <property name="geometry">
            <rect>
             <x>210</x>
@@ -2987,7 +2970,7 @@ border-radius:10px;
             </rect>
            </property>
           </widget>
-          <widget class="QLabel" name="label_95">
+          <widget class="QLabel" name="label_951">
            <property name="geometry">
             <rect>
              <x>40</x>
@@ -3085,7 +3068,7 @@ border-radius:10px;
            </rect>
           </property>
          </widget>
-         <widget class="QLabel" name="label_96">
+         <widget class="QLabel" name="label_961">
           <property name="geometry">
            <rect>
             <x>320</x>
@@ -3098,22 +3081,9 @@ border-radius:10px;
            <string>ID</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="TRI_3">
-          <property name="geometry">
-           <rect>
-            <x>550</x>
-            <y>60</y>
-            <width>131</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Trier le tableau</string>
-          </property>
-         </widget>
         </widget>
        </widget>
-       <widget class="QLabel" name="label_97">
+       <widget class="QLabel" name="label_971">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -3129,7 +3099,7 @@ border-radius:10px;
          <pixmap>../../../stocks1.png</pixmap>
         </property>
        </widget>
-       <widget class="QLabel" name="label_98">
+       <widget class="QLabel" name="label_981">
         <property name="geometry">
          <rect>
           <x>80</x>
@@ -3208,7 +3178,7 @@ color : white;</string>
             <string>Ajouter au STOCK</string>
            </property>
           </widget>
-          <widget class="QLabel" name="label_102">
+          <widget class="QLabel" name="label_1021">
            <property name="geometry">
             <rect>
              <x>30</x>
@@ -3463,19 +3433,6 @@ color : white;</string>
           </property>
           <property name="text">
            <string>ID</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="TRI_4">
-          <property name="geometry">
-           <rect>
-            <x>730</x>
-            <y>40</y>
-            <width>131</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Trier le tableau</string>
           </property>
          </widget>
         </widget>
@@ -3825,19 +3782,6 @@ color : white;</string>
            <string>ID_Produit</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="TRI_5">
-          <property name="geometry">
-           <rect>
-            <x>550</x>
-            <y>60</y>
-            <width>131</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Trier le tableau</string>
-          </property>
-         </widget>
          <widget class="QLineEdit" name="OF_DELETE_F">
           <property name="geometry">
            <rect>
@@ -3957,7 +3901,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_8">
        <attribute name="title">
@@ -4568,7 +4512,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_12">
          <attribute name="title">
@@ -5227,7 +5171,6 @@ border-radius:10px;
    <zorder>label_3</zorder>
    <zorder>label</zorder>
    <zorder>label_4</zorder>
-   <zorder>label_2</zorder>
    <zorder>label_6</zorder>
    <zorder>label_7</zorder>
    <zorder>play</zorder>

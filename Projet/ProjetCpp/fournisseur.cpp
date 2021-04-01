@@ -80,7 +80,7 @@ Fournisseur::Fournisseur(QString nom,QString adresse,QString mail,int telephone)
         return query.exec();
     }
 
-QSqlQueryModel * Fournisseur::afficher(){
+QSortFilterProxyModel * Fournisseur::afficher(){
     QSqlQueryModel* model   = new QSqlQueryModel();
 
     model->setQuery("select * from FOURNISSEUR");
@@ -90,6 +90,7 @@ QSqlQueryModel * Fournisseur::afficher(){
     model->setHeaderData(3, Qt::Horizontal,QObject::tr("ADRESSE"));
     model->setHeaderData(4, Qt::Horizontal,QObject::tr("MAIL"));
 
-    return model;
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+    proxyModel->setSourceModel(model);
+    return proxyModel;
     }
-
