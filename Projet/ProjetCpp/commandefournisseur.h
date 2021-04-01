@@ -38,6 +38,9 @@ public:
     bool modifier();
     QSortFilterProxyModel * afficher();
 
+    QSortFilterProxyModel * searchP(int);
+    QSortFilterProxyModel * searchF(int);
+
     int lastId();
 
 };

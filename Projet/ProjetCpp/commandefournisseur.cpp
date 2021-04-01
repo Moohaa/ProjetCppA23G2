@@ -105,3 +105,39 @@ qDebug() << stringId;
         }
         return lastId+1;
     }
+
+
+    QSortFilterProxyModel * CommandeFournisseur::searchP(int f){
+        QSqlQueryModel* model   = new QSqlQueryModel();
+                QSqlQuery query;
+                QString string ="SELECT * FROM COMMANDE_FOURNISSEUR WHERE ID_PRODUIT="+QString::number(f);
+                model->setQuery(string);
+
+                model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_COMMANDE"));
+                model->setHeaderData(1, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
+                model->setHeaderData(2, Qt::Horizontal,QObject::tr("ID_PRODUIT"));
+                model->setHeaderData(3, Qt::Horizontal,QObject::tr("QUANTITE"));
+                model->setHeaderData(4, Qt::Horizontal,QObject::tr("DATE_ENVOI"));
+                model->setHeaderData(5, Qt::Horizontal,QObject::tr("DATE_RECEPTION"));
+                QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+                proxyModel->setSourceModel(model);
+                return proxyModel;
+
+    }
+    QSortFilterProxyModel * CommandeFournisseur::searchF(int f){
+        QSqlQueryModel* model   = new QSqlQueryModel();
+                QSqlQuery query;
+                QString string ="SELECT * FROM COMMANDE_FOURNISSEUR WHERE ID_FOURNISSEUR="+QString::number(f);
+                model->setQuery(string);
+
+                model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_COMMANDE"));
+                model->setHeaderData(1, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
+                model->setHeaderData(2, Qt::Horizontal,QObject::tr("ID_PRODUIT"));
+                model->setHeaderData(3, Qt::Horizontal,QObject::tr("QUANTITE"));
+                model->setHeaderData(4, Qt::Horizontal,QObject::tr("DATE_ENVOI"));
+                model->setHeaderData(5, Qt::Horizontal,QObject::tr("DATE_RECEPTION"));
+                QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
+                proxyModel->setSourceModel(model);
+                return proxyModel;
+
+    }

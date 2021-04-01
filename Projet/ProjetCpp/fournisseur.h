@@ -33,6 +33,12 @@ public:
     bool supprimer();
     QSortFilterProxyModel * afficher();
 
+    QSortFilterProxyModel * searchNom(QString);
+    QSortFilterProxyModel * searchTelephone(QString);
+    QSortFilterProxyModel * searchMail(QString);
+    QSortFilterProxyModel * searchAdresse(QString);
+
+
     int lastId();
 
 };

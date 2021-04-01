@@ -18,6 +18,28 @@
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
 
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+
+#include <string>
+#include <iostream>
+#include <QThread>
+
 #include <QDebug>
 #include "connection.h"
 
@@ -32,6 +54,8 @@
 #include <QMediaPlayer>
 
 using namespace std;
+QT_CHARTS_USE_NAMESPACE
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -836,4 +860,80 @@ void MainWindow::on_pushButton_50_clicked()
     offreFournisseur.supprimer();
     ui->tabOffreFournisseur->setSortingEnabled(true);
     ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+}
+
+void MainWindow::on_pushButton_45_clicked()
+{
+    delete ui->widget->layout();
+    OffreFournisseur offre;
+    QVBoxLayout * mainLayout = offre.stat();
+    ui->widget->setLayout(mainLayout);
+}
+
+void MainWindow::on_pushButton_51_clicked()
+{
+    OffreFournisseur offre;
+    ui->tabOffreFournisseur->setSortingEnabled(true);
+    int x =ui->OF_RECHERCHE_P->text().toInt();
+
+    QSortFilterProxyModel * model =  offre.searchProduit(x);
+    ui->tabOffreFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_52_clicked()
+{
+    OffreFournisseur offre;
+        ui->tabOffreFournisseur->setSortingEnabled(true);
+        int x =ui->OF_RECHERCHE_F->text().toInt();
+
+        QSortFilterProxyModel * model =  offre.searchFournisseur(x);
+       ui->tabOffreFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_49_clicked()
+{
+    CommandeFournisseur c;
+        ui->tabOffreFournisseur->setSortingEnabled(true);
+        int x =ui->CF_S_P->text().toInt();
+
+        QSortFilterProxyModel * model =  c.searchP(x);
+       ui->tabCommandeFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_48_clicked()
+{
+    CommandeFournisseur c;
+        ui->tabOffreFournisseur->setSortingEnabled(true);
+        int x =ui->CF_S_F->text().toInt();
+
+        QSortFilterProxyModel * model =  c.searchF(x);
+       ui->tabCommandeFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_53_clicked()
+{
+    Fournisseur f;
+    QSortFilterProxyModel * model =  f.searchNom(ui->FSN->text());
+    ui->tabFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_54_clicked()
+{
+    Fournisseur f;
+    QSortFilterProxyModel * model =  f.searchTelephone(ui->FST->text());
+    ui->tabFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_55_clicked()
+{
+    Fournisseur f;
+    QSortFilterProxyModel * model =  f.searchMail(ui->FSE->text());
+    ui->tabFournisseur->setModel(model );
+}
+
+void MainWindow::on_pushButton_56_clicked()
+{
+    Fournisseur f;
+    QSortFilterProxyModel * model =  f.searchAdresse(ui->FSA->text());
+    ui->tabFournisseur->setModel(model );
 }

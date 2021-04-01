@@ -4,9 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
-
-QT       += core gui multimedia
+QT       += core gui sql multimedia charts
 
 CONFIG += stl
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
