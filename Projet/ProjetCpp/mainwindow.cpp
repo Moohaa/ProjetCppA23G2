@@ -175,11 +175,11 @@ void MainWindow::on_pushButton_9_clicked()
 }
 void MainWindow::on_pushButton_10_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(4);
 }
 void MainWindow::on_pushButton_11_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(5);
 }
 
 //--------------------------------~PRODUIT~----------------------------------------------

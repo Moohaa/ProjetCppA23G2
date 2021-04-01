@@ -412,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -2810,7 +2810,7 @@ border-radius:10px;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_5">
+    <widget class="QWidget" name="page_6">
      <widget class="QTabWidget" name="tabWidget_4">
       <property name="geometry">
        <rect>
@@ -2868,7 +2868,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -5542,7 +5542,7 @@ border-radius:10px;
      <x>0</x>
      <y>0</y>
      <width>1290</width>
-     <height>29</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
