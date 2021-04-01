@@ -2,8 +2,9 @@
 #define MENU_H
 #include <QString>
 #include <QSqlQueryModel>
-#include<QDateEdit>
-#include<QTableView>
+#include <QDateEdit>
+#include <QTableView>
+
 class menu
 {
     int ID_MENU;

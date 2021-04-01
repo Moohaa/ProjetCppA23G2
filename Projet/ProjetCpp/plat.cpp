@@ -2,10 +2,10 @@
 #include "menu.h"
 #include <QSqlQuery>
 #include <QVariant>
-#include<QDebug>
-#include<QTableView>
+#include <QDebug>
+#include <QTableView>
 #include <QSqlTableModel>
-#include<QSqlRecord>
+#include <QSqlRecord>
 #include <QtWidgets>
 
 plat::plat(){}

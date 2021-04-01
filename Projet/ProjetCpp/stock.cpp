@@ -93,7 +93,7 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QDate
         return query.exec();
     }
 
-QSqlQueryModel * stock::afficher_stock(){
+    QSqlQueryModel * stock::afficher_stock(){
     QSqlQueryModel* model   = new QSqlQueryModel();
 
     model->setQuery("select * from STOCKAGE");
@@ -155,8 +155,8 @@ void stock::recherche(QTableView* table,QString CATEGORIE_STOCK){
 
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from STOCKAGE  where CATEGORIE_STOCK='"+CATEGORIE_STOCK+"'");
-    query->bindValue(":CATEGORIE_STOCK",CATEGORIE_STOCK);
+    query->prepare("select * from STOCKAGE  where QUANTITE='"+CATEGORIE_STOCK+"'");
+    query->bindValue(":QUANTITE",CATEGORIE_STOCK);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
