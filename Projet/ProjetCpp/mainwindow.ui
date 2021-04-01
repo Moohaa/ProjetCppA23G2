@@ -2243,7 +2243,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_21">
        <attribute name="title">
@@ -2259,7 +2259,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_22">
          <attribute name="title">
@@ -2567,8 +2567,19 @@ border-radius:10px;
         </widget>
         <widget class="QWidget" name="tab_24">
          <attribute name="title">
-          <string/>
+          <string>Statistique</string>
          </attribute>
+         <widget class="QFrame" name="horizontalFrame">
+          <property name="geometry">
+           <rect>
+            <x>19</x>
+            <y>10</y>
+            <width>821</width>
+            <height>401</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+         </widget>
         </widget>
        </widget>
       </widget>
