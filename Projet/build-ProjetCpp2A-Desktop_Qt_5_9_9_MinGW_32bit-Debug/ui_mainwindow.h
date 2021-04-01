@@ -251,7 +251,7 @@ public:
     QLineEdit *lineEdit_40;
     QPushButton *pushButton_39;
     QWidget *page_2;
-    QLabel *label_32;
+    QLabel *gif;
     QWidget *page_5;
     QTabWidget *tabWidget_4;
     QWidget *tab_8;
@@ -338,7 +338,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1296, 880);
+        MainWindow->resize(1290, 891);
         actionimage_menu = new QAction(MainWindow);
         actionimage_menu->setObjectName(QStringLiteral("actionimage_menu"));
         centralWidget = new QWidget(MainWindow);
@@ -355,14 +355,14 @@ public:
 "background : rgb(239, 198, 168);}"));
         label_6 = new QLabel(centralWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(100, 100, 111, 21));
+        label_6->setGeometry(QRect(90, 100, 151, 21));
         label_6->setStyleSheet(QLatin1String("color: rgb(240, 75, 36);\n"
 "\n"
 "font: 12pt \"Sitka Text\";\n"
 ""));
         label_7 = new QLabel(centralWidget);
         label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(110, 120, 211, 20));
+        label_7->setGeometry(QRect(100, 120, 121, 20));
         label_7->setStyleSheet(QLatin1String("color : rgb(240, 75, 36); \n"
 "font: 25 6pt \"Yu Gothic UI Light\";"));
         label = new QLabel(centralWidget);
@@ -605,18 +605,22 @@ public:
 "color: rgb(255, 170, 127);\n"
 "}\n"
 "\n"
-"QtabWidget :hover {\n"
+"QTabWidget :hover {\n"
 "background-color: rgb(43, 43, 43);\n"
+"color:rgb(175, 31, 36) ;\n"
 "}\n"
-"QtabWidget :focus\n"
+"QTabWidget :focus\n"
 "{\n"
 "color: rgb(255, 170, 127);\n"
 "\n"
 "background:rgb(175, 31, 36);\n"
 "\n"
+"background-color: rgb(75, 75, 75);\n"
+"\n"
 "border-radius:10px;\n"
 "}\n"
 "\n"
+"/**************BUTTONS********************/\n"
 "QPushButton{\n"
 "    color: rgb(255, 170, 127);\n"
 "	font: 63 10pt \"Yu Gothic UI Semibold\";\n"
@@ -631,8 +635,6 @@ public:
 "color: rgb(255, 170, 127);\n"
 "\n"
 "background:rgb(175, 31, 36);\n"
-"\n"
-"\n"
 "\n"
 "border-radius:10px;\n"
 "}\n"
@@ -702,7 +704,7 @@ public:
         label_34 = new QLabel(tab);
         label_34->setObjectName(QStringLiteral("label_34"));
         label_34->setGeometry(QRect(10, 550, 71, 61));
-        label_34->setPixmap(QPixmap(QString::fromUtf8("../../../stocks1.png")));
+        label_34->setPixmap(QPixmap(QString::fromUtf8("../../stock.png")));
         label_35 = new QLabel(tab);
         label_35->setObjectName(QStringLiteral("label_35"));
         label_35->setGeometry(QRect(80, 570, 351, 31));
@@ -1373,9 +1375,9 @@ public:
         stackedWidget->addWidget(page_4);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
-        label_32 = new QLabel(page_2);
-        label_32->setObjectName(QStringLiteral("label_32"));
-        label_32->setGeometry(QRect(190, 330, 56, 16));
+        gif = new QLabel(page_2);
+        gif->setObjectName(QStringLiteral("gif"));
+        gif->setGeometry(QRect(30, 40, 881, 621));
         stackedWidget->addWidget(page_2);
         page_5 = new QWidget();
         page_5->setObjectName(QStringLiteral("page_5"));
@@ -1756,22 +1758,22 @@ public:
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1296, 21));
+        menuBar->setGeometry(QRect(0, 0, 1290, 29));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(4);
-        tabWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
         tabWidget_2->setCurrentIndex(0);
-        tabWidget_3->setCurrentIndex(1);
+        tabWidget_3->setCurrentIndex(0);
         tabWidget_7->setCurrentIndex(1);
         tabWidget_8->setCurrentIndex(1);
-        tabWidget_9->setCurrentIndex(1);
-        tabWidget_10->setCurrentIndex(0);
+        tabWidget_9->setCurrentIndex(2);
+        tabWidget_10->setCurrentIndex(1);
         tabWidget_11->setCurrentIndex(1);
         tabWidget_12->setCurrentIndex(1);
-        tabWidget_4->setCurrentIndex(0);
+        tabWidget_4->setCurrentIndex(1);
         tabWidget_5->setCurrentIndex(1);
         tabWidget_6->setCurrentIndex(0);
 
@@ -1796,9 +1798,9 @@ public:
         mute->setText(QApplication::translate("MainWindow", "mute", Q_NULLPTR));
         pause->setText(QApplication::translate("MainWindow", "pause", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainWindow", "Menu et Plats", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("MainWindow", "Tables et Commandes", Q_NULLPTR));
-        pushButton_9->setText(QApplication::translate("MainWindow", "Produits et Stocks", Q_NULLPTR));
-        pushButton_10->setText(QApplication::translate("MainWindow", "Gest des Fournisseurs", Q_NULLPTR));
+        pushButton_8->setText(QApplication::translate("MainWindow", "            Tables et Commandes", Q_NULLPTR));
+        pushButton_9->setText(QApplication::translate("MainWindow", "     Produits et Stocks", Q_NULLPTR));
+        pushButton_10->setText(QApplication::translate("MainWindow", "        Gest des Fournisseurs", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "ID STOCK", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("MainWindow", "Gestion des Produits", Q_NULLPTR));
@@ -1836,8 +1838,8 @@ public:
         label_21->setText(QApplication::translate("MainWindow", "ID_PRODUIT", Q_NULLPTR));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "Fruit", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Liquide", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Fruit", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Legume", Q_NULLPTR)
         );
         comboBox_2->clear();
@@ -1965,7 +1967,7 @@ public:
         pushButton_39->setText(QApplication::translate("MainWindow", "Supprimer", Q_NULLPTR));
         tabWidget_12->setTabText(tabWidget_12->indexOf(tab_27), QApplication::translate("MainWindow", "Consulter", Q_NULLPTR));
         tabWidget_10->setTabText(tabWidget_10->indexOf(tab_25), QApplication::translate("MainWindow", "Gestion des commandes", Q_NULLPTR));
-        label_32->setText(QApplication::translate("MainWindow", "Mahmoud", Q_NULLPTR));
+        gif->setText(QString());
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Gestion de Caisse", Q_NULLPTR));
         label_33->setText(QApplication::translate("MainWindow", "Nom Du Mr/Mme", Q_NULLPTR));
         label_36->setText(QApplication::translate("MainWindow", "Num Du Client ", Q_NULLPTR));

@@ -1,15 +1,14 @@
 #include "table.h"
-
-#include<QtWidgets>
+#include <QtWidgets>
 #include <QSqlQuery>
-#include  <QSqlQueryModel>
+#include <QSqlQueryModel>
 #include <QVariant>
-#include<QTableView>
+#include <QTableView>
 #include <QSqlTableModel>
-#include<QSqlRecord>
-#include<QDebug>
-#include<QString>
-#include<QObject>
+#include <QSqlRecord>
+#include <QDebug>
+#include <QString>
+#include <QObject>
 
 Table::Table()
 {

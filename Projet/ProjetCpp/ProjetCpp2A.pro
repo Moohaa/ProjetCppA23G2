@@ -6,7 +6,9 @@
 
 QT       += core gui sql
 
-QT       += core gui multimedia
+QT       += network
+
+QT       += multimedia multimediawidgets printsupport serialport charts
 
 CONFIG += stl
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -19,6 +21,7 @@ TEMPLATE = app
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -31,6 +34,7 @@ SOURCES += \
     evaluation.cpp \
     menu.cpp \
     plat.cpp \
+    smtp.cpp \
     stock.cpp\
     produit.cpp\
     connection.cpp\
@@ -48,6 +52,7 @@ HEADERS += \
     evaluation.h \
     menu.h \
     plat.h \
+    smtp.h \
     stock.h\
     produit.h\
     mainwindow.h \
@@ -62,6 +67,9 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+QMAKE_CXXFLAGS += -std=gnu++11
+QMAKE_CXXFLAGS += -std=gnu++14
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -3,6 +3,7 @@ INPUT(
 ./debug/evaluation.o
 ./debug/menu.o
 ./debug/plat.o
+./debug/smtp.o
 ./debug/stock.o
 ./debug/produit.o
 ./debug/connection.o
@@ -10,5 +11,6 @@ INPUT(
 ./debug/mainwindow.o
 ./debug/table.o
 ./debug/transaction.o
+./debug/moc_smtp.o
 ./debug/moc_mainwindow.o
 );
