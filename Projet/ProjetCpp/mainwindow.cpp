@@ -576,7 +576,7 @@ void MainWindow::on_rechercher_3_clicked() // Recherche Par Nom
 }
 
 
-void MainWindow::on_rechercher_4_clicked()
+void MainWindow::on_rechercher_4_clicked() // Recherche Par Region
 {
     QString findText;
         QString text = ui->lineEdit_42->text();
