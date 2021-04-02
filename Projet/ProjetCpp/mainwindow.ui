@@ -2569,17 +2569,6 @@ border-radius:10px;
          <attribute name="title">
           <string>Statistique</string>
          </attribute>
-         <widget class="QFrame" name="horizontalFrame">
-          <property name="geometry">
-           <rect>
-            <x>19</x>
-            <y>10</y>
-            <width>821</width>
-            <height>401</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_2"/>
-         </widget>
         </widget>
        </widget>
       </widget>

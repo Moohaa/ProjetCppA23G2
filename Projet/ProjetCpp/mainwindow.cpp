@@ -544,6 +544,11 @@ void MainWindow::on_pushButton_31_clicked()//AJOUTER TAB
 t.ajouter();
 ui->tableView_7->setModel(t.afficher());
 QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectué"),  QMessageBox::Cancel);
+ui->lineEdit_28->setText("");
+ ui->lineEdit_29->setText("");
+ ui->comboBox_8->setCurrentText("");
+ ui->comboBox_9->setCurrentText("");
+ ui->lineEdit_30->setText("");
 
 }
 
@@ -560,6 +565,7 @@ void MainWindow::on_pushButton_33_clicked()//supprimer tab
     else
         msgBox.setText("Echec de suppression");
     msgBox.exec();
+     ui->lineEdit_32->setText("");
 }
 
 void MainWindow::on_pushButton_32_clicked()//modifier table
@@ -597,6 +603,12 @@ void MainWindow::on_pushButton_37_clicked()//AJOUTER COMMANDE
 c.ajouter();
 ui->tableView_8->setModel(c.afficher());
 QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectué"),  QMessageBox::Cancel);
+ui->lineEdit_33->setText("");
+ui->lineEdit_38->setText("");
+ui->lineEdit_37->setText("");
+ui->lineEdit_36->setText("");
+ui->lineEdit_35->setText("");
+ui->lineEdit_34->setText("");
 
 }
 
@@ -672,6 +684,7 @@ Table t;
             t.recherche(table,NUM_TABLE.toInt());
 
 }
+         ui->find->setText("");
 }
 
 void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer donnee table
@@ -706,6 +719,7 @@ Commande c;;
             c.recherche(table,ID_COMMANDE.toInt());
 
 }
+         ui->lineEdit_31->setText("");
 }
 
 void MainWindow::on_pushButton_40_clicked()//trier commande par id
@@ -750,6 +764,7 @@ Table t;
             t.rechercheC(table,NB_CHAISES.toInt());
 
 }
+          ui->find->setText("");
 }
 
 void MainWindow::on_recher_2_clicked()
@@ -767,6 +782,7 @@ Commande c;;
         } else {
          LIBELLE= find;
             c.rechercheL(table,LIBELLE);
+              ui->lineEdit_31->setText("");
 
 }
 }

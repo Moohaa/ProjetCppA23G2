@@ -1734,8 +1734,8 @@ public:
         tabWidget_7->setCurrentIndex(1);
         tabWidget_8->setCurrentIndex(0);
         tabWidget_9->setCurrentIndex(0);
-        tabWidget_10->setCurrentIndex(1);
-        tabWidget_11->setCurrentIndex(1);
+        tabWidget_10->setCurrentIndex(0);
+        tabWidget_11->setCurrentIndex(2);
         tabWidget_12->setCurrentIndex(1);
         tabWidget_4->setCurrentIndex(1);
         tabWidget_5->setCurrentIndex(0);
@@ -1904,7 +1904,7 @@ public:
         pushButton_42->setText(QCoreApplication::translate("MainWindow", " Nombre de chaises", nullptr));
         label_80->setText(QCoreApplication::translate("MainWindow", "Chercher par :", nullptr));
         tabWidget_11->setTabText(tabWidget_11->indexOf(tab_23), QCoreApplication::translate("MainWindow", "Consulter", nullptr));
-        tabWidget_11->setTabText(tabWidget_11->indexOf(tab_24), QString());
+        tabWidget_11->setTabText(tabWidget_11->indexOf(tab_24), QCoreApplication::translate("MainWindow", "Statistique", nullptr));
         tabWidget_10->setTabText(tabWidget_10->indexOf(tab_21), QCoreApplication::translate("MainWindow", "Gestion des tables", nullptr));
         groupBox_8->setTitle(QString());
         label_74->setText(QCoreApplication::translate("MainWindow", "ID commande", nullptr));
