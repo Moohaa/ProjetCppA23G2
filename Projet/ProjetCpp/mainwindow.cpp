@@ -544,9 +544,13 @@ void MainWindow::on_pushButton_31_clicked()//AJOUTER TAB
 
  Table t(ui->lineEdit_28->text().toInt(), ui->lineEdit_29->text().toInt(),
         ui->comboBox_8->currentText(),ui->comboBox_9->currentText(),ui->lineEdit_30->text().toInt());
+ if(t.check()==0)
+ {QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("erreur"),  QMessageBox::Cancel); }
+else{
 t.ajouter();
 ui->tableView_7->setModel(t.afficher());
 QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectué"),  QMessageBox::Cancel);
+    }
 ui->lineEdit_28->setText("");
  ui->lineEdit_29->setText("");
  ui->comboBox_8->setCurrentText("");
@@ -555,20 +559,22 @@ ui->lineEdit_28->setText("");
 
 }
 
-void MainWindow::on_pushButton_33_clicked()//supprimer tab
+void MainWindow::on_pushButton_33_clicked()//supprimer table
 {
     Table t1;
-    t1.setNUM_TABLE(ui->lineEdit_32->text().toInt());
-    bool test =t1.supprimer(t1.get_NUM_TABLE());
     QMessageBox msgBox;
-    if(test)
-    {msgBox.setText("supression avec succés");
-      ui->tableView_7->setModel(t1.afficher());
-    }
-    else
-        msgBox.setText("Echec de suppression");
+    t1.setNUM_TABLE(ui->lineEdit_32->text().toInt());
+    if(t1.check()==0){
+    bool test =t1.supprimer(t1.get_NUM_TABLE());
+
+      if(test)
+         {msgBox.setText("supression avec succés");
+             ui->tableView_7->setModel(t1.afficher());
+            }}
+      else
+        msgBox.setText("numéro n'existe pas");
     msgBox.exec();
-     ui->lineEdit_32->setText("");
+
 }
 
 void MainWindow::on_pushButton_32_clicked()//modifier table
@@ -675,18 +681,37 @@ void MainWindow::on_pushButton_36_clicked()//chercher table
     QString find =ui->find->text();
 Table t;
     QTableView* table=ui->tableView_7;
-        if (find.isEmpty()) {
+    t.setNUM_TABLE(ui->find->text().toInt());
+        if (t.check()==0) {
+            /*QMessageBox::information(this, tr("Empty Field"),
+                tr("Entr//."));
+            ui->tableView_7->setModel(t.afficher());
+            return;*/
+
+           NUM_TABLE = find;
+            t.recherche(table,NUM_TABLE.toInt());}
+               else {QMessageBox::critical (this, "Error", "Cette table n'existe pas!");}
+
+         ui->find->setText("");
+}
+/* void MainWindow::on_pushButton_36_clicked()//chercher table
+{
+    QString NUM_TABLE;
+    QString find =ui->find->text();
+Table t;
+    QTableView* table=ui->tableView_7;
+        if (find.is()) {
             QMessageBox::information(this, tr("Empty Field"),
                 tr("Entr//."));
             ui->tableView_7->setModel(t.afficher());
             return;
-        } else {
-            NUM_TABLE = find;
-            t.recherche(table,NUM_TABLE.toInt());
+        } else if(t.check()==0)
+           { NUM_TABLE = find;
+            t.recherche(table,NUM_TABLE.toInt());}
+                else {QMessageBox::critical (this, "Error", "ID n'existe pas!");}
 
-}
          ui->find->setText("");
-}
+} */
 
 void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer donnee table
 {
@@ -703,7 +728,7 @@ void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer don
 
 }
 
-void MainWindow::on_recher_clicked()
+void MainWindow::on_recher_clicked()//rechercher commande par id
 {
     QString ID_COMMANDE;
 QString find = ui->lineEdit_31->text();
@@ -749,22 +774,23 @@ void MainWindow::on_tableView_8_clicked(const QModelIndex &index)//recupereer do
           ui->lineEdit_34->setText(ui->tableView_8->model()->index(row,4).data().toString());
 }
 
-void MainWindow::on_pushButton_42_clicked()
+void MainWindow::on_pushButton_42_clicked()//recherche table par nbr chaises
 {
     QString NB_CHAISES;
     QString find =ui->find->text();
 Table t;
     QTableView* table=ui->tableView_7;
-        if (find.isEmpty()) {
-            QMessageBox::information(this, tr("Empty Field"),
-                tr("Entr//."));
-            ui->tableView_7->setModel(t.afficher());
-            return;
-        } else {
-          NB_CHAISES = find;
-            t.rechercheC(table,NB_CHAISES.toInt());
+      t.setNB_CHAISES(ui->find->text().toInt());
+    if (t.check1()==0) {
+        /*QMessageBox::information(this, tr("Empty Field"),
+            tr("Entr//."));
+        ui->tableView_7->setModel(t.afficher());
+        return;*/
 
-}
+      NB_CHAISES = find;
+        t.rechercheC(table,NB_CHAISES.toInt());}
+           else {QMessageBox::critical (this, "Error", "Ce nombre de chaises n'existe pas !");}
+
           ui->find->setText("");
 }
 
@@ -788,7 +814,7 @@ Commande c;;
 }
 }
 
-void MainWindow::on_pushButton_43_clicked()
+void MainWindow::on_pushButton_43_clicked()//ACtualiser
 {
 
     Commande c;
@@ -796,8 +822,39 @@ void MainWindow::on_pushButton_43_clicked()
 
 }
 
-void MainWindow::on_pushButton_44_clicked()
+void MainWindow::on_pushButton_44_clicked()//actualiser
 {
     Table t;
             ui->tableView_7->setModel(t.afficher());
+}
+
+
+
+void MainWindow::on_pushButton_DB_clicked()
+{
+
+    QString DEBARRASSAGE;
+    QString find =ui->find->text();
+Table t;
+    QTableView* table=ui->tableView_7;
+    t.setDEBARRASSAGE(ui->find->text().toInt());
+
+    if (find.isEmpty()) {
+        QMessageBox::information(this, tr("Empty Field"),
+            tr("Entr//."));
+        ui->tableView_8->setModel(t.afficher());
+        return;}
+        else{
+           DEBARRASSAGE = find;
+            t.rechercheD(table,DEBARRASSAGE.toInt());
+             }
+
+         ui->find->setText("");
+}
+
+void MainWindow::on_pushButton_deb1_clicked()
+{
+    Table t;
+    QTableView* table=ui->tableView_7;
+    t.tri_DEB(table);
 }

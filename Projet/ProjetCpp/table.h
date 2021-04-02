@@ -34,11 +34,16 @@ public:
     bool supprimer(int);
     QSqlQueryModel * afficher();
     bool modifier();
+    int check();
+    int check1();
      void recherche(QTableView* table,int NUM_TABLE);
       void rechercheC(QTableView* table,int NB_CHAISES);
+      void rechercheD(QTableView* table,int DEBARRASSAGE);
+
 
       void tri_Num(QTableView* table);
       void tri_NB(QTableView* table);
+      void tri_DEB(QTableView* table);
     //int lastId();
 
 };

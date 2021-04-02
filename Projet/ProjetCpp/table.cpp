@@ -71,6 +71,7 @@ QSqlQueryModel * Table::afficher(){
 
 return model;
     }
+
 bool Table::supprimer(int NUM_TABLE){
         QSqlQuery query;
         query.prepare("DELETE FROM TABLES WHERE NUM_TABLE=?");
@@ -98,7 +99,58 @@ bool Table ::modifier()
 
                           return    edit.exec();
     }
+int Table::check() // check if it exsits or not  par id
+{
+    int res1=get_NUM_TABLE();
+ QString res2 = QString::number(res1);
+    QSqlQuery query;
 
+    query.prepare("select * from TABLES where NUM_TABLE =:NUM_TABLE");
+    query.bindValue(":NUM_TABLE",res2);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }}
+int Table::check1() // check if it exsits or not  par id
+{
+    int res1=get_NB_CHAISES();
+ QString res2 = QString::number(res1);
+    QSqlQuery query;
+
+    query.prepare("select * from TABLES where NB_CHAISES=:NB_CHAISES");
+    query.bindValue(":NB_CHAISES",res2);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }}
  void Table::recherche(QTableView* table,int NUM_TABLE)//recherche table PAR SON NUM
  {
   QSqlQueryModel *model= new QSqlQueryModel();  //'"+ide+"%'  '"+spec+"'
@@ -113,8 +165,21 @@ bool Table ::modifier()
  {
   QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
+     QString CHAI = QString::number(NB_CHAISES);
     query->prepare("select * from TABLES  where NB_CHAISES=:NB_CHAISES");
-    query->bindValue(":NB_CHAISES",NB_CHAISES);
+    query->bindValue(":NB_CHAISES",CHAI);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();}
+ void Table::rechercheD(QTableView* table,int DEBARRASSAGE)//recherche table PAR ETAT debarrassage
+ {
+  QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    QString DEB = QString::number(DEBARRASSAGE);
+    query->prepare("select * from TABLES  where DEBARRASSAGE=:DEBARRASSAGE");
+
+    query->bindValue(":DEBARRASSAGE",DEB);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
@@ -142,4 +207,14 @@ void Table::tri_NB(QTableView* table){
     table->show();
 }
 
+void Table::tri_DEB(QTableView* table)// trier selon etat debarrassage
+{
 
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from TABLES  ORDER BY DEBARRASSAGE ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
