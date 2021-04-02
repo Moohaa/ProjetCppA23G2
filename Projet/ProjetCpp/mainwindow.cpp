@@ -98,13 +98,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     myMoviebg = new QMovie("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
 
-       ui->gif->setMovie(myMoviebg);
+       //ui->gif->setMovie(myMoviebg);
 
        myMoviebg->start();
 
 ui->label_94->setToolTip("Music");
 
-    ui->label_102->setPixmap(pix150);
+    ui->label_5->setPixmap(pix150);
     ui->label_3->setPixmap(pix1);
     ui->label_28->setPixmap(pix2);
     ui->label_85->setPixmap(pix3);
@@ -176,11 +176,11 @@ void MainWindow::on_pushButton_9_clicked()
 }
 void MainWindow::on_pushButton_10_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 void MainWindow::on_pushButton_11_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(5);
+    ui->stackedWidget->setCurrentIndex(4);
 }
 
 //--------------------------------~PRODUIT~----------------------------------------------
