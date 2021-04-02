@@ -2374,7 +2374,7 @@ public:
         tabWidget_15->setCurrentIndex(0);
         tabWidget_16->setCurrentIndex(0);
         tabWidget_4->setCurrentIndex(0);
-        tabWidget_5->setCurrentIndex(1);
+        tabWidget_5->setCurrentIndex(0);
         tabWidget_6->setCurrentIndex(0);
 
 
