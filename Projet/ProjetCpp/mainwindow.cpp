@@ -15,11 +15,32 @@
 #include "menu.h"
 #include "table.h"
 #include "commande.h"
-#include "smtp.h"
 #include "fournisseur.h"
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
 
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+
+#include <string>
+#include <iostream>
+#include <QThread>
+#include "smtp.h"
 
 #include <QDebug>
 #include "connection.h"
@@ -106,10 +127,17 @@ ui->label_94->setToolTip("Music");
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
 
+    OffreFournisseur offreFournisseur;
+    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+    CommandeFournisseur commandeFournisseur;
+    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+    Fournisseur fournisseur;
+    ui->tabFournisseur->setModel(fournisseur.afficher());
+
+    //ui->label_84->setPixmap(pix4.scaled(100,100,Qt::KeepAspectRatio));
 
 
    // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
-
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
@@ -148,11 +176,11 @@ void MainWindow::on_pushButton_9_clicked()
 }
 void MainWindow::on_pushButton_10_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(4);
 }
 void MainWindow::on_pushButton_11_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(5);
 }
 
 //--------------------------------~PRODUIT~----------------------------------------------
@@ -986,7 +1014,10 @@ void MainWindow::on_pushButton_47_clicked()
 //-- Send Mail
 void MainWindow::on_sendBtn_2_clicked()
 {
+    Smtp* smtp = new Smtp("rajianacib@gmail.com", "nbvcxwnbvcxw", "smtp.gmail.com", 465);
 
+         smtp->sendMail("rajianacib@gmail.com","mahmoud.cheikh@esprit.tn", "STOCK LIMITE", "vous ne pouvez pas stocker plus de 500 produits");
+          QMessageBox::information(this,"message envoyee", "stock saturé verifier votre mail");//fonctionne
 }
 //-- Ajouter Stock Fournisseur
 void MainWindow::on_OF_ADD_clicked()

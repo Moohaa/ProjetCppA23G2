@@ -1441,7 +1441,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_14">
        <attribute name="title">
@@ -2895,7 +2895,22 @@ border-radius:10px;
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QTabWidget" name="tabWidget_13">
+     <widget class="QLabel" name="gif">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>881</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QTabWidget" name="tabWidget_4">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -3395,7 +3410,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_32">
          <attribute name="title">
