@@ -867,7 +867,10 @@ void MainWindow::on_pushButton_47_clicked()
 //-- Send Mail
 void MainWindow::on_sendBtn_2_clicked()
 {
+    Smtp* smtp = new Smtp("rajianacib@gmail.com", "nbvcxwnbvcxw", "smtp.gmail.com", 465);
 
+         smtp->sendMail("rajianacib@gmail.com","mahmoud.cheikh@esprit.tn", "STOCK LIMITE", "vous ne pouvez pas stocker plus de 500 produits");
+          QMessageBox::information(this,"message envoyee", "stock saturé verifier votre mail");//fonctionne
 }
 //-- Ajouter Stock Fournisseur
 void MainWindow::on_OF_ADD_clicked()
