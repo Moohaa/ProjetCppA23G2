@@ -180,6 +180,8 @@ private slots:
 
 
 
+    void on_pushButton_42_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;

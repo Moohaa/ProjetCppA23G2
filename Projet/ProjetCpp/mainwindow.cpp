@@ -59,7 +59,8 @@
 #include <QSsl>
 #include <QSslSocket>
 #include <QNetworkAccessManager>
-
+#include <QPrinter>
+#include <QFileDialog>
 
 
 
@@ -96,7 +97,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
      setFixedSize(1296,801);  //fixe la taille de la fenêtre
 
-    myMoviebg = new QMovie("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
+    myMoviebg = new QMovie("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
 
        //ui->gif->setMovie(myMoviebg);
 
@@ -553,6 +554,61 @@ void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
     Transaction t;
         ui->tableView_2->setModel(t.afficher());
 
+}
+
+
+void MainWindow::on_pushButton_42_clicked()
+{
+    QString str;
+                 str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
+                 str.append("<table border=1><tr>") ;
+                 str.append("<td>"+QString("ID_FACTURE")+"</td>") ;
+                 str.append("<td>"+QString("NOM_CLIENT")+"</td>") ;
+                 str.append("<td>"+QString("NUM_CLIENT")+"</td>") ;
+                 str.append("<td>"+QString("ADRESSE_CLIENT")+"</td>") ;
+                 str.append("<td>"+QString("DATE_HEURE")+"</td>") ;
+                 str.append("<td>"+QString("PRIX")+"</td>") ;
+                 str.append("<td>"+QString("ID_UTILISATEUR")+"</td>") ;
+
+
+                 QSqlQuery* query=new QSqlQuery();
+                 query->exec("SELECT ID_FACTURE,NOM_CLIENT,NUM_CLIENT,ADRESSE_CLIENT,DATE_HEURE,PRIX,ID_UTILISATEUR FROM TRANSACTION");
+
+                 while(query->next())
+                 {
+                 str.append("<tr><td>");
+                 str.append(query->value(0).toString()) ;
+                 str.append("</td><td>") ;
+                 str.append(query->value(1).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(2).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(3).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(4).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(5).toString());
+                 str.append("</td></td>");
+                 str.append(query->value(6).toString());
+                 str.append("</td></tr>");
+
+
+                 }
+              str.append("</table></center></body></html>") ;
+
+              QPrinter printer ;
+              printer.setOrientation(QPrinter::Portrait);
+              printer.setOutputFormat(QPrinter::PdfFormat);
+              printer.setPaperSize(QPrinter::A4) ;
+
+              QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+              if (path.isEmpty()) return ;
+              printer.setOutputFileName(path) ;
+
+              QTextDocument doc;
+              doc.setHtml(str) ;
+              doc.print(&printer);
 }
 //-----------------------------------~Evaluation~--------------------------------------
 void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
