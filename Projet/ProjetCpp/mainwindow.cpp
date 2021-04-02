@@ -344,6 +344,11 @@ void MainWindow::on_TRI_3_clicked()//tri stock
   s.tri_id(table);
 
 }
+void MainWindow::on_pushButton_43_clicked()//Afficher Stock
+{
+    stock s;
+        ui->tableView_B->setModel(s.afficher_stock());
+}
 
 /*void MainWindow::on_tableView_B_clicked()//rechercher un stock
 {
@@ -461,17 +466,34 @@ void MainWindow::on_pushButton_12_clicked()//Ajouter Transaction
     t.setPRIX(ui->lineEdit_5->text().toInt());
     t.setID_UTILISATEUR(ui->lineEdit_7->text().toInt());
 
-        t.ajouter();
+        bool test= t.ajouter();
 
 
             ui->tableView_2->setModel(t.afficher());
-}
+
+            if(test){
+                QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);}
+
+            else
+
+                QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
+        }
+
 
 void MainWindow::on_pushButton_14_clicked()//Supprimer Transaction
 {
     Transaction Transaction(ui->textDelete_3->text().toUInt());
-    Transaction.supprimer();
+    bool test= Transaction.supprimer();
+
+
     ui->tableView_2->setModel(Transaction.afficher());
+
+
+    if(test){
+        QMessageBox::information(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
+    else
+
+        QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
 }
 
 
@@ -488,9 +510,16 @@ void MainWindow::on_pushButton_13_clicked() // ModifierTransaction
       t.setPRIX(ui->lineEdit_5->text().toInt());
       t.setID_UTILISATEUR(ui->lineEdit_7->text().toInt());
 
-      t.update();
+      bool test= t.update();
+
 
       ui->tableView_2->setModel(t.afficher());
+
+      if(test){
+          QMessageBox::information(nullptr,QObject::tr("Modifier  Facture"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
+      else
+
+          QMessageBox::critical(nullptr,QObject::tr("Modifier  Facture"),QObject::tr("Modfication non effectuée"),  QMessageBox::Cancel);
 }
 
 void MainWindow::on_pushButton_40_clicked()// trier Transaction
@@ -527,6 +556,46 @@ void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
 
 }
 
+void MainWindow::on_rechercher_3_clicked() // Recherche Par Nom
+{
+    QString findText;
+        QString text = ui->lineEdit_41->text();
+    Transaction t;
+    QTableView* table=ui->tableView_2;
+        if (text.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entrez une specialité a rechercher."));
+            ui->tableView_2->setModel(t.afficher());
+            return;
+        } else {
+            findText = text;
+            t.recherche2(table,findText);
+
+
+}
+}
+
+
+void MainWindow::on_rechercher_4_clicked()
+{
+    QString findText;
+        QString text = ui->lineEdit_42->text();
+    Transaction t;
+    QTableView* table=ui->tableView_2;
+        if (text.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entrez une specialité a rechercher."));
+            ui->tableView_2->setModel(t.afficher());
+            return;
+        } else {
+            findText = text;
+            t.recherche3(table,findText);
+
+
+}
+}
+
+
 
 void MainWindow::on_pushButton_42_clicked()
 {
@@ -539,11 +608,13 @@ void MainWindow::on_pushButton_42_clicked()
                  str.append("<td>"+QString("ADRESSE_CLIENT")+"</td>") ;
                  str.append("<td>"+QString("DATE_HEURE")+"</td>") ;
                  str.append("<td>"+QString("PRIX")+"</td>") ;
+                 str.append("<td>"+QString("ID_UTLISATEUR")+"</td>") ;
+
 
 
 
                  QSqlQuery* query=new QSqlQuery();
-                 query->exec("SELECT ID_FACTURE,NOM_CLIENT,NUM_CLIENT,ADRESSE_CLIENT,DATE_HEURE,PRIX FROM TRANSACTION");
+                 query->exec("SELECT * FROM TRANSACTION");
 
                  while(query->next())
                  {
@@ -559,6 +630,8 @@ void MainWindow::on_pushButton_42_clicked()
                  str.append(query->value(4).toString());
                  str.append("</td><td>") ;
                  str.append(query->value(5).toString());
+                 str.append("</td></td>");
+                 str.append(query->value(6).toString());
                  str.append("</td></td>");
 
 
@@ -585,18 +658,33 @@ void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
     Evaluation e(ui->lineEdit_8->text(), ui->comboBox_5->currentText().toUInt(),
                   ui->comboBox_6->currentText(),ui->lineEdit_9->text().toUInt());
 
-        e.ajouter();
 
+        bool test= e.ajouter();
 
             ui->tableView->setModel(e.afficher());
+
+
+            if(test){
+                QMessageBox::information(nullptr,QObject::tr("Ajouter Eva"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);}
+            else
+
+                QMessageBox::critical(nullptr,QObject::tr("Ajouter Eva"),QObject::tr("Ajout non effectuée"),  QMessageBox::Cancel);
 }
 
 void MainWindow::on_pushButton_18_clicked()//Supprimer Evaluation
 {
-    Evaluation Evaluation(ui->textDelete_4->text().toUInt());
-    Evaluation.supprimer();
-    ui->tableView->setModel(Evaluation.afficher());
-}
+    Evaluation e(ui->textDelete_4->text().toUInt());
+    bool test = e.supprimer();
+
+    ui->tableView->setModel(e.afficher());
+
+
+    if(test){
+        QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);}
+    else
+
+        QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);}
+
 
 
 void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
@@ -609,11 +697,19 @@ void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
       e.setNOTE_CLIENT(ui->comboBox_5->currentText().toUInt());
       e.setREMARQUE_CLIENT(ui->comboBox_6->currentText());
       e.setID_FACTURE(ui->lineEdit_9->text().toInt());
+      bool test = e.update();
 
-      e.update();
+
 
       ui->tableView->setModel(e.afficher());
-}
+
+      if(test){
+          QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);}
+      else
+
+          QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);}
+
+
 
 void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation
 {
@@ -632,6 +728,13 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation
 
 
   }
+}
+
+
+void MainWindow::on_pushButton_57_clicked()
+{
+    Evaluation e;
+        ui->tableView->setModel(e.afficher());
 }
 
 //-----------------------------------------AZIZ------------------------------------------------
@@ -1086,6 +1189,11 @@ void MainWindow::on_pushButton_56_clicked()
     QSortFilterProxyModel * model =  f.searchAdresse(ui->FSA->text());
     ui->tabFournisseur->setModel(model );
 }
+
+
+
+
+
 
 
 
