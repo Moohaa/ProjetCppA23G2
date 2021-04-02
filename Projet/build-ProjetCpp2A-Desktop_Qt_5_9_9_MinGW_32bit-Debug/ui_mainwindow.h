@@ -2354,12 +2354,12 @@ public:
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1296, 29));
+        menuBar->setGeometry(QRect(0, 0, 1296, 21));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(4);
         tabWidget->setCurrentIndex(1);
         tabWidget_2->setCurrentIndex(0);
         tabWidget_3->setCurrentIndex(1);
@@ -2373,9 +2373,9 @@ public:
         tabWidget_14->setCurrentIndex(0);
         tabWidget_15->setCurrentIndex(0);
         tabWidget_16->setCurrentIndex(0);
-        tabWidget_4->setCurrentIndex(1);
-        tabWidget_5->setCurrentIndex(0);
-        tabWidget_6->setCurrentIndex(1);
+        tabWidget_4->setCurrentIndex(0);
+        tabWidget_5->setCurrentIndex(1);
+        tabWidget_6->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

@@ -38,7 +38,8 @@
 #include <QSsl>
 #include <QSslSocket>
 #include <QNetworkAccessManager>
-
+#include <QPrinter>
+#include <QFileDialog>
 
 
 
@@ -524,6 +525,61 @@ void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
     Transaction t;
         ui->tableView_2->setModel(t.afficher());
 
+}
+
+
+void MainWindow::on_pushButton_42_clicked()
+{
+    QString str;
+                 str.append("<html><head></head><body><center>"+QString("GESTION EQUIPEMENT"));
+                 str.append("<table border=1><tr>") ;
+                 str.append("<td>"+QString("ID_E")+"</td>") ;
+                 str.append("<td>"+QString("NOM")+"</td>") ;
+                 str.append("<td>"+QString("NOMBRE")+"</td>") ;
+                 str.append("<td>"+QString("ADRESSE")+"</td>") ;
+                 str.append("<td>"+QString("PRIX")+"</td>") ;
+                 str.append("<td>"+QString("MARQUE")+"</td>") ;
+
+
+
+                 QSqlQuery* query=new QSqlQuery();
+                 query->exec("SELECT ID_E,NOM,NOMBRE,ADRESSE,PRIX,MARQUE FROM EQUIPEMENT");
+
+                 while(query->next())
+                 {
+                 str.append("<tr><td>");
+                 str.append(query->value(0).toString()) ;
+                 str.append("</td><td>") ;
+                 str.append(query->value(1).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(2).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(3).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(4).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(5).toString());
+                 str.append("</td></td>");
+                 str.append(query->value(6).toString());
+                 str.append("</td></tr>");
+
+
+                 }
+              str.append("</table></center></body></html>") ;
+
+              QPrinter printer ;
+              printer.setOrientation(QPrinter::Portrait);
+              printer.setOutputFormat(QPrinter::PdfFormat);
+              printer.setPaperSize(QPrinter::A4) ;
+
+              QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+              if (path.isEmpty()) return ;
+              printer.setOutputFileName(path) ;
+
+              QTextDocument doc;
+              doc.setHtml(str) ;
+              doc.print(&printer);
 }
 //-----------------------------------~Evaluation~--------------------------------------
 void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
@@ -1032,4 +1088,6 @@ void MainWindow::on_pushButton_56_clicked()
     QSortFilterProxyModel * model =  f.searchAdresse(ui->FSA->text());
     ui->tabFournisseur->setModel(model );
 }
+
+
 
