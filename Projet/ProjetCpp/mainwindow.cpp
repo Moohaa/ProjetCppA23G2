@@ -567,11 +567,11 @@ void MainWindow::on_pushButton_42_clicked()
                  str.append("<td>"+QString("ADRESSE_CLIENT")+"</td>") ;
                  str.append("<td>"+QString("DATE_HEURE")+"</td>") ;
                  str.append("<td>"+QString("PRIX")+"</td>") ;
-                 str.append("<td>"+QString("ID_UTILISATEUR")+"</td>") ;
+
 
 
                  QSqlQuery* query=new QSqlQuery();
-                 query->exec("SELECT ID_FACTURE,NOM_CLIENT,NUM_CLIENT,ADRESSE_CLIENT,DATE_HEURE,PRIX,ID_UTILISATEUR FROM TRANSACTION");
+                 query->exec("SELECT ID_FACTURE,NOM_CLIENT,NUM_CLIENT,ADRESSE_CLIENT,DATE_HEURE,PRIX FROM TRANSACTION");
 
                  while(query->next())
                  {
@@ -588,8 +588,6 @@ void MainWindow::on_pushButton_42_clicked()
                  str.append("</td><td>") ;
                  str.append(query->value(5).toString());
                  str.append("</td></td>");
-                 str.append(query->value(6).toString());
-                 str.append("</td></tr>");
 
 
                  }
