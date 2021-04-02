@@ -60,9 +60,10 @@
 #include <QSslSocket>
 #include <QNetworkAccessManager>
 
-using namespace std;
-QT_CHARTS_USE_NAMESPACE
 
+
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -187,11 +188,15 @@ void MainWindow::on_pushButton_clicked()//Ajouter Produit
 {
     produit p;
 
+
     p.setNOM_PRODUIT(ui->lineEdit_2->text());
     p.setCATEGORIE_PRODUIT(ui->comboBox_3->currentText());
 
     p.ajouter();
     ui->tableView_A->setModel(p.afficher());
+
+
+
 }
 
 void MainWindow::on_pushButton_6_clicked()//suuprimer Produit
@@ -294,11 +299,14 @@ void MainWindow::on_pushButton_7_clicked()//suuprimer Stock
     ui->tableView_B->setModel(s.afficher_stock());
 }
 
-void MainWindow::on_tableView_B_doubleClicked() // modifier stockage depuis l'affichage
+void MainWindow::on_tableView_B_doubleClicked() // recuperer data du stockage depuis l'affichage
 {
 stock s;
+QSqlQueryModel * modelS =s.afficher_stock();
+
+QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
     int row =ui->tableView_B->selectionModel()->currentIndex().row();
-    //ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(0);
     s.setID_STOCK(ui->lineEdit_21->text().toInt());
 
     ui->lineEdit_21->setText(ui->tableView_B->model()->index(row,0).data().toString());
@@ -308,11 +316,20 @@ stock s;
     ui->dateTimeEdit->setDate(ui->tableView_B->model()->index(row,4).data().toDate());
     ui->lineEdit_22->setText(ui->tableView_B->model()->index(row,5).data().toString());
     ui->lineEdit_23->setText(ui->tableView_B->model()->index(row,6).data().toString());
+
+    proxyModel->setSourceModel(modelS);
+    ui->tableView_B->setSortingEnabled(true);
+     ui->tableView_B->setModel(proxyModel);
+    ui->tableView_B->setModel(s.afficher_stock());
 }
 
 void MainWindow::on_pushButton_5_clicked()//modifier Stock
 {
     stock s;
+
+    QSqlQueryModel * modelS =s.afficher_stock();
+
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
 
     s.setID_STOCK(ui->lineEdit_21->text().toInt());
     s.setCATEGORIE_STOCK(ui->comboBox->currentText());
@@ -322,11 +339,9 @@ void MainWindow::on_pushButton_5_clicked()//modifier Stock
     s.setQUANTITE(ui->lineEdit_22->text().toInt());
     s.setID_PRODUIT(ui->lineEdit_23->text().toInt());
 
- s.update_stock();
+    s.update_stock();
 
-    QSqlQueryModel * modelS =s.afficher_stock();
 
-    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
     proxyModel->setSourceModel(modelS);
     ui->tableView_B->setSortingEnabled(true);
      ui->tableView_B->setModel(proxyModel);
@@ -342,11 +357,23 @@ void MainWindow::on_TRI_2_clicked()//tri stock
   //ui->tableView_B->setModel(s.tri(ui->tableView_B->currentIndex().column()));
 
    QTableView* table=ui->tableView_B;
-  s.tri(table);
+  s.tri_quantite(table);
 
 }
 
-void MainWindow::on_tableView_B_clicked()//rechercher un stock
+
+void MainWindow::on_TRI_3_clicked()//tri stock
+{
+    stock s;
+
+  //ui->tableView_B->setModel(s.tri(ui->tableView_B->currentIndex().column()));
+
+   QTableView* table=ui->tableView_B;
+  s.tri_id(table);
+
+}
+
+/*void MainWindow::on_tableView_B_clicked()//rechercher un stock
 {
     QString findText;
         QString text = ui->lineEdit_22->text();
@@ -362,7 +389,77 @@ void MainWindow::on_tableView_B_clicked()//rechercher un stock
             findText = text;
             s.recherche(table,findText);
             }
+}*/
+
+void MainWindow::on_rechercherStock_clicked()
+{
+        stock s;
+            QString text;
+            if (ui->radioButton->isChecked()==true)
+        {
+        text=ui->rechercherStock->text();
+             if(text == "")
+
+             {
+
+                 ui->tableView_B->setModel(s.afficher_stock());
+
+             }
+
+             else
+
+             {
+
+
+
+                 ui->tableView_B->setModel(s.rechercher_cr1(text));
+
+             }
+            }
+             if(ui->radioButton->isChecked()==true)
+            {
+                text=ui->rechercherStock->text();
+                     if(text == "")
+
+                     {
+
+                         ui->tableView_B->setModel(s.afficher_stock());
+
+                     }
+
+                     else
+
+                     {
+
+
+
+                         ui->tableView_B->setModel(s.rechercher_cr2(text));
+
+                     }
+
+            }
+             else if     (ui->radioButton_2->isChecked()==true)
+             {
+
+                 text=ui->rechercherStock->text();
+                      if(text == "")
+
+                      {
+
+                          ui->tableView_B->setModel(s.afficher_stock());
+
+                      }
+
+                      else
+
+                      {
+                          ui->tableView_B->setModel(s.rechercher_cr3(text));
+
+                      }
+    }
+
 }
+
 
 //--------------------------------------------~MUSIC_PLAY~-------------------------------------------------------
 
@@ -552,7 +649,6 @@ void MainWindow::on_pushButton_23_clicked()//supprimer plat
         /* if(ui->textDelete_3->text()!=p.getNOM_PLAT()){
              QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
          else
-
              QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);*/
 
 }
@@ -700,12 +796,9 @@ void MainWindow::on_pushButton_33_clicked()//supprimer tab
 
 void MainWindow::on_pushButton_32_clicked()//modifier table
 {/*
-
     Table t2;
   int a;
           a=ui->lineEdit_5->text().toInt();
-
-
       QString b=QString ::number(t2.get_NUM_TABLE());
       t2.setNUM_TABLE(b.toInt());
       t2.setNB_CHAISES(ui->lineEdit_2->text().toInt());
@@ -716,7 +809,6 @@ void MainWindow::on_pushButton_32_clicked()//modifier table
       ui->tableView->setModel(t2.afficher());
     QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);
      ui->toupdate->setText("");
-
             ui->lineEdit_17->setText("");
             ui->lineEdit_9->setText("");
             ui->lineEdit_10->setText("");
