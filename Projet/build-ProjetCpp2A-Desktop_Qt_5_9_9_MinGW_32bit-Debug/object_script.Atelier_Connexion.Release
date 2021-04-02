@@ -1,7 +1,10 @@
 INPUT(
 ./release/commande.o
+./release/commandefournisseur.o
 ./release/evaluation.o
+./release/fournisseur.o
 ./release/menu.o
+./release/offrefournisseur.o
 ./release/plat.o
 ./release/smtp.o
 ./release/stock.o

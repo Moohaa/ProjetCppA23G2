@@ -1,7 +1,10 @@
 INPUT(
 ./debug/commande.o
+./debug/commandefournisseur.o
 ./debug/evaluation.o
+./debug/fournisseur.o
 ./debug/menu.o
+./debug/offrefournisseur.o
 ./debug/plat.o
 ./debug/smtp.o
 ./debug/stock.o

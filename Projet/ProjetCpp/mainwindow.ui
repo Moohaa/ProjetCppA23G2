@@ -34,9 +34,9 @@ color : white;</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>90</x>
       <y>100</y>
-      <width>111</width>
+      <width>151</width>
       <height>21</height>
      </rect>
     </property>
@@ -53,7 +53,7 @@ font: 12pt &quot;Sitka Text&quot;;
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>100</x>
       <y>120</y>
       <width>211</width>
       <height>20</height>
@@ -472,7 +472,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -769,7 +769,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
@@ -1069,8 +1069,8 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_7">
           <property name="geometry">
            <rect>
-            <x>400</x>
-            <y>390</y>
+            <x>210</x>
+            <y>450</y>
             <width>131</width>
             <height>41</height>
            </rect>
@@ -1082,8 +1082,8 @@ color : white;</string>
          <widget class="QLineEdit" name="textDelete">
           <property name="geometry">
            <rect>
-            <x>270</x>
-            <y>390</y>
+            <x>70</x>
+            <y>450</y>
             <width>113</width>
             <height>31</height>
            </rect>
@@ -1092,8 +1092,8 @@ color : white;</string>
          <widget class="QLabel" name="label_23">
           <property name="geometry">
            <rect>
-            <x>220</x>
-            <y>400</y>
+            <x>20</x>
+            <y>460</y>
             <width>31</width>
             <height>16</height>
            </rect>
@@ -1105,14 +1105,115 @@ color : white;</string>
          <widget class="QPushButton" name="TRI_2">
           <property name="geometry">
            <rect>
-            <x>760</x>
-            <y>50</y>
+            <x>650</x>
+            <y>390</y>
             <width>131</width>
-            <height>41</height>
+            <height>21</height>
            </rect>
           </property>
           <property name="text">
            <string>Trier le tableau</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="rechercherStock">
+          <property name="geometry">
+           <rect>
+            <x>750</x>
+            <y>20</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Rechercher</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="radioButton">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>30</y>
+            <width>99</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Quantite</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="radioButton_2">
+          <property name="geometry">
+           <rect>
+            <x>490</x>
+            <y>30</y>
+            <width>111</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Categorie</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="radioButton_3">
+          <property name="geometry">
+           <rect>
+            <x>620</x>
+            <y>30</y>
+            <width>131</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Temperature</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="rechercherStock_2">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>30</y>
+            <width>113</width>
+            <height>24</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="TRI_3">
+          <property name="geometry">
+           <rect>
+            <x>650</x>
+            <y>350</y>
+            <width>131</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Trier le tableau</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="tri_par_quantite">
+          <property name="geometry">
+           <rect>
+            <x>800</x>
+            <y>400</y>
+            <width>81</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Quantite</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="tri_par_id">
+          <property name="geometry">
+           <rect>
+            <x>800</x>
+            <y>350</y>
+            <width>101</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Id du Stock</string>
           </property>
          </widget>
         </widget>
@@ -2197,7 +2298,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_21">
        <attribute name="title">
@@ -2851,7 +2952,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -2867,7 +2968,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_29">
          <attribute name="title">
@@ -3833,7 +3934,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_36">
          <attribute name="title">
@@ -4151,7 +4252,7 @@ color : white;</string>
          <rect>
           <x>490</x>
           <y>560</y>
-          <width>121</width>
+          <width>201</width>
           <height>31</height>
          </rect>
         </property>
@@ -5444,23 +5545,7 @@ border-radius:10px;
      <rect>
       <x>90</x>
       <y>20</y>
-      <width>121</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>koujniti_logo.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_102">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>20</y>
-      <width>121</width>
+      <width>131</width>
       <height>81</height>
      </rect>
     </property>
@@ -5487,8 +5572,25 @@ border-radius:10px;
      <pixmap>casic.png</pixmap>
     </property>
    </widget>
-   <zorder>label_3</zorder>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>0</y>
+      <width>321</width>
+      <height>801</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color : rgb(255, 170, 127);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
    <zorder>label_4</zorder>
    <zorder>label_6</zorder>
    <zorder>label_7</zorder>
@@ -5507,7 +5609,6 @@ border-radius:10px;
    <zorder>label_100</zorder>
    <zorder>label_101</zorder>
    <zorder>label_5</zorder>
-   <zorder>label_102</zorder>
    <zorder>label_97</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -5525,7 +5626,7 @@ border-radius:10px;
      <x>0</x>
      <y>0</y>
      <width>1296</width>
-     <height>22</height>
+     <height>29</height>
     </rect>
    </property>
   </widget>
