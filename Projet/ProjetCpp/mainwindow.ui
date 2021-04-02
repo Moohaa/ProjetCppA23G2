@@ -412,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -3395,7 +3395,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab_32">
          <attribute name="title">
@@ -3885,6 +3885,24 @@ color : white;</string>
           </layout>
          </widget>
         </widget>
+        <widget class="QWidget" name="tab_31">
+         <attribute name="title">
+          <string>Facture</string>
+         </attribute>
+         <widget class="QPushButton" name="pushButton_43">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>30</y>
+            <width>201</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generation Des Factures(PDF)</string>
+          </property>
+         </widget>
+        </widget>
        </widget>
        <widget class="QLabel" name="label_114">
         <property name="geometry">
@@ -4337,7 +4355,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -5626,7 +5644,7 @@ border-radius:10px;
      <x>0</x>
      <y>0</y>
      <width>1296</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

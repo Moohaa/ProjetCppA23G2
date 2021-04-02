@@ -1120,3 +1120,55 @@ void MainWindow::on_pushButton_56_clicked()
     QSortFilterProxyModel * model =  f.searchAdresse(ui->FSA->text());
     ui->tabFournisseur->setModel(model );
 }
+
+void MainWindow::on_pushButton_43_clicked()//PDF Fournisseur
+{
+    QString str;
+                 str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
+                 str.append("<table border=1><tr>") ;
+                 str.append("<td>"+QString("ID_COMMANDE")+"</td>") ;
+                 str.append("<td>"+QString("ID_FOURNISSEUR")+"</td>") ;
+                 str.append("<td>"+QString("ID_PRODUIT")+"</td>") ;
+                 str.append("<td>"+QString("QUANTITE")+"</td>") ;
+                 str.append("<td>"+QString("DATE_ENVOI")+"</td>") ;
+                 str.append("<td>"+QString("DATE_RECEPTION")+"</td>") ;
+
+
+                 QSqlQuery* query=new QSqlQuery();
+                 query->exec("SELECT * FROM COMMANDE_FOURNISSEUR");
+
+                 while(query->next())
+                 {
+                 str.append("<tr><td>");
+                 str.append(query->value(0).toString()) ;
+                 str.append("</td><td>") ;
+                 str.append(query->value(1).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(2).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(3).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(4).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(5).toString());
+                 str.append("</td></td>");
+
+
+
+                 }
+              str.append("</table></center></body></html>") ;
+
+              QPrinter printer ;
+              printer.setOrientation(QPrinter::Portrait);
+              printer.setOutputFormat(QPrinter::PdfFormat);
+              printer.setPaperSize(QPrinter::A4) ;
+
+              QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+              if (path.isEmpty()) return ;
+              printer.setOutputFileName(path) ;
+
+              QTextDocument doc;
+              doc.setHtml(str) ;
+              doc.print(&printer);
+}
