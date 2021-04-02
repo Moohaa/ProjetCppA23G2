@@ -39,10 +39,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 
 {
+
     ui->setupUi(this);
+     ui->lineEdit_28->setValidator(new QIntValidator(0,99999999,this));
+      ui->lineEdit_33->setValidator(new QIntValidator(0,99999999,this));
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/brave  ,.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/brave.mp3"));
     media->play();
 
     QPixmap pix("C:/Users/Fadwa/Desktop/Projet c++/ProjetCppA23G2/hhhhhh.png");
@@ -590,9 +593,7 @@ void MainWindow::on_pushButton_32_clicked()//modifier table
             ui->comboBox_8->setCurrentText("");
             ui->comboBox_9->setCurrentText("");
             ui->lineEdit_30->setText("");
-           /* ui->lineEdit_13->setText("");
-            ui->lineEdit_14->setText("");
-            ui->lineEdit_15->setText("");*/
+
     }
 
 
@@ -785,4 +786,18 @@ Commande c;;
               ui->lineEdit_31->setText("");
 
 }
+}
+
+void MainWindow::on_pushButton_43_clicked()
+{
+
+    Commande c;
+        ui->tableView_8->setModel(c.afficher());
+
+}
+
+void MainWindow::on_pushButton_44_clicked()
+{
+    Table t;
+            ui->tableView_7->setModel(t.afficher());
 }

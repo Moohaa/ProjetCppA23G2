@@ -1901,7 +1901,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_18">
          <attribute name="title">
@@ -2259,7 +2259,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_22">
          <attribute name="title">
@@ -2386,7 +2386,7 @@ border-radius:10px;
           </item>
           <item>
            <property name="text">
-            <string>Occpé</string>
+            <string>Occupé</string>
            </property>
           </item>
          </widget>
@@ -2564,6 +2564,30 @@ border-radius:10px;
            <string>Chercher par :</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="pushButton_44">
+          <property name="geometry">
+           <rect>
+            <x>620</x>
+            <y>150</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Actualiser</string>
+          </property>
+         </widget>
+         <zorder>pushButton_44</zorder>
+         <zorder>tableView_7</zorder>
+         <zorder>pushButton_33</zorder>
+         <zorder>lineEdit_32</zorder>
+         <zorder>pushButton_34</zorder>
+         <zorder>label_73</zorder>
+         <zorder>pushButton_35</zorder>
+         <zorder>pushButton_36</zorder>
+         <zorder>find</zorder>
+         <zorder>pushButton_42</zorder>
+         <zorder>label_80</zorder>
         </widget>
         <widget class="QWidget" name="tab_24">
          <attribute name="title">
@@ -2586,7 +2610,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_26">
          <attribute name="title">
@@ -2919,6 +2943,19 @@ border-radius:10px;
           </property>
           <property name="text">
            <string>Libellé</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_43">
+          <property name="geometry">
+           <rect>
+            <x>670</x>
+            <y>230</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Actualiser</string>
           </property>
          </widget>
         </widget>
