@@ -585,13 +585,15 @@ void MainWindow::on_pushButton_32_clicked()//modifier table
 
 
         t2.setNUM_TABLE(ui->lineEdit_28->text().toInt());
-      t2.setNB_CHAISES(ui->lineEdit_29->text().toInt());
+               if(t2.check()==0)
+     { t2.setNB_CHAISES(ui->lineEdit_29->text().toInt());
       t2.setEMPLACEMENT( ui->comboBox_8->currentText());
       t2.setDISPONIBILITE(ui->comboBox_9->currentText());
       t2.setDEBARRASSAGE(ui->lineEdit_30->text().toInt());
     t2.modifier();
       ui->tableView_7->setModel(t2.afficher());
-    QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);
+    QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
+               else {   QMessageBox::information(nullptr,QObject::tr("erreur"),QObject::tr("impossible de modifier une table qui n'existe pas "),  QMessageBox::Cancel); }
 
 
            ui->lineEdit_28->setText("");
@@ -607,9 +609,15 @@ void MainWindow::on_pushButton_37_clicked()//AJOUTER COMMANDE
 {
     Commande c(ui->lineEdit_33->text().toUInt(), ui->lineEdit_38->text().toUInt(),
         ui->lineEdit_37->text(),ui->lineEdit_36->text(),ui->lineEdit_35->text().toFloat(),ui->lineEdit_34->text().toUInt());
-c.ajouter();
+if(c.check()==0 )
+{QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("cette commande existe déjà"),  QMessageBox::Cancel); }
+else if(c.check_tab()==0)
+{QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("cette table est déjà associée à une commande"),  QMessageBox::Cancel); }
+  else if(c.check_tabcom()!=0)
+{QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("impossible d'associer cette commande a une table qui  n'existe pas !"),  QMessageBox::Cancel);}
+else { c.ajouter();
 ui->tableView_8->setModel(c.afficher());
-QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectué"),  QMessageBox::Cancel);
+QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectué"),  QMessageBox::Cancel);}
 ui->lineEdit_33->setText("");
 ui->lineEdit_38->setText("");
 ui->lineEdit_37->setText("");
@@ -622,16 +630,17 @@ ui->lineEdit_34->setText("");
 void MainWindow::on_pushButton_39_clicked()//SUPPRIMER UNE COMMANDE
 {
     Commande c1;
-    c1.setID_COMMANDE(ui->lineEdit_40->text().toInt());
-    bool test =c1.supprimer(c1.get_ID_COMMANDE());
     QMessageBox msgBox;
-    if(test)
-    {msgBox.setText("supression avec succés");
-      ui->tableView_8->setModel(c1.afficher());
-      ui->lineEdit_40->setText("");
-    }
-    else
-        msgBox.setText("Echec de suppression");
+    c1.setID_COMMANDE(ui->lineEdit_40->text().toInt());
+    if(c1.check()==0){
+    bool test =c1.supprimer(c1.get_ID_COMMANDE());
+
+      if(test)
+         {msgBox.setText("supression avec succés");
+             ui->tableView_8->setModel(c1.afficher());
+            }}
+      else
+        msgBox.setText("ID n'existe pas");
     msgBox.exec();
 }
 
@@ -642,14 +651,16 @@ void MainWindow::on_pushButton_38_clicked()//modifier commande
     Commande c2;
 
      c2.setID_COMMANDE(ui->lineEdit_33->text().toUInt());
-      c2.setQUANTITE(ui->lineEdit_38->text().toUInt());
+     if(c2.check()==0)
+     { c2.setQUANTITE(ui->lineEdit_38->text().toUInt());
       c2.setLIBELLE(  ui->lineEdit_37->text());
       c2.setDESCRIPTION( ui->lineEdit_36->text());
       c2.setPRIX(ui->lineEdit_35->text().toFloat());
       c2.setNUM_TABLE(ui->lineEdit_34->text().toUInt());
     c2.modifier();
       ui->tableView_8->setModel(c2.afficher());
-    QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);
+    QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
+     else {   QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("impossible de modifier une commande qui n'existe pas"),  QMessageBox::Cancel); }
      ui->lineEdit_33->setText("");
      ui->lineEdit_38->setText("");
      ui->lineEdit_37->setText("");
@@ -733,19 +744,18 @@ void MainWindow::on_recher_clicked()//rechercher commande par id
     QString ID_COMMANDE;
 QString find = ui->lineEdit_31->text();
 
-Commande c;;
-    QTableView* table=ui->tableView_8;
-        if (find.isEmpty()) {
-            QMessageBox::information(this, tr("Empty Field"),
-                tr("Entr//."));
-            ui->tableView_8->setModel(c.afficher());
-            return;
-        } else {
-          ID_COMMANDE= find;
-            c.recherche(table,ID_COMMANDE.toInt());
+Commande c;
 
-}
-         ui->lineEdit_31->setText("");
+    QTableView* table=ui->tableView_8;
+    c.setID_COMMANDE(ui->lineEdit_31->text().toInt());
+        if (c.check()==0) {
+            ID_COMMANDE= find;
+              c.recherche(table,ID_COMMANDE.toInt());}
+        else{
+           QMessageBox::critical (this, "Error", "Cette commande n'existe pas!");
+            }
+
+               ui->lineEdit_31->setText("");
 }
 
 void MainWindow::on_pushButton_40_clicked()//trier commande par id
@@ -771,7 +781,7 @@ void MainWindow::on_tableView_8_clicked(const QModelIndex &index)//recupereer do
         ui->lineEdit_37->setText(ui->tableView_8->model()->index(row,2).data().toString());
          ui->lineEdit_36->setText(ui->tableView_8->model()->index(row,3).data().toString());
         ui->lineEdit_35->setText(ui->tableView_8->model()->index(row,4).data().toString());
-          ui->lineEdit_34->setText(ui->tableView_8->model()->index(row,4).data().toString());
+          ui->lineEdit_34->setText(ui->tableView_8->model()->index(row,5).data().toString());
 }
 
 void MainWindow::on_pushButton_42_clicked()//recherche table par nbr chaises
@@ -799,19 +809,18 @@ void MainWindow::on_recher_2_clicked()
     QString LIBELLE;
 QString find = ui->lineEdit_31->text();
 
-Commande c;;
-    QTableView* table=ui->tableView_8;
-        if (find.isEmpty()) {
-            QMessageBox::information(this, tr("Empty Field"),
-                tr("Entr//."));
-            ui->tableView_8->setModel(c.afficher());
-            return;
-        } else {
-         LIBELLE= find;
-            c.rechercheL(table,LIBELLE);
-              ui->lineEdit_31->setText("");
+Commande c;
+QTableView* table=ui->tableView_8;
+c.setLIBELLE(ui->lineEdit_31->text());
+    if (c.checkL()==0) {
+       LIBELLE= find;
+          c.rechercheL(table,LIBELLE);}
+    else{
+       QMessageBox::critical (this, "Error", "Cette commande n'existe pas!");
+        }
 
-}
+           ui->lineEdit_31->setText("");
+
 }
 
 void MainWindow::on_pushButton_43_clicked()//ACtualiser
@@ -857,4 +866,29 @@ void MainWindow::on_pushButton_deb1_clicked()
     Table t;
     QTableView* table=ui->tableView_7;
     t.tri_DEB(table);
+}
+
+void MainWindow::on_pushButton_prix_clicked()//trier par prix
+{
+    Commande c;
+      QTableView* table=ui->tableView_8;
+      c.tri_P(table);
+}
+
+void MainWindow::on_pushButton_ntab_clicked()//chercher commande par num de tab
+{
+    QString NUM_TABLE;
+QString find = ui->lineEdit_31->text();
+
+Commande c;;
+    QTableView* table=ui->tableView_8;
+    c.setNUM_TABLE(ui->lineEdit_31->text().toInt());
+        if (c.check_tab()==0) {
+           NUM_TABLE= find;
+              c.rechercheTAB(table,NUM_TABLE.toInt());}
+        else{
+           QMessageBox::critical (this, "Error", "Cette commande n'existe pas!");
+            }
+
+               ui->lineEdit_31->setText("");
 }

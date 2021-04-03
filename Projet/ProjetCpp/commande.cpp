@@ -101,6 +101,110 @@ bool Commande ::modifier()
 
                           return    edit.exec();
 }
+int Commande::check() // check if it exsits or not  par id
+{
+    int res1=get_ID_COMMANDE();
+ QString res2 = QString::number(res1);
+    QSqlQuery query;
+
+    query.prepare("select * from COMMANDE where ID_COMMANDE =:ID_COMMANDE");
+    query.bindValue(":ID_COMMANDE",res2);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }}
+int Commande::checkL() // check if it exsits or not  par id
+{
+    QString res1=get_LIBELLE();
+
+    QSqlQuery query;
+
+    query.prepare("select * from COMMANDE where LIBELLE =:LIBELLE");
+    query.bindValue(":LIBELLE",res1);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }}
+int Commande::check_tab() // check if it exsits or not  par id
+{
+    int res1=get_NUM_TABLE();
+ QString res2 = QString::number(res1);
+    QSqlQuery query;
+
+    query.prepare("select * from COMMANDE where NUM_TABLE =:NUM_TABLE");
+    query.bindValue(":NUM_TABLE",res2);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }}
+int Commande::check_tabcom() // check if it exsits or not  par id
+{
+    int res1=get_NUM_TABLE();
+ QString res2 = QString::number(res1);
+    QSqlQuery query;
+
+    query.prepare("select * from COMMANDE  INNER JOIN  TABLES   ON  TABLES.NUM_TABLE =:COMMANDE.NUM_TABLE");
+    query.bindValue(":COMMANDE.NUM_TABLE",res2);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }}
 void Commande::recherche(QTableView* table,int ID_COMMANDE)//CHERCHER PAR ID COMMANDE
 {
  QSqlQueryModel *model= new QSqlQueryModel();
@@ -121,6 +225,16 @@ void Commande::rechercheL(QTableView* table,QString LIBELLE)//CHERCHER PAR LIBEL
    model->setQuery(*query);
    table->setModel(model);
    table->show();}
+void Commande::rechercheTAB(QTableView* table,int NUM_TABLE)//CHERCHER PAR LIBELLE
+{
+ QSqlQueryModel *model= new QSqlQueryModel();
+   QSqlQuery *query=new QSqlQuery;
+   query->prepare("select * from COMMANDE  where NUM_TABLE=:NUM_TABLE");
+   query->bindValue(":NUM_TABLE",NUM_TABLE);
+   query->exec();
+   model->setQuery(*query);
+   table->setModel(model);
+   table->show();}
 void Commande::tri_ID(QTableView* table){
 
     QSqlQueryModel *model= new QSqlQueryModel();
@@ -136,6 +250,16 @@ void Commande::tri_LIBELLE(QTableView* table){
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
     query->prepare("select * from COMMANDE  ORDER BY LIBELLE ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+void Commande::tri_P(QTableView* table){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from COMMANDE  ORDER BY PRIX ASC");
     query->exec();
     model->setQuery(*query);
     table->setModel(model);

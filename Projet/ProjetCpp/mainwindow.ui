@@ -2243,7 +2243,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_21">
        <attribute name="title">
@@ -2259,7 +2259,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_22">
          <attribute name="title">
@@ -2322,12 +2322,12 @@ border-radius:10px;
            <rect>
             <x>10</x>
             <y>160</y>
-            <width>71</width>
+            <width>111</width>
             <height>16</height>
            </rect>
           </property>
           <property name="text">
-           <string>Debarrassage</string>
+           <string>Debarrassage( 0 ou 1)</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="lineEdit_28">
@@ -2875,8 +2875,8 @@ border-radius:10px;
          <widget class="QPushButton" name="recher">
           <property name="geometry">
            <rect>
-            <x>50</x>
-            <y>420</y>
+            <x>10</x>
+            <y>370</y>
             <width>111</width>
             <height>31</height>
            </rect>
@@ -2889,7 +2889,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>150</x>
-            <y>380</y>
+            <y>340</y>
             <width>113</width>
             <height>20</height>
            </rect>
@@ -2931,9 +2931,9 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_41">
           <property name="geometry">
            <rect>
-            <x>630</x>
+            <x>620</x>
             <y>420</y>
-            <width>111</width>
+            <width>131</width>
             <height>31</height>
            </rect>
           </property>
@@ -2945,7 +2945,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>350</y>
+            <y>330</y>
             <width>101</width>
             <height>20</height>
            </rect>
@@ -2963,7 +2963,7 @@ border-radius:10px;
          <widget class="QPushButton" name="recher_2">
           <property name="geometry">
            <rect>
-            <x>180</x>
+            <x>0</x>
             <y>420</y>
             <width>121</width>
             <height>31</height>
@@ -2984,6 +2984,32 @@ border-radius:10px;
           </property>
           <property name="text">
            <string>Actualiser</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_prix">
+          <property name="geometry">
+           <rect>
+            <x>624</x>
+            <y>470</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Prix</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_ntab">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>470</y>
+            <width>121</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Numéro de table</string>
           </property>
          </widget>
         </widget>

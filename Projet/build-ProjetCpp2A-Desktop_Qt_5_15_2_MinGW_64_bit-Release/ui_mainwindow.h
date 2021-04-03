@@ -259,6 +259,8 @@ public:
     QLabel *label_82;
     QPushButton *recher_2;
     QPushButton *pushButton_43;
+    QPushButton *pushButton_prix;
+    QPushButton *pushButton_ntab;
     QWidget *page_2;
     QLabel *label_32;
     QWidget *page_5;
@@ -1249,7 +1251,7 @@ public:
         label_70->setGeometry(QRect(10, 120, 71, 16));
         label_71 = new QLabel(tab_22);
         label_71->setObjectName(QString::fromUtf8("label_71"));
-        label_71->setGeometry(QRect(10, 160, 71, 16));
+        label_71->setGeometry(QRect(10, 160, 111, 16));
         lineEdit_28 = new QLineEdit(tab_22);
         lineEdit_28->setObjectName(QString::fromUtf8("lineEdit_28"));
         lineEdit_28->setGeometry(QRect(160, 20, 113, 20));
@@ -1409,10 +1411,10 @@ public:
         pushButton_39->setGeometry(QRect(640, 150, 121, 31));
         recher = new QPushButton(tab_27);
         recher->setObjectName(QString::fromUtf8("recher"));
-        recher->setGeometry(QRect(50, 420, 111, 31));
+        recher->setGeometry(QRect(10, 370, 111, 31));
         lineEdit_31 = new QLineEdit(tab_27);
         lineEdit_31->setObjectName(QString::fromUtf8("lineEdit_31"));
-        lineEdit_31->setGeometry(QRect(150, 380, 113, 20));
+        lineEdit_31->setGeometry(QRect(150, 340, 113, 20));
         label_72 = new QLabel(tab_27);
         label_72->setObjectName(QString::fromUtf8("label_72"));
         label_72->setGeometry(QRect(590, 330, 81, 16));
@@ -1426,17 +1428,23 @@ public:
         pushButton_40->setGeometry(QRect(620, 370, 131, 31));
         pushButton_41 = new QPushButton(tab_27);
         pushButton_41->setObjectName(QString::fromUtf8("pushButton_41"));
-        pushButton_41->setGeometry(QRect(630, 420, 111, 31));
+        pushButton_41->setGeometry(QRect(620, 420, 131, 31));
         label_82 = new QLabel(tab_27);
         label_82->setObjectName(QString::fromUtf8("label_82"));
-        label_82->setGeometry(QRect(10, 350, 101, 20));
+        label_82->setGeometry(QRect(10, 330, 101, 20));
         label_82->setFont(font);
         recher_2 = new QPushButton(tab_27);
         recher_2->setObjectName(QString::fromUtf8("recher_2"));
-        recher_2->setGeometry(QRect(180, 420, 121, 31));
+        recher_2->setGeometry(QRect(0, 420, 121, 31));
         pushButton_43 = new QPushButton(tab_27);
         pushButton_43->setObjectName(QString::fromUtf8("pushButton_43"));
         pushButton_43->setGeometry(QRect(670, 230, 75, 23));
+        pushButton_prix = new QPushButton(tab_27);
+        pushButton_prix->setObjectName(QString::fromUtf8("pushButton_prix"));
+        pushButton_prix->setGeometry(QRect(624, 470, 131, 31));
+        pushButton_ntab = new QPushButton(tab_27);
+        pushButton_ntab->setObjectName(QString::fromUtf8("pushButton_ntab"));
+        pushButton_ntab->setGeometry(QRect(0, 470, 121, 31));
         tabWidget_12->addTab(tab_27, QString());
         tabWidget_10->addTab(tab_25, QString());
         stackedWidget->addWidget(page_4);
@@ -1763,8 +1771,8 @@ public:
         tabWidget_7->setCurrentIndex(1);
         tabWidget_8->setCurrentIndex(0);
         tabWidget_9->setCurrentIndex(2);
-        tabWidget_10->setCurrentIndex(0);
-        tabWidget_11->setCurrentIndex(1);
+        tabWidget_10->setCurrentIndex(1);
+        tabWidget_11->setCurrentIndex(0);
         tabWidget_12->setCurrentIndex(0);
         tabWidget_4->setCurrentIndex(1);
         tabWidget_5->setCurrentIndex(0);
@@ -1915,7 +1923,7 @@ public:
         label_68->setText(QCoreApplication::translate("MainWindow", "Nombre de chaises", nullptr));
         label_69->setText(QCoreApplication::translate("MainWindow", "Emplacement", nullptr));
         label_70->setText(QCoreApplication::translate("MainWindow", "Disponibilit\303\251", nullptr));
-        label_71->setText(QCoreApplication::translate("MainWindow", "Debarrassage", nullptr));
+        label_71->setText(QCoreApplication::translate("MainWindow", "Debarrassage( 0 ou 1)", nullptr));
         comboBox_8->setItemText(0, QCoreApplication::translate("MainWindow", "Ext\303\251rieur", nullptr));
         comboBox_8->setItemText(1, QCoreApplication::translate("MainWindow", "Int\303\251rieur", nullptr));
 
@@ -1957,6 +1965,8 @@ public:
         label_82->setText(QCoreApplication::translate("MainWindow", "Chercher par :", nullptr));
         recher_2->setText(QCoreApplication::translate("MainWindow", "Libell\303\251", nullptr));
         pushButton_43->setText(QCoreApplication::translate("MainWindow", "Actualiser", nullptr));
+        pushButton_prix->setText(QCoreApplication::translate("MainWindow", "Prix", nullptr));
+        pushButton_ntab->setText(QCoreApplication::translate("MainWindow", "Num\303\251ro de table", nullptr));
         tabWidget_12->setTabText(tabWidget_12->indexOf(tab_27), QCoreApplication::translate("MainWindow", "Consulter", nullptr));
         tabWidget_10->setTabText(tabWidget_10->indexOf(tab_25), QCoreApplication::translate("MainWindow", "Gestion des commandes", nullptr));
         label_32->setText(QCoreApplication::translate("MainWindow", "Mahmoud", nullptr));
