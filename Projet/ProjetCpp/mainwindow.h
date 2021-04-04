@@ -47,6 +47,8 @@ private slots:
 
     void on_TRI_2_clicked();
 
+    void on_TRI_3_clicked();
+
     void on_tableView_B_doubleClicked();
 
     void on_tableView_A_doubleClicked();
@@ -57,9 +59,11 @@ private slots:
 
     void on_mute_clicked();
 
-    void on_tableView_B_clicked();
+    //void on_tableView_B_clicked();
 
     void on_tableView_A_clicked();
+
+    void on_rechercherStock_clicked();
 
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
@@ -133,6 +137,52 @@ private slots:
 
 //-------------------------------------------------------------------------------------------------------------------------
 
+
+    void on_F_ADD_clicked();
+
+    void on_F_UPDATE_clicked();
+
+    void on_pushButton_44_clicked();
+
+    void on_CF_ADD_clicked();
+
+    void on_pushButton_46_clicked();
+
+    void on_pushButton_47_clicked();
+
+    void on_sendBtn_2_clicked();
+
+    void on_OF_ADD_clicked();
+
+    void on_OF_UPDATE_clicked();
+
+    void on_pushButton_50_clicked();
+
+    void on_pushButton_45_clicked();
+
+    void on_pushButton_51_clicked();
+
+    void on_pushButton_52_clicked();
+
+    void on_pushButton_49_clicked();
+
+    void on_pushButton_48_clicked();
+
+    void on_pushButton_53_clicked();
+
+    void on_pushButton_54_clicked();
+
+    void on_pushButton_55_clicked();
+
+    void on_pushButton_56_clicked();
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+    void on_pushButton_42_clicked();
+
+    void on_pushButton_43_clicked();
 
 private:
     Ui::MainWindow *ui;

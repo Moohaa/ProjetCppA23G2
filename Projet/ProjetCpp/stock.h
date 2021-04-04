@@ -46,8 +46,13 @@ public:
     bool update_stock();
     QSqlQueryModel * afficher_stock();
 
-    void recherche(QTableView* table,QString CATEGORIE_STOCK);
-    void tri(QTableView* table);
+    //void recherche(QTableView* table,QString CATEGORIE_STOCK);
+    QSqlQueryModel * rechercher_cr1(const QString &QUANTITE);
+    QSqlQueryModel * rechercher_cr2(const QString &CATEGORIE_STOCK);
+    QSqlQueryModel * rechercher_cr3(const QString &TEMPERATURE);
+
+    void tri_quantite(QTableView* table);
+    void tri_id(QTableView* table);
 
     int lastId();
 

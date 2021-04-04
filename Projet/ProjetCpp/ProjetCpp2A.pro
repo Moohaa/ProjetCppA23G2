@@ -31,8 +31,11 @@ CONFIG += c++11
 
 SOURCES += \
     commande.cpp \
+    commandefournisseur.cpp \
     evaluation.cpp \
+    fournisseur.cpp \
     menu.cpp \
+    offrefournisseur.cpp \
     plat.cpp \
     smtp.cpp \
     stock.cpp\
@@ -49,8 +52,11 @@ SOURCES += \
 
 HEADERS += \
     commande.h \
+    commandefournisseur.h \
     evaluation.h \
+    fournisseur.h \
     menu.h \
+    offrefournisseur.h \
     plat.h \
     smtp.h \
     stock.h\
