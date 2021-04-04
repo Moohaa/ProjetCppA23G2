@@ -59,8 +59,13 @@
 #include <QSsl>
 #include <QSslSocket>
 #include <QNetworkAccessManager>
+<<<<<<< Updated upstream
 #include <QPrinter>
 #include <QFileDialog>
+=======
+#include<QPrinter>
+#include<QFileDialog>
+>>>>>>> Stashed changes
 
 
 
@@ -75,6 +80,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     media = new QMediaPlayer (this);
+<<<<<<< Updated upstream
     media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
@@ -93,6 +99,28 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table");
     QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod");
     QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov");
+=======
+    media->setMedia( QUrl::fromLocalFile("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->play();
+
+    QPixmap pix150("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
+    QPixmap pix1("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/stock.png");
+    QPixmap pix3("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/cash.png");
+    QPixmap pix4("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
+    QPixmap pix5("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/stars");
+    QPixmap pix6("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/cor");
+    QPixmap pix7("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/modi");
+    QPixmap pix8("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/mui");
+    QPixmap pix9("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
+    QPixmap pix10("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/casic");
+    QPixmap pix11("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/food");
+    QPixmap pix12("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/table");
+    QPixmap pix13("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/prod");
+    QPixmap pix14("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/prov");
+    QPixmap pix140("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/pl");
+    QPixmap pix141("C:/Users/Lenovo/Desktop/GIT ProjetCppA23G2/Projet/ProjetCpp/icons8-restaurant-menu-64");
+>>>>>>> Stashed changes
 
 
      setFixedSize(1296,801);  //fixe la taille de la fenêtre
@@ -127,6 +155,10 @@ ui->label_94->setToolTip("Music");
     ui->label_99->setPixmap(pix12);
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
+    ui->label_32->setPixmap(pix140);
+    ui->label_60->setPixmap(pix9);
+    ui->label_105->setPixmap(pix141);
+
 
     OffreFournisseur offreFournisseur;
     ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
@@ -670,10 +702,17 @@ void MainWindow::on_pushButton_21_clicked()//ajouter plat
 {
     plat p(ui->lineEdit_16->text(), ui->lineEdit_17->text(),
          ui->lineEdit_18->text(),ui->lineEdit_19->text().toFloat(),ui->lineEdit_20->text().toUInt());
-p.ajouter();
- ui->tableView_2->setModel(p.afficher());
+bool test=p.ajouter();
+ui->tableView_2->setModel(p.afficher());
 
-}
+ if(test){
+    QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);}
+
+            else
+
+     QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Ajout non effectuée"),  QMessageBox::Cancel);
+        }
+
 void MainWindow::on_pushButton_22_clicked()//modifier plat
 {
     plat p;
@@ -699,13 +738,21 @@ void MainWindow::on_pushButton_23_clicked()//supprimer plat
      plat p;
         plat plat(ui->textDelete_5->text());
 
-         plat.supprimer();
+  bool test=plat.supprimer();
 
         ui->tableView_3->setModel(plat.afficher());
+<<<<<<< Updated upstream
         /* if(ui->textDelete_3->text()!=p.getNOM_PLAT()){
              QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
          else
              QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);*/
+=======
+        if(test){
+ QMessageBox::information(nullptr,QObject::tr("Supprimer"),QObject::tr("suppression effectuée"),  QMessageBox::Cancel);}
+     else
+ QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("suppression non effectuée"),  QMessageBox::Cancel);
+
+>>>>>>> Stashed changes
 
 }
 
@@ -722,10 +769,14 @@ void MainWindow::on_pushButton_27_clicked()//ajouter menu
     req.bindValue(":NOM_MENU",m.getNOM_MENU());
     req.bindValue(":CATEGORIE_MENU",m.getCATEGORIE_MENU());
     */
-    m.ajouter();
     ui->tableView_4->setModel(m.afficher());
-    QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);
-    //req.exec();
+    if(ui->lineEdit_25->text()!=0){
+QMessageBox::information(nullptr,QObject::tr("AJOUT"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);
+      m.ajouter();}
+
+ else if(ui->lineEdit_25->text()==0)
+
+QMessageBox::critical(nullptr,QObject::tr("AJOUT"),QObject::tr("Ajout non effectuée"),  QMessageBox::Cancel);
 
 }
 
@@ -759,45 +810,82 @@ m.modifier();
 
 void MainWindow::on_pushButton_24_clicked()//rechercher plat
 {
-    QString findText;
-        QString text = ui->lineEdit_24->text();
     plat p;
-    QTableView* table=ui->tableView_3;
-        if (text.isEmpty()) {
-            QMessageBox::information(this, tr("Empty Field"),
-                tr("Entrez une specialité a rechercher."));
-            ui->tableView_3->setModel(p.afficher());
-            return;
-        } else {
-            findText = text;
-            p.recherche(table,findText);
+            QString text;
+            int text1;
+            QTableView* table=ui->tableView_3;
+            if (ui->radioButton_7->isChecked()==true)
+        {
+        text=ui->lineEdit_24->text();
+             if(text == "")
+
+             {
+        ui->tableView_3->setModel(p.afficher());
+             }
+
+             else
+
+             {
+      ui->tableView_3->setModel(p.chercher_ut(text));
+
+             }
+            }
+             if(ui->radioButton_8->isChecked()==true)
+            {
+                text=ui->lineEdit_24->text();
+                     if(text == "")
+
+                     {
+          ui->tableView_3->setModel(p.afficher());
+                     }
+
+                     else
+
+                     {
+          ui->tableView_3->setModel(p.chercher_ut1(text));
+                      }
+
+            }
+             if (ui->radioButton_9->isChecked()==true)
+         {
+         text1=ui->lineEdit_24->text().toUInt();
+         p.chercher_ut2(table,text1); }
 
 
-}
 }
 
 void MainWindow::on_pushButton_25_clicked()//trier plat
 {
     plat p;
-     QTableView* table=ui->tableView_3;
-    p.trie(table);
+            /*QString critere=ui->cb_historique->currentText();*/
+                QString mode;
+                 if (ui->radioButton_3->isChecked()==true)
+            {
+                     ui->tableView_3->setModel(p.tri());
+
+
+            }
+                 else if(ui->radioButton_4->isChecked()==true)
+
+                     ui->tableView_3->setModel(p.tri2());
 }
 
 void MainWindow::on_pushButton_26_clicked()//reinitialiser plat
 { plat p;
     ui->tableView_3->setModel(p.afficher());
 }
-
+void MainWindow::on_pushButton_43_clicked()//afficher menu
+{   menu m;
+        ui->tableView_4->setModel(m.afficher());
+}
 void MainWindow::on_pushButton_30_clicked()//generation menu
 {
     int text = ui->lineEdit_27->text().toUInt();
-    int findText;
 menu m;
 plat p;
 QTableView* table=ui->tableView_5;
 QTableView* table1=ui->tableView_6;
         ui->tableView_5->setModel(m.afficher());
-        findText = text;
         m.recherche(table,text);
         p.recherche1(table1,text);
 
@@ -825,6 +913,92 @@ void MainWindow::on_tableView_4_clicked()//recuperation donnée menu
        ui->comboBox_7->setCurrentText(ui->tableView_4->model()->index(row,3).data().toString());
 
 }
+void MainWindow::on_pushButton_15_clicked()//pdf
+{
+    QString str;
+    int spec=ui->lineEdit_27->text().toUInt();
+               str.append("<html><head></head><body><center>"+QString("LE MENU"));
+               str.append("<table border=1><tr>") ;
+               str.append("<td>"+QString("ID_MENU")+"</td>") ;
+               str.append("<td>"+QString("DATE_MENU")+"</td>") ;
+               str.append("<td>"+QString("NOM_MENU")+"</td>") ;
+               str.append("<td>"+QString("CATEGORIE_MENU")+"</td>") ;
+
+               QSqlQuery* query=new QSqlQuery();
+               QSqlQuery* query1=new QSqlQuery();
+
+               query->prepare("select * from MENU  where ID_MENU=:ID_MENU");
+               query->bindValue(":ID_MENU",spec);
+               query->exec();
+               query1->prepare("select * from PLAT  where ID_MENU=:ID_MENU");
+               query1->bindValue(":ID_MENU",spec);
+               query1->exec();
+               while((query->next()))
+               {
+               str.append("<tr><td>");
+               str.append(query->value(0).toString()) ;
+               str.append("</td><td>") ;
+               str.append(query->value(1).toString());
+               str.append("</td><td>") ;
+               str.append(query->value(2).toString());
+               str.append("</td><td>") ;
+               str.append(query->value(3).toString());
+               str.append("</td></td>") ;
+               str.append(query->value(4).toString());
+               str.append("</td></tr>") ;
+               }
+
+            str.append("</table></center></body></html>") ;
+
+            str.append("<html><head></head><body><center>"+QString("PLATS"));
+            str.append("<table border=1><tr>") ;
+            str.append("<td>"+QString("NOM_PLAT")+"</td>") ;
+            str.append("<td>"+QString("INGREDIENTS_PLAT")+"</td>") ;
+            str.append("<td>"+QString("SPECIALITE_PLAT")+"</td>") ;
+            str.append("<td>"+QString("PRIX_PLAT")+"</td>") ;
+             str.append("<td>"+QString("ID_MENU")+"</td>") ;
+             while((query1->next()))
+             {
+                 str.append("<tr><td>");
+             str.append(query1->value(0).toString());
+             str.append("</td><td>") ;
+             str.append(query1->value(1).toString());
+             str.append("</td><td>") ;
+             str.append(query1->value(2).toString());
+             str.append("</td><td>") ;
+             str.append(query1->value(3).toString());
+             str.append("</td><td>") ;
+             str.append(query1->value(4).toString());
+             str.append("</td></tr>") ;
+
+             }
+             str.append("</table></center></body></html>") ;
+
+            QPrinter printer ;
+            printer.setOrientation(QPrinter::Portrait);
+            printer.setOutputFormat(QPrinter::PdfFormat);
+            printer.setPaperSize(QPrinter::A4) ;
+
+            QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+            if (path.isEmpty()) return ;
+            printer.setOutputFileName(path) ;
+
+            QTextDocument doc;
+            doc.setHtml(str) ;
+            doc.print(&printer);
+}
+void MainWindow::on_pushButton_44_clicked()//trier les plat par ID_MENU
+{ plat p;
+    p.trie(ui->tableView_3);
+
+}
+void MainWindow::on_pushButton_45_clicked()
+{
+    plat p;
+        p.tri(ui->tableView_3);
+}
+
 //------------------------------------------FADWA--------------------------------------------------------------------
 void MainWindow::on_pushButton_31_clicked()//AJOUTER TAB
 {
@@ -1100,6 +1274,7 @@ void MainWindow::on_pushButton_53_clicked()
     ui->tabFournisseur->setModel(model );
 }
 
+<<<<<<< Updated upstream
 void MainWindow::on_pushButton_54_clicked()
 {
     Fournisseur f;
@@ -1172,3 +1347,12 @@ void MainWindow::on_pushButton_43_clicked()//PDF Fournisseur
               doc.setHtml(str) ;
               doc.print(&printer);
 }
+=======
+
+
+
+
+
+
+
+>>>>>>> Stashed changes

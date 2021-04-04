@@ -138,6 +138,7 @@ private slots:
 //-------------------------------------------------------------------------------------------------------------------------
 
 
+<<<<<<< Updated upstream
     void on_F_ADD_clicked();
 
     void on_F_UPDATE_clicked();
@@ -184,6 +185,16 @@ private slots:
 
     void on_pushButton_43_clicked();
 
+=======
+    void on_pushButton_15_clicked();
+
+    void on_pushButton_43_clicked();
+
+    void on_pushButton_44_clicked();
+
+    void on_pushButton_45_clicked();
+
+>>>>>>> Stashed changes
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
