@@ -135,7 +135,7 @@ private slots:
 
     void on_pushButton_39_clicked();
 
-//-------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------~MAHMOUD~------------------------------------------------------------------------
 
 
     void on_F_ADD_clicked();
@@ -183,6 +183,12 @@ private slots:
     void on_pushButton_42_clicked();
 
     void on_pushButton_43_clicked();
+
+    void on_pushButton_57_clicked();
+
+    void on_rechercher_3_clicked();
+
+    void on_rechercher_4_clicked();
 
 private:
     Ui::MainWindow *ui;

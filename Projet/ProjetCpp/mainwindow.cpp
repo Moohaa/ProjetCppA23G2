@@ -15,6 +15,7 @@
 #include "menu.h"
 #include "table.h"
 #include "commande.h"
+#include "smtp.h"
 #include "fournisseur.h"
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
@@ -75,25 +76,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
-    QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
-    QPixmap pix2("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
-    QPixmap pix3("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
-    QPixmap pix4("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
-    QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stars");
-    QPixmap pix6("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cor");
-    QPixmap pix7("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/modi");
-    QPixmap pix8("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui");
-    QPixmap pix9("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
-    QPixmap pix10("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/casic");
-    QPixmap pix11("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/food");
-    QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table");
-    QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod");
-    QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov");
-
+    QPixmap pix150("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
+    QPixmap pix1("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
+    QPixmap pix3("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
+    QPixmap pix4("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
+    QPixmap pix5("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/stars");
+    QPixmap pix6("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/cor");
+    QPixmap pix7("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/modi");
+    QPixmap pix8("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/mui");
+    QPixmap pix9("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
+    QPixmap pix10("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/casic");
+    QPixmap pix11("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/food");
+    QPixmap pix12("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/table");
+    QPixmap pix13("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/prod");
+    QPixmap pix14("C:/Users/Ahmed Elmoez/Documents/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/prov");
 
      setFixedSize(1296,801);  //fixe la taille de la fenêtre
 
@@ -128,17 +128,10 @@ ui->label_94->setToolTip("Music");
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
 
-    OffreFournisseur offreFournisseur;
-    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
-    CommandeFournisseur commandeFournisseur;
-    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
-    Fournisseur fournisseur;
-    ui->tabFournisseur->setModel(fournisseur.afficher());
-
-    //ui->label_84->setPixmap(pix4.scaled(100,100,Qt::KeepAspectRatio));
 
 
    // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
+
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
@@ -373,6 +366,11 @@ void MainWindow::on_TRI_3_clicked()//tri stock
   s.tri_id(table);
 
 }
+void MainWindow::on_pushButton_43_clicked()//Afficher Stock
+{
+    stock s;
+        ui->tableView_B->setModel(s.afficher_stock());
+}
 
 /*void MainWindow::on_tableView_B_clicked()//rechercher un stock
 {
@@ -490,17 +488,34 @@ void MainWindow::on_pushButton_12_clicked()//Ajouter Transaction
     t.setPRIX(ui->lineEdit_5->text().toInt());
     t.setID_UTILISATEUR(ui->lineEdit_7->text().toInt());
 
-        t.ajouter();
+        bool test= t.ajouter();
 
 
             ui->tableView_2->setModel(t.afficher());
-}
+
+            if(test){
+                QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);}
+
+            else
+
+                QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
+        }
+
 
 void MainWindow::on_pushButton_14_clicked()//Supprimer Transaction
 {
     Transaction Transaction(ui->textDelete_3->text().toUInt());
-    Transaction.supprimer();
+    bool test= Transaction.supprimer();
+
+
     ui->tableView_2->setModel(Transaction.afficher());
+
+
+    if(test){
+        QMessageBox::information(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
+    else
+
+        QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
 }
 
 
@@ -517,9 +532,16 @@ void MainWindow::on_pushButton_13_clicked() // ModifierTransaction
       t.setPRIX(ui->lineEdit_5->text().toInt());
       t.setID_UTILISATEUR(ui->lineEdit_7->text().toInt());
 
-      t.update();
+      bool test= t.update();
+
 
       ui->tableView_2->setModel(t.afficher());
+
+      if(test){
+          QMessageBox::information(nullptr,QObject::tr("Modifier  Facture"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
+      else
+
+          QMessageBox::critical(nullptr,QObject::tr("Modifier  Facture"),QObject::tr("Modfication non effectuée"),  QMessageBox::Cancel);
 }
 
 void MainWindow::on_pushButton_40_clicked()// trier Transaction
@@ -556,6 +578,46 @@ void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
 
 }
 
+void MainWindow::on_rechercher_3_clicked() // Recherche Par Nom
+{
+    QString findText;
+        QString text = ui->lineEdit_41->text();
+    Transaction t;
+    QTableView* table=ui->tableView_2;
+        if (text.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entrez une specialité a rechercher."));
+            ui->tableView_2->setModel(t.afficher());
+            return;
+        } else {
+            findText = text;
+            t.recherche2(table,findText);
+
+
+}
+}
+
+
+void MainWindow::on_rechercher_4_clicked() // Recherche Par Region
+{
+    QString findText;
+        QString text = ui->lineEdit_42->text();
+    Transaction t;
+    QTableView* table=ui->tableView_2;
+        if (text.isEmpty()) {
+            QMessageBox::information(this, tr("Empty Field"),
+                tr("Entrez une specialité a rechercher."));
+            ui->tableView_2->setModel(t.afficher());
+            return;
+        } else {
+            findText = text;
+            t.recherche3(table,findText);
+
+
+}
+}
+
+
 
 void MainWindow::on_pushButton_42_clicked()
 {
@@ -568,11 +630,13 @@ void MainWindow::on_pushButton_42_clicked()
                  str.append("<td>"+QString("ADRESSE_CLIENT")+"</td>") ;
                  str.append("<td>"+QString("DATE_HEURE")+"</td>") ;
                  str.append("<td>"+QString("PRIX")+"</td>") ;
-                 str.append("<td>"+QString("ID_UTILISATEUR")+"</td>") ;
+                 str.append("<td>"+QString("ID_UTLISATEUR")+"</td>") ;
+
+
 
 
                  QSqlQuery* query=new QSqlQuery();
-                 query->exec("SELECT ID_FACTURE,NOM_CLIENT,NUM_CLIENT,ADRESSE_CLIENT,DATE_HEURE,PRIX,ID_UTILISATEUR FROM TRANSACTION");
+                 query->exec("SELECT * FROM TRANSACTION");
 
                  while(query->next())
                  {
@@ -590,7 +654,7 @@ void MainWindow::on_pushButton_42_clicked()
                  str.append(query->value(5).toString());
                  str.append("</td></td>");
                  str.append(query->value(6).toString());
-                 str.append("</td></tr>");
+                 str.append("</td></td>");
 
 
                  }
@@ -616,18 +680,33 @@ void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
     Evaluation e(ui->lineEdit_8->text(), ui->comboBox_5->currentText().toUInt(),
                   ui->comboBox_6->currentText(),ui->lineEdit_9->text().toUInt());
 
-        e.ajouter();
 
+        bool test= e.ajouter();
 
             ui->tableView->setModel(e.afficher());
+
+
+            if(test){
+                QMessageBox::information(nullptr,QObject::tr("Ajouter Eva"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);}
+            else
+
+                QMessageBox::critical(nullptr,QObject::tr("Ajouter Eva"),QObject::tr("Ajout non effectuée"),  QMessageBox::Cancel);
 }
 
 void MainWindow::on_pushButton_18_clicked()//Supprimer Evaluation
 {
-    Evaluation Evaluation(ui->textDelete_4->text().toUInt());
-    Evaluation.supprimer();
-    ui->tableView->setModel(Evaluation.afficher());
-}
+    Evaluation e(ui->textDelete_4->text().toUInt());
+    bool test = e.supprimer();
+
+    ui->tableView->setModel(e.afficher());
+
+
+    if(test){
+        QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);}
+    else
+
+        QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);}
+
 
 
 void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
@@ -640,11 +719,19 @@ void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
       e.setNOTE_CLIENT(ui->comboBox_5->currentText().toUInt());
       e.setREMARQUE_CLIENT(ui->comboBox_6->currentText());
       e.setID_FACTURE(ui->lineEdit_9->text().toInt());
+      bool test = e.update();
 
-      e.update();
+
 
       ui->tableView->setModel(e.afficher());
-}
+
+      if(test){
+          QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);}
+      else
+
+          QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);}
+
+
 
 void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation
 {
@@ -663,6 +750,13 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation
 
 
   }
+}
+
+
+void MainWindow::on_pushButton_57_clicked()
+{
+    Evaluation e;
+        ui->tableView->setModel(e.afficher());
 }
 
 //-----------------------------------------AZIZ------------------------------------------------
@@ -1015,10 +1109,7 @@ void MainWindow::on_pushButton_47_clicked()
 //-- Send Mail
 void MainWindow::on_sendBtn_2_clicked()
 {
-    Smtp* smtp = new Smtp("rajianacib@gmail.com", "nbvcxwnbvcxw", "smtp.gmail.com", 465);
 
-         smtp->sendMail("rajianacib@gmail.com","mahmoud.cheikh@esprit.tn", "STOCK LIMITE", "vous ne pouvez pas stocker plus de 500 produits");
-          QMessageBox::information(this,"message envoyee", "stock saturé verifier votre mail");//fonctionne
 }
 //-- Ajouter Stock Fournisseur
 void MainWindow::on_OF_ADD_clicked()
