@@ -131,7 +131,7 @@ void plat::trie(QTableView* table){
 
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from PLAT  ORDER BY ID_MENU ASC");
+    query->prepare("select * from PLAT  ORDER BY PRIX_PLAT ASC");
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
@@ -154,83 +154,6 @@ void plat::recherche1(QTableView* table,int spec){
     QSqlQuery *query=new QSqlQuery;
     query->prepare("select * from PLAT  where ID_MENU=:ID_MENU");
     query->bindValue(":ID_MENU",spec);
-    query->exec();
-    model->setQuery(*query);
-    table->setModel(model);
-    table->show();
-}
-QSqlQueryModel * plat::chercher_ut(const QString &aux)
-{
-    QSqlQueryModel * model = new QSqlQueryModel();
-
-    model->setQuery("select * from PLAT where ((SPECIALITE_PLAT ) LIKE '%"+aux+"%')");
-    model->setHeaderData(0, Qt::Horizontal,QObject::tr("NOM_PLAT"));
-    model->setHeaderData(1, Qt::Horizontal,QObject::tr("INGREDIENTS_PLAT"));
-    model->setHeaderData(2, Qt::Horizontal,QObject::tr("SPECIALITE_PLAT"));
-    model->setHeaderData(3, Qt::Horizontal,QObject::tr("PRIX_PLAT"));
-    model->setHeaderData(4, Qt::Horizontal,QObject::tr("ID_MENU"));
-
-    return model;
-}
-
-
-QSqlQueryModel * plat::chercher_ut1(const QString &aux)
-{
-    QSqlQueryModel * model = new QSqlQueryModel();
-
-    model->setQuery("select * from PLAT where ((NOM_PLAT ) LIKE '%"+aux+"%')");
-    model->setHeaderData(0, Qt::Horizontal,QObject::tr("NOM_PLAT"));
-    model->setHeaderData(1, Qt::Horizontal,QObject::tr("INGREDIENTS_PLAT"));
-    model->setHeaderData(2, Qt::Horizontal,QObject::tr("SPECIALITE_PLAT"));
-    model->setHeaderData(3, Qt::Horizontal,QObject::tr("PRIX_PLAT"));
-    model->setHeaderData(4, Qt::Horizontal,QObject::tr("ID_MENU"));
-
-    return model;
-}
-void plat::chercher_ut2(QTableView* table,int aux){
-    QSqlQueryModel *model= new QSqlQueryModel();
-    QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from PLAT  where ID_MENU=:ID_MENU");
-    query->bindValue(":ID_MENU",aux);
-    query->exec();
-    model->setQuery(*query);
-    table->setModel(model);
-    table->show();
-
-}
-QSqlQueryModel* plat::tri()
-{
-    QSqlQueryModel* model = new QSqlQueryModel();
-
-        model->setQuery("select *from PLAT ORDER BY PRIX_PLAT asc");
-        model->setHeaderData(0, Qt::Horizontal,QObject::tr("NOM_PLAT"));
-        model->setHeaderData(1, Qt::Horizontal,QObject::tr("INGREDIENTS_PLAT"));
-        model->setHeaderData(2, Qt::Horizontal,QObject::tr("SPECIALITE_PLAT"));
-        model->setHeaderData(3, Qt::Horizontal,QObject::tr("PRIX_PLAT"));
-        model->setHeaderData(4, Qt::Horizontal,QObject::tr("ID_MENU"));
-
-
-    return model;
-}
-
-QSqlQueryModel* plat::tri2()
-{
-    QSqlQueryModel* model = new QSqlQueryModel();
-
-        model->setQuery("select *from PLAT ORDER BY PRIX_PLAT desc");
-        model->setHeaderData(0, Qt::Horizontal,QObject::tr("NOM_PLAT"));
-        model->setHeaderData(1, Qt::Horizontal,QObject::tr("INGREDIENTS_PLAT"));
-        model->setHeaderData(2, Qt::Horizontal,QObject::tr("SPECIALITE_PLAT"));
-        model->setHeaderData(3, Qt::Horizontal,QObject::tr("PRIX_PLAT"));
-        model->setHeaderData(4, Qt::Horizontal,QObject::tr("ID_MENU"));
-
-
-    return model;
-}
-void plat::tri(QTableView* table){
-    QSqlQueryModel *model= new QSqlQueryModel();
-    QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from PLAT  ORDER BY NOM_PLAT ");
     query->exec();
     model->setQuery(*query);
     table->setModel(model);

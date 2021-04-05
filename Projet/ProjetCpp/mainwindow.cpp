@@ -20,28 +20,6 @@
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
 
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-#include <QtCharts/QHorizontalStackedBarSeries>
-#include <QtCharts/QLineSeries>
-#include <QtCharts/QCategoryAxis>
-#include <QtCharts/QPieSeries>
-#include <QtCharts/QPieSlice>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QMainWindow>
-#include <QtCharts/QChartView>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-
-#include <string>
-#include <iostream>
-#include <QThread>
-#include "smtp.h"
 
 #include <QDebug>
 #include "connection.h"
@@ -482,7 +460,7 @@ void MainWindow::on_pushButton_12_clicked()//Ajouter Transaction
     Transaction t;
 
     t.setNOM_CLIENT(ui->lineEdit_3->text());
-    t.setNUM_CLIENT(ui->lineEdit_4->text().toInt());
+    t.setNUM_CLIENT(ui->lineEdit_4->text());
     t.setADRESSE_CLIENT(ui->comboBox_4->currentText());
     t.setDATE_HEURE(ui->dateTimeEdit_2->date());
     t.setPRIX(ui->lineEdit_5->text().toInt());
@@ -498,7 +476,7 @@ void MainWindow::on_pushButton_12_clicked()//Ajouter Transaction
 
             else
 
-                QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
+                QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Ajout non effectuée"),  QMessageBox::Cancel);
         }
 
 
@@ -513,8 +491,7 @@ void MainWindow::on_pushButton_14_clicked()//Supprimer Transaction
 
     if(test){
         QMessageBox::information(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
-    else
-
+    else if(test!=Transaction.supprimer())
         QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
 }
 
@@ -526,7 +503,7 @@ void MainWindow::on_pushButton_13_clicked() // ModifierTransaction
 
       t.setID_FACTURE(ui->textEdit_2->text().toInt());
       t.setNOM_CLIENT(ui->lineEdit_3->text());
-      t.setNUM_CLIENT(ui->lineEdit_4->text().toInt());
+      t.setNUM_CLIENT(ui->lineEdit_4->text());
       t.setADRESSE_CLIENT(ui->comboBox_4->currentText());
       t.setDATE_HEURE(ui->dateTimeEdit_2->date());
       t.setPRIX(ui->lineEdit_5->text().toInt());
@@ -551,6 +528,23 @@ void MainWindow::on_pushButton_40_clicked()// trier Transaction
       t.trie(table);
 
 }
+
+void MainWindow::on_pushButton_58_clicked()// tri2 Transaction
+{
+    Transaction t;
+       QTableView* table=ui->tableView_2;
+      t.tri1(table);
+
+}
+
+
+void MainWindow::on_pushButton_59_clicked() // Tri Par Facture Trans
+{
+    Transaction t;
+       QTableView* table=ui->tableView_2;
+      t.tri2(table);
+}
+
 
 void MainWindow::on_rechercher_clicked()//Rechercher Transaction
 {
@@ -619,8 +613,8 @@ void MainWindow::on_rechercher_4_clicked() // Recherche Par Region
 
 
 
-void MainWindow::on_pushButton_42_clicked()
-{
+void MainWindow::on_pushButton_42_clicked() // PDF
+ {
     QString str;
                  str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
                  str.append("<table border=1><tr>") ;
@@ -726,30 +720,103 @@ void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
       ui->tableView->setModel(e.afficher());
 
       if(test){
-          QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);}
+          QMessageBox::information(nullptr,QObject::tr("Modifier Eva"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
       else
 
-          QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);}
+          QMessageBox::critical(nullptr,QObject::tr("Modifier Eva"),QObject::tr("Modification non effectuée"),  QMessageBox::Cancel);}
 
 
 
-void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation
+void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation Par Button
 {
-    QString findText;
-          QString text = ui->lineEdit_10->text();
-      Evaluation e;
-      QTableView* table=ui->tableView;
-          if (text.isEmpty()) {
-              QMessageBox::information(this, tr("Empty Field"),
-                  tr("Entrez une specialité a rechercher."));
-              ui->tableView->setModel(e.afficher());
-              return;
-          } else {
-              findText = text;
-              e.recherche2(table,findText.toUInt());
+
+             Evaluation e;
+
+             QTableView* table=ui->tableView;
+                QString text;
+                int text1;
+
+                if (ui->radioButton_4->isChecked()==true)
+                        {
+
+                        text1=ui->lineEdit_10->text().toUInt();
+
+                                 ui->tableView->setModel(e.afficher());
 
 
-  }
+                                 text1=ui->lineEdit_10->text().toUInt();
+                                         e.rechercher1(table,text1);
+
+
+                }
+
+                 if(ui->radioButton_5->isChecked()==true)
+                {
+                    text=ui->lineEdit_10->text();
+                         if(text == "")
+
+                         {
+
+                             ui->tableView->setModel(e.afficher());
+
+                         }
+
+                         else
+
+                         {
+                             ui->tableView->setModel(e.rechercher2(text));
+
+                         }
+
+                }
+                 else if     (ui->radioButton_6->isChecked()==true)
+                 {
+
+                     text=ui->lineEdit_10->text();
+                          if(text == "")
+
+                          {
+                              ui->tableView->setModel(e.afficher());
+
+                          }
+
+                          else
+
+                          {
+                              ui->tableView->setModel(e.rechercher3(text));
+
+                          }
+        }
+
+    }
+
+
+
+
+void MainWindow::on_rechercher_5_clicked()// Trier Evaluation
+{
+    Evaluation e;
+
+    QTableView* table=ui->tableView;
+       QString text;
+
+       if(ui->radioButton_5->isChecked()==true)
+
+      {
+          e.tri1(table);
+       }
+
+
+       else if     (ui->radioButton_6->isChecked()==true)
+       {
+
+           e.tri2(table);
+}
+
+       else if     (ui->radioButton_4->isChecked()==true)
+       {
+        e.tri3(table);
+}
 }
 
 
@@ -1212,54 +1279,12 @@ void MainWindow::on_pushButton_56_clicked()
     ui->tabFournisseur->setModel(model );
 }
 
-void MainWindow::on_pushButton_43_clicked()//PDF Fournisseur
-{
-    QString str;
-                 str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
-                 str.append("<table border=1><tr>") ;
-                 str.append("<td>"+QString("ID_COMMANDE")+"</td>") ;
-                 str.append("<td>"+QString("ID_FOURNISSEUR")+"</td>") ;
-                 str.append("<td>"+QString("ID_PRODUIT")+"</td>") ;
-                 str.append("<td>"+QString("QUANTITE")+"</td>") ;
-                 str.append("<td>"+QString("DATE_ENVOI")+"</td>") ;
-                 str.append("<td>"+QString("DATE_RECEPTION")+"</td>") ;
-
-
-                 QSqlQuery* query=new QSqlQuery();
-                 query->exec("SELECT * FROM COMMANDE_FOURNISSEUR");
-
-                 while(query->next())
-                 {
-                 str.append("<tr><td>");
-                 str.append(query->value(0).toString()) ;
-                 str.append("</td><td>") ;
-                 str.append(query->value(1).toString());
-                 str.append("</td><td>") ;
-                 str.append(query->value(2).toString());
-                 str.append("</td><td>") ;
-                 str.append(query->value(3).toString());
-                 str.append("</td><td>") ;
-                 str.append(query->value(4).toString());
-                 str.append("</td><td>") ;
-                 str.append(query->value(5).toString());
-                 str.append("</td></td>");
 
 
 
-                 }
-              str.append("</table></center></body></html>") ;
 
-              QPrinter printer ;
-              printer.setOrientation(QPrinter::Portrait);
-              printer.setOutputFormat(QPrinter::PdfFormat);
-              printer.setPaperSize(QPrinter::A4) ;
 
-              QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
 
-              if (path.isEmpty()) return ;
-              printer.setOutputFileName(path) ;
 
-              QTextDocument doc;
-              doc.setHtml(str) ;
-              doc.print(&printer);
-}
+
+
