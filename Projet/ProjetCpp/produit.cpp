@@ -112,16 +112,32 @@ void produit::recherche(QTableView* table,QString CATEGORIE_PRODUIT){
     table->show();
 }
 
-QSqlTableModel *produit::tri(int num)
-{
-
-   QSqlTableModel *mmodel = new QSqlTableModel();
-   mmodel->setTable("set PRODUIT WHERE ID_PRODUIT = :ID_PRODUIT");
-   mmodel->setTable("PRODUIT");
-
-   mmodel->setSort(num,Qt::DescendingOrder);
-   mmodel->select();
-   return mmodel;
-
+void produit::tri(QTableView* table){
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PRODUIT  ORDER BY ID_PRODUIT ");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
 }
 
+void produit::tri1(QTableView* table){
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PRODUIT  ORDER BY CATEGORIE_PRODUIT ");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+
+void produit::tri2(QTableView* table){
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PRODUIT  ORDER BY NOM_PRODUIT ");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}

@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QMediaPlayer>
-
+#include <QSystemTrayIcon>
+#include "smtp.h"
+#include <QPropertyAnimation>
 namespace Ui {
 class MainWindow;
 }
@@ -18,7 +20,8 @@ public:
 
 
 private slots:
-
+    void sendMail();
+    void mailSent(QString);
 //----------------------------------------MENU---------------------------------------------------
     void on_pushButton_2_clicked();
 
@@ -65,6 +68,8 @@ private slots:
 
     void on_rechercherStock_clicked();
 
+    void on_TRI_4_clicked();
+
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -90,6 +95,7 @@ private slots:
 
     void on_pushButton_41_clicked();
 
+    void on_pushButton_57_clicked();
 //------------------------------------------AZIZ----------------------------------------------------
     void on_pushButton_21_clicked();
 
@@ -115,6 +121,13 @@ private slots:
 
     void on_tableView_4_clicked();
 
+    void on_PDF_aziz_clicked();
+
+    void on_tri_aziz_clicked();
+
+    void on_tri_aziz_1_clicked();
+
+    void on_afficher_menu_clicked();
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
     void on_pushButton_31_clicked();
@@ -135,7 +148,7 @@ private slots:
 
     void on_pushButton_39_clicked();
 
-//-------------------------------------------------~MAHMOUD~------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------
 
 
     void on_F_ADD_clicked();
@@ -184,17 +197,13 @@ private slots:
 
     void on_pushButton_43_clicked();
 
-    void on_pushButton_57_clicked();
-
-    void on_rechercher_3_clicked();
-
-    void on_rechercher_4_clicked();
 
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
     QMovie *myMoviebg;
-
+    QSystemTrayIcon *mSystemTrayIcon;
+    QPropertyAnimation *animation;
 };
 
 #endif // MAINWINDOW_H

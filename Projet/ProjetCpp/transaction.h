@@ -44,8 +44,6 @@ public:
 
     void trie(QTableView* table);
     void recherche1(QTableView* table,int);
-    void recherche2(QTableView* table,QString);
-    void recherche3(QTableView* table,QString);
 
     int lastId();
 

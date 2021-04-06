@@ -1,4 +1,5 @@
 #include "stock.h"
+
 #include <QSqlQuery>
 #include <QVariant>
 #include <QMessageBox>
@@ -114,7 +115,7 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QDate
 
 
 bool stock::update_stock()
-{/*
+{
     QString res=QString::number(ID_STOCK);
     QString res1= QString(CATEGORIE_STOCK);
     QString res2= QString::number(TEMPERATURE);
@@ -125,48 +126,17 @@ bool stock::update_stock()
 
     QSqlQuery edit;
 
-    CATEGORIE_STOCK=CATEGORIE_STOCK.toLower();
-    CATEGORIE_STOCK[0]=CATEGORIE_STOCK[0].toUpper();
+                      edit.prepare("update STOCKAGE set CATEGORIE_STOCK =:CATEGORIE_STOCK, TEMPERATURE =:TEMPERATURE, EMPLACEMENT =:EMPLACEMENT, DATE_STOCK =:DATE_STOCK, QUANTITE =:QUANTITE, ID_PRODUIT =:ID_PRODUIT where ID_STOCK =:ID_STOCK");
 
+                      edit.bindValue(":CATEGORIE_STOCK",res);
+                      edit.bindValue(":TEMPERATURE",res1);
+                      edit.bindValue(":EMPLACEMENT",res2);
+                      edit.bindValue(":DATE_STOCK",res3);
+                      edit.bindValue(":QUANTITE",res4);
+                      edit.bindValue(":ID_PRODUIT",res5);
+                      edit.bindValue(":ID_STOCK",res6);
 
-     EMPLACEMENT=EMPLACEMENT.toLower();
-            EMPLACEMENT[0]= EMPLACEMENT[0].toUpper();
-
-
-
-                      edit.prepare("update STOCKAGE set CATEGORIE_STOCK =(?), TEMPERATURE =(?), EMPLACEMENT =(?), DATE_STOCK =(?), QUANTITE =(?), ID_PRODUIT =(?) where ID_STOCK =(?)");
-
-                      edit.addBindValue(res);
-                      edit.addBindValue(res1);
-                      edit.addBindValue(res2);
-                      edit.addBindValue(res3);
-                      edit.addBindValue(res4);
-                      edit.addBindValue(res5);
-                      edit.addBindValue(res6);
-
-                      return edit.exec();*/
-        QSqlQuery query;
-
-
-        QString stringID_STOCK = QString::number(this->ID_STOCK);
-        QString stringCATEGORIE_STOCK= QString(this->CATEGORIE_STOCK);
-        QString stringEMPLACEMENT= QString(this->EMPLACEMENT);
-        QString stringTEMPERATURE = QString::number(this->TEMPERATURE);
-        QString stringQUANTITE = QString::number(this->QUANTITE);
-        QString stringID_PRODUIT = QString::number(this->ID_PRODUIT);
-        query.prepare("update STOCKAGE SET CATEGORIE_STOCK =?, TEMPERATURE =?, EMPLACEMENT =?, DATE_STOCK =?, QUANTITE =?, ID_PRODUIT =? where ID_STOCK =?");
-
-        query.addBindValue(stringID_STOCK);
-        query.addBindValue(stringCATEGORIE_STOCK);
-        query.addBindValue(stringTEMPERATURE);
-        query.addBindValue(stringEMPLACEMENT);
-        query.addBindValue(this->DATE_STOCK);
-        query.addBindValue(stringQUANTITE);
-        query.addBindValue(stringID_PRODUIT);
-        return query.exec();
-
-
-
+                      return edit.exec();
 }
 
 
@@ -259,5 +229,19 @@ void stock::tri_id(QTableView *table)
     table->show();
 
 }
+
+void stock::tri_etage(QTableView *table)
+{
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from STOCKAGE  ORDER BY EMPLACEMENT ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+
+}
+
 
 

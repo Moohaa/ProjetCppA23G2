@@ -156,27 +156,4 @@ void Transaction::recherche1(QTableView* table,int spec){
     table->show();
 }
 
-void Transaction::recherche2(QTableView* table,QString spec){
-
-    QSqlQueryModel *model= new QSqlQueryModel();
-    QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from TRANSACTION  where NOM_CLIENT=:NOM_CLIENT");
-    query->bindValue(":NOM_CLIENT",spec);
-    query->exec();
-    model->setQuery(*query);
-    table->setModel(model);
-    table->show();
-}
-
-void Transaction::recherche3(QTableView* table,QString spec){
-
-    QSqlQueryModel *model= new QSqlQueryModel();
-    QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from TRANSACTION  where ADRESSE_CLIENT=:ADRESSE_CLIENT");
-    query->bindValue(":ADRESSE_CLIENT",spec);
-    query->exec();
-    model->setQuery(*query);
-    table->setModel(model);
-    table->show();
-}
 

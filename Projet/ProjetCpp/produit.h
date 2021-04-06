@@ -32,7 +32,9 @@ public:
     QSqlQueryModel * afficher();
 
     void recherche(QTableView* table,QString CATEGORIE_PRODUIT);
-    QSqlTableModel * tri(int num);
+    void tri(QTableView* table);
+    void tri1(QTableView* table);
+    void tri2(QTableView* table);
 
     int lastId();
 

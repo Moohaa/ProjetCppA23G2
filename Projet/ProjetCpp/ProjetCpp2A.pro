@@ -8,7 +8,7 @@ QT       += core gui sql
 
 QT       += network
 
-QT       += multimedia multimediawidgets printsupport serialport charts
+QT       += multimedia multimediawidgets printsupport serialport charts widgets
 
 CONFIG += stl
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -73,6 +73,8 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+RC_ICONS = hat.ico
 
 QMAKE_CXXFLAGS += -std=gnu++11
 QMAKE_CXXFLAGS += -std=gnu++14
