@@ -3,6 +3,47 @@
 #include <QMessageBox>
 #include "utilisateur.h"
 #include "droitacces.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QDateTime>
+#include <QMessageBox>
+#include "string.h"
+#include <QDateTime>
+#include <QCalendarWidget>
+#include <QFile>
+#include <QPrintDialog>
+#include <QFileDialog>
+#include <QDebug>
+#include <QPainter>
+#include <QKeyEvent>
+#include <QGraphicsOpacityEffect>
+#include <QCompleter>
+#include <QKeyEvent>
+#include <QMediaPlayer>
+#include<QGraphicsOpacityEffect>
+#include<QMessageBox>
+#include <QCoreApplication>
+#include <QPdfWriter>
+#include <QPainter>
+#include <QPdfWriter>
+#include <QUrl>
+#include <QSqlTableModel>
+#include <QSortFilterProxyModel>
+#include <QSqlRelationalTableModel>
+
+#include <QPrintPreviewDialog>
+#include <QPainter>
+#include <QDebug>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QSqlTableModel>
+#include"QMessageBox"
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
+#include <QPushButton>
+#include<QFileInfo>
+//
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -15,6 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
             qry.exec();
             model->setQuery(qry);
             ui->liste_droit->setModel(model);
+            ui->liste_droit_3->setModel(model);
 
 }
 
@@ -47,7 +89,7 @@ void MainWindow::on_Login_connexion_clicked()
    else
     if(email==qry.value(3).toString() && mdp==qry.value(4).toString())
     {
-    ui->stackedWidget->setCurrentIndex(10);
+    ui->stackedWidget->setCurrentIndex(11);
     }
 
     else
@@ -62,7 +104,7 @@ void MainWindow::on_Login_connexion_clicked()
 
 void MainWindow::on_affiche_utilisateur_clicked()
 {
-   ui->stackedWidget->setCurrentIndex(5);
+   ui->stackedWidget->setCurrentIndex(6);
 ui->tab_affiche->setModel(tmputilisateur.afficher_utilisateur());
 }
 
@@ -234,7 +276,7 @@ void MainWindow::on_inscription_inscrit_clicked()
         Utilisateur u;
 
 
-      if(nom.isEmpty()|| prenom.isEmpty()||nom.contains(QRegExp("^[a-z+$+A-Z]"))==0||prenom.contains(QRegExp("^[a-z+$+A-Z]"))==0||email.isEmpty()||mdp.isEmpty()||role.isEmpty())
+      if(nom.isEmpty()|| prenom.isEmpty()||nom.contains(QRegExp("^[a-z+$+A-Z]"))==0||prenom.contains(QRegExp("^[a-z+$+A-Z]"))==0||email.isEmpty()||mdp.isEmpty()||role.isEmpty()||u.controlsaisieMail(email)==false)
         {
 
 
@@ -369,7 +411,7 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_pushButton_5_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(12);
+    ui->stackedWidget->setCurrentIndex(13);
     ui->affiche_droit->setModel(tmpdroit.afficher_droit());
 }
 
@@ -425,7 +467,6 @@ void MainWindow::on_ajout_droit_clicked()
           QMessageBox::information(nullptr, QObject::tr("droit un utilisateur"),
                             QObject::tr("droit ajoutée.\n"
                                         "Cliquez sur  cancel Pour Quitter."), QMessageBox::Cancel);
-
    }
 
 
@@ -434,12 +475,12 @@ void MainWindow::on_ajout_droit_clicked()
 
 void MainWindow::on_pushButton_4_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(8);
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(6);
+    ui->stackedWidget->setCurrentIndex(7);
     ui->aff_droitutilisateur->setModel(tmputilisateur.afficher_droitutilisateur());
 }
 
@@ -448,15 +489,31 @@ void MainWindow::on_tri_clicked()
         Utilisateur u;
         /*QString critere=ui->cb_historique->currentText();*/
             QString mode;
-             if (ui->tri_asc->isChecked()==true)
+             if (ui->id_asc->isChecked()==true)
         {
-                 ui->tab_affiche->setModel(u.trie());
+                 ui->tab_affiche->setModel(u.trie_id_asc());
 
 
-        }
-             else if(ui->tri_des->isChecked()==true)
+       }
+             else if(ui->id_des->isChecked()==true)
 
-                 ui->tab_affiche->setModel(u.trie2());
+                { ui->tab_affiche->setModel(u.trie2_id_des());}
+
+             else if(ui->nom_asc->isChecked()==true)
+
+             {ui->tab_affiche->setModel(u.trie_nom_asc());}
+
+             else if(ui->nom_desc->isChecked()==true)
+
+             {ui->tab_affiche->setModel(u.trie2_nom_des());}
+
+             else if(ui->role_asc->isChecked()==true)
+
+             {ui->tab_affiche->setModel(u.trie_role_asc());}
+
+             else if(ui->role_desc->isChecked()==true)
+
+             {ui->tab_affiche->setModel(u.trie2_role_des());}
 }
 
 void MainWindow::on_recherche_clicked()
@@ -528,3 +585,117 @@ void MainWindow::on_recherche_clicked()
 
                   }
 }}
+
+void MainWindow::on_Supp_droitut_clicked()
+{
+    int row =ui->aff_droitutilisateur->selectionModel()->currentIndex().row();
+    QString id=ui->aff_droitutilisateur->model()->index(row,0).data().toString();
+
+    bool test =tmputilisateur.supprimer_droit_utilisateur(id);
+    if(row==-1)
+    { QMessageBox::critical(nullptr, QObject::tr("Supprimer un droit"),
+                            QObject::tr("Erreur ! selectionnez droit que vous voulez le supprimer !.\n"
+                                        "Click Cancel to exit."), QMessageBox::Cancel);}
+    else
+    {
+    if(test)
+    {
+        ui->aff_droitutilisateur->setModel(tmputilisateur.afficher_droitutilisateur());
+        QMessageBox::information(nullptr, QObject::tr("Supprimer un droit"),
+                    QObject::tr("droit  supprimé.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+                ui->aff_droitutilisateur->setModel(tmputilisateur.afficher_droitutilisateur());
+
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("Supprimer un droit"),
+                    QObject::tr("Erreur !.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+}
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+   ui->stackedWidget->setCurrentIndex(5);
+   int row =ui->tab_affiche->selectionModel()->currentIndex().row();
+   QString id=ui->tab_affiche->model()->index(row,0).data().toString();
+   ui->line_id->setText(id);
+   ui->AJT_DROIT->setModel(tmpdroit_u.afficher_droit_1(id));
+
+}
+
+void MainWindow::on_ajoute_droit_3_clicked()
+{
+    Utilisateur u;
+      QString Code_droit=ui->codedroit_inscri_3->text();
+      QString id=ui->line_id->text();
+
+          bool test=u.affecter_nvdroit(Code_droit,id);
+      if(test)
+      {
+
+          QMessageBox::information(nullptr, QObject::tr("Ajouter un droit"),
+                            QObject::tr("droit ajoutée.\n"
+                                        "Cliquez sur  cancel Pour Quitter."), QMessageBox::Cancel);
+
+   }
+ ui->AJT_DROIT->setModel(tmpdroit_u.afficher_droit_1(id));
+}
+
+void MainWindow::on_liste_droit_3_currentIndexChanged(const QString &arg2)
+{
+    QString nom=arg2;
+     QSqlQuery qry;
+     qry.prepare("select CODE_DROIT from DROITS_ACCES where LIBELLE_DROIT =:nom");
+     qry.bindValue(":nom", nom);
+ if(qry.exec())
+ {while(qry.next())
+     {
+
+     ui->codedroit_inscri_3->setText(qry.value(0).toString());
+ }
+ }
+}
+
+
+void MainWindow::on_pushButton_7_clicked()
+{
+
+    QTableView *table;
+            table = ui->tab_affiche;
+
+            QString filters("CSV files (.csv);;All files (.*)");
+            QString defaultFilter("CSV files (*.csv)");
+            QString fileName = QFileDialog::getSaveFileName(0, "Save file", QCoreApplication::applicationDirPath(),
+                               filters, &defaultFilter);
+            QFile file(fileName);
+
+            QAbstractItemModel *model =  table->model();
+            if (file.open(QFile::WriteOnly | QFile::Truncate)) {
+                QTextStream data(&file);
+                QStringList strList;
+                for (int i = 0; i < model->columnCount(); i++) {
+                    if (model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString().length() > 0)
+                        strList.append("\"" + model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString() + "\"");
+                    else
+                        strList.append("");
+                }
+                data << strList.join(";") << "\n";
+                for (int i = 0; i < model->rowCount(); i++) {
+                    strList.clear();
+                    for (int j = 0; j < model->columnCount(); j++) {
+
+                        if (model->data(model->index(i, j)).toString().length() > 0)
+                            strList.append("\"" + model->data(model->index(i, j)).toString() + "\"");
+                        else
+                            strList.append("");
+                    }
+                    data << strList.join(";") + "\n";
+                }
+                file.close();
+                QMessageBox::information(nullptr, QObject::tr("Export excel"),
+                                          QObject::tr("Export avec succes .\n"
+                                                      "Click OK to exit."), QMessageBox::Ok);
+            }
+
+}

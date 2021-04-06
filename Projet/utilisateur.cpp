@@ -69,6 +69,13 @@ bool Utilisateur::supprimer_utilisateur(QString idd)
 {
 QSqlQuery query;
 query.prepare("Delete from UTILISATEURS where ID_UTILISATEUR = :ID_UTILISATEUR ");
+query.bindValue(":ID_UTILISATEUR", idd);
+return    query.exec();
+}
+
+bool Utilisateur::supprimer_droit_utilisateur(QString idd)
+{
+QSqlQuery query;
 query.prepare("Delete from DROIT_UTILISATEURS where ID_UTILISATEUR = :ID_UTILISATEUR ");
 query.bindValue(":ID_UTILISATEUR", idd);
 return    query.exec();
@@ -141,6 +148,18 @@ QSqlQueryModel * Utilisateur::afficher_droit()
         return model;
 }
 
+QSqlQueryModel * Utilisateur::afficher_droit_1(QString id)
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    QSqlQuery Query;
+    model->setQuery("select distinct utilisateurs.nom_utilisateur,utilisateurs.prenom_utilisateur,droits_acces.code_droit,droits_acces.libelle_droit from utilisateurs,droits_acces,droit_utilisateurs where droits_acces.code_droit=droit_utilisateurs.code_droit and utilisateurs.id_utilisateur = '"+id+"'  and utilisateurs.id_utilisateur = droit_utilisateurs.id_utilisateur");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("prenom "));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("code_droit "));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("libelle_droit "));
+        return model;
+}
+
 bool Utilisateur::supprimer_droit(QString idd)
 {
 QSqlQuery query;
@@ -165,16 +184,17 @@ bool Utilisateur::modifier_droit(int code,QString libelle)
 QSqlQueryModel * Utilisateur::afficher_droitutilisateur()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("select utilisateurs.nom_utilisateur,utilisateurs.prenom_utilisateur,utilisateurs.email_utilisateur,utilisateurs.role_utilisateur,droit_utilisateurs.code_droit from utilisateurs,droits_acces,droit_utilisateurs where droits_acces.code_droit=droit_utilisateurs.code_droit and utilisateurs.id_utilisateur = droit_utilisateurs.id_utilisateur;");
+    model->setQuery("select utilisateurs.id_utilisateur,utilisateurs.nom_utilisateur,utilisateurs.prenom_utilisateur,utilisateurs.email_utilisateur,utilisateurs.role_utilisateur,droit_utilisateurs.code_droit from utilisateurs,droits_acces,droit_utilisateurs where droits_acces.code_droit=droit_utilisateurs.code_droit and utilisateurs.id_utilisateur = droit_utilisateurs.id_utilisateur;");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("nom"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("prenom "));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("email "));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("role "));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("code_droit "));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom "));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("email "));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("role "));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("code_droit "));
         return model;
 }
 
-QSqlQueryModel* Utilisateur::trie()
+QSqlQueryModel* Utilisateur::trie_id_asc()
 {
     QSqlQueryModel* model = new QSqlQueryModel();
 
@@ -191,7 +211,7 @@ QSqlQueryModel* Utilisateur::trie()
     return model;
 }
 
-QSqlQueryModel* Utilisateur::trie2()
+QSqlQueryModel* Utilisateur::trie2_id_des()
 {
     QSqlQueryModel* model = new QSqlQueryModel();
 
@@ -208,11 +228,79 @@ QSqlQueryModel* Utilisateur::trie2()
     return model;
 }
 
+QSqlQueryModel* Utilisateur::trie_nom_asc()
+{
+    QSqlQueryModel* model = new QSqlQueryModel();
+
+        model->setQuery("select *from utilisateurs ORDER BY NOM_UTILISATEUR asc");
+
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+         model->setHeaderData(2, Qt::Horizontal, QObject::tr(" Prenom"));
+
+         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Email"));
+         model->setHeaderData(5, Qt::Horizontal, QObject::tr("role"));
+
+
+    return model;
+}
+
+QSqlQueryModel* Utilisateur::trie2_nom_des()
+{
+    QSqlQueryModel* model = new QSqlQueryModel();
+
+        model->setQuery("select *from utilisateurs ORDER BY NOM_UTILISATEUR desc");
+
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+         model->setHeaderData(2, Qt::Horizontal, QObject::tr(" Prenom"));
+
+         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Email"));
+         model->setHeaderData(5, Qt::Horizontal, QObject::tr("role"));
+
+
+    return model;
+}
+
+QSqlQueryModel* Utilisateur::trie_role_asc()
+{
+    QSqlQueryModel* model = new QSqlQueryModel();
+
+        model->setQuery("select *from utilisateurs ORDER BY ROLE_UTILISATEUR asc");
+
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+         model->setHeaderData(2, Qt::Horizontal, QObject::tr(" Prenom"));
+
+         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Email"));
+         model->setHeaderData(5, Qt::Horizontal, QObject::tr("role"));
+
+
+    return model;
+}
+
+QSqlQueryModel* Utilisateur::trie2_role_des()
+{
+    QSqlQueryModel* model = new QSqlQueryModel();
+
+        model->setQuery("select *from utilisateurs ORDER BY ROLE_UTILISATEUR desc");
+
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+         model->setHeaderData(2, Qt::Horizontal, QObject::tr(" Prenom"));
+
+         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Email"));
+         model->setHeaderData(5, Qt::Horizontal, QObject::tr("role"));
+
+
+    return model;
+}
+
 QSqlQueryModel * Utilisateur::chercher_ut(const QString &aux)
 {
     QSqlQueryModel * model = new QSqlQueryModel();
 
-    model->setQuery("select * from utilisateurs where ((id_utilisateur ) LIKE '%"+aux+"%')");
+    model->setQuery("select * from utilisateurs where ((id_utilisateur ) = '"+aux+"')");
     model->setHeaderData(0,Qt::Vertical,QObject::tr("ID"));
     model->setHeaderData(1,Qt::Vertical,QObject::tr("nom"));
     model->setHeaderData(2,Qt::Vertical,QObject::tr("PRENOM"));
@@ -249,4 +337,13 @@ QSqlQueryModel * Utilisateur::chercher_ut2(const QString &aux)
     model->setHeaderData(5,Qt::Vertical,QObject::tr("role"));
 
     return model;
+}
+
+bool Utilisateur::affecter_nvdroit(QString code,QString id)
+{
+    QSqlQuery Query;
+    Query.prepare("INSERT INTO DROIT_UTILISATEURS(ID_UTILISATEUR,CODE_DROIT) values (:id,:code)");
+    Query.bindValue(":id",id);
+    Query.bindValue(":code",code);
+    return Query.exec();
 }

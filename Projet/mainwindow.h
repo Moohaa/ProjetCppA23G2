@@ -5,6 +5,15 @@
 #include <QPropertyAnimation>
 #include "utilisateur.h"
 #include "droitacces.h"
+#include <QMainWindow>
+#include <windows.h>
+#include <QFile>
+#include <QPrinter>
+#include <QPrintDialog>
+#include<QPropertyAnimation>
+#include<QParallelAnimationGroup>
+#include <QMediaPlayer>
+#include"fournisseur.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -62,6 +71,16 @@ private slots:
     void on_tri_clicked();
 
     void on_recherche_clicked();
+
+    void on_Supp_droitut_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_ajoute_droit_3_clicked();
+
+    void on_liste_droit_3_currentIndexChanged(const QString &arg2);
+
+    void on_pushButton_7_clicked();
 
 private:
     Ui::MainWindow *ui;

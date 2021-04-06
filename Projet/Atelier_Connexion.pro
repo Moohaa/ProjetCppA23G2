@@ -3,7 +3,17 @@
 # Project created by QtCreator 2018-10-26T21:45:23
 #
 #-------------------------------------------------
-
+QT += core gui
+QT+= sql
+QT       += core gui printsupport
+QT       += core gui network
+QT       +=  network
+QT       += core gui widgets texttospeech
+QT += core gui widgets
+QT += multimedia
+QT       += core gui sql serialport
+QT += serialport
+QT += core gui charts
 QT       += core gui sql
 QT+= sql
 CONFIG += console
