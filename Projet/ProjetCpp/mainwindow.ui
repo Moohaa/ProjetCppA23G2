@@ -412,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -3409,7 +3409,6 @@ color : white;</string>
         </property>
         <property name="currentIndex">
          <number>0</number>
-         <number>3</number>
         </property>
         <widget class="QWidget" name="tab_32">
          <attribute name="title">
@@ -3897,24 +3896,6 @@ color : white;</string>
             </layout>
            </item>
           </layout>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="tab_31">
-         <attribute name="title">
-          <string>Facture</string>
-         </attribute>
-         <widget class="QPushButton" name="pushButton_43">
-          <property name="geometry">
-           <rect>
-            <x>70</x>
-            <y>30</y>
-            <width>201</width>
-            <height>22</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Generation Des Factures(PDF)</string>
-          </property>
          </widget>
         </widget>
        </widget>
@@ -4859,14 +4840,14 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_40">
           <property name="geometry">
            <rect>
-            <x>460</x>
+            <x>700</x>
             <y>110</y>
             <width>91</width>
             <height>22</height>
            </rect>
           </property>
           <property name="text">
-           <string>TRIER </string>
+           <string>Trier Par Prix</string>
           </property>
          </widget>
          <widget class="QLabel" name="label_83">
@@ -4889,9 +4870,9 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_41">
           <property name="geometry">
            <rect>
-            <x>250</x>
+            <x>40</x>
             <y>110</y>
-            <width>201</width>
+            <width>151</width>
             <height>22</height>
            </rect>
           </property>
@@ -4902,7 +4883,7 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_42">
           <property name="geometry">
            <rect>
-            <x>40</x>
+            <x>200</x>
             <y>110</y>
             <width>201</width>
             <height>22</height>
@@ -5010,6 +4991,32 @@ color : white;</string>
            </rect>
           </property>
          </widget>
+         <widget class="QPushButton" name="pushButton_58">
+          <property name="geometry">
+           <rect>
+            <x>600</x>
+            <y>110</y>
+            <width>91</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Trier Par Date</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_59">
+          <property name="geometry">
+           <rect>
+            <x>490</x>
+            <y>110</y>
+            <width>101</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Trier Par Facture</string>
+          </property>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -5027,7 +5034,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_12">
          <attribute name="title">
@@ -5368,9 +5375,9 @@ color : white;</string>
          <widget class="QTableView" name="tableView">
           <property name="geometry">
            <rect>
-            <x>10</x>
+            <x>50</x>
             <y>100</y>
-            <width>791</width>
+            <width>761</width>
             <height>201</height>
            </rect>
           </property>
@@ -5378,7 +5385,7 @@ color : white;</string>
          <widget class="QLineEdit" name="textDelete_4">
           <property name="geometry">
            <rect>
-            <x>470</x>
+            <x>480</x>
             <y>320</y>
             <width>113</width>
             <height>20</height>
@@ -5388,7 +5395,7 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_18">
           <property name="geometry">
            <rect>
-            <x>590</x>
+            <x>600</x>
             <y>320</y>
             <width>171</width>
             <height>23</height>
@@ -5401,22 +5408,22 @@ color : white;</string>
          <widget class="QPushButton" name="rechercher_2">
           <property name="geometry">
            <rect>
-            <x>440</x>
+            <x>580</x>
             <y>20</y>
-            <width>171</width>
+            <width>111</width>
             <height>22</height>
            </rect>
           </property>
           <property name="text">
-           <string>Rechercher Par Note</string>
+           <string>Rechercher </string>
           </property>
          </widget>
          <widget class="QLineEdit" name="lineEdit_10">
           <property name="geometry">
            <rect>
-            <x>20</x>
+            <x>120</x>
             <y>20</y>
-            <width>411</width>
+            <width>101</width>
             <height>21</height>
            </rect>
           </property>
@@ -5461,7 +5468,7 @@ color : white;</string>
          <widget class="QLabel" name="label_90">
           <property name="geometry">
            <rect>
-            <x>430</x>
+            <x>440</x>
             <y>310</y>
             <width>31</width>
             <height>31</height>
@@ -5477,7 +5484,7 @@ color : white;</string>
          <widget class="QLabel" name="label_48">
           <property name="geometry">
            <rect>
-            <x>760</x>
+            <x>770</x>
             <y>310</y>
             <width>71</width>
             <height>41</height>
@@ -5493,8 +5500,8 @@ color : white;</string>
          <widget class="QLabel" name="label_27">
           <property name="geometry">
            <rect>
-            <x>620</x>
-            <y>0</y>
+            <x>60</x>
+            <y>10</y>
             <width>51</width>
             <height>51</height>
            </rect>
@@ -5509,7 +5516,7 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_57">
           <property name="geometry">
            <rect>
-            <x>20</x>
+            <x>50</x>
             <y>70</y>
             <width>201</width>
             <height>22</height>
@@ -5517,6 +5524,58 @@ color : white;</string>
           </property>
           <property name="text">
            <string>Afficher Les Evaluations</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="radioButton_4">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>20</y>
+            <width>85</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Notes</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="radioButton_5">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>20</y>
+            <width>111</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Nom Du Mr/Mme</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="radioButton_6">
+          <property name="geometry">
+           <rect>
+            <x>430</x>
+            <y>20</y>
+            <width>141</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Remarque Du Mr /Mme</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="rechercher_5">
+          <property name="geometry">
+           <rect>
+            <x>700</x>
+            <y>20</y>
+            <width>111</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Trier Selon</string>
           </property>
          </widget>
         </widget>
@@ -5735,7 +5794,6 @@ border-radius:10px;
      <y>0</y>
      <width>1296</width>
      <height>21</height>
-     <height>22</height>
     </rect>
    </property>
   </widget>

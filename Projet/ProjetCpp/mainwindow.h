@@ -190,6 +190,12 @@ private slots:
 
     void on_rechercher_4_clicked();
 
+    void on_pushButton_58_clicked();
+
+    void on_pushButton_59_clicked();
+
+    void on_rechercher_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
