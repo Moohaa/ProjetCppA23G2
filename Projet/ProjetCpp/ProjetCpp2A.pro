@@ -8,7 +8,13 @@ QT       += core gui sql
 
 QT       += network
 
+<<<<<<< Updated upstream
 QT       += multimedia multimediawidgets printsupport serialport charts widgets
+=======
+QT       += axcontainer
+
+QT       += multimedia multimediawidgets printsupport serialport charts
+>>>>>>> Stashed changes
 
 CONFIG += stl
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -69,7 +75,7 @@ HEADERS += \
 
 
 
-
+RC_ICONS = favicon.ico
 
 FORMS += \
         mainwindow.ui
@@ -84,7 +90,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    images.qrc \
+    sound.qrc
 
 DISTFILES += \
     ../Calque 0.png \

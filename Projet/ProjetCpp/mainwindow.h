@@ -4,8 +4,12 @@
 #include <QMainWindow>
 #include <QMediaPlayer>
 #include <QSystemTrayIcon>
+<<<<<<< Updated upstream
 #include "smtp.h"
 #include <QPropertyAnimation>
+=======
+
+>>>>>>> Stashed changes
 namespace Ui {
 class MainWindow;
 }
@@ -32,6 +36,8 @@ private slots:
     void on_pushButton_10_clicked();
 
     void on_pushButton_11_clicked();
+
+//    void drawIcon(QPainter *painter, QPoint pos);
 
 //---------------------------------------------~MARIEM~-----------------------------------------------------
     void on_pushButton_clicked();
@@ -195,15 +201,23 @@ private slots:
 
     void on_pushButton_42_clicked();
 
+<<<<<<< Updated upstream
     void on_pushButton_43_clicked();
 
+=======
+    void on_TRI_4_clicked();
+>>>>>>> Stashed changes
 
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
     QMovie *myMoviebg;
     QSystemTrayIcon *mSystemTrayIcon;
+<<<<<<< Updated upstream
     QPropertyAnimation *animation;
+=======
+
+>>>>>>> Stashed changes
 };
 
 #endif // MAINWINDOW_H

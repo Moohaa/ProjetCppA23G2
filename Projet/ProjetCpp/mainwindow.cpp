@@ -45,8 +45,12 @@
 #include <QSystemTrayIcon>
 #include <QIcon>
 #include <QDesktopWidget>
+<<<<<<< Updated upstream
 #include <QPlainTextEdit>
 #include <QPropertyAnimation>
+=======
+//#include <QIconDragEvent>
+>>>>>>> Stashed changes
 
 
 using namespace std;
@@ -59,9 +63,15 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+<<<<<<< Updated upstream
             mSystemTrayIcon = new QSystemTrayIcon(this);
             mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
+=======
+    mSystemTrayIcon = new QSystemTrayIcon(this);
+    mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
+    mSystemTrayIcon->setVisible(true);
+>>>>>>> Stashed changes
 
 
     media = new QMediaPlayer (this);
@@ -87,8 +97,13 @@ MainWindow::MainWindow(QWidget *parent) :
      setFixedSize(1296,801);  //fixe la taille de la fenêtre
 
 
+<<<<<<< Updated upstream
      myMoviebg = new QMovie(this);
      myMoviebg = new QMovie("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif5.gif");
+=======
+     //myMoviebg = new QMovie(this);
+     myMoviebg = new QMovie("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
+>>>>>>> Stashed changes
 
        ui->gif->setMovie(myMoviebg);
 
@@ -150,7 +165,19 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+<<<<<<< Updated upstream
 
+=======
+/*void MainWindow::drawIcon(QPainter *painter, QPoint pos)
+{
+    QPixmap pixmap = icon.pixmap(QSize(22, 22),
+                                   isEnabled() ? QIcon::Normal
+                                               : QIcon::Disabled,
+                                   isChecked() ? QIcon::On
+                                               : QIcon::Off);
+    painter->drawPixmap(pos, pixmap);
+}*/
+>>>>>>> Stashed changes
 //---------------------------------------------------~MENU PRINCIPALE~----------------------------------------------------
 
 void MainWindow::on_pushButton_2_clicked()
@@ -250,11 +277,19 @@ void MainWindow::on_TRI_clicked()//tri Produit
       //ui->tableView_A->setModel(p.tri(ui->tableView_A->currentIndex().column()));
 
          QTableView *table=ui->tableView_A;
+<<<<<<< Updated upstream
 
                if(ui->choixTrie->currentIndex() == 0)
                  { p.tri(table);
                // ui->listeCitoyen->setModel(c.afficherCitoyen());
 
+=======
+
+               if(ui->choixTrie->currentIndex() == 0)
+                 { p.tri(table);
+               // ui->listeCitoyen->setModel(c.afficherCitoyen());
+
+>>>>>>> Stashed changes
                }
 
                if(ui->choixTrie->currentIndex() == 1)
@@ -324,7 +359,11 @@ void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
     s.setCATEGORIE_STOCK(ui->comboBox->currentText());
     s.setTEMPERATURE(ui->spinBox->text().toInt());
     s.setEMPLACEMENT(ui->comboBox_2->currentText());
+<<<<<<< Updated upstream
     s.setDATE_STOCK(ui->calendarWidget->selectedDate());
+=======
+    s.setDATE_STOCK(ui->dateTimeEdit->selectedDate());
+>>>>>>> Stashed changes
     s.setQUANTITE(ui->lineEdit_22->text().toInt());
     s.setID_PRODUIT(ui->lineEdit_23->text().toInt());
 
@@ -396,7 +435,11 @@ QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
     ui->comboBox->setCurrentText(ui->tableView_B->model()->index(row,1).data().toString());
     ui->spinBox->setPrefix(ui->tableView_B->model()->index(row,2).data().toString());
     ui->comboBox_2->setCurrentText(ui->tableView_B->model()->index(row,3).data().toString());
+<<<<<<< Updated upstream
     ui->calendarWidget->setSelectedDate(ui->tableView_B->model()->index(row,4).data().toDate());
+=======
+    ui->dateTimeEdit->setSelectedDate(ui->tableView_B->model()->index(row,4).data().toDate());
+>>>>>>> Stashed changes
     ui->lineEdit_22->setText(ui->tableView_B->model()->index(row,5).data().toString());
     ui->lineEdit_23->setText(ui->tableView_B->model()->index(row,6).data().toString());
 
@@ -418,7 +461,11 @@ void MainWindow::on_pushButton_5_clicked()//modifier Stock
     s.setCATEGORIE_STOCK(ui->comboBox->currentText());
     s.setTEMPERATURE(ui->spinBox->text().toInt());
     s.setEMPLACEMENT(ui->comboBox_2->currentText());
+<<<<<<< Updated upstream
     s.setDATE_STOCK(ui->calendarWidget->selectedDate());
+=======
+    s.setDATE_STOCK(ui->dateTimeEdit->selectedDate());
+>>>>>>> Stashed changes
     s.setQUANTITE(ui->lineEdit_22->text().toInt());
     s.setID_PRODUIT(ui->lineEdit_23->text().toInt());
 
@@ -455,7 +502,17 @@ void MainWindow::on_TRI_3_clicked()//tri stock
   s.tri_id(table);
 
 }
+void MainWindow::on_TRI_4_clicked()//tri stock
+{    stock s;
 
+     //ui->tableView_B->setModel(s.tri(ui->tableView_B->currentIndex().column()));
+
+      QTableView* table=ui->tableView_B;
+     s.tri_Etage(table);
+
+}
+
+<<<<<<< Updated upstream
 void MainWindow::on_pushButton_43_clicked()//Afficher Stock
 {
     stock s;
@@ -474,6 +531,9 @@ void MainWindow::on_TRI_4_clicked()//tri stock
 }
 
 
+=======
+
+>>>>>>> Stashed changes
 void MainWindow::on_rechercherStock_clicked()//recherche stock
 {
         stock s;
@@ -490,7 +550,11 @@ void MainWindow::on_rechercherStock_clicked()//recherche stock
 
 
                  text1=ui->rechercherStock_2->text().toUInt();
+<<<<<<< Updated upstream
                          //s.rechercher_cr1(table,text1);
+=======
+                         s.rechercher_cr1(table,text1);
+>>>>>>> Stashed changes
 
 
             }
@@ -524,7 +588,11 @@ void MainWindow::on_rechercherStock_clicked()//recherche stock
 
 
                           text1=ui->rechercherStock_2->text().toUInt();
+<<<<<<< Updated upstream
                                   //s.rechercher_cr3(table,text1);
+=======
+                                  s.rechercher_cr3(table,text1);
+>>>>>>> Stashed changes
 
 
 

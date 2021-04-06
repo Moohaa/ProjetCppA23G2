@@ -112,15 +112,49 @@ void produit::recherche(QTableView* table,QString CATEGORIE_PRODUIT){
     table->show();
 }
 
+<<<<<<< Updated upstream
 void produit::tri(QTableView* table){
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
     query->prepare("select * from PRODUIT  ORDER BY ID_PRODUIT ");
+=======
+void produit::tri(QTableView *table)
+{
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PRODUIT  ORDER BY ID_PRODUIT ASC");
+>>>>>>> Stashed changes
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
     table->show();
 }
+<<<<<<< Updated upstream
+=======
+void produit::tri1(QTableView *table)
+{
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PRODUIT  ORDER BY CATEGORIE_PRODUIT ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+
+}
+void produit::tri2(QTableView *table)
+{
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PRODUIT  ORDER BY NOM_PRODUIT ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+>>>>>>> Stashed changes
 
 void produit::tri1(QTableView* table){
     QSqlQueryModel *model= new QSqlQueryModel();

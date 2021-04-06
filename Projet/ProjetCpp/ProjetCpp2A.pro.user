@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< Updated upstream
 <!-- Written by QtCreator 4.11.0, 2021-04-06T10:13:45. -->
+=======
+<!-- Written by QtCreator 4.11.0, 2021-04-04T14:31:52. -->
+>>>>>>> Stashed changes
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -299,7 +303,11 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
+<<<<<<< Updated upstream
     <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
+=======
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug</value>
+>>>>>>> Stashed changes
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

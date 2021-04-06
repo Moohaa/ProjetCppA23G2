@@ -1,11 +1,18 @@
 #include "stock.h"
 
 #include <QSqlQuery>
+#include <QSql>
+#include <QtCore>
 #include <QVariant>
 #include <QMessageBox>
 #include <QSqlTableModel>
 #include <QDebug>
 #include <QDate>
+#include <QTableView>
+
+#include <QtSql/QtSql>
+#include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlQuery>
 
 stock::stock(){}
 
@@ -116,6 +123,12 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QDate
 
 bool stock::update_stock()
 {
+<<<<<<< Updated upstream
+=======
+
+    QSqlQuery query;
+
+>>>>>>> Stashed changes
     QString res=QString::number(ID_STOCK);
     QString res1= QString(CATEGORIE_STOCK);
     QString res2= QString::number(TEMPERATURE);
@@ -124,9 +137,28 @@ bool stock::update_stock()
     QString res5= QString::number(QUANTITE);
     QString res6= QString::number(ID_PRODUIT);
 
+<<<<<<< Updated upstream
     QSqlQuery edit;
 
                       edit.prepare("update STOCKAGE set CATEGORIE_STOCK =:CATEGORIE_STOCK, TEMPERATURE =:TEMPERATURE, EMPLACEMENT =:EMPLACEMENT, DATE_STOCK =:DATE_STOCK, QUANTITE =:QUANTITE, ID_PRODUIT =:ID_PRODUIT where ID_STOCK =:ID_STOCK");
+=======
+
+
+                      query.prepare("UPDATE STOCKAGE SET CATEGORIE_STOCK = :CATEGORIE_STOCK, TEMPERATURE = :TEMPERATURE, EMPLACEMENT = :EMPLACEMENT, DATE_STOCK = :DATE_STOCK, QUANTITE = :QUANTITE, ID_PRODUIT = :ID_PRODUIT where ID_STOCK = :ID_STOCK");
+
+                      query.bindValue(":ID_STOCK",res);
+                      query.bindValue(":CATEGORIE_STOCK",res1);
+                      query.bindValue(":TEMPERATURE",res2);
+                      query.bindValue(":EMPLACEMENT",res3);
+                      query.bindValue(":DATE_STOCK",res4);
+                      query.bindValue(":QUANTITE",res5);
+                      query.bindValue(":ID_PRODUIT",res6);
+
+                      return query.exec();
+
+
+
+>>>>>>> Stashed changes
 
                       edit.bindValue(":CATEGORIE_STOCK",res);
                       edit.bindValue(":TEMPERATURE",res1);
@@ -151,20 +183,34 @@ bool stock::update_stock()
     table->setModel(model);
     table->show();
 }*/
-QSqlQueryModel * stock::rechercher_cr1(const QString &QUANTITE)
+/*QSqlQueryModel * stock::rechercher_cr1(const int &QUANTITE)
 {
     QSqlQueryModel * model = new QSqlQueryModel();
 
-    model->setQuery("select * from STOCKAGE where ((QUANTITE ) LIKE '%"+QUANTITE+"%')");
+    model->setQuery("select * from STOCKAGE where QUANTITE=:QUANTITE");
 
-    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_STOCK"));
-    model->setHeaderData(1, Qt::Horizontal,QObject::tr("CATEGORIE_STOCK"));
-    model->setHeaderData(2, Qt::Horizontal,QObject::tr("TEMPERATURE"));
-    model->setHeaderData(3, Qt::Horizontal,QObject::tr("EMPLACEMENT"));
-    model->setHeaderData(4, Qt::Horizontal,QObject::tr("DATE_STOCK"));
-    model->setHeaderData(5, Qt::Horizontal,QObject::tr("QUANTITE"));
-    model->setHeaderData(6, Qt::Horizontal,QObject::tr("ID_PRODUIT"));
+
+    model->setQuery("select * from STOCKAGE where TEMPERATURE=:TEMPERATURE");
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr(":ID_STOCK"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr(":CATEGORIE_STOCK"));
+    model->setHeaderData(2, Qt::Horizontal,QObject::tr(":TEMPERATURE"));
+    model->setHeaderData(3, Qt::Horizontal,QObject::tr(":EMPLACEMENT"));
+    model->setHeaderData(4, Qt::Horizontal,QObject::tr(":DATE_STOCK"));
+    model->setHeaderData(5, Qt::Horizontal,QObject::tr(":QUANTITE"),QUANTITE);
+    model->setHeaderData(6, Qt::Horizontal,QObject::tr(":ID_PRODUIT"));
+
     return model;
+}*/
+void stock::rechercher_cr1(QTableView* table,int QUANTITE){
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from STOCKAGE where QUANTITE=:QUANTITE");
+    query->bindValue(":QUANTITE",QUANTITE);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+
 }
 
 
@@ -186,20 +232,17 @@ QSqlQueryModel * stock::rechercher_cr2(const QString &CATEGORIE_STOCK)
     return model;
 }
 
-QSqlQueryModel * stock::rechercher_cr3(const QString &TEMPERATURE)
-{
-    QSqlQueryModel * model = new QSqlQueryModel();
 
-    model->setQuery("select * from STOCKAGE where ((TEMPERATURE ) LIKE '%"+TEMPERATURE+"%')");
-    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_STOCK"));
-    model->setHeaderData(1, Qt::Horizontal,QObject::tr("CATEGORIE_STOCK"));
-    model->setHeaderData(2, Qt::Horizontal,QObject::tr("TEMPERATURE"));
-    model->setHeaderData(3, Qt::Horizontal,QObject::tr("EMPLACEMENT"));
-    model->setHeaderData(4, Qt::Horizontal,QObject::tr("DATE_STOCK"));
-    model->setHeaderData(5, Qt::Horizontal,QObject::tr("QUANTITE"));
-    model->setHeaderData(6, Qt::Horizontal,QObject::tr("ID_PRODUIT"));
+void stock::rechercher_cr3(QTableView* table,int TEMPERATURE){
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from STOCKAGE where TEMPERATURE=:TEMPERATURE");
+    query->bindValue(":TEMPERATURE",TEMPERATURE);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
 
-    return model;
 }
 
 
@@ -230,7 +273,11 @@ void stock::tri_id(QTableView *table)
 
 }
 
+<<<<<<< Updated upstream
 void stock::tri_etage(QTableView *table)
+=======
+void stock::tri_Etage(QTableView *table)
+>>>>>>> Stashed changes
 {
 
     QSqlQueryModel *model= new QSqlQueryModel();
@@ -243,5 +290,8 @@ void stock::tri_etage(QTableView *table)
 
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
