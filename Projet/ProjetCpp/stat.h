@@ -24,7 +24,7 @@ public:
      void paintEvent(QPaintEvent *) ;
     ~stati();
 private slots:
-    void on_STATF_clicked();
+    void on_pushButton_clicked();
 
 private:
     Ui::stati *ui;

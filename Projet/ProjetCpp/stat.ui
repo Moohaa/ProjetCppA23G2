@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>300</y>
+     <y>310</y>
      <width>47</width>
      <height>13</height>
     </rect>
@@ -37,6 +37,26 @@
    </property>
    <property name="text">
     <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widgetFF" native="true">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>310</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_2FF" native="true">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>340</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
    </property>
   </widget>
  </widget>
