@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+/*
+Copyright (c) 2013 Raivis Strogonovs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
+
+
+
+>>>>>>> Ahmed_Elmoez_Noomen
 #include "smtp.h"
 
 Smtp::Smtp( const QString &user, const QString &pass, const QString &host, int port, int timeout )
@@ -6,8 +20,13 @@ Smtp::Smtp( const QString &user, const QString &pass, const QString &host, int p
 
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
     connect(socket, SIGNAL(connected()), this, SLOT(connected() ) );
+<<<<<<< HEAD
     connect(socket, SIGNAL(error(QAbstractSocket::SocketError)), this,SLOT(errorReceived(QAbstractSocket::SocketError)));
     connect(socket, SIGNAL(stateChanged(QAbstractSocket::SocketState)), this, SLOT(stateChanged(QAbstractSocket::SocketState)));
+=======
+    //connect(socket, SIGNAL(error(QAbstractSocket::SocketError)), this,SLOT(errorReceived(QAbstractSocket::SocketError)));
+    //connect(socket, SIGNAL(stateChanged(QAbstractSocket::SocketState)), this, SLOT(stateChanged(QAbstractSocket::SocketState)));
+>>>>>>> Ahmed_Elmoez_Noomen
     connect(socket, SIGNAL(disconnected()), this,SLOT(disconnected()));
 
 
@@ -21,11 +40,16 @@ Smtp::Smtp( const QString &user, const QString &pass, const QString &host, int p
 
 }
 
+<<<<<<< HEAD
 void Smtp::sendMail(const QString &from, const QString &to, const QString &subject, const QString &body, QStringList files)
+=======
+void Smtp::sendMail(const QString &from, const QString &to, const QString &subject, const QString &body)
+>>>>>>> Ahmed_Elmoez_Noomen
 {
     message = "To: " + to + "\n";
     message.append("From: " + from + "\n");
     message.append("Subject: " + subject + "\n");
+<<<<<<< HEAD
 
     //Let's intitiate multipart MIME with cutting boundary "frontier"
     message.append("MIME-Version: 1.0\n");
@@ -77,6 +101,18 @@ void Smtp::sendMail(const QString &from, const QString &to, const QString &subje
     socket->connectToHostEncrypted("smtp.gmail.com",465); //"smtp.gmail.com" and 465 for gmail TLS
     if (!socket->waitForConnected(timeout)) {
          qDebug()<< "send_mail " << socket->errorString();
+=======
+    message.append(body);
+    message.replace( QString::fromLatin1( "\n" ), QString::fromLatin1( "\r\n" ) );
+    message.replace( QString::fromLatin1( "\r\n.\r\n" ),
+    QString::fromLatin1( "\r\n..\r\n" ) );
+    this->from = from;
+    rcpt = to;
+    state = Init;
+    socket->connectToHostEncrypted(host, port); //"smtp.gmail.com" and 465 for gmail TLS
+    if (!socket->waitForConnected(timeout)) {
+         qDebug() << socket->errorString();
+>>>>>>> Ahmed_Elmoez_Noomen
      }
 
     t = new QTextStream( socket );
@@ -141,14 +177,22 @@ void Smtp::readyRead()
         state = HandShake;
     }
     //No need, because I'm using socket->startClienEncryption() which makes the SSL handshake for you
+<<<<<<< HEAD
     else if (state == Tls && responseLine == "250")
+=======
+    /*else if (state == Tls && responseLine == "250")
+>>>>>>> Ahmed_Elmoez_Noomen
     {
         // Trying AUTH
         qDebug() << "STarting Tls";
         *t << "STARTTLS" << "\r\n";
         t->flush();
         state = HandShake;
+<<<<<<< HEAD
     }
+=======
+    }*/
+>>>>>>> Ahmed_Elmoez_Noomen
     else if (state == HandShake && responseLine == "250")
     {
         socket->startClientEncryption();
@@ -230,7 +274,11 @@ void Smtp::readyRead()
         *t << "QUIT\r\n";
         t->flush();
         // here, we just close.
+<<<<<<< HEAD
         //state = Close;
+=======
+        state = Close;
+>>>>>>> Ahmed_Elmoez_Noomen
         emit status( tr( "Message sent" ) );
     }
     else if ( state == Close )
@@ -241,10 +289,17 @@ void Smtp::readyRead()
     else
     {
         // something broke.
+<<<<<<< HEAD
      //   QMessageBox::warning( nullptr, tr( "Qt Simple SMTP client" ), tr( "Unexpected reply from SMTP server:\n\n" ) + response );
+=======
+        QMessageBox::warning( 0, tr( "Qt Simple SMTP client" ), tr( "Unexpected reply from SMTP server:\n\n" ) + response );
+>>>>>>> Ahmed_Elmoez_Noomen
         state = Close;
         emit status( tr( "Failed to send message" ) );
     }
     response = "";
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> Ahmed_Elmoez_Noomen

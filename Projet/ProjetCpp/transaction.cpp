@@ -18,7 +18,7 @@ Transaction::Transaction(){}
 
 Transaction::Transaction(int ID_FACTURE){this->ID_FACTURE = ID_FACTURE;}
 
-Transaction::Transaction(QString NOM_CLIENT,int NUM_CLIENT ,QString ADRESSE_CLIENT,QDate DATE_HEURE,int PRIX,int ID_UTILISATEUR)
+Transaction::Transaction(QString NOM_CLIENT,QString NUM_CLIENT ,QString ADRESSE_CLIENT,QDate DATE_HEURE,int PRIX,int ID_UTILISATEUR)
 {
     this->ID_FACTURE = lastId();
     this->NOM_CLIENT = NOM_CLIENT;
@@ -30,7 +30,7 @@ Transaction::Transaction(QString NOM_CLIENT,int NUM_CLIENT ,QString ADRESSE_CLIE
 }
     int Transaction::getID_FACTURE(){return this->ID_FACTURE;}
     QString Transaction::getNOM_CLIENT(){return this->NOM_CLIENT;}
-    int Transaction::getNUM_CLIENT(){return this->NUM_CLIENT;}
+    QString Transaction::getNUM_CLIENT(){return this->NUM_CLIENT;}
     QString Transaction::getADRESSE_CLIENT(){return this->ADRESSE_CLIENT;}
     QDate Transaction::getDATE_HEURE(){return this->DATE_HEURE;}
     int Transaction::getPRIX(){return this->PRIX;}
@@ -39,7 +39,7 @@ Transaction::Transaction(QString NOM_CLIENT,int NUM_CLIENT ,QString ADRESSE_CLIE
 
     void Transaction::setID_FACTURE(int ID_FACTURE){this->ID_FACTURE = ID_FACTURE;};
     void Transaction::setNOM_CLIENT(QString NOM_CLIENT){this->NOM_CLIENT = NOM_CLIENT;}
-    void Transaction::setNUM_CLIENT(int NUM_CLIENT){this->NUM_CLIENT = NUM_CLIENT;}
+    void Transaction::setNUM_CLIENT(QString NUM_CLIENT){this->NUM_CLIENT = NUM_CLIENT;}
     void Transaction::setADRESSE_CLIENT(QString ADRESSE_CLIENT){this->ADRESSE_CLIENT = ADRESSE_CLIENT;}
     void Transaction::setDATE_HEURE(QDate DATE_HEURE){this->DATE_HEURE = DATE_HEURE;}
     void Transaction::setPRIX(int PRIX){this->PRIX = PRIX;}
@@ -67,8 +67,9 @@ Transaction::Transaction(QString NOM_CLIENT,int NUM_CLIENT ,QString ADRESSE_CLIE
         query.addBindValue(l);
         query.addBindValue(this->NOM_CLIENT);
 
-        stringInt = QString::number(this->NUM_CLIENT);
-        query.addBindValue(stringInt);
+        query.addBindValue(this->NUM_CLIENT);
+
+
         query.addBindValue(this->ADRESSE_CLIENT);
         query.addBindValue(this->DATE_HEURE);
 
@@ -96,7 +97,7 @@ Transaction::Transaction(QString NOM_CLIENT,int NUM_CLIENT ,QString ADRESSE_CLIE
     {
         QString res=QString::number(ID_FACTURE);
         QString res1= QString(NOM_CLIENT);
-        QString res2= QString::number(NUM_CLIENT);
+        QString res2= QString(NUM_CLIENT);
         QString res3= QString(ADRESSE_CLIENT);
         QDate res4= QDate(DATE_HEURE);
         QString res5= QString::number(PRIX);
@@ -144,6 +145,31 @@ void Transaction::trie(QTableView* table){
     table->show();
 }
 
+void Transaction::tri1(QTableView* table){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from TRANSACTION  ORDER BY DATE_HEURE DESC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+
+void Transaction::tri2(QTableView* table){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from TRANSACTION  ORDER BY ID_FACTURE DESC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+
+
+
+
 void Transaction::recherche1(QTableView* table,int spec){
 
     QSqlQueryModel *model= new QSqlQueryModel();
@@ -156,4 +182,27 @@ void Transaction::recherche1(QTableView* table,int spec){
     table->show();
 }
 
+void Transaction::recherche2(QTableView* table,QString spec)
+{
 
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from TRANSACTION  where NOM_CLIENT=:NOM_CLIENT");
+    query->bindValue(":NOM_CLIENT",spec);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+
+void Transaction::recherche3(QTableView* table,QString spec){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from TRANSACTION  where ADRESSE_CLIENT=:ADRESSE_CLIENT");
+    query->bindValue(":ADRESSE_CLIENT",spec);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}

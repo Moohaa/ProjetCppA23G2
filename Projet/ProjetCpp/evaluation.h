@@ -40,6 +40,17 @@ public:
     void recherche2(QTableView* table,int);
 
 
+     void rechercher1(QTableView* table,int NOTE_CLIENT);
+     QSqlQueryModel * rechercher2(const QString &NOM_CLIENT);
+     QSqlQueryModel * rechercher3(const QString &REMARQUE_CLIENT);
+
+     void tri1(QTableView *table);
+     void tri2(QTableView *table);
+     void tri3(QTableView *table);
+
+
+
+
 };
 
 #endif // EVALUATION_H
