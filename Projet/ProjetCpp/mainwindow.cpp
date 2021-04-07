@@ -1306,7 +1306,7 @@ void MainWindow::on_pushButton_56_clicked()
     ui->tabFournisseur->setModel(model );
 }
 
-void MainWindow::on_pushButton_43_clicked()//PDF Fournisseur
+void MainWindow::on_pdf_f_clicked()//PDF Fournisseur
 {
     QString str;
                  str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
