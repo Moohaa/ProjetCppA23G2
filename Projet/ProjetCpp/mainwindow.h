@@ -29,6 +29,8 @@ private slots:
 
     void on_pushButton_11_clicked();
 
+    void on_pdf_f_clicked();
+
 //---------------------------------------------~MARIEM~-----------------------------------------------------
     void on_pushButton_clicked();
 

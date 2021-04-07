@@ -3,40 +3,12 @@
 # Project created by QtCreator 2018-10-26T21:45:23
 #
 #-------------------------------------------------
-<<<<<<< HEAD
 
-QT       += core gui sql
-=======
-QT += core gui
-QT+= sql
-QT       += core gui printsupport
-QT       += core gui network
-QT       +=  network
-QT       += core gui widgets texttospeech
-QT += core gui widgets
-QT += multimedia
-QT       += core gui sql serialport
-QT += serialport
-QT += core gui charts
-QT       += core gui sql
-<<<<<<< HEAD:Projet/Atelier_Connexion.pro
-QT+= sql
-CONFIG += console
-=======
->>>>>>> Ahmed_Elmoez_Noomen
+QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech
+CONFIG += console stl
 
-QT       += network
-
-QT       += multimedia multimediawidgets printsupport serialport charts
-
-CONFIG += stl
-<<<<<<< HEAD
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-=======
->>>>>>> Ahmed_Elmoez_Noomen:Projet/ProjetCpp/ProjetCpp2A.pro
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
->>>>>>> Ahmed_Elmoez_Noomen
 TARGET = Atelier_Connexion
 TEMPLATE = app
 
@@ -55,60 +27,34 @@ OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
 
 SOURCES += \
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:Projet/Atelier_Connexion.pro
     droitacces.cpp \
     fournisseur.cpp \
     login.cpp \
-        main.cpp \
+    main.cpp \
     connection.cpp \
-    utilisateur.cpp
-=======
->>>>>>> Ahmed_Elmoez_Noomen
+    utilisateur.cpp \
     commande.cpp \
     commandefournisseur.cpp \
     evaluation.cpp \
-    fournisseur.cpp \
     menu.cpp \
     offrefournisseur.cpp \
     plat.cpp \
     smtp.cpp \
     stock.cpp\
     produit.cpp\
-    connection.cpp\
-    main.cpp \
     mainwindow.cpp \
     table.cpp \
-<<<<<<< HEAD
-    transaction.cpp\
-    droitacces.cpp \
-    login.cpp \
-    utilisateur.cpp
-=======
     transaction.cpp
->>>>>>> Ahmed_Elmoez_Noomen:Projet/ProjetCpp/ProjetCpp2A.pro
-
->>>>>>> Ahmed_Elmoez_Noomen
-
-
-
 
 HEADERS += \
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:Projet/Atelier_Connexion.pro
     droitacces.h \
     fournisseur.h \
     connection.h \
     login.h \
-    utilisateur.h
-=======
->>>>>>> Ahmed_Elmoez_Noomen
+    utilisateur.h \
     commande.h \
     commandefournisseur.h \
     evaluation.h \
-    fournisseur.h \
     menu.h \
     offrefournisseur.h \
     plat.h \
@@ -116,32 +62,12 @@ HEADERS += \
     stock.h\
     produit.h\
     mainwindow.h \
-    connection.h \
     table.h \
-<<<<<<< HEAD
-    transaction.h\
-    droitacces.h \
-    login.h \
-    utilisateur.h
-=======
     transaction.h
->>>>>>> Ahmed_Elmoez_Noomen:Projet/ProjetCpp/ProjetCpp2A.pro
-
->>>>>>> Ahmed_Elmoez_Noomen
-
-
-
-
 
 FORMS += \
-<<<<<<< HEAD
         mainwindow.ui\
-		login.ui
-=======
-    login.ui
-
-
->>>>>>> Ahmed_Elmoez_Noomen
+                login.ui
 
 QMAKE_CXXFLAGS += -std=gnu++11
 QMAKE_CXXFLAGS += -std=gnu++14
