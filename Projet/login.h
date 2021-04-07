@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef LOGIN_H
+#define LOGIN_H
 #include "inscri.h"
 #include <QMainWindow>
 #include <QPropertyAnimation>
@@ -15,16 +15,16 @@
 #include <QMediaPlayer>
 #include"fournisseur.h"
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class Login; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class Login : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    Login(QWidget *parent = nullptr);
+    ~Login();
 
 private slots:
 
@@ -83,10 +83,10 @@ private slots:
     void on_pushButton_7_clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::Login *ui;
     QPropertyAnimation *animation,*animation1;
     Inscri *ins;
     Utilisateur tmputilisateur,tmpdroit_u;
     droit_acces tmpdroit;
 };
-#endif // MAINWINDOW_H
+#endif // LOGIN_H
