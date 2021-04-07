@@ -6,6 +6,24 @@
 #include <QSqlQueryModel>
 #include<QTableView>
 
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+
 
 class Table
 {
@@ -44,7 +62,10 @@ public:
       void tri_Num(QTableView* table);
       void tri_NB(QTableView* table);
       void tri_DEB(QTableView* table);
-    //int lastId();
+      QVBoxLayout * stat();
+      int lastIDNumtable();
+      int lastIDnbchaise();
+
 
 };
 

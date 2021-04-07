@@ -457,13 +457,26 @@ release/commande.o: ../ProjetCpp/commande.cpp ../ProjetCpp/commande.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGridLayout \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QtWidgets \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QtWidgetsDepends \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QtCore \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QtCoreDepends \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstracteventdispatcher.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractstate.h \
@@ -490,7 +503,6 @@ release/commande.o: ../ProjetCpp/commande.cpp ../ProjetCpp/commande.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcollator.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcommandlineoption.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcommandlineparser.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qconcatenatetablesproxymodel.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdeadlinetimer.h \
@@ -615,8 +627,6 @@ release/commande.o: ../ProjetCpp/commande.cpp ../ProjetCpp/commande.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qgenericmatrix.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qgenericplugin.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qgenericpluginfactory.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qiconengine.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qiconengineplugin.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qimageiohandler.h \
@@ -694,12 +704,6 @@ release/commande.o: ../ProjetCpp/commande.cpp ../ProjetCpp/commande.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaccessiblewidget.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qbuttongroup.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcalendarwidget.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcheckbox.h \
@@ -758,7 +762,6 @@ release/commande.o: ../ProjetCpp/commande.cpp ../ProjetCpp/commande.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistview.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmdiarea.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmdisubwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
@@ -2199,6 +2202,18 @@ release/mainwindow.o: ../ProjetCpp/mainwindow.cpp ../ProjetCpp/mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdatetimeedit.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcalendar.h \
 		../ProjetCpp/table.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGridLayout \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
 		../ProjetCpp/commande.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
 		../ProjetCpp/connection.h \
@@ -2209,7 +2224,11 @@ release/mainwindow.o: ../ProjetCpp/mainwindow.cpp ../ProjetCpp/mainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QFileDialog \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qfiledialog.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\ProjetCpp\mainwindow.cpp
 
 release/table.o: ../ProjetCpp/table.cpp ../ProjetCpp/table.h \
@@ -2340,13 +2359,26 @@ release/table.o: ../ProjetCpp/table.cpp ../ProjetCpp/table.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QGridLayout \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
+		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QtWidgets \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/QtWidgetsDepends \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QtCore \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/QtCoreDepends \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstracteventdispatcher.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qabstractstate.h \
@@ -2373,7 +2405,6 @@ release/table.o: ../ProjetCpp/table.cpp ../ProjetCpp/table.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcollator.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcommandlineoption.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcommandlineparser.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qconcatenatetablesproxymodel.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtCore/qdeadlinetimer.h \
@@ -2498,8 +2529,6 @@ release/table.o: ../ProjetCpp/table.cpp ../ProjetCpp/table.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qgenericmatrix.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qgenericplugin.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qgenericpluginfactory.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qiconengine.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qiconengineplugin.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtGui/qimageiohandler.h \
@@ -2577,12 +2606,6 @@ release/table.o: ../ProjetCpp/table.cpp ../ProjetCpp/table.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaccessiblewidget.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qbuttongroup.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcalendarwidget.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qcheckbox.h \
@@ -2641,7 +2664,6 @@ release/table.o: ../ProjetCpp/table.cpp ../ProjetCpp/table.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistview.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlistwidget.h \
-		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmdiarea.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmdisubwindow.h \
 		C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \

@@ -2192,7 +2192,7 @@ border-radius:10px;
         <x>0</x>
         <y>10</y>
         <width>851</width>
-        <height>591</height>
+        <height>681</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2255,11 +2255,11 @@ border-radius:10px;
           <x>0</x>
           <y>0</y>
           <width>841</width>
-          <height>441</height>
+          <height>631</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_22">
          <attribute name="title">
@@ -2619,8 +2619,132 @@ border-radius:10px;
         </widget>
         <widget class="QWidget" name="tab_24">
          <attribute name="title">
-          <string>Statistique</string>
+          <string>Mail</string>
          </attribute>
+         <widget class="QWidget" name="layoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>701</width>
+            <height>451</height>
+           </rect>
+          </property>
+          <layout class="QFormLayout" name="formLayout_2">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::ExpandingFieldsGrow</enum>
+           </property>
+           <property name="rowWrapPolicy">
+            <enum>QFormLayout::WrapLongRows</enum>
+           </property>
+           <property name="verticalSpacing">
+            <number>9</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_81">
+             <property name="text">
+              <string>Smtp-server:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEdit_39F">
+             <property name="text">
+              <string>smtp.gmail.com</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_83">
+             <property name="text">
+              <string>Server port:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="port_2F">
+             <property name="text">
+              <string>465</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_84">
+             <property name="text">
+              <string>Username:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="uname_4F"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_85">
+             <property name="text">
+              <string>Password:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="paswd_2F">
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_86">
+             <property name="text">
+              <string>Recipant to:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="rcpt_2F"/>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_87">
+             <property name="text">
+              <string>Subject:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="subject_2F"/>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_88">
+             <property name="text">
+              <string>Message:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QPlainTextEdit" name="msg_2F"/>
+           </item>
+           <item row="7" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QPushButton" name="sendBtn_2F">
+               <property name="text">
+                <string>    Envoyer    </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="exitBtn_2F">
+               <property name="text">
+                <string>     Exit    </string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -2634,11 +2758,11 @@ border-radius:10px;
           <x>0</x>
           <y>0</y>
           <width>821</width>
-          <height>541</height>
+          <height>661</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_26">
          <attribute name="title">
@@ -2829,31 +2953,18 @@ border-radius:10px;
          <widget class="QTableView" name="tableView_8">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>591</width>
+            <x>20</x>
+            <y>60</y>
+            <width>601</width>
             <height>291</height>
            </rect>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_81">
-          <property name="geometry">
-           <rect>
-            <x>630</x>
-            <y>50</y>
-            <width>161</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Entrer l'id du commande</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="lineEdit_40">
           <property name="geometry">
            <rect>
             <x>640</x>
-            <y>100</y>
+            <y>120</y>
             <width>101</width>
             <height>20</height>
            </rect>
@@ -2862,7 +2973,7 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_39">
           <property name="geometry">
            <rect>
-            <x>640</x>
+            <x>630</x>
             <y>150</y>
             <width>121</width>
             <height>31</height>
@@ -2876,7 +2987,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>370</y>
+            <y>490</y>
             <width>111</width>
             <height>31</height>
            </rect>
@@ -2888,8 +2999,8 @@ border-radius:10px;
          <widget class="QLineEdit" name="lineEdit_31">
           <property name="geometry">
            <rect>
-            <x>150</x>
-            <y>340</y>
+            <x>110</x>
+            <y>440</y>
             <width>113</width>
             <height>20</height>
            </rect>
@@ -2899,7 +3010,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>590</x>
-            <y>330</y>
+            <y>460</y>
             <width>81</width>
             <height>16</height>
            </rect>
@@ -2918,8 +3029,8 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_40">
           <property name="geometry">
            <rect>
-            <x>620</x>
-            <y>370</y>
+            <x>630</x>
+            <y>500</y>
             <width>131</width>
             <height>31</height>
            </rect>
@@ -2931,8 +3042,8 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_41">
           <property name="geometry">
            <rect>
-            <x>620</x>
-            <y>420</y>
+            <x>630</x>
+            <y>540</y>
             <width>131</width>
             <height>31</height>
            </rect>
@@ -2945,7 +3056,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>330</y>
+            <y>440</y>
             <width>101</width>
             <height>20</height>
            </rect>
@@ -2963,9 +3074,9 @@ border-radius:10px;
          <widget class="QPushButton" name="recher_2">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>420</y>
-            <width>121</width>
+            <x>10</x>
+            <y>540</y>
+            <width>111</width>
             <height>31</height>
            </rect>
           </property>
@@ -2976,10 +3087,10 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_43">
           <property name="geometry">
            <rect>
-            <x>670</x>
-            <y>230</y>
-            <width>75</width>
-            <height>23</height>
+            <x>490</x>
+            <y>10</y>
+            <width>101</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -2989,8 +3100,8 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_prix">
           <property name="geometry">
            <rect>
-            <x>624</x>
-            <y>470</y>
+            <x>630</x>
+            <y>590</y>
             <width>131</width>
             <height>31</height>
            </rect>
@@ -3002,14 +3113,45 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_ntab">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>470</y>
-            <width>121</width>
+            <x>10</x>
+            <y>580</y>
+            <width>111</width>
             <height>31</height>
            </rect>
           </property>
           <property name="text">
            <string>Numéro de table</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_pdf">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>20</y>
+            <width>121</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>generer un pdf</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_28">
+         <attribute name="title">
+          <string>Statistiques</string>
+         </attribute>
+         <widget class="QPushButton" name="STATF">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>140</y>
+            <width>151</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>afficher les statistique</string>
           </property>
          </widget>
         </widget>

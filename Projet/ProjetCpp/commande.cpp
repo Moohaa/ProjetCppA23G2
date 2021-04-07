@@ -185,7 +185,7 @@ int Commande::check_tabcom() // check if it exsits or not  par id
  QString res2 = QString::number(res1);
     QSqlQuery query;
 
-    query.prepare("select * from COMMANDE  INNER JOIN  TABLES   ON  TABLES.NUM_TABLE =:COMMANDE.NUM_TABLE");
+    query.prepare("SELECT * from COMMANDE  INNER JOIN  TABLES   ON  TABLES.NUM_TABLE =:COMMANDE.NUM_TABLE");
     query.bindValue(":COMMANDE.NUM_TABLE",res2);
 
 

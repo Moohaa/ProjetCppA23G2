@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "stock.h"
+#include"smtp.h"
 #include "produit.h"
 #include <QMediaPlayer>
 #include <QTableView>
@@ -22,6 +23,7 @@ public:
 
 
 private slots:
+    void  mailSent(QString status);
 //---------------------------------------------~MARIEM~-----------------------------------------------------
     void on_pushButton_clicked();
 
@@ -155,6 +157,20 @@ private slots:
     void on_pushButton_prix_clicked();
 
     void on_pushButton_ntab_clicked();
+
+
+
+
+
+    //void on_pushButton_pdf_clicked();
+
+    void on_sendBtn_2F_clicked();
+
+
+
+
+
+    void on_STATF_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -3,10 +3,10 @@
 # Project created by QtCreator 2018-10-26T21:45:23
 #
 #-------------------------------------------------
-
+QT += charts
 QT       += core gui sql
 
-QT       += core gui multimedia
+QT       += core gui multimedia network
 
 CONFIG += stl
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -37,7 +37,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     table.cpp \
-    transaction.cpp
+    transaction.cpp \
+    smtp.cpp \
+    stat.cpp
 
 
 
@@ -53,7 +55,9 @@ HEADERS += \
     mainwindow.h \
     connection.h \
     table.h \
-    transaction.h
+    transaction.h \
+    smtp.h \
+    stat.h
 
 
 
@@ -61,7 +65,8 @@ HEADERS += \
 
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    stat.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,5 +1,5 @@
 #include "table.h"
-
+#include <iostream>
 #include<QtWidgets>
 #include <QSqlQuery>
 #include  <QSqlQueryModel>
@@ -10,6 +10,10 @@
 #include<QDebug>
 #include<QString>
 #include<QObject>
+
+#include <QThread>
+QT_CHARTS_USE_NAMESPACE
+using namespace  std;
 
 Table::Table()
 {
@@ -218,3 +222,77 @@ void Table::tri_DEB(QTableView* table)// trier selon etat debarrassage
     table->setModel(model);
     table->show();
 }
+int Table::lastIDNumtable(){
+        int lastId = 0;
+        QSqlQuery qry3 ;
+        qry3.prepare("select MAX(NUM_TABLE) from TABLES");
+        if (qry3.exec()){
+            while(qry3.next()){
+            lastId = qry3.value(0).toInt();}
+        }
+        return lastId;
+    }
+
+    int Table::lastIDnbchaise(){
+        int lastId = 0;
+        QSqlQuery qry3 ;
+        qry3.prepare("select MAX(NB_CHAISES) from TABLES");
+        if (qry3.exec()){
+            while(qry3.next()){
+            lastId = qry3.value(0).toInt();}
+        }
+        return lastId;
+    }
+
+
+   QVBoxLayout * Table::stat(){
+        int countTABLE = this->lastIDNumtable();
+        int countNBCHAISES = this->lastIDnbchaise();
+        QStringList categories;
+        for (int j = 1;j<= countNBCHAISES;j++) {
+            categories << QString::fromStdString(std::to_string(j));
+        }
+        cout << countTABLE << " " << countNBCHAISES << endl;
+         QBarSeries *series = new QBarSeries();
+        for (int i=1;i <= countTABLE;i++) {
+            std::string s = std::to_string(i);
+            QString qstr = QString::fromStdString(s);
+            QBarSet *set0 = new QBarSet(qstr);
+            for (int j=1;j<= countNBCHAISES;j++) {
+
+                QSqlQuery query;
+
+                QString stringnbchaises = QString::number(j);
+                QString stringnumTable = QString::number(i);
+
+                query.prepare("SELECT DEBARRASSAGE FROM TABLES WHERE NUM_TABLE=? AND NB_CHAISES=?");
+
+                query.addBindValue(stringnumTable);
+                query.addBindValue(stringnbchaises);
+
+                 query.exec();
+                 if(query.next()){
+                     *set0 << query.value(0).toUInt();
+                 }else{
+                     *set0 << 0;
+                 }
+            }
+            series->append(set0);
+        }
+           QChart *chart = new QChart();
+           chart->addSeries(series);
+           chart->setTitle("Offres prix produit");
+           chart->setAnimationOptions(QChart::SeriesAnimations);
+           QBarCategoryAxis *axis = new QBarCategoryAxis();
+           axis->append(categories);
+           chart->createDefaultAxes();
+           chart->setAxisX(axis, series);
+           chart->legend()->setVisible(true);
+           chart->legend()->setAlignment(Qt::AlignBottom);
+           QChartView *chartView = new QChartView(chart);
+           chartView->setRenderHint(QPainter::Antialiasing);
+           QVBoxLayout *mainLayout = new QVBoxLayout;
+           mainLayout->addWidget(chartView);
+           return mainLayout;
+
+    }

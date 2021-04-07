@@ -14,6 +14,9 @@
 #include "menu.h"
 #include "table.h"
 #include "commande.h"
+#include "smtp.h"
+#include "stat.h"
+#include<QAbstractSocket>
 
 #include <QDebug>
 #include "connection.h"
@@ -28,6 +31,28 @@
 #include <QPixmap>
 #include <QMediaPlayer>
 
+
+
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+
+//#include <QPrinter>
+#include <QFileDialog>
 
 
 
@@ -891,4 +916,98 @@ Commande c;;
             }
 
                ui->lineEdit_31->setText("");
+}
+
+
+
+
+
+/*void MainWindow::on_pushButton_pdf_clicked()
+{
+    QString str;
+                 str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
+                 str.append("<table border=1><tr>") ;
+                 str.append("<td>"+QString("ID_COMMANDE")+"</td>") ;
+                 str.append("<td>"+QString("QUANTITE")+"</td>") ;
+                 str.append("<td>"+QString("LIBELLE")+"</td>") ;
+                 str.append("<td>"+QString("DESCRIPTION")+"</td>") ;
+                 str.append("<td>"+QString("PRIX")+"</td>") ;
+                 str.append("<td>"+QString("NUM_TABLE")+"</td>") ;
+
+
+                 QSqlQuery* query=new QSqlQuery();
+                 query->exec("SELECTID_COMMANDE,QUANTITE,LIBELLE,DESCRIPTION,PRIX,NUM_TABLE FROM COMMANDE");
+
+                 while(query->next())
+                 {
+                 str.append("<tr><td>");
+                 str.append(query->value(0).toString()) ;
+                 str.append("</td><td>") ;
+                 str.append(query->value(1).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(2).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(3).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(4).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(5).toString());
+                 str.append("</td></tr>");
+
+
+
+
+                 }
+              str.append("</table></center></body></html>") ;
+
+             QPrinter printer ;
+              printer.setOrientation(QPrinter::Portrait);
+              printer.setOutputFormat(QPrinter::PdfFormat);
+              printer.setPaperSize(QPrinter::A4) ;
+
+            QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+              if (path.isEmpty()) return ;
+              printer.setOutputFileName(path) ;
+
+              QTextDocument doc;
+              doc.setHtml(str) ;
+              doc.print(&printer);
+}*/
+
+void MainWindow::on_sendBtn_2F_clicked()
+{
+    Smtp* smtp = new Smtp("fadwa.berrich@esprit.tn","192JFT4518", "smtp.gmail.com");
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+    /*if( !files.isEmpty() )
+        smtp->sendMail("mariem.nacib@esprit.tn", ui->rcpt->currentText() , ui->subject->text(),ui->msg->toPlainText(), files );
+    else*/
+        smtp->sendMail("fadwa.berrich@esprit.tn", ui->rcpt_2F->text() , ui->subject_2F->text(),ui->msg_2F->toPlainText());
+}
+void   MainWindow::mailSent(QString status)
+{
+
+    /*if(status == "Message sent")
+       QMessageBox::warning( nullptr, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
+    {
+        ui->msg->setPlainText("Email sent!") ;
+        animation->setDuration(1000);
+        animation->setStartValue(ui->msg->geometry());
+        animation->setEndValue(QRect(200,200,100,50));
+        animation->start();
+    }*/
+    ui->rcpt_2F->clear();
+    ui->subject_2F->clear();
+    //ui->fileF->clear();
+    ui->msg_2F->clear();
+    ui->paswd_2F->clear();
+}
+
+
+
+
+void MainWindow::on_STATF_clicked()
+{
+    stati s;
 }
