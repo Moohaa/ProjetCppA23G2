@@ -202,21 +202,11 @@ private slots:
 
     void on_recher_clicked();
 
-    void on_pushButton_40_clicked();
-
-    void on_pushButton_41_clicked();
 
     void on_tableView_8_clicked(const QModelIndex &index);
 
-    void on_pushButton_42_clicked();
 
     void on_recher_2_clicked();
-
-    void on_pushButton_43_clicked();
-
-    void on_pushButton_44_clicked();
-
-
 
     void on_pushButton_DB_clicked();
 
@@ -239,6 +229,16 @@ private slots:
 
 
     void on_STATF_clicked();
+
+    void on_buttonStock_clicked();
+
+    void on_pushButton_441_clicked();
+
+    void on_idDeCommande_clicked();
+
+    void on_libelle_clicked();
+
+    void on_nombredechaises_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -1216,7 +1216,7 @@ color : white;</string>
            <string>Par Id du Stock</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_43">
+         <widget class="QPushButton" name="buttonStock">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -2600,7 +2600,7 @@ border-radius:10px;
            </rect>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_42">
+         <widget class="QPushButton" name="nombredechaises">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -2632,7 +2632,7 @@ border-radius:10px;
            <string>Chercher par :</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_44">
+         <widget class="QPushButton" name="pushButton_441">
           <property name="geometry">
            <rect>
             <x>620</x>
@@ -2671,7 +2671,7 @@ border-radius:10px;
            <string>Etat de débarrassage</string>
           </property>
          </widget>
-         <zorder>pushButton_44</zorder>
+         <zorder>pushButton_441</zorder>
          <zorder>tableView_7</zorder>
          <zorder>pushButton_33</zorder>
          <zorder>lineEdit_32</zorder>
@@ -2680,7 +2680,7 @@ border-radius:10px;
          <zorder>pushButton_35</zorder>
          <zorder>pushButton_36</zorder>
          <zorder>find</zorder>
-         <zorder>pushButton_42</zorder>
+         <zorder>nombredechaises</zorder>
          <zorder>label_80</zorder>
          <zorder>pushButton_DB</zorder>
          <zorder>pushButton_deb1</zorder>
@@ -2698,7 +2698,7 @@ border-radius:10px;
             <height>451</height>
            </rect>
           </property>
-          <layout class="QFormLayout" name="formLayout_2">
+          <layout class="QFormLayout" name="formLayout_21">
            <property name="fieldGrowthPolicy">
             <enum>QFormLayout::ExpandingFieldsGrow</enum>
            </property>
@@ -2723,7 +2723,7 @@ border-radius:10px;
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QLabel" name="label_83">
+            <widget class="QLabel" name="label_831">
              <property name="text">
               <string>Server port:</string>
              </property>
@@ -2774,7 +2774,7 @@ border-radius:10px;
             <widget class="QLineEdit" name="rcpt_2F"/>
            </item>
            <item row="5" column="0">
-            <widget class="QLabel" name="label_87">
+            <widget class="QLabel" name="label_871">
              <property name="text">
               <string>Subject:</string>
              </property>
@@ -2794,7 +2794,7 @@ border-radius:10px;
             <widget class="QPlainTextEdit" name="msg_2F"/>
            </item>
            <item row="7" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <layout class="QHBoxLayout" name="horizontalLayout_21">
              <item>
               <widget class="QPushButton" name="sendBtn_2F">
                <property name="text">
@@ -2830,7 +2830,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_26">
          <attribute name="title">
@@ -3094,7 +3094,7 @@ border-radius:10px;
            <string>Trier par  :</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_40">
+         <widget class="QPushButton" name="idDeCommande">
           <property name="geometry">
            <rect>
             <x>630</x>
@@ -3107,7 +3107,7 @@ border-radius:10px;
            <string>ID de commande</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_41">
+         <widget class="QPushButton" name="libelle">
           <property name="geometry">
            <rect>
             <x>630</x>
@@ -3205,7 +3205,7 @@ border-radius:10px;
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" name="tab_28">
+        <widget class="QWidget" name="tab_281">
          <attribute name="title">
           <string>Statistiques</string>
          </attribute>
@@ -3301,7 +3301,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_29">
          <attribute name="title">
@@ -4295,7 +4295,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_36">
          <attribute name="title">
@@ -5055,7 +5055,7 @@ border-radius:10px;
            <string>Modifier</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_82">
+         <widget class="QLabel" name="label_821">
           <property name="geometry">
            <rect>
             <x>140</x>
@@ -5241,7 +5241,7 @@ color : white;</string>
            <string>Generation Des Factures(PDF)</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_85">
+         <widget class="QLabel" name="label_851">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -5662,7 +5662,7 @@ color : white;</string>
            <string>ID</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_84">
+         <widget class="QLabel" name="label_841">
           <property name="geometry">
            <rect>
             <x>90</x>
@@ -5682,7 +5682,7 @@ color : white;</string>
            <pixmap>stars.png</pixmap>
           </property>
          </widget>
-         <widget class="QLabel" name="label_86">
+         <widget class="QLabel" name="label_866">
           <property name="geometry">
            <rect>
             <x>180</x>
@@ -5776,7 +5776,7 @@ color : white;</string>
            </rect>
           </property>
          </widget>
-         <widget class="QLabel" name="label_88">
+         <widget class="QLabel" name="label_888">
           <property name="geometry">
            <rect>
             <x>100</x>

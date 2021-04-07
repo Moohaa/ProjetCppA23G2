@@ -1260,14 +1260,14 @@ Commande c;
                ui->lineEdit_31->setText("");
 }
 
-void MainWindow::on_pushButton_40_clicked()//trier commande par id
+void MainWindow::on_idDeCommande_clicked()//trier commande par id
 {
   Commande c;
     QTableView* table=ui->tableView_8;
     c.tri_ID(table);
 }
 
-void MainWindow::on_pushButton_41_clicked()//trier commande par libelle
+void MainWindow::on_libelle_clicked()//trier commande par libelle
 {
     Commande c;
       QTableView* table=ui->tableView_8;
@@ -1286,7 +1286,7 @@ void MainWindow::on_tableView_8_clicked(const QModelIndex &index)//recupereer do
           ui->lineEdit_34->setText(ui->tableView_8->model()->index(row,5).data().toString());
 }
 
-void MainWindow::on_pushButton_42_clicked()//recherche table par nbr chaises
+void MainWindow::on_nombredechaises_clicked()//recherche table par nbr chaises
 {
     QString NB_CHAISES;
     QString find =ui->find->text();
@@ -1325,7 +1325,7 @@ c.setLIBELLE(ui->lineEdit_31->text());
 
 }
 
-void MainWindow::on_pushButton_43_clicked()//ACtualiser
+void MainWindow::on_buttonStock_clicked()//ACtualiser
 {
 
     Commande c;
@@ -1333,7 +1333,7 @@ void MainWindow::on_pushButton_43_clicked()//ACtualiser
 
 }
 
-void MainWindow::on_pushButton_44_clicked()//actualiser
+void MainWindow::on_pushButton_441_clicked()//actualiser
 {
     Table t;
             ui->tableView_7->setModel(t.afficher());
@@ -1483,11 +1483,11 @@ void   MainWindow::mailSent(QString status)
 
 
 
-
+/*
 void MainWindow::on_STATF_clicked()
 {
     stati s;
-}
+}*/
 //--------------------MAHMOUD-----------------------------
 //----Ajouter Fournisseur
 void MainWindow::on_F_ADD_clicked()
