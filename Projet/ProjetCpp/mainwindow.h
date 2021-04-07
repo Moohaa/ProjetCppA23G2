@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "stock.h"
+#include"smtp.h"
+#include "produit.h"
 #include <QMediaPlayer>
 
 namespace Ui {
@@ -29,6 +32,7 @@ private slots:
 
     void on_pushButton_11_clicked();
 
+    void  mailSent(QString status);
 //---------------------------------------------~MARIEM~-----------------------------------------------------
     void on_pushButton_clicked();
 
@@ -194,6 +198,47 @@ private slots:
     void on_pushButton_59_clicked();
 
     void on_rechercher_5_clicked();
+    void on_tableView_7_clicked(const QModelIndex &index);
+
+    void on_recher_clicked();
+
+    void on_pushButton_40_clicked();
+
+    void on_pushButton_41_clicked();
+
+    void on_tableView_8_clicked(const QModelIndex &index);
+
+    void on_pushButton_42_clicked();
+
+    void on_recher_2_clicked();
+
+    void on_pushButton_43_clicked();
+
+    void on_pushButton_44_clicked();
+
+
+
+    void on_pushButton_DB_clicked();
+
+    void on_pushButton_deb1_clicked();
+
+    void on_pushButton_prix_clicked();
+
+    void on_pushButton_ntab_clicked();
+
+
+
+
+
+    //void on_pushButton_pdf_clicked();
+
+    void on_sendBtn_2F_clicked();
+
+
+
+
+
+    void on_STATF_clicked();
 
 private:
     Ui::MainWindow *ui;
