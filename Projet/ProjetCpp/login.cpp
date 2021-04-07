@@ -30,7 +30,6 @@
 #include <QSqlTableModel>
 #include <QSortFilterProxyModel>
 #include <QSqlRelationalTableModel>
-
 #include <QPrintPreviewDialog>
 #include <QPainter>
 #include <QDebug>
@@ -43,7 +42,7 @@
 #include <QtPrintSupport/QPrintDialog>
 #include <QPushButton>
 #include<QFileInfo>
-//
+
 Login::Login(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Login)
@@ -90,13 +89,17 @@ void Login::on_Login_connexion_clicked()
    else
     if(email==qry.value(3).toString() && mdp==qry.value(4).toString())
     {
-        ui->stackedWidget->setCurrentIndex(3);
-          MainWindow *w =new MainWindow(this);
-//          MainWindow w;
-          w->show();
-          this->setVisible(false);
+        if(qry.value(5).toString() == "Gerant"){
+            ui->stackedWidget->setCurrentIndex(11);
+            MainWindow *w =new MainWindow(this);
+            w->show();
+        }else{
+            //ui->stackedWidget->setCurrentIndex(3);
+             MainWindow *w =new MainWindow(this);
+             w->show();
+             this->setVisible(false);
+        }
     }
-
     else
        { QMessageBox :: critical(nullptr,QObject::tr("Erreur "),
                                  QObject::tr("Vérifier votre login ou mot de passe\n"
