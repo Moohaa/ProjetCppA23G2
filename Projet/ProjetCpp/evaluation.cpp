@@ -196,4 +196,3 @@ void Evaluation::tri3(QTableView *table){
     table->show();
 
 }
-

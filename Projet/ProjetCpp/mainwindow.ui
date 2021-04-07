@@ -3144,6 +3144,16 @@ border-radius:10px;
            </property>
           </widget>
          </widget>
+         <widget class="QComboBox" name="comboF">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>450</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab_30">
          <attribute name="title">
@@ -3898,6 +3908,24 @@ color : white;</string>
           </layout>
          </widget>
         </widget>
+        <widget class="QWidget" name="tab_31">
+         <attribute name="title">
+          <string>Facture</string>
+         </attribute>
+         <widget class="QPushButton" name="pushButton_43">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>30</y>
+            <width>201</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generation Des Factures(PDF)</string>
+          </property>
+         </widget>
+        </widget>
        </widget>
        <widget class="QLabel" name="label_114">
         <property name="geometry">
@@ -3947,7 +3975,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_36">
          <attribute name="title">
@@ -4074,16 +4102,16 @@ color : white;</string>
            <rect>
             <x>20</x>
             <y>20</y>
-            <width>651</width>
-            <height>191</height>
+            <width>861</width>
+            <height>391</height>
            </rect>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_50">
           <property name="geometry">
            <rect>
-            <x>250</x>
-            <y>230</y>
+            <x>210</x>
+            <y>420</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -4095,8 +4123,8 @@ color : white;</string>
          <widget class="QLineEdit" name="OF_DELETE_P">
           <property name="geometry">
            <rect>
-            <x>120</x>
-            <y>230</y>
+            <x>90</x>
+            <y>420</y>
             <width>113</width>
             <height>31</height>
            </rect>
@@ -4106,7 +4134,7 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>30</x>
-            <y>240</y>
+            <y>420</y>
             <width>61</width>
             <height>20</height>
            </rect>
@@ -4118,8 +4146,8 @@ color : white;</string>
          <widget class="QLineEdit" name="OF_DELETE_F">
           <property name="geometry">
            <rect>
-            <x>140</x>
-            <y>280</y>
+            <x>90</x>
+            <y>460</y>
             <width>113</width>
             <height>31</height>
            </rect>
@@ -4128,8 +4156,8 @@ color : white;</string>
          <widget class="QLabel" name="label_127">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>290</y>
+            <x>10</x>
+            <y>470</y>
             <width>81</width>
             <height>20</height>
            </rect>
@@ -4141,8 +4169,8 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_51">
           <property name="geometry">
            <rect>
-            <x>280</x>
-            <y>360</y>
+            <x>740</x>
+            <y>430</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -4154,8 +4182,8 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_52">
           <property name="geometry">
            <rect>
-            <x>280</x>
-            <y>400</y>
+            <x>740</x>
+            <y>470</y>
             <width>151</width>
             <height>31</height>
            </rect>
@@ -4167,8 +4195,8 @@ color : white;</string>
          <widget class="QLabel" name="label_128">
           <property name="geometry">
            <rect>
-            <x>60</x>
-            <y>370</y>
+            <x>520</x>
+            <y>440</y>
             <width>61</width>
             <height>20</height>
            </rect>
@@ -4180,8 +4208,8 @@ color : white;</string>
          <widget class="QLineEdit" name="OF_RECHERCHE_P">
           <property name="geometry">
            <rect>
-            <x>150</x>
-            <y>360</y>
+            <x>610</x>
+            <y>430</y>
             <width>113</width>
             <height>31</height>
            </rect>
@@ -4190,8 +4218,8 @@ color : white;</string>
          <widget class="QLabel" name="label_129">
           <property name="geometry">
            <rect>
-            <x>60</x>
-            <y>410</y>
+            <x>520</x>
+            <y>480</y>
             <width>81</width>
             <height>20</height>
            </rect>
@@ -4203,8 +4231,8 @@ color : white;</string>
          <widget class="QLineEdit" name="OF_RECHERCHE_F">
           <property name="geometry">
            <rect>
-            <x>150</x>
-            <y>400</y>
+            <x>610</x>
+            <y>470</y>
             <width>113</width>
             <height>31</height>
            </rect>

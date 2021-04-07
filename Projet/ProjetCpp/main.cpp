@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include "login.h"
 #include <QMessageBox>
 #include "connection.h"
 #include <QDebug>
@@ -8,25 +9,23 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    Connection c;
-
-    QSplashScreen *splash= new QSplashScreen;
-//splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
-splash->show();
-
-
-QTimer::singleShot(2500,splash,SLOT(close()));
-QTimer::singleShot(2500,&w,SLOT(show()));
-
-
-
     qDebug() << "Projet C++, Application Desktop:";
-    bool test=c.createconnect();
     qDebug() << "Smart Restaurant";
+    Connection c;
+    bool test=c.createconnect();
+    Login l;
+    l.show();
+// MainWindow w;
+//    w.show();
+ /*   QSplashScreen *splash= new QSplashScreen;
+    //splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
+    splash->show();
 
+    QTimer::singleShot(2500,splash,SLOT(close()));
+    QTimer::singleShot(2500,&w,SLOT(show()));
+*/
     if(test)
-    {w.show();
+    {//w.show();
         QMessageBox::information(nullptr, QObject::tr("database is open"),
                     QObject::tr("connection successful.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -38,6 +37,6 @@ QTimer::singleShot(2500,&w,SLOT(show()));
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
 
-delete (splash);
+    //delete (splash);
     return a.exec();
 }

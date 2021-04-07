@@ -37,6 +37,8 @@ public:
     QSqlQueryModel * afficher();
 
     int lastId();
+    void recherche2(QTableView* table,int);
+
 
      void rechercher1(QTableView* table,int NOTE_CLIENT);
      QSqlQueryModel * rechercher2(const QString &NOM_CLIENT);
