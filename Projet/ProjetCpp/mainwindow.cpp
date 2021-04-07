@@ -62,8 +62,6 @@
 #include <QPrinter>
 #include <QFileDialog>
 
-
-
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -101,10 +99,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
        //ui->gif->setMovie(myMoviebg);
 
-       myMoviebg->start();
+    myMoviebg->start();
 
-ui->label_94->setToolTip("Music");
-
+    ui->label_94->setToolTip("Music");
     ui->label_5->setPixmap(pix150);
     ui->label_3->setPixmap(pix1);
     ui->label_28->setPixmap(pix2);
@@ -135,25 +132,27 @@ ui->label_94->setToolTip("Music");
     Fournisseur fournisseur;
     ui->tabFournisseur->setModel(fournisseur.afficher());
 
-    //ui->label_84->setPixmap(pix4.scaled(100,100,Qt::KeepAspectRatio));
-
-
-   // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
-
-     produit test;
+    produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
+    qDebug() << "aejazlejejazklalk";
     ui->tableView_A->setModel(test.tri(ui->tableView_A->currentIndex().column()));
 
-    stock test1;
+   stock test1;
    ui->tableView_B->setModel(test1.afficher_stock());//Afficher Stock
-   //ui->tableView_B->setModel(test1.tri(ui->tableView_B->currentIndex().column()));
+  //ui->tableView_B->setModel(test1.tri(ui->tableView_B->currentIndex().column()));
 
-//-----------------------------------AHMED AFFICHAGE----------------------------------------------------
-
-   Transaction test3;
-   Evaluation test4;
+  Transaction test3;
+  Evaluation test4;
   ui->tableView_2->setModel(test3.afficher());
   ui->tableView->setModel(test4.afficher());
+
+  QSqlQueryModel *modelF=new QSqlQueryModel();
+  QSqlQuery qryF;
+  qryF.prepare("select ID_FOURNISSEUR from FOURNISSEUR");
+  qryF.exec();
+  modelF->setQuery(qryF);
+  ui->comboF->setModel(modelF);
+
 
 }
 
@@ -189,15 +188,11 @@ void MainWindow::on_pushButton_clicked()//Ajouter Produit
 {
     produit p;
 
-
     p.setNOM_PRODUIT(ui->lineEdit_2->text());
     p.setCATEGORIE_PRODUIT(ui->comboBox_3->currentText());
 
     p.ajouter();
     ui->tableView_A->setModel(p.afficher());
-
-
-
 }
 
 void MainWindow::on_pushButton_6_clicked()//suuprimer Produit
@@ -234,7 +229,6 @@ void MainWindow::on_pushButton_4_clicked()//modifier produit
 void MainWindow::on_TRI_clicked()//tri Produit
 {
         produit p;
-
       ui->tableView_A->setModel(p.tri(ui->tableView_A->currentIndex().column()));
 
 }
@@ -400,65 +394,39 @@ void MainWindow::on_rechercherStock_clicked()
         {
         text=ui->rechercherStock->text();
              if(text == "")
-
              {
-
                  ui->tableView_B->setModel(s.afficher_stock());
-
              }
-
-             else
-
+            else
              {
-
-
-
                  ui->tableView_B->setModel(s.rechercher_cr1(text));
-
              }
             }
              if(ui->radioButton->isChecked()==true)
             {
                 text=ui->rechercherStock->text();
                      if(text == "")
-
                      {
-
                          ui->tableView_B->setModel(s.afficher_stock());
-
                      }
-
                      else
-
                      {
-
-
-
                          ui->tableView_B->setModel(s.rechercher_cr2(text));
-
                      }
 
             }
              else if     (ui->radioButton_2->isChecked()==true)
              {
-
                  text=ui->rechercherStock->text();
                       if(text == "")
-
                       {
-
                           ui->tableView_B->setModel(s.afficher_stock());
-
                       }
-
                       else
-
                       {
                           ui->tableView_B->setModel(s.rechercher_cr3(text));
-
                       }
     }
-
 }
 
 
@@ -544,8 +512,6 @@ void MainWindow::on_rechercher_clicked()//Rechercher Transaction
           } else {
               findText = text;
               t.recherche1(table,findText.toUInt());
-
-
   }
   }
 
@@ -553,9 +519,7 @@ void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
 {
     Transaction t;
         ui->tableView_2->setModel(t.afficher());
-
 }
-
 
 void MainWindow::on_pushButton_42_clicked()
 {
@@ -591,7 +555,6 @@ void MainWindow::on_pushButton_42_clicked()
                  str.append("</td></td>");
                  str.append(query->value(6).toString());
                  str.append("</td></tr>");
-
 
                  }
               str.append("</table></center></body></html>") ;
@@ -660,8 +623,6 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation
           } else {
               findText = text;
               e.recherche2(table,findText.toUInt());
-
-
   }
 }
 
@@ -916,9 +877,6 @@ void MainWindow::on_pushButton_38_clicked()//modifier com
     QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);
 }
 
-
-
-
 void MainWindow::on_pushButton_34_clicked()//trier par num
 {
     Table t;
@@ -1046,11 +1004,12 @@ void MainWindow::on_pushButton_50_clicked()
 }
 
 void MainWindow::on_pushButton_45_clicked()
-{
+{/*
     delete ui->widget->layout();
     OffreFournisseur offre;
     QVBoxLayout * mainLayout = offre.stat();
-    ui->widget->setLayout(mainLayout);
+    ui->widget->setLayout(mainLayout);*/
+    return;
 }
 
 void MainWindow::on_pushButton_51_clicked()
@@ -1152,9 +1111,6 @@ void MainWindow::on_pushButton_43_clicked()//PDF Fournisseur
                  str.append("</td><td>") ;
                  str.append(query->value(5).toString());
                  str.append("</td></td>");
-
-
-
                  }
               str.append("</table></center></body></html>") ;
 
