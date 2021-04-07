@@ -247,4 +247,3 @@ void Smtp::readyRead()
     }
     response = "";
 }
-

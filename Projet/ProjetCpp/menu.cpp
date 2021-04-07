@@ -1,8 +1,8 @@
 #include "menu.h"
 #include <QSqlQuery>
 #include <QVariant>
-#include<QDateEdit>
-#include<QTableView>
+#include <QDateEdit>
+#include <QTableView>
 
 menu::menu(){}
 

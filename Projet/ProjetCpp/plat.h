@@ -2,7 +2,8 @@
 #define PLAT_H
 #include <QString>
 #include <QSqlQueryModel>
-#include<QTableView>
+#include <QTableView>
+
 class plat
 {
     QString NOM_PLAT;

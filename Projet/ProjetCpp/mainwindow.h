@@ -6,8 +6,6 @@
 #include"smtp.h"
 #include "produit.h"
 #include <QMediaPlayer>
-#include <QTableView>
-#include "transactionmain.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,8 +19,19 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
 private slots:
+
+//----------------------------------------MENU---------------------------------------------------
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
+
     void  mailSent(QString status);
 //---------------------------------------------~MARIEM~-----------------------------------------------------
     void on_pushButton_clicked();
@@ -41,6 +50,8 @@ private slots:
 
     void on_TRI_2_clicked();
 
+    void on_TRI_3_clicked();
+
     void on_tableView_B_doubleClicked();
 
     void on_tableView_A_doubleClicked();
@@ -51,21 +62,11 @@ private slots:
 
     void on_mute_clicked();
 
-    void on_tableView_B_clicked();
+    //void on_tableView_B_clicked();
 
     void on_tableView_A_clicked();
 
-//----------------------------------------MENU---------------------------------------------------
-
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_8_clicked();
-
-    void on_pushButton_9_clicked();
-
-    void on_pushButton_10_clicked();
-
-    void on_pushButton_11_clicked();
+    void on_rechercherStock_clicked();
 
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
@@ -74,13 +75,23 @@ private slots:
 
     void on_pushButton_14_clicked();
 
-    void on_pushButton_15_clicked();
+    //void on_pushButton_15_clicked();
 
     void on_pushButton_16_clicked();
 
     void on_pushButton_17_clicked();
 
     void on_pushButton_18_clicked();
+
+    void on_rechercher_clicked();
+
+    //void on_lineEdit_10_cursorPositionChanged(int arg1, int arg2);
+
+    void on_rechercher_2_clicked();
+
+    void on_pushButton_40_clicked();
+
+    void on_pushButton_41_clicked();
 
 //------------------------------------------AZIZ----------------------------------------------------
     void on_pushButton_21_clicked();
@@ -103,9 +114,9 @@ private slots:
 
     void on_pushButton_30_clicked();
 
-    void on_tableView_3_clicked(const QModelIndex &index);
+    void on_tableView_3_clicked();
 
-    void on_tableView_4_clicked(const QModelIndex &index);
+    void on_tableView_4_clicked();
 
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
@@ -121,8 +132,6 @@ private slots:
 
     void on_pushButton_36_clicked();
 
-
-
     void on_pushButton_37_clicked();
 
     void on_pushButton_38_clicked();
@@ -130,25 +139,74 @@ private slots:
     void on_pushButton_39_clicked();
 
 //-------------------------------------------------------------------------------------------------------------------------
+
+
+    void on_F_ADD_clicked();
+
+    void on_F_UPDATE_clicked();
+
+    void on_pushButton_44_clicked();
+
+    void on_CF_ADD_clicked();
+
+    void on_pushButton_46_clicked();
+
+    void on_pushButton_47_clicked();
+
+    void on_sendBtn_2_clicked();
+
+    void on_OF_ADD_clicked();
+
+    void on_OF_UPDATE_clicked();
+
+    void on_pushButton_50_clicked();
+
+    void on_pushButton_45_clicked();
+
+    void on_pushButton_51_clicked();
+
+    void on_pushButton_52_clicked();
+
+    void on_pushButton_49_clicked();
+
+    void on_pushButton_48_clicked();
+
+    void on_pushButton_53_clicked();
+
+    void on_pushButton_54_clicked();
+
+    void on_pushButton_55_clicked();
+
+    void on_pushButton_56_clicked();
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+
+    void on_pdf_f_clicked();
+
+    void on_pushButton_42_clicked();
+
+    void on_pushButton_43_clicked();
+
+    void on_pushButton_57_clicked();
+
+    void on_rechercher_3_clicked();
+
+    void on_rechercher_4_clicked();
+
+    void on_pushButton_58_clicked();
+
+    void on_pushButton_59_clicked();
+
+    void on_rechercher_5_clicked();
     void on_tableView_7_clicked(const QModelIndex &index);
 
     void on_recher_clicked();
 
-    void on_pushButton_40_clicked();
-
-    void on_pushButton_41_clicked();
 
     void on_tableView_8_clicked(const QModelIndex &index);
 
-    void on_pushButton_42_clicked();
 
     void on_recher_2_clicked();
-
-    void on_pushButton_43_clicked();
-
-    void on_pushButton_44_clicked();
-
-
 
     void on_pushButton_DB_clicked();
 
@@ -172,10 +230,20 @@ private slots:
 
     void on_STATF_clicked();
 
+    void on_buttonStock_clicked();
+
+    void on_pushButton_441_clicked();
+
+    void on_idDeCommande_clicked();
+
+    void on_libelle_clicked();
+
+    void on_nombredechaises_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
-
+    QMovie *myMoviebg;
 
 };
 

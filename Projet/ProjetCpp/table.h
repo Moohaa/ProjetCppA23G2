@@ -1,10 +1,10 @@
 #ifndef TABLE_H
 #define TABLE_H
-#include<QString>
+#include <QString>
 #include <QSqlQueryModel>
 #include <QString>
 #include <QSqlQueryModel>
-#include<QTableView>
+#include <QTableView>
 
 #include <QtCharts/QBarSeries>
 #include <QtCharts/QBarSet>
