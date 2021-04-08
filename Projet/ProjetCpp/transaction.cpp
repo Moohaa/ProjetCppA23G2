@@ -206,4 +206,3 @@ void Transaction::recherche3(QTableView* table,QString spec){
     table->setModel(model);
     table->show();
 }
-

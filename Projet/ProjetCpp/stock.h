@@ -47,12 +47,13 @@ public:
     QSqlQueryModel * afficher_stock();
 
     //void recherche(QTableView* table,QString CATEGORIE_STOCK);
-    QSqlQueryModel * rechercher_cr1(const QString &QUANTITE);
+    void rechercher_cr1(QTableView* table,int num);
     QSqlQueryModel * rechercher_cr2(const QString &CATEGORIE_STOCK);
-    QSqlQueryModel * rechercher_cr3(const QString &TEMPERATURE);
+    void rechercher_cr3(QTableView* table,int num1);
 
     void tri_quantite(QTableView* table);
     void tri_id(QTableView* table);
+    void tri_etage(QTableView *table);
 
     int lastId();
 
