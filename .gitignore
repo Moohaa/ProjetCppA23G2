@@ -1,34 +1,54 @@
-
-*.exe
+# C++ objects and libs
+*.slo
+*.lo
 *.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/.qmake.stash
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/Atelier_Connexion.exe
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/commande.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/commandefournisseur.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/connection.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/evaluation.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/fournisseur.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/main.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/mainwindow.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/menu.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/moc_mainwindow.cpp
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/moc_mainwindow.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/moc_predefs.h
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/moc_smtp.cpp
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/moc_smtp.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/offrefournisseur.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/plat.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/produit.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/smtp.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/stock.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/table.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/debug/transaction.o
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/Makefile
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/Makefile.Debug
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/Makefile.Release
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/object_script.Atelier_Connexion.Debug
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/object_script.Atelier_Connexion.Release
-Projet/build-ProjetCpp2A-Desktop_Qt_5_9_9_MinGW_32bit-Debug/ui_mainwindow.h
-*.883a5d5
-*.77699b1
-*.user
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dll
+*.dylib
+
+# Qt-es
+object_script.*.Release
+object_script.*.Debug
+*_plugin_import.cpp
+/.qmake.cache
+/.qmake.stash
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+Makefile*
+*build-*
+*.qm
+*.prl
+
+# Qt unit tests
+target_wrapper.*
+
+# QtCreator
+*.autosave
+
+# QtCreator Qml
+*.qmlproject.user
+*.qmlproject.user.*
+
+# QtCreator CMake
+CMakeLists.txt.user*
+
+# QtCreator 4.8< compilation database
+compile_commands.json
+
+# QtCreator local machine specific files for imported projects
+*creator.user*
+
+*_qmlcache.qrc

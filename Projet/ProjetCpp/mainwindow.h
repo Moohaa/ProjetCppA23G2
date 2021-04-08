@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "stock.h"
+#include"smtp.h"
+#include "produit.h"
 #include <QMediaPlayer>
 #include <QSystemTrayIcon>
 #include "smtp.h"
@@ -18,7 +21,6 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
 private slots:
     void sendMail();
     void mailSent(QString);
@@ -34,6 +36,9 @@ private slots:
     void on_pushButton_11_clicked();
 
 //---------------------------------------------~MARIEM~-----------------------------------------------------
+
+    void on_recherche_produit_clicked();
+
     void on_pushButton_clicked();
 
     void on_pushButton_3_clicked();
@@ -186,21 +191,62 @@ private slots:
 
 //------------------------------------------------------------------------------------------------------------------------------------------
 
-
+    void on_pdf_f_clicked();
 
     void on_pushButton_42_clicked();
 
     void on_pushButton_43_clicked();
 
+    //void on_rechercher_3_clicked();
 
-
-    void on_recherche_produit_clicked();
+    void on_rechercher_4_clicked();
 
     void on_pushButton_58_clicked();
 
     void on_pushButton_59_clicked();
 
     void on_rechercher_5_clicked();
+    void on_tableView_7_clicked(const QModelIndex &index);
+
+    void on_recher_clicked();
+
+
+    void on_tableView_8_clicked(const QModelIndex &index);
+
+
+    void on_recher_2_clicked();
+
+    void on_pushButton_DB_clicked();
+
+    void on_pushButton_deb1_clicked();
+
+    void on_pushButton_prix_clicked();
+
+    void on_pushButton_ntab_clicked();
+
+
+
+
+
+    //void on_pushButton_pdf_clicked();
+
+    void on_sendBtn_2F_clicked();
+
+
+
+
+
+   // void on_STATF_clicked();
+
+    void on_buttonStock_clicked();
+
+    void on_pushButton_441_clicked();
+
+    void on_idDeCommande_clicked();
+
+    void on_libelle_clicked();
+
+    void on_nombredechaises_clicked();
 
 private:
     Ui::MainWindow *ui;

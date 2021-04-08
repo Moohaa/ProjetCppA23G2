@@ -158,22 +158,10 @@ void Evaluation::rechercher1(QTableView* table,int NOTE_CLIENT){
 
 }
 
-void Evaluation::tri1(QTableView *table){
+void Evaluation::tri1(QTableView *table){}
 
-
-    QSqlQueryModel *model= new QSqlQueryModel();
-    QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from EVALUATION  ORDER BY NOM_CLIENT ASC");
-    query->exec();
-    model->setQuery(*query);
-    table->setModel(model);
-    table->show();
-
-}
 
 void Evaluation::tri2(QTableView *table){
-
-
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
     query->prepare("select * from EVALUATION  ORDER BY REMARQUE_CLIENT ASC");
@@ -196,4 +184,3 @@ void Evaluation::tri3(QTableView *table){
     table->show();
 
 }
-

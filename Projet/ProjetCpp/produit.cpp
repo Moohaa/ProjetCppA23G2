@@ -176,4 +176,3 @@ void produit::tri2(QTableView* table){
     table->setModel(model);
     table->show();
 }
-//

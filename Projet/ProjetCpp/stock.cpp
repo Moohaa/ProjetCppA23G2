@@ -122,7 +122,6 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QDate
 
 bool stock::update_stock()
 {
-
     QString res=QString::number(ID_STOCK);
     QString res1= QString(CATEGORIE_STOCK);
     QString res2= QString::number(TEMPERATURE);
@@ -133,16 +132,24 @@ bool stock::update_stock()
 
     QSqlQuery edit;
 
+    CATEGORIE_STOCK=CATEGORIE_STOCK.toLower();
+    CATEGORIE_STOCK[0]=CATEGORIE_STOCK[0].toUpper();
+
+
+     EMPLACEMENT=EMPLACEMENT.toLower();
+            EMPLACEMENT[0]= EMPLACEMENT[0].toUpper();
+
+
+
                       edit.prepare("update STOCKAGE set CATEGORIE_STOCK =:CATEGORIE_STOCK, TEMPERATURE =:TEMPERATURE, EMPLACEMENT =:EMPLACEMENT, DATE_STOCK =:DATE_STOCK, QUANTITE =:QUANTITE, ID_PRODUIT =:ID_PRODUIT where ID_STOCK =:ID_STOCK");
 
-                      edit.bindValue(":ID_STOCK",res);
-                      edit.bindValue(":CATEGORIE_STOCK",res1);
-                      edit.bindValue(":TEMPERATURE",res2);
-                      edit.bindValue(":EMPLACEMENT",res3);
-                      edit.bindValue(":DATE_STOCK",res4);
-                      edit.bindValue(":QUANTITE",res5);
-                      edit.bindValue(":ID_PRODUIT",res6);
-
+                      edit.bindValue(":CATEGORIE_STOCK",res);
+                      edit.bindValue(":TEMPERATURE",res1);
+                      edit.bindValue(":EMPLACEMENT",res2);
+                      edit.bindValue(":DATE_STOCK",res3);
+                      edit.bindValue(":QUANTITE",res4);
+                      edit.bindValue(":ID_PRODUIT",res5);
+                      edit.bindValue(":ID_STOCK",res6);
 
                       return edit.exec();
 }
@@ -228,6 +235,3 @@ void stock::tri_etage(QTableView *table)
     table->show();
 
 }
-
-
-

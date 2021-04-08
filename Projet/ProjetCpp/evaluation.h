@@ -45,10 +45,6 @@ public:
      void tri1(QTableView *table);
      void tri2(QTableView *table);
      void tri3(QTableView *table);
-
-
-
-
 };
 
 #endif // EVALUATION_H
