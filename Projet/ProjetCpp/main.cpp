@@ -10,12 +10,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QSplashScreen *splash= new QSplashScreen;
-    splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
-    splash->show();
 
-    QTimer::singleShot(2500,splash,SLOT(close()));
-    QTimer::singleShot(2500,&w,SLOT(show()));
 
     qDebug() << "Projet C++, Application Desktop:";
     qDebug() << "Smart Restaurant";

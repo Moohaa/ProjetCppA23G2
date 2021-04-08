@@ -1778,25 +1778,6 @@ void MainWindow::on_sendBtn_2F_clicked()
     else*/
         smtp->sendMail("fadwa.berrich@esprit.tn", ui->rcpt_2F->text() , ui->subject_2F->text(),ui->msg_2F->toPlainText());
 }
-void   MainWindow::mailSent(QString status)
-{
-
-    /*if(status == "Message sent")
-       QMessageBox::warning( nullptr, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
-    {
-        ui->msg->setPlainText("Email sent!") ;
-        animation->setDuration(1000);
-        animation->setStartValue(ui->msg->geometry());
-        animation->setEndValue(QRect(200,200,100,50));
-        animation->start();
-    }*/
-    ui->rcpt_2F->clear();
-    ui->subject_2F->clear();
-    //ui->fileF->clear();
-    ui->msg_2F->clear();
-    ui->paswd_2F->clear();
-}
-
 
 
 /*

@@ -412,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -6426,7 +6426,7 @@ border-radius:10px;
      <x>0</x>
      <y>0</y>
      <width>1296</width>
-     <height>29</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

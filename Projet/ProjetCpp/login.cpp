@@ -1,4 +1,6 @@
 #include "login.h"
+#include <QSplashScreen>
+#include <QTimer>
 #include "ui_login.h"
 #include "mainwindow.h"
 #include <QMessageBox>
@@ -92,10 +94,22 @@ void Login::on_Login_connexion_clicked()
         if(qry.value(5).toString() == "Gerant"){
             ui->stackedWidget->setCurrentIndex(11);
             MainWindow *w =new MainWindow(this);
+            QSplashScreen *splash= new QSplashScreen;
+            splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
+            splash->show();
+
+            QTimer::singleShot(2500,splash,SLOT(close()));
+            QTimer::singleShot(2500,w,SLOT(show()));
             w->show();
         }else{
             //ui->stackedWidget->setCurrentIndex(3);
              MainWindow *w =new MainWindow(this);
+             QSplashScreen *splash= new QSplashScreen;
+             splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
+             splash->show();
+
+             QTimer::singleShot(2500,splash,SLOT(close()));
+             QTimer::singleShot(2500,w,SLOT(show()));
              w->show();
              this->setVisible(false);
         }

@@ -35,8 +35,10 @@ private slots:
 
     void on_pushButton_11_clicked();
 
-    void  mailSent(QString status);
 //---------------------------------------------~MARIEM~-----------------------------------------------------
+
+    void on_recherche_produit_clicked();
+
     void on_pushButton_clicked();
 
     void on_pushButton_3_clicked();
