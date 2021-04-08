@@ -109,35 +109,35 @@ MainWindow::MainWindow(QWidget *parent) :
       ui->lineEdit_33->setValidator(new QIntValidator(0,99999999,this));
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
-            mSystemTrayIcon->setIcon(QIcon("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/hat"));
+            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/hat"));
             mSystemTrayIcon->setVisible(true);
 
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix150("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
-    QPixmap pix1("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
-    QPixmap pix2("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
-    QPixmap pix3("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
-    QPixmap pix4("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
-    QPixmap pix5("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/stars");
-    QPixmap pix6("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/cor");
-    QPixmap pix7("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/modi");
-    QPixmap pix8("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/mui");
-    QPixmap pix9("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
-    QPixmap pix10("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/casic");
-    QPixmap pix11("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/food");
-    QPixmap pix12("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/table");
-    QPixmap pix13("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/prod");
-    QPixmap pix14("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/prov");
+    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
+    QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
+    QPixmap pix3("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
+    QPixmap pix4("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
+    QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stars");
+    QPixmap pix6("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cor");
+    QPixmap pix7("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/modi");
+    QPixmap pix8("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui");
+    QPixmap pix9("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
+    QPixmap pix10("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/casic");
+    QPixmap pix11("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/food");
+    QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table");
+    QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod");
+    QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov");
 
      setFixedSize(1296,801);  //fixe la taille de la fenêtre
 
 
      myMoviebg = new QMovie(this);
-     myMoviebg = new QMovie("C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCppgif5.gif");
+     myMoviebg = new QMovie("C:/QTP/ProjetCppA23G2/Projet/ProjetCppgif5.gif");
 
        //ui->gif->setMovie(myMoviebg);
 
@@ -177,7 +177,7 @@ MainWindow::MainWindow(QWidget *parent) :
     produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
     qDebug() << "aejazlejejazklalk";
-    ui->tableView_A->setModel(test.tri(ui->tableView_A->currentIndex().column()));
+    //ui->tableView_A->setModel(test.tri(ui->tableView_A->currentIndex().column()));
 
    stock test1;
    ui->tableView_B->setModel(test1.afficher_stock());//Afficher Stock
@@ -475,12 +475,6 @@ void MainWindow::on_TRI_3_clicked()//tri stock
   s.tri_id(table);
 
 }
-void MainWindow::on_pushButton_43_clicked()//Afficher Stock
-{
-    stock s;
-        ui->tableView_B->setModel(s.afficher_stock());
-}
-
 void MainWindow::on_pushButton_43_clicked()//Afficher Stock
 {
     stock s;
@@ -856,24 +850,17 @@ void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
       e.setREMARQUE_CLIENT(ui->comboBox_6->currentText());
       e.setID_FACTURE(ui->lineEdit_9->text().toInt());
       bool test = e.update();
-
-
-
       ui->tableView->setModel(e.afficher());
-
       if(test){
-          QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);}
+          QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);
+      }
       else
-
-          QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);}
-
-
-
+          QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);
       if(test){
           QMessageBox::information(nullptr,QObject::tr("Modifier Eva"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
       else
-
-          QMessageBox::critical(nullptr,QObject::tr("Modifier Eva"),QObject::tr("Modification non effectuée"),  QMessageBox::Cancel);}
+          QMessageBox::critical(nullptr,QObject::tr("Modifier Eva"),QObject::tr("Modification non effectuée"),  QMessageBox::Cancel);
+}
 
 
 
@@ -967,13 +954,6 @@ void MainWindow::on_rechercher_5_clicked()// Trier Evaluation
        {
         e.tri3(table);
 }
-}
-
-
-void MainWindow::on_pushButton_57_clicked()
-{
-    Evaluation e;
-        ui->tableView->setModel(e.afficher());
 }
 
 
