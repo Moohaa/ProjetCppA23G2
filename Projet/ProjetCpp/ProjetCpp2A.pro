@@ -7,6 +7,14 @@
 QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech
 CONFIG += console stl
 
+<<<<<<< HEAD
+=======
+QT       += network
+
+QT       += multimedia multimediawidgets printsupport serialport charts widgets
+
+CONFIG += stl
+>>>>>>> aziz_jaziri
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Atelier_Connexion

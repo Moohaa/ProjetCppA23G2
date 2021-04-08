@@ -53,6 +53,7 @@ public:
 
     void tri_quantite(QTableView* table);
     void tri_id(QTableView* table);
+    void tri_etage(QTableView *table);
 
     int lastId();
 
