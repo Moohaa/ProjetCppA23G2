@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMediaPlayer>
+#include <QSystemTrayIcon>
 
 namespace Ui {
 class MainWindow;
@@ -65,6 +66,8 @@ private slots:
 
     void on_rechercherStock_clicked();
 
+    void on_TRI_4_clicked();
+
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -90,6 +93,7 @@ private slots:
 
     void on_pushButton_41_clicked();
 
+    void on_pushButton_57_clicked();
 //------------------------------------------AZIZ----------------------------------------------------
     void on_pushButton_21_clicked();
 
@@ -115,6 +119,13 @@ private slots:
 
     void on_tableView_4_clicked();
 
+    void on_PDF_aziz_clicked();
+
+    void on_tri_aziz_clicked();
+
+    void on_tri_aziz_1_clicked();
+
+    void on_afficher_menu_clicked();
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
     void on_pushButton_31_clicked();
@@ -138,7 +149,6 @@ private slots:
 //-------------------------------------------------------------------------------------------------------------------------
 
 
-<<<<<<< Updated upstream
     void on_F_ADD_clicked();
 
     void on_F_UPDATE_clicked();
@@ -185,20 +195,11 @@ private slots:
 
     void on_pushButton_43_clicked();
 
-=======
-    void on_pushButton_15_clicked();
-
-    void on_pushButton_43_clicked();
-
-    void on_pushButton_44_clicked();
-
-    void on_pushButton_45_clicked();
-
->>>>>>> Stashed changes
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
     QMovie *myMoviebg;
+    QSystemTrayIcon *mSystemTrayIcon;
 
 };
 
