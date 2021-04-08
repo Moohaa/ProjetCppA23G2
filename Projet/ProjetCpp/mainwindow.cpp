@@ -348,7 +348,7 @@ void MainWindow::on_TRI_clicked()//tri Produit
 }*/
 
 void MainWindow::on_recherche_produit_clicked()
-{
+{//
     produit p;
      QString textA;
      int textB;
