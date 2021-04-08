@@ -418,8 +418,8 @@ border-radius:10px;
      <widget class="QTabWidget" name="tabWidget">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
+        <x>0</x>
+        <y>0</y>
         <width>921</width>
         <height>701</height>
        </rect>
@@ -663,8 +663,8 @@ border-radius:10px;
          <widget class="QTableView" name="tableView_A">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>110</y>
+            <x>130</x>
+            <y>150</y>
             <width>651</width>
             <height>191</height>
            </rect>
@@ -674,7 +674,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>500</x>
-            <y>350</y>
+            <y>390</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -687,7 +687,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>370</x>
-            <y>350</y>
+            <y>390</y>
             <width>113</width>
             <height>31</height>
            </rect>
@@ -697,7 +697,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>320</x>
-            <y>360</y>
+            <y>400</y>
             <width>21</width>
             <height>16</height>
            </rect>
@@ -709,8 +709,8 @@ border-radius:10px;
          <widget class="QPushButton" name="TRI">
           <property name="geometry">
            <rect>
-            <x>550</x>
-            <y>70</y>
+            <x>650</x>
+            <y>100</y>
             <width>131</width>
             <height>41</height>
            </rect>
@@ -722,11 +722,17 @@ border-radius:10px;
          <widget class="QComboBox" name="choixTrie">
           <property name="geometry">
            <rect>
-            <x>280</x>
-            <y>80</y>
-            <width>261</width>
-            <height>24</height>
+            <x>480</x>
+            <y>100</y>
+            <width>161</width>
+            <height>41</height>
            </rect>
+          </property>
+          <property name="toolTipDuration">
+           <number>-1</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
           </property>
           <item>
            <property name="text">
@@ -743,6 +749,81 @@ border-radius:10px;
             <string>tri par nom</string>
            </property>
           </item>
+         </widget>
+         <widget class="QPushButton" name="recherche_produit">
+          <property name="geometry">
+           <rect>
+            <x>390</x>
+            <y>10</y>
+            <width>131</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Rechercher</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="recherche_produit_2">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>10</y>
+            <width>161</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="rehcerche_produit">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>171</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Entrer le donnée a chercher :</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="produit1">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>20</y>
+            <width>99</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par ID</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="produit2">
+          <property name="geometry">
+           <rect>
+            <x>650</x>
+            <y>20</y>
+            <width>99</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Nom</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="produit3">
+          <property name="geometry">
+           <rect>
+            <x>760</x>
+            <y>20</y>
+            <width>111</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Categorie</string>
+          </property>
          </widget>
         </widget>
        </widget>
@@ -794,7 +875,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
@@ -912,6 +993,12 @@ color : white;</string>
              <height>41</height>
             </rect>
            </property>
+           <property name="toolTipDuration">
+            <number>-1</number>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
            <item>
             <property name="text">
              <string>Fruit</string>
@@ -973,6 +1060,9 @@ color : white;</string>
              <width>151</width>
              <height>41</height>
             </rect>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
            </property>
            <item>
             <property name="text">
@@ -1137,26 +1227,13 @@ color : white;</string>
            <string>ID</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="TRI_2">
-          <property name="geometry">
-           <rect>
-            <x>650</x>
-            <y>410</y>
-            <width>131</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Trier le tableau</string>
-          </property>
-         </widget>
          <widget class="QPushButton" name="rechercherStock">
           <property name="geometry">
            <rect>
-            <x>750</x>
+            <x>400</x>
             <y>20</y>
             <width>131</width>
-            <height>31</height>
+            <height>41</height>
            </rect>
           </property>
           <property name="text">
@@ -1166,7 +1243,7 @@ color : white;</string>
          <widget class="QRadioButton" name="radioButton">
           <property name="geometry">
            <rect>
-            <x>370</x>
+            <x>550</x>
             <y>30</y>
             <width>99</width>
             <height>22</height>
@@ -1179,7 +1256,7 @@ color : white;</string>
          <widget class="QRadioButton" name="radioButton_2">
           <property name="geometry">
            <rect>
-            <x>490</x>
+            <x>660</x>
             <y>30</y>
             <width>111</width>
             <height>22</height>
@@ -1192,7 +1269,7 @@ color : white;</string>
          <widget class="QRadioButton" name="radioButton_3">
           <property name="geometry">
            <rect>
-            <x>620</x>
+            <x>780</x>
             <y>30</y>
             <width>131</width>
             <height>22</height>
@@ -1205,50 +1282,65 @@ color : white;</string>
          <widget class="QLineEdit" name="rechercherStock_2">
           <property name="geometry">
            <rect>
-            <x>120</x>
-            <y>30</y>
-            <width>221</width>
-            <height>24</height>
+            <x>200</x>
+            <y>20</y>
+            <width>171</width>
+            <height>41</height>
            </rect>
           </property>
          </widget>
-         <widget class="QPushButton" name="TRI_3">
+         <widget class="QPushButton" name="TRI_2">
           <property name="geometry">
            <rect>
-            <x>650</x>
-            <y>370</y>
-            <width>131</width>
-            <height>21</height>
+            <x>480</x>
+            <y>360</y>
+            <width>181</width>
+            <height>41</height>
            </rect>
           </property>
           <property name="text">
            <string>Trier le tableau</string>
           </property>
          </widget>
-         <widget class="QLabel" name="tri_par_quantite">
+         <widget class="QComboBox" name="Trie">
           <property name="geometry">
            <rect>
-            <x>800</x>
-            <y>410</y>
-            <width>81</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Par Quantite</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="tri_par_id">
-          <property name="geometry">
-           <rect>
-            <x>800</x>
+            <x>680</x>
             <y>370</y>
-            <width>101</width>
+            <width>191</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Par ID Stock</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Par Quantité</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Par Emplacement</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_102">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>171</width>
             <height>16</height>
            </rect>
           </property>
           <property name="text">
-           <string>Par Id du Stock</string>
+           <string>Entrer le donnée a chercher :</string>
           </property>
          </widget>
          <widget class="QPushButton" name="TRI_4">
@@ -1285,10 +1377,10 @@ color : white;</string>
          <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>30</y>
-            <width>701</width>
-            <height>451</height>
+            <x>10</x>
+            <y>10</y>
+            <width>891</width>
+            <height>551</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="formLayout">
@@ -1337,7 +1429,7 @@ color : white;</string>
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QLineEdit" name="uname_3"/>
+            <widget class="QLineEdit" name="uname"/>
            </item>
            <item row="3" column="0">
             <widget class="QLabel" name="label_16">
@@ -1448,10 +1540,10 @@ color : white;</string>
      <widget class="QTabWidget" name="tabWidget_7">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
+        <x>0</x>
+        <y>0</y>
         <width>771</width>
-        <height>561</height>
+        <height>671</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1694,7 +1786,7 @@ border-radius:10px;
           <x>0</x>
           <y>0</y>
           <width>651</width>
-          <height>521</height>
+          <height>571</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -1922,6 +2014,19 @@ border-radius:10px;
            <string>Rechercher</string>
           </property>
          </widget>
+         <widget class="QLabel" name="label_60">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>330</y>
+            <width>91</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Specialité plat:</string>
+          </property>
+         </widget>
          <widget class="QLineEdit" name="lineEdit_24">
           <property name="geometry">
            <rect>
@@ -2007,7 +2112,7 @@ border-radius:10px;
            </rect>
           </property>
           <property name="text">
-           <string>Croissant</string>
+           <string>id menu</string>
           </property>
          </widget>
          <widget class="QRadioButton" name="tri_azizB">
@@ -2020,7 +2125,7 @@ border-radius:10px;
            </rect>
           </property>
           <property name="text">
-           <string>Decroissant</string>
+           <string>ASC</string>
           </property>
          </widget>
          <widget class="QPushButton" name="tri_aziz">
@@ -2063,6 +2168,19 @@ border-radius:10px;
           </property>
          </widget>
         </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_26">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>600</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Réinitialiser </string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_17">
@@ -2397,7 +2515,7 @@ border-radius:10px;
            </rect>
           </property>
           <property name="text">
-           <string>Générer en PDF</string>
+           <string>Générer PDF</string>
           </property>
          </widget>
         </widget>
@@ -2410,7 +2528,7 @@ border-radius:10px;
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>10</y>
+        <y>0</y>
         <width>851</width>
         <height>681</height>
        </rect>
@@ -3437,7 +3555,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -4780,8 +4898,8 @@ color : white;</string>
      <widget class="QTabWidget" name="tabWidget_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>20</y>
+        <x>0</x>
+        <y>0</y>
         <width>911</width>
         <height>611</height>
        </rect>
@@ -5534,7 +5652,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_12">
          <attribute name="title">
@@ -6083,6 +6201,21 @@ color : white;</string>
       </widget>
      </widget>
     </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QLabel" name="gif">
+      <property name="geometry">
+       <rect>
+        <x>-5</x>
+        <y>-5</y>
+        <width>971</width>
+        <height>741</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QPushButton" name="pushButton_11">
     <property name="geometry">
@@ -6293,7 +6426,7 @@ border-radius:10px;
      <x>0</x>
      <y>0</y>
      <width>1296</width>
-     <height>22</height>
+     <height>29</height>
     </rect>
    </property>
   </widget>

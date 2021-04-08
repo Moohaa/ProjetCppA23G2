@@ -7,7 +7,8 @@
 #include "produit.h"
 #include <QMediaPlayer>
 #include <QSystemTrayIcon>
-
+#include "smtp.h"
+#include <QPropertyAnimation>
 namespace Ui {
 class MainWindow;
 }
@@ -21,7 +22,8 @@ public:
     ~MainWindow();
 
 private slots:
-
+    void sendMail();
+    void mailSent(QString);
 //----------------------------------------MENU---------------------------------------------------
     void on_pushButton_2_clicked();
 
@@ -51,8 +53,6 @@ private slots:
 
     void on_TRI_2_clicked();
 
-    void on_TRI_3_clicked();
-
     void on_tableView_B_doubleClicked();
 
     void on_tableView_A_doubleClicked();
@@ -63,14 +63,11 @@ private slots:
 
     void on_mute_clicked();
 
-    //void on_tableView_B_clicked();
+    void on_tableView_B_clicked();
 
-    void on_tableView_A_clicked();
+   //void on_tableView_A_clicked();
 
     void on_rechercherStock_clicked();
-
-    void on_TRI_4_clicked();
-
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -254,7 +251,7 @@ private:
     QMediaPlayer *media;
     QMovie *myMoviebg;
     QSystemTrayIcon *mSystemTrayIcon;
-
+    QPropertyAnimation *animation;
 };
 
 #endif // MAINWINDOW_H

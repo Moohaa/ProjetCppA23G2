@@ -69,6 +69,8 @@ FORMS += \
         mainwindow.ui\
 		login.ui
 
+RC_ICONS = hat.ico
+
 QMAKE_CXXFLAGS += -std=gnu++11
 QMAKE_CXXFLAGS += -std=gnu++14
 
