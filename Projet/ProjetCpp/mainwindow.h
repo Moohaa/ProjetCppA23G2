@@ -4,12 +4,8 @@
 #include <QMainWindow>
 #include <QMediaPlayer>
 #include <QSystemTrayIcon>
-<<<<<<< Updated upstream
 #include "smtp.h"
 #include <QPropertyAnimation>
-=======
-
->>>>>>> Stashed changes
 namespace Ui {
 class MainWindow;
 }
@@ -37,8 +33,6 @@ private slots:
 
     void on_pushButton_11_clicked();
 
-//    void drawIcon(QPainter *painter, QPoint pos);
-
 //---------------------------------------------~MARIEM~-----------------------------------------------------
     void on_pushButton_clicked();
 
@@ -56,8 +50,6 @@ private slots:
 
     void on_TRI_2_clicked();
 
-    void on_TRI_3_clicked();
-
     void on_tableView_B_doubleClicked();
 
     void on_tableView_A_doubleClicked();
@@ -68,14 +60,11 @@ private slots:
 
     void on_mute_clicked();
 
-    //void on_tableView_B_clicked();
+    void on_tableView_B_clicked();
 
-    void on_tableView_A_clicked();
+   //void on_tableView_A_clicked();
 
     void on_rechercherStock_clicked();
-
-    void on_TRI_4_clicked();
-
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -201,23 +190,18 @@ private slots:
 
     void on_pushButton_42_clicked();
 
-<<<<<<< Updated upstream
     void on_pushButton_43_clicked();
 
-=======
-    void on_TRI_4_clicked();
->>>>>>> Stashed changes
+
+
+    void on_recherche_produit_clicked();
 
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
     QMovie *myMoviebg;
     QSystemTrayIcon *mSystemTrayIcon;
-<<<<<<< Updated upstream
     QPropertyAnimation *animation;
-=======
-
->>>>>>> Stashed changes
 };
 
 #endif // MAINWINDOW_H

@@ -12,11 +12,7 @@ int main(int argc, char *argv[])
     Connection c;
 
     QSplashScreen *splash= new QSplashScreen;
-<<<<<<< Updated upstream
 splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
-=======
-splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png"));
->>>>>>> Stashed changes
 splash->show();
 
 

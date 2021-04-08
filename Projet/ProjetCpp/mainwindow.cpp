@@ -6,7 +6,21 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QSortFilterProxyModel>
-#include <QAbstractSocket>
+#include <QAbstractSocket>//mail
+
+#include <QMap>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
 
 #include "produit.h"
 #include "stock.h"
@@ -45,12 +59,8 @@
 #include <QSystemTrayIcon>
 #include <QIcon>
 #include <QDesktopWidget>
-<<<<<<< Updated upstream
 #include <QPlainTextEdit>
 #include <QPropertyAnimation>
-=======
-//#include <QIconDragEvent>
->>>>>>> Stashed changes
 
 
 using namespace std;
@@ -63,15 +73,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-<<<<<<< Updated upstream
             mSystemTrayIcon = new QSystemTrayIcon(this);
             mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
-=======
-    mSystemTrayIcon = new QSystemTrayIcon(this);
-    mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
-    mSystemTrayIcon->setVisible(true);
->>>>>>> Stashed changes
 
 
     media = new QMediaPlayer (this);
@@ -97,13 +101,8 @@ MainWindow::MainWindow(QWidget *parent) :
      setFixedSize(1296,801);  //fixe la taille de la fenêtre
 
 
-<<<<<<< Updated upstream
      myMoviebg = new QMovie(this);
      myMoviebg = new QMovie("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif5.gif");
-=======
-     //myMoviebg = new QMovie(this);
-     myMoviebg = new QMovie("C:/Users/PC/Desktop/Projet C++/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
->>>>>>> Stashed changes
 
        ui->gif->setMovie(myMoviebg);
 
@@ -165,19 +164,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-<<<<<<< Updated upstream
 
-=======
-/*void MainWindow::drawIcon(QPainter *painter, QPoint pos)
-{
-    QPixmap pixmap = icon.pixmap(QSize(22, 22),
-                                   isEnabled() ? QIcon::Normal
-                                               : QIcon::Disabled,
-                                   isChecked() ? QIcon::On
-                                               : QIcon::Off);
-    painter->drawPixmap(pos, pixmap);
-}*/
->>>>>>> Stashed changes
 //---------------------------------------------------~MENU PRINCIPALE~----------------------------------------------------
 
 void MainWindow::on_pushButton_2_clicked()
@@ -241,8 +228,8 @@ void MainWindow::on_tableView_A_doubleClicked() // modifier produit depuis l'aff
     int row =ui->tableView_A->selectionModel()->currentIndex().row();
     //ui->stackedWidget->setCurrentIndex(2);
     ui->lineEdit->setText(ui->tableView_A->model()->index(row,0).data().toString());
-    ui->comboBox_3->setCurrentText(ui->tableView_A->model()->index(row,1).data().toString());
-    ui->lineEdit_2->setText(ui->tableView_A->model()->index(row,2).data().toString());
+    ui->comboBox_3->setCurrentText(ui->tableView_A->model()->index(row,2).data().toString());
+    ui->lineEdit_2->setText(ui->tableView_A->model()->index(row,1).data().toString());
 
 }
 void MainWindow::on_pushButton_4_clicked()//modifier produit
@@ -277,19 +264,11 @@ void MainWindow::on_TRI_clicked()//tri Produit
       //ui->tableView_A->setModel(p.tri(ui->tableView_A->currentIndex().column()));
 
          QTableView *table=ui->tableView_A;
-<<<<<<< Updated upstream
 
                if(ui->choixTrie->currentIndex() == 0)
                  { p.tri(table);
                // ui->listeCitoyen->setModel(c.afficherCitoyen());
 
-=======
-
-               if(ui->choixTrie->currentIndex() == 0)
-                 { p.tri(table);
-               // ui->listeCitoyen->setModel(c.afficherCitoyen());
-
->>>>>>> Stashed changes
                }
 
                if(ui->choixTrie->currentIndex() == 1)
@@ -302,26 +281,75 @@ void MainWindow::on_TRI_clicked()//tri Produit
                }
 }
 
-void MainWindow::on_tableView_A_clicked()//rechercher un produit
+/*void MainWindow::on_tableView_A_clicked()//rechercher un produit
 {
     QString findText;
-        int text = ui->comboBox_3->currentIndex();
+        QString text = ui->recherche_produit_2->text();
     produit p;
     QTableView* table=ui->tableView_A;
 
 
             findText = text;
-            p.recherche(table,findText);
+            p.rechercher(table,findText);
 
 
-            QMessageBox::information(this, tr("Empty Field"),
-                tr("Entrez l'ID a rechercher."));
+            //QMessageBox::information(this, tr("Empty Field"),
+                //tr("Entrez l'ID a rechercher."));
             ui->tableView_A->setModel(p.afficher());
-            return;
+
+}*/
+
+void MainWindow::on_recherche_produit_clicked()
+{
+    produit p;
+     QString textA;
+     int textB;
+     QTableView* table1=ui->tableView_A;
+
+     if(ui->produit2->isChecked()==true)
+    {
+        textA=ui->recherche_produit_2->text();
+             if(textA == "")
+
+             {
+  ui->tableView_A->setModel(p.afficher());
+             }
+
+             else
+             {
+  ui->tableView_A->setModel(p.rechercher_cr1(textA));
+              }
+
+    }
+
+      if(ui->produit3->isChecked()==true)
+     {
+         textA=ui->recherche_produit_2->text();
+              if(textA == "")
+
+              {
+   ui->tableView_A->setModel(p.afficher());
+              }
+
+              else
+
+              {
+   ui->tableView_A->setModel(p.rechercher_cr2(textA));
+               }
+
+     }
+      if (ui->produit1->isChecked()==true)
+  {
+  textB=ui->recherche_produit_2->text().toUInt();
+  p.rechercher_cr3(table1,textB);
+  }
+
 }
+
 
 //---------------------------------~STOCK~----------------------------------------------
 
+//mail debut
 void   MainWindow::sendMail()
 {
 
@@ -333,7 +361,7 @@ void   MainWindow::sendMail()
     else*/
         smtp->sendMail("mariem.nacib@esprit.tn", ui->rcpt->text() , ui->subject->text(),ui->msg->toPlainText());
 }
-void   MainWindow::mailSent(QString status)
+void   MainWindow::mailSent(QString)
 {
 
     /*if(status == "Message sent")
@@ -351,6 +379,7 @@ void   MainWindow::mailSent(QString status)
     ui->msg->clear();
     ui->paswd->clear();
 }
+//mail fin
 
 void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
 {
@@ -359,11 +388,7 @@ void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
     s.setCATEGORIE_STOCK(ui->comboBox->currentText());
     s.setTEMPERATURE(ui->spinBox->text().toInt());
     s.setEMPLACEMENT(ui->comboBox_2->currentText());
-<<<<<<< Updated upstream
     s.setDATE_STOCK(ui->calendarWidget->selectedDate());
-=======
-    s.setDATE_STOCK(ui->dateTimeEdit->selectedDate());
->>>>>>> Stashed changes
     s.setQUANTITE(ui->lineEdit_22->text().toInt());
     s.setID_PRODUIT(ui->lineEdit_23->text().toInt());
 
@@ -411,14 +436,42 @@ void MainWindow::on_pushButton_7_clicked()//suuprimer Stock
 
     bool test= s.supprimer_stock();
 
-                ui->tableView_B->setModel(s.afficher_stock());
-
                 if(test){
                     QMessageBox::information(nullptr,QObject::tr("Supprimer"),QObject::tr("Supprission effectuée"),  QMessageBox::Cancel);}
 
                 else
 
-                    QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("Supprission non effectuée"),  QMessageBox::Cancel);
+                    QMessageBox::critical(nullptr,QObject::tr("erreur"),QObject::tr("Supprission non effectuée"),  QMessageBox::Cancel);
+}
+
+void MainWindow::on_tableView_B_clicked()
+{
+  /*  stock s;
+int row =ui->tableView_B->selectionModel()->currentIndex().row();
+   QString id=ui->tableView_B->model()->index(row,2).data().toString();
+
+   bool test =s.supprimer_stock();
+   if(row==-1)
+   { QMessageBox::critical(nullptr, QObject::tr("Supprimer un stock"),
+                           QObject::tr("Erreur ! selectionnez stock que vous voulez le supprimer !.\n"
+                                       "Click Cancel to exit."), QMessageBox::Cancel);}
+   else
+   {
+   if(test)
+   {
+       ui->tableView_B->setModel(s.afficher_stock());
+       QMessageBox::information(nullptr, QObject::tr("Supprimer un stock"),
+                   QObject::tr("stock  supprimé.\n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
+               ui->tableView_B->setModel(s.afficher_stock());
+
+   }
+   else
+       QMessageBox::critical(nullptr, QObject::tr("supprimer un stock"),
+                   QObject::tr("Erreur !.\n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
+}*/
+
 }
 
 void MainWindow::on_tableView_B_doubleClicked() // recuperer data du stockage depuis l'affichage
@@ -433,13 +486,9 @@ QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
 
     ui->lineEdit_21->setText(ui->tableView_B->model()->index(row,0).data().toString());
     ui->comboBox->setCurrentText(ui->tableView_B->model()->index(row,1).data().toString());
-    ui->spinBox->setPrefix(ui->tableView_B->model()->index(row,2).data().toString());
+    ui->spinBox->setValue(ui->tableView_B->model()->index(row,2).data().toInt());
     ui->comboBox_2->setCurrentText(ui->tableView_B->model()->index(row,3).data().toString());
-<<<<<<< Updated upstream
     ui->calendarWidget->setSelectedDate(ui->tableView_B->model()->index(row,4).data().toDate());
-=======
-    ui->dateTimeEdit->setSelectedDate(ui->tableView_B->model()->index(row,4).data().toDate());
->>>>>>> Stashed changes
     ui->lineEdit_22->setText(ui->tableView_B->model()->index(row,5).data().toString());
     ui->lineEdit_23->setText(ui->tableView_B->model()->index(row,6).data().toString());
 
@@ -461,11 +510,7 @@ void MainWindow::on_pushButton_5_clicked()//modifier Stock
     s.setCATEGORIE_STOCK(ui->comboBox->currentText());
     s.setTEMPERATURE(ui->spinBox->text().toInt());
     s.setEMPLACEMENT(ui->comboBox_2->currentText());
-<<<<<<< Updated upstream
     s.setDATE_STOCK(ui->calendarWidget->selectedDate());
-=======
-    s.setDATE_STOCK(ui->dateTimeEdit->selectedDate());
->>>>>>> Stashed changes
     s.setQUANTITE(ui->lineEdit_22->text().toInt());
     s.setID_PRODUIT(ui->lineEdit_23->text().toInt());
 
@@ -486,119 +531,71 @@ void MainWindow::on_TRI_2_clicked()//tri stock
 
   //ui->tableView_B->setModel(s.tri(ui->tableView_B->currentIndex().column()));
 
-   QTableView* table=ui->tableView_B;
-  s.tri_quantite(table);
+   //QTableView* table=ui->tableView_B;
+  //s.tri_quantite(table);
+
+           QTableView *table=ui->tableView_B;
+
+               if(ui->Trie->currentIndex() == 0)
+                 { s.tri_id(table);
+               //ui->tableView_B->setModel(s.afficher_stock());
+
+               }
+
+               if(ui->Trie->currentIndex() == 1)
+                 { s.tri_quantite(table);
+                //ui->tableView_B->setModel(s.afficher_stock());
+               }
+               if(ui->Trie->currentIndex() == 2)
+                 { s.tri_etage(table);
+                //ui->tableView_B->setModel(s.afficher_stock());
+               }
 
 }
 
 
-void MainWindow::on_TRI_3_clicked()//tri stock
-{
-    stock s;
 
-  //ui->tableView_B->setModel(s.tri(ui->tableView_B->currentIndex().column()));
-
-   QTableView* table=ui->tableView_B;
-  s.tri_id(table);
-
-}
-void MainWindow::on_TRI_4_clicked()//tri stock
-{    stock s;
-
-     //ui->tableView_B->setModel(s.tri(ui->tableView_B->currentIndex().column()));
-
-      QTableView* table=ui->tableView_B;
-     s.tri_Etage(table);
-
-}
-
-<<<<<<< Updated upstream
 void MainWindow::on_pushButton_43_clicked()//Afficher Stock
 {
     stock s;
         ui->tableView_B->setModel(s.afficher_stock());
 }
 
-void MainWindow::on_TRI_4_clicked()//tri stock
-{    stock s;
 
-     //ui->tableView_B->setModel(s.tri(ui->tableView_B->currentIndex().column()));
-
-      QTableView* table=ui->tableView_B;
-     s.tri_etage(table);
-
-
-}
-
-
-=======
-
->>>>>>> Stashed changes
 void MainWindow::on_rechercherStock_clicked()//recherche stock
 {
-        stock s;
+    stock s;
             QString text;
             int text1;
-
             QTableView* table=ui->tableView_B;
 
-            if (ui->radioButton->isChecked()==true)
-        {
-        text1=ui->rechercherStock_2->text().toUInt();
+             if (ui->radioButton->isChecked()==true)
+         {
+         text1=ui->rechercherStock_2->text().toUInt();
+         s.rechercher_cr1(table,text1);
+         }
 
-                 ui->tableView_B->setModel(s.afficher_stock());
-
-
-                 text1=ui->rechercherStock_2->text().toUInt();
-<<<<<<< Updated upstream
-                         //s.rechercher_cr1(table,text1);
-=======
-                         s.rechercher_cr1(table,text1);
->>>>>>> Stashed changes
-
-
-            }
              if(ui->radioButton_2->isChecked()==true)
             {
                 text=ui->rechercherStock_2->text();
                      if(text == "")
 
                      {
-
-                         ui->tableView_B->setModel(s.afficher_stock());
-
+          ui->tableView_B->setModel(s.afficher_stock());
                      }
 
                      else
 
                      {
-                         ui->tableView_B->setModel(s.rechercher_cr2(text));
-
-                     }
+          ui->tableView_B->setModel(s.rechercher_cr2(text));
+                      }
 
             }
-
-             else if     (ui->radioButton_3->isChecked()==true)
-             {
-
-                 text1=ui->rechercherStock_2->text().toUInt();
-
-                          ui->tableView_B->setModel(s.afficher_stock());
-
-
-
-                          text1=ui->rechercherStock_2->text().toUInt();
-<<<<<<< Updated upstream
-                                  //s.rechercher_cr3(table,text1);
-=======
-                                  s.rechercher_cr3(table,text1);
->>>>>>> Stashed changes
-
-
-
-
-    }
-
+             if (ui->radioButton_3->isChecked()==true)
+         {
+         text1=ui->rechercherStock_2->text().toUInt();
+         s.rechercher_cr3(table,text1);
+         }
 }
 
 
