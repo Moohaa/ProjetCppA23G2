@@ -4,14 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech
+CONFIG += console stl
 
-QT       += network
-
-QT       += multimedia multimediawidgets printsupport serialport charts widgets
-
-CONFIG += stl
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 TARGET = Atelier_Connexion
 TEMPLATE = app
 
@@ -30,31 +27,34 @@ OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
 
 SOURCES += \
+    droitacces.cpp \
+    fournisseur.cpp \
+    login.cpp \
+    main.cpp \
+    connection.cpp \
+    utilisateur.cpp \
     commande.cpp \
     commandefournisseur.cpp \
     evaluation.cpp \
-    fournisseur.cpp \
     menu.cpp \
     offrefournisseur.cpp \
     plat.cpp \
     smtp.cpp \
     stock.cpp\
     produit.cpp\
-    connection.cpp\
-    main.cpp \
     mainwindow.cpp \
     table.cpp \
     transaction.cpp
 
-
-
-
-
 HEADERS += \
+    droitacces.h \
+    fournisseur.h \
+    connection.h \
+    login.h \
+    utilisateur.h \
     commande.h \
     commandefournisseur.h \
     evaluation.h \
-    fournisseur.h \
     menu.h \
     offrefournisseur.h \
     plat.h \
@@ -62,17 +62,12 @@ HEADERS += \
     stock.h\
     produit.h\
     mainwindow.h \
-    connection.h \
     table.h \
     transaction.h
 
-
-
-
-
-
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui\
+		login.ui
 
 QMAKE_CXXFLAGS += -std=gnu++11
 QMAKE_CXXFLAGS += -std=gnu++14

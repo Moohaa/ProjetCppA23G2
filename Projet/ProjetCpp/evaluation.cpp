@@ -111,14 +111,88 @@ QSqlQueryModel * Evaluation::afficher(){
   return model;
     }
 
-void Evaluation::recherche2(QTableView* table,int spec){
 
+QSqlQueryModel * Evaluation::rechercher3(const QString &REMARQUE_CLIENT)
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+
+
+
+    model->setQuery("select * from EVALUATION where ((REMARQUE_CLIENT ) LIKE '%"+REMARQUE_CLIENT+"%')");
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_NOTE"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM_CLIENT"));
+    model->setHeaderData(2, Qt::Horizontal,QObject::tr("NOTE_CLIENT"));
+    model->setHeaderData(3, Qt::Horizontal,QObject::tr("REMARQUE_CLIENT"));
+    model->setHeaderData(4, Qt::Horizontal,QObject::tr("ID_FACTURE"));
+
+
+    return model;
+}
+
+QSqlQueryModel * Evaluation::rechercher2(const QString &NOM_CLIENT)
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+
+
+
+    model->setQuery("select * from EVALUATION where ((NOM_CLIENT ) LIKE '%"+NOM_CLIENT+"%')");
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_NOTE"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM_CLIENT"));
+    model->setHeaderData(2, Qt::Horizontal,QObject::tr("NOTE_CLIENT"));
+    model->setHeaderData(3, Qt::Horizontal,QObject::tr("REMARQUE_CLIENT"));
+    model->setHeaderData(4, Qt::Horizontal,QObject::tr("ID_FACTURE"));
+
+
+    return model;
+}
+
+void Evaluation::rechercher1(QTableView* table,int NOTE_CLIENT){
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from EVALUATION  where NOTE_CLIENT=:NOTE_CLIENT");
-    query->bindValue(":NOTE_CLIENT",spec);
+    query->prepare("select * from EVALUATION where NOTE_CLIENT=:NOTE_CLIENT");
+    query->bindValue(":NOTE_CLIENT",NOTE_CLIENT);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
     table->show();
+
+}
+
+void Evaluation::tri1(QTableView *table){
+
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from EVALUATION  ORDER BY NOM_CLIENT ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+
+}
+
+void Evaluation::tri2(QTableView *table){
+
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from EVALUATION  ORDER BY REMARQUE_CLIENT ASC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+
+}
+
+void Evaluation::tri3(QTableView *table){
+
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from EVALUATION  ORDER BY NOTE_CLIENT DESC");
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+
 }
