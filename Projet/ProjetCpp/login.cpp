@@ -45,6 +45,8 @@
 #include <QPushButton>
 #include<QFileInfo>
 #include <QMovie>
+#include <QVideoWidget>
+#include <QMediaPlaylist>
 
 Login::Login(QWidget *parent)
     : QMainWindow(parent)
@@ -65,7 +67,17 @@ Login::Login(QWidget *parent)
             mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
 
-
+            //-------------------------
+            QMediaPlayer *player = new QMediaPlayer;
+            QMediaPlaylist *playlist  = new QMediaPlaylist;
+                player->setVideoOutput(ui->video);
+                playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/video.mp4")));
+            playlist->setPlaybackMode(QMediaPlaylist::Loop);
+                player->setVolume(0);
+                player->setPlaylist(playlist);
+                player->play();
+                qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();
+            //-------------------------
     media = new QMediaPlayer (this);
     media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
@@ -127,7 +139,7 @@ void Login::on_Login_connexion_clicked()
     if(email==qry.value(3).toString() && mdp==qry.value(4).toString())
     {
         if(qry.value(5).toString() == "Gerant"){
-            ui->stackedWidget->setCurrentIndex(11);
+            ui->stackedWidget->setCurrentIndex(9);
             MainWindow *w =new MainWindow(this);
             QSplashScreen *splash= new QSplashScreen;
             splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
@@ -157,7 +169,7 @@ void Login::on_Login_connexion_clicked()
 
 void Login::on_affiche_utilisateur_clicked()
 {
-   ui->stackedWidget->setCurrentIndex(6);
+   ui->stackedWidget->setCurrentIndex(5);
 ui->tab_affiche->setModel(tmputilisateur.afficher_utilisateur());
 }
 
@@ -306,7 +318,7 @@ void Login::on_inscription_inscrit_2_clicked()
           bool test=u.Ajouter_utilisateur();
       if(test)
       {
-           ui->stackedWidget->setCurrentIndex(4);
+           ui->stackedWidget->setCurrentIndex(3);
 
 
           QMessageBox::information(nullptr, QObject::tr("Ajouter un utilisateur"),
@@ -464,7 +476,7 @@ void Login::on_pushButton_3_clicked()
 
 void Login::on_pushButton_5_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(13);
+    ui->stackedWidget->setCurrentIndex(10);
     ui->affiche_droit->setModel(tmpdroit.afficher_droit());
 }
 
@@ -528,12 +540,12 @@ void Login::on_ajout_droit_clicked()
 
 void Login::on_pushButton_4_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(8);
+    ui->stackedWidget->setCurrentIndex(7);
 }
 
 void Login::on_pushButton_2_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(7);
+    ui->stackedWidget->setCurrentIndex(6);
     ui->aff_droitutilisateur->setModel(tmputilisateur.afficher_droitutilisateur());
 }
 
@@ -669,7 +681,7 @@ void Login::on_Supp_droitut_clicked()
 
 void Login::on_pushButton_6_clicked()
 {
-   ui->stackedWidget->setCurrentIndex(5);
+   ui->stackedWidget->setCurrentIndex(4);
    int row =ui->tab_affiche->selectionModel()->currentIndex().row();
    QString id=ui->tab_affiche->model()->index(row,0).data().toString();
    ui->line_id->setText(id);

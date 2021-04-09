@@ -1,13 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "login.h"
-#include <QCloseEvent>
-#include <QMessageBox>
-#include <QPushButton>
-#include <QLineEdit>
-#include <QSortFilterProxyModel>
-#include <QAbstractSocket>//mail
-
 #include "produit.h"
 #include "stock.h"
 #include "transaction.h"
@@ -16,56 +9,12 @@
 #include "menu.h"
 #include "table.h"
 #include "commande.h"
-#include "smtp.h"
-#include "fournisseur.h"
-#include "offrefournisseur.h"
-#include "commandefournisseur.h"
-
-#include <QMap>
-#include <QtWidgets/QMainWindow>
-#include <QtCharts/QChartView>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-#include <QtCharts/QHorizontalStackedBarSeries>
-#include <QtCharts/QLineSeries>
-#include <QtCharts/QCategoryAxis>
-#include <QtCharts/QPieSeries>
-#include <QtCharts/QPieSlice>
-#include <QtWidgets/QGridLayout>
-
-#include "produit.h"
-#include "stock.h"
-#include "transaction.h"
-#include "evaluation.h"
-#include "plat.h"
-#include "menu.h"
-#include "table.h"
-#include "commande.h"
-#include "smtp.h"
-#include "smtp.h"
-#include "stat.h"
-#include<QAbstractSocket>
-#include "fournisseur.h"
-#include "offrefournisseur.h"
-#include "commandefournisseur.h"
-#include "produit.h"
-#include "stock.h"
-#include "transaction.h"
-#include "evaluation.h"
-#include "plat.h"
-#include "menu.h"
-#include "table.h"
-#include "commande.h"
-#include "smtp.h"
 #include "smtp.h"
 #include "stat.h"
 #include "fournisseur.h"
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
 #include "connection.h"
-
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QPushButton>
@@ -91,12 +40,6 @@
 #include <QIcon>
 #include <QDesktopWidget>
 //#include <QIconDragEvent>
-
-
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
 #include <QtCharts/QHorizontalStackedBarSeries>
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QCategoryAxis>
@@ -122,10 +65,6 @@
 #include <QObject>
 //#include <QPrinter>
 #include <QFileDialog>
-
-//#include <QPrinter>
-#include <QFileDialog>
-
 #include <QPlainTextEdit>
 #include <QPropertyAnimation>
 #include <QVideoWidget>
@@ -891,7 +830,7 @@ void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
 
 }
 
-/*void MainWindow::on_rechercher_3_clicked() // Recherche Par Nom
+void MainWindow::on_rechercher_3_clicked() // Recherche Par Nom
 {
     QString findText;
         QString text = ui->lineEdit_41->text();
@@ -908,29 +847,7 @@ void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
 
 
 }
-}*/
-
-
-/*void MainWindow::on_rechercher_4_clicked() // Recherche Par Region
-{
-    QString findText;
-        QString text = ui->lineEdit_42->text();
-    Transaction t;
-    QTableView* table=ui->tableView_2;
-        if (text.isEmpty()) {
-            QMessageBox::information(this, tr("Empty Field"),
-                tr("Entrez une specialité a rechercher."));
-            ui->tableView_2->setModel(t.afficher());
-            return;
-        } else {
-            findText = text;
-            t.recherche3(table,findText);
-
-
 }
-}*/
-
-
 
 void MainWindow::on_rechercher_4_clicked() // Recherche Par Region
 {
@@ -1766,21 +1683,6 @@ c.setLIBELLE(ui->lineEdit_31->text());
 
 }
 
-void MainWindow::on_buttonStock_clicked()//ACtualiser
-{
-
-    Commande c;
-        ui->tableView_8->setModel(c.afficher());
-
-}
-
-void MainWindow::on_pushButton_441_clicked()//actualiser
-{
-    Table t;
-            ui->tableView_7->setModel(t.afficher());
-}
-
-
 
 void MainWindow::on_pushButton_DB_clicked()
 {
@@ -2215,3 +2117,4 @@ void MainWindow::on_CF_Act_clicked()
 {
      updateFournisseursTabsCombos();
 }
+

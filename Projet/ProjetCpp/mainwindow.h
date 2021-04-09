@@ -210,7 +210,7 @@ private slots:
 
     void on_pushButton_43_clicked();
 
-    //void on_rechercher_3_clicked();
+    void on_rechercher_3_clicked();
 
     void on_rechercher_4_clicked();
 
@@ -219,12 +219,12 @@ private slots:
     void on_pushButton_59_clicked();
 
     void on_rechercher_5_clicked();
-    void on_tableView_7_clicked(const QModelIndex &index);
+   // void on_tableView_7_clicked(const QModelIndex &index);
 
     void on_recher_clicked();
 
 
-    void on_tableView_8_clicked(const QModelIndex &index);
+    //void on_tableView_8_clicked(const QModelIndex &index);
 
 
     void on_recher_2_clicked();
@@ -268,46 +268,6 @@ private slots:
 
     void on_CF_Act_clicked();
 
-
-    void on_recher_clicked();
-
-
-
-
-
-    void on_recher_2_clicked();
-
-    void on_pushButton_DB_clicked();
-
-    void on_pushButton_deb1_clicked();
-
-    void on_pushButton_prix_clicked();
-
-    void on_pushButton_ntab_clicked();
-
-
-
-
-
-    //void on_pushButton_pdf_clicked();
-
-    void on_sendBtn_2F_clicked();
-
-
-
-
-
-   // void on_STATF_clicked();
-
-    void on_buttonStock_clicked();
-
-    void on_pushButton_441_clicked();
-
-    void on_idDeCommande_clicked();
-
-    void on_libelle_clicked();
-
-    void on_nombredechaises_clicked();
 
 private:
     Ui::MainWindow *ui;

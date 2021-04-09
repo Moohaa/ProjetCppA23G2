@@ -74,7 +74,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>9</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QGroupBox" name="groupBox">
@@ -769,7 +769,6 @@ border-radius:10px;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_10"/>
     <widget class="QWidget" name="page_9">
      <widget class="QComboBox" name="liste_droit">
       <property name="geometry">
@@ -971,61 +970,6 @@ border-radius:10px;
       </property>
       <property name="pixmap">
        <pixmap>padlock_78356.png</pixmap>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="page_12">
-     <widget class="QTableView" name="AJT_DROIT">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>90</y>
-        <width>631</width>
-        <height>451</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="ajoute_droit_3">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>40</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Ajouter</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="codedroit_inscri_3">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>40</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="liste_droit_3">
-      <property name="geometry">
-       <rect>
-        <x>281</x>
-        <y>40</y>
-        <width>91</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="line_id">
-      <property name="geometry">
-       <rect>
-        <x>970</x>
-        <y>20</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
       </property>
      </widget>
     </widget>
@@ -1576,7 +1520,6 @@ QComboBox { color: red }</string>
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_15"/>
     <widget class="QWidget" name="page_6">
      <widget class="QPushButton" name="affiche_utilisateur">
       <property name="geometry">
@@ -1633,28 +1576,21 @@ QComboBox { color: red }</string>
        <pixmap>gif.gif</pixmap>
       </property>
      </widget>
+     <widget class="QVideoWidget" name="video" native="true">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>741</width>
+        <height>541</height>
+       </rect>
+      </property>
+     </widget>
      <zorder>gif</zorder>
      <zorder>affiche_utilisateur</zorder>
      <zorder>pushButton_5</zorder>
      <zorder>pushButton_4</zorder>
-    </widget>
-    <widget class="QWidget" name="page_30">
-     <widget class="QLabel" name="label_24">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>160</y>
-        <width>421</width>
-        <height>371</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../../Calque 0.png</pixmap>
-      </property>
-     </widget>
+     <zorder>video</zorder>
     </widget>
     <widget class="QWidget" name="page_7">
      <widget class="QGroupBox" name="groupBox_6">
@@ -2085,12 +2021,20 @@ border-radius:10px;
      <x>0</x>
      <y>0</y>
      <width>1296</width>
-     <height>29</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>qvideowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
