@@ -104,8 +104,8 @@ background: rgb(175, 31, 36);
    <widget class="QPushButton" name="play">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>580</y>
+      <x>60</x>
+      <y>520</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -147,8 +147,8 @@ border-radius:10px;
    <widget class="QPushButton" name="mute">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>580</y>
+      <x>160</x>
+      <y>520</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -190,8 +190,8 @@ border-radius:10px;
    <widget class="QPushButton" name="pause">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>580</y>
+      <x>220</x>
+      <y>520</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -233,8 +233,8 @@ border-radius:10px;
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>210</y>
+      <x>20</x>
+      <y>150</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -276,8 +276,8 @@ border-radius:10px;
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>280</y>
+      <x>20</x>
+      <y>220</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -319,8 +319,8 @@ border-radius:10px;
    <widget class="QPushButton" name="pushButton_9">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>350</y>
+      <x>20</x>
+      <y>290</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -362,8 +362,8 @@ border-radius:10px;
    <widget class="QPushButton" name="pushButton_10">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>420</y>
+      <x>20</x>
+      <y>360</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -6282,8 +6282,8 @@ color : white;</string>
    <widget class="QPushButton" name="pushButton_11">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>490</y>
+      <x>20</x>
+      <y>430</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -6325,8 +6325,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_94">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>570</y>
+      <x>-10</x>
+      <y>510</y>
       <width>61</width>
       <height>41</height>
      </rect>
@@ -6341,8 +6341,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_98">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>220</y>
+      <x>50</x>
+      <y>160</y>
       <width>61</width>
       <height>31</height>
      </rect>
@@ -6357,8 +6357,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_99">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>280</y>
+      <x>50</x>
+      <y>220</y>
       <width>61</width>
       <height>51</height>
      </rect>
@@ -6373,8 +6373,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_100">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>360</y>
+      <x>50</x>
+      <y>300</y>
       <width>47</width>
       <height>41</height>
      </rect>
@@ -6389,8 +6389,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_101">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>423</y>
+      <x>50</x>
+      <y>363</y>
       <width>47</width>
       <height>41</height>
      </rect>
@@ -6421,8 +6421,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_97">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>495</y>
+      <x>50</x>
+      <y>435</y>
       <width>61</width>
       <height>41</height>
      </rect>
@@ -6450,6 +6450,16 @@ border-radius:10px;
      <string/>
     </property>
    </widget>
+   <widget class="QVideoWidget" name="video" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>560</y>
+      <width>261</width>
+      <height>151</height>
+     </rect>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>
@@ -6472,6 +6482,7 @@ border-radius:10px;
    <zorder>label_101</zorder>
    <zorder>label_5</zorder>
    <zorder>label_97</zorder>
+   <zorder>video</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="mainToolBar">
@@ -6502,6 +6513,14 @@ border-radius:10px;
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>qvideowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

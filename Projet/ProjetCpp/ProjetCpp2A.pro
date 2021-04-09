@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech
+QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech multimediawidgets
 CONFIG += console stl
   PRECOMPILED_HEADER = "includes.h"
     CONFIG += precompile_header

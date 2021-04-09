@@ -81,6 +81,8 @@
 #include <QFileDialog>
 #include <QPlainTextEdit>
 #include <QPropertyAnimation>
+#include <QVideoWidget>
+#include <QMediaPlaylist>
 
 using namespace std;
 
@@ -103,6 +105,18 @@ MainWindow::MainWindow(QWidget *parent) :
     media = new QMediaPlayer (this);
     media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
+
+    //-------------------------
+    QMediaPlayer *player = new QMediaPlayer;
+    QMediaPlaylist *playlist  = new QMediaPlaylist;
+        player->setVideoOutput(ui->video);
+        playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/video.mp4")));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+        player->setVolume(0);
+        player->setPlaylist(playlist);
+        player->play();
+        qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();
+    //-------------------------
 
     QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
     QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
