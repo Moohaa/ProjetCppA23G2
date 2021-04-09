@@ -117,35 +117,35 @@ MainWindow::MainWindow(QWidget *parent) :
       ui->lineEdit_33->setValidator(new QIntValidator(0,99999999,this));
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
-            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/hat"));
+            mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
 
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
-    QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
-    QPixmap pix2("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
-    QPixmap pix3("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
-    QPixmap pix4("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
-    QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stars");
-    QPixmap pix6("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cor");
-    QPixmap pix7("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/modi");
-    QPixmap pix8("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui");
-    QPixmap pix9("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
-    QPixmap pix10("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/casic");
-    QPixmap pix11("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/food");
-    QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table");
-    QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod");
-    QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov");
+    QPixmap pix150("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo.png");
+    QPixmap pix1("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
+    QPixmap pix3("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
+    QPixmap pix4("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32.png");
+    QPixmap pix5("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/stars.png");
+    QPixmap pix6("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/cor.png");
+    QPixmap pix7("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/modi.png");
+    QPixmap pix8("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/mui.png");
+    QPixmap pix9("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48.png");
+    QPixmap pix10("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/casic.png");
+    QPixmap pix11("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/food.png");
+    QPixmap pix12("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/table.png");
+    QPixmap pix13("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/prod.png");
+    QPixmap pix14("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/prov.png");
+
 
      setFixedSize(1296,801);  //fixe la taille de la fenêtre
 
-
-     myMoviebg = new QMovie(this);
-     myMoviebg = new QMovie("C:/QTP/ProjetCppA23G2/Projet/ProjetCppgif5.gif");
+//     myMoviebg = new QMovie(this);
+//     myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/gif.mp4");
 
        //ui->gif->setMovie(myMoviebg);
 
@@ -238,6 +238,13 @@ void MainWindow::on_pushButton_11_clicked()
 }
 
 //--------------------------------~PRODUIT~----------------------------------------------
+
+void MainWindow::on_Afficher_Produit_clicked()//afficher Stock
+{
+    produit p;
+        ui->tableView_A->setModel(p.afficher());
+}
+
 void MainWindow::on_pushButton_clicked()//Ajouter Produit
 {
     produit p;
@@ -249,9 +256,6 @@ void MainWindow::on_pushButton_clicked()//Ajouter Produit
     ui->tableView_A->setModel(p.afficher());
 
     bool test= p.ajouter();
-
-
-                ui->tableView_A->setModel(p.afficher());
 
                 if(test){
                     QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);}
@@ -276,6 +280,7 @@ void MainWindow::on_tableView_A_doubleClicked() // modifier produit depuis l'aff
     int row =ui->tableView_A->selectionModel()->currentIndex().row();
     //ui->stackedWidget->setCurrentIndex(2);
     ui->lineEdit->setText(ui->tableView_A->model()->index(row,0).data().toString());
+    ui->textEdit_2->setText(ui->tableView_A->model()->index(row,0).data().toString());
     ui->comboBox_3->setCurrentText(ui->tableView_A->model()->index(row,2).data().toString());
     ui->lineEdit_2->setText(ui->tableView_A->model()->index(row,1).data().toString());
 
@@ -347,8 +352,8 @@ void MainWindow::on_TRI_clicked()//tri Produit
 
 }*/
 
-void MainWindow::on_recherche_produit_clicked()
-{
+void MainWindow::on_recherche_produit_clicked()//rechercher un produit
+{//
     produit p;
      QString textA;
      int textB;
@@ -428,6 +433,12 @@ void   MainWindow::mailSent(QString)
     ui->paswd->clear();
 }
 //mail fin
+
+void MainWindow::on_Afficher_Stock_clicked()//afficher Stock
+{
+    stock s;
+        ui->tableView_B->setModel(s.afficher_stock());
+}
 
 void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
 {
@@ -533,6 +544,7 @@ QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
     s.setID_STOCK(ui->lineEdit_21->text().toInt());
 
     ui->lineEdit_21->setText(ui->tableView_B->model()->index(row,0).data().toString());
+    ui->textDelete->setText(ui->tableView_B->model()->index(row,0).data().toString());
     ui->comboBox->setCurrentText(ui->tableView_B->model()->index(row,1).data().toString());
     ui->spinBox->setValue(ui->tableView_B->model()->index(row,2).data().toInt());
     ui->comboBox_2->setCurrentText(ui->tableView_B->model()->index(row,3).data().toString());
@@ -645,7 +657,55 @@ void MainWindow::on_rechercherStock_clicked()//recherche stock
          s.rechercher_cr3(table,text1);
          }
 }
+void MainWindow::on_PDF_STOCK_clicked()//PDF STOCK
+{
+    QString str;
+                 str.append("<html><head></head><body><center>"+QString("Les Donnée du Stockage"));
+                 str.append("<table border=1><tr>") ;
+                 str.append("<td>"+QString("ID_STOCK")+"</td>") ;
+                 str.append("<td>"+QString("CATEGORIE_STOCK")+"</td>") ;
+                 str.append("<td>"+QString("TEMPERATURE")+"</td>") ;
+                 str.append("<td>"+QString("EMPLACEMENT")+"</td>") ;
+                 str.append("<td>"+QString("DATE_STOCK")+"</td>") ;
+                 str.append("<td>"+QString("QUANTITE")+"</td>") ;
+                 str.append("<td>"+QString("ID_PRODUIT")+"</td>") ;
 
+
+                 QSqlQuery* query=new QSqlQuery();
+                 query->exec("SELECT * FROM STOCKAGE");
+
+                 while(query->next())
+                 {
+                 str.append("<tr><td>");
+                 str.append(query->value(0).toString()) ;
+                 str.append("</td><td>") ;
+                 str.append(query->value(1).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(2).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(3).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(4).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(5).toString());
+                 str.append("</td></td>");
+                 }
+              str.append("</table></center></body></html>") ;
+
+              QPrinter printer ;
+              printer.setOrientation(QPrinter::Portrait);
+              printer.setOutputFormat(QPrinter::PdfFormat);
+              printer.setPaperSize(QPrinter::A4) ;
+
+              QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+              if (path.isEmpty()) return ;
+              printer.setOutputFileName(path) ;
+
+              QTextDocument doc;
+              doc.setHtml(str) ;
+              doc.print(&printer);
+}
 
 //--------------------------------------------~MUSIC_PLAY~-------------------------------------------------------
 
@@ -1542,7 +1602,7 @@ Table t;
          ui->find->setText("");
 } */
 
-void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer donnee table
+void MainWindow::on_tableView_7_clicked()//recuperer donnee table
 {
 
 
@@ -1590,7 +1650,7 @@ void MainWindow::on_libelle_clicked()//trier commande par libelle
       c.tri_LIBELLE(table);
 }
 
-void MainWindow::on_tableView_8_clicked(const QModelIndex &index)//recupereer donnee commande
+void MainWindow::on_tableView_8_clicked()//recupereer donnee commande
 {
     int row =ui->tableView_8->selectionModel()->currentIndex().row();
         //ui->stackedWidget->setCurrentIndex(2);

@@ -3,12 +3,13 @@
 
 #include <QMainWindow>
 #include "stock.h"
-#include"smtp.h"
+#include "smtp.h"
 #include "produit.h"
 #include <QMediaPlayer>
 #include <QSystemTrayIcon>
 #include "smtp.h"
 #include <QPropertyAnimation>
+
 namespace Ui {
 class MainWindow;
 }
@@ -70,6 +71,12 @@ private slots:
    //void on_tableView_A_clicked();
 
     void on_rechercherStock_clicked();
+
+    void on_PDF_STOCK_clicked();
+
+    void on_Afficher_Produit_clicked();
+
+    void on_Afficher_Stock_clicked();
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -128,6 +135,8 @@ private slots:
     void on_tri_aziz_1_clicked();
 
     void on_afficher_menu_clicked();
+
+    void on_tableView_8_clicked();
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
     void on_pushButton_31_clicked();
@@ -147,6 +156,8 @@ private slots:
     void on_pushButton_38_clicked();
 
     void on_pushButton_39_clicked();
+
+    void on_tableView_7_clicked();
 
 //-------------------------------------------------------------------------------------------------------------------------
 
@@ -206,12 +217,12 @@ private slots:
     void on_pushButton_59_clicked();
 
     void on_rechercher_5_clicked();
-    void on_tableView_7_clicked(const QModelIndex &index);
+
 
     void on_recher_clicked();
 
 
-    void on_tableView_8_clicked(const QModelIndex &index);
+
 
 
     void on_recher_2_clicked();

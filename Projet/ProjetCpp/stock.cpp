@@ -143,13 +143,14 @@ bool stock::update_stock()
 
                       edit.prepare("update STOCKAGE set CATEGORIE_STOCK =:CATEGORIE_STOCK, TEMPERATURE =:TEMPERATURE, EMPLACEMENT =:EMPLACEMENT, DATE_STOCK =:DATE_STOCK, QUANTITE =:QUANTITE, ID_PRODUIT =:ID_PRODUIT where ID_STOCK =:ID_STOCK");
 
-                      edit.bindValue(":CATEGORIE_STOCK",res);
-                      edit.bindValue(":TEMPERATURE",res1);
-                      edit.bindValue(":EMPLACEMENT",res2);
-                      edit.bindValue(":DATE_STOCK",res3);
-                      edit.bindValue(":QUANTITE",res4);
-                      edit.bindValue(":ID_PRODUIT",res5);
-                      edit.bindValue(":ID_STOCK",res6);
+                      edit.bindValue(":ID_STOCK",res);
+                      edit.bindValue(":CATEGORIE_STOCK",res1);
+                      edit.bindValue(":TEMPERATURE",res2);
+                      edit.bindValue(":EMPLACEMENT",res3);
+                      edit.bindValue(":DATE_STOCK",res4);
+                      edit.bindValue(":QUANTITE",res5);
+                      edit.bindValue(":ID_PRODUIT",res6);
+
 
                       return edit.exec();
 }
