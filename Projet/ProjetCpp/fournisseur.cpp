@@ -99,7 +99,7 @@ QSortFilterProxyModel * Fournisseur::afficher(){
 QSortFilterProxyModel * Fournisseur::searchNom(QString f){
             QSqlQueryModel* model   = new QSqlQueryModel();
             QSqlQuery query;
-            QString string ="SELECT * FROM FOURNISSEUR WHERE NOM LIKE "+f;
+            QString string ="SELECT * FROM FOURNISSEUR WHERE NOM LIKE '"+f + "'";
             model->setQuery(string);
             model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
             model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM"));
@@ -127,7 +127,7 @@ QSortFilterProxyModel * Fournisseur::searchTelephone(QString f){
 QSortFilterProxyModel * Fournisseur::searchMail(QString f){
     QSqlQueryModel* model   = new QSqlQueryModel();
     QSqlQuery query;
-    QString string ="SELECT * FROM FOURNISSEUR WHERE MAIL LIKE "+f;
+    QString string ="SELECT * FROM FOURNISSEUR WHERE MAIL LIKE '"+f+"'";
     model->setQuery(string);
     model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
     model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM"));
@@ -141,7 +141,7 @@ QSortFilterProxyModel * Fournisseur::searchMail(QString f){
 QSortFilterProxyModel * Fournisseur::searchAdresse(QString f){
     QSqlQueryModel* model   = new QSqlQueryModel();
     QSqlQuery query;
-    QString string ="SELECT * FROM FOURNISSEUR WHERE ADRESSE LIKE "+f;
+    QString string ="SELECT * FROM FOURNISSEUR WHERE ADRESSE LIKE '"+f+"'";
     model->setQuery(string);
     model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_FOURNISSEUR"));
     model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM"));

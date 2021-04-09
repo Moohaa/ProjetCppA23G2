@@ -6,6 +6,8 @@
 
 QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech
 CONFIG += console stl
+  PRECOMPILED_HEADER = "includes.h"
+    CONFIG += precompile_header
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -50,6 +52,7 @@ HEADERS += \
     droitacces.h \
     fournisseur.h \
     connection.h \
+    includes.h \
     login.h \
     utilisateur.h \
     commande.h \

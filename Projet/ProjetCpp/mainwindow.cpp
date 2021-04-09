@@ -1,13 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "login.h"
-#include <QCloseEvent>
-#include <QMessageBox>
-#include <QPushButton>
-#include <QLineEdit>
-#include <QSortFilterProxyModel>
-#include <QAbstractSocket>//mail
-
 #include "produit.h"
 #include "stock.h"
 #include "transaction.h"
@@ -20,21 +13,6 @@
 #include "fournisseur.h"
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
-
-#include <QMap>
-#include <QtWidgets/QMainWindow>
-#include <QtCharts/QChartView>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-#include <QtCharts/QHorizontalStackedBarSeries>
-#include <QtCharts/QLineSeries>
-#include <QtCharts/QCategoryAxis>
-#include <QtCharts/QPieSeries>
-#include <QtCharts/QPieSlice>
-#include <QtWidgets/QGridLayout>
-
 #include "produit.h"
 #include "stock.h"
 #include "transaction.h"
@@ -46,24 +24,25 @@
 #include "smtp.h"
 #include "smtp.h"
 #include "stat.h"
-#include<QAbstractSocket>
 #include "fournisseur.h"
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
-
-
-#include <QDebug>
 #include "connection.h"
 
+#include <QCloseEvent>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QSortFilterProxyModel>
+#include <QAbstractSocket>//mail
+#include <QMap>
+#include<QAbstractSocket>
 #include <string>
-#include <QSqlQuery>
-#include <QTableView>
 #include <QLabel>
 #include <QDate>
 #include <QtWidgets/QMessageBox>
 #include <QMainWindow>
 #include <QCalendarWidget>
-
 #include <QPixmap>
 #include <QMediaPlayer>
 #include <QMovie>
@@ -71,17 +50,10 @@
 #include <QSslSocket>
 #include <QNetworkAccessManager>
 #include <QPrinter>
-#include <QFileDialog>
 #include <QSystemTrayIcon>
 #include <QIcon>
 #include <QDesktopWidget>
 //#include <QIconDragEvent>
-
-
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
 #include <QtCharts/QHorizontalStackedBarSeries>
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QCategoryAxis>
@@ -95,13 +67,20 @@
 #include <QtCharts/QBarSet>
 #include <QtCharts/QLegend>
 #include <QtCharts/QBarCategoryAxis>
-
+#include <QtWidgets>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QVariant>
+#include <QTableView>
+#include <QSqlTableModel>
+#include <QSqlRecord>
+#include <QDebug>
+#include <QString>
+#include <QObject>
 //#include <QPrinter>
 #include <QFileDialog>
-
 #include <QPlainTextEdit>
 #include <QPropertyAnimation>
-
 
 using namespace std;
 
@@ -174,13 +153,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_99->setPixmap(pix12);
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
-
+updateFournisseursTabsCombos();
 
    // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
 
     connect(ui->sendBtn, SIGNAL(clicked()),this, SLOT(sendMail()));
     connect(ui->exitBtn, SIGNAL(clicked()),this, SLOT(close()));
-
+    connect(ui->sendBtn_2, SIGNAL(clicked()),this, SLOT(sendMail2()));
+    connect(ui->exitBtn_2, SIGNAL(clicked()),this, SLOT(close2()));
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
@@ -199,12 +179,7 @@ MainWindow::MainWindow(QWidget *parent) :
   ui->tableView_2->setModel(test3.afficher());
   ui->tableView->setModel(test4.afficher());
 
-  QSqlQueryModel *modelF=new QSqlQueryModel();
-  QSqlQuery qryF;
-  qryF.prepare("select ID_FOURNISSEUR from FOURNISSEUR");
-  qryF.exec();
-  modelF->setQuery(qryF);
-  ui->comboF->setModel(modelF);
+
 
 
 }
@@ -427,7 +402,22 @@ void   MainWindow::mailSent(QString)
     ui->msg->clear();
     ui->paswd->clear();
 }
-//mail fin
+
+void   MainWindow::sendMail2()
+{
+
+    Smtp* smtp = new Smtp("mariem.nacib@esprit.tn","191JFT2771", "smtp.gmail.com");
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+        smtp->sendMail("mariem.nacib@esprit.tn", ui->rcpt_2->text() , ui->subject_2->text(),ui->msg_2->toPlainText());
+}
+
+void   MainWindow::mailSent2(QString)
+{
+    ui->rcpt_2->clear();
+    ui->subject_2->clear();
+    ui->msg_2->clear();
+    ui->paswd_2->clear();
+}
 
 void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
 {
@@ -1544,8 +1534,6 @@ Table t;
 
 void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer donnee table
 {
-
-
         int row =ui->tableView_7->selectionModel()->currentIndex().row();
             //ui->stackedWidget->setCurrentIndex(2);
             ui->lineEdit_28->setText(ui->tableView_7->model()->index(row,0).data().toString());
@@ -1553,8 +1541,6 @@ void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer don
             ui->comboBox_8->setCurrentText(ui->tableView_7->model()->index(row,2).data().toString());
              ui->comboBox_9->setCurrentText(ui->tableView_7->model()->index(row,3).data().toString());
             ui->lineEdit_30->setText(ui->tableView_7->model()->index(row,4).data().toString());
-
-
 }
 
 void MainWindow::on_recher_clicked()//rechercher commande par id
@@ -1786,6 +1772,58 @@ void MainWindow::on_STATF_clicked()
     stati s;
 }*/
 //--------------------MAHMOUD-----------------------------
+
+void MainWindow::updateFournisseursTabsCombos(){
+        Fournisseur fournisseur;
+        QSortFilterProxyModel *proxyModel = fournisseur.afficher();
+        ui->tabFournisseur->setSortingEnabled(true);
+        ui->tabFournisseur->setModel(proxyModel);
+
+
+        CommandeFournisseur commandeFournisseur;
+         ui->tabCommandeFournisseur->setSortingEnabled(true);
+        ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+
+        OffreFournisseur offreFournisseur;
+            ui->tabOffreFournisseur->setSortingEnabled(true);
+        ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+
+        QSqlQueryModel *modelF=new QSqlQueryModel();
+        QSqlQuery qryF;
+        qryF.prepare("select ID_FOURNISSEUR from FOURNISSEUR");
+        qryF.exec();
+        modelF->setQuery(qryF);
+        ui->comboF->setModel(modelF);
+        ui->F_D_COMBO->setModel(modelF);
+
+        QSqlQueryModel *modelCF=new QSqlQueryModel();
+        QSqlQuery qryCF;
+        qryCF.prepare("select ID_COMMANDE from COMMANDE_FOURNISSEUR");
+        qryCF.exec();
+        modelCF->setQuery(qryCF);
+        ui->CF_DELETE_COMBO->setModel(modelCF);
+        ui->CF_UPDATE_COMBO->setModel(modelCF);
+
+        ui->tabOffreFournisseur->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+
+        QSqlQueryModel *modelOFP=new QSqlQueryModel();
+        QSqlQuery qryOFP;
+        qryOFP.prepare("select ID_PRODUIT from OFFRE");
+        qryOFP.exec();
+        modelOFP->setQuery(qryOFP);
+        ui->OF_UPDATE_COMBO->setModel(modelOFP);
+        ui->OF_DELETE_COMBO->setModel(modelOFP);
+
+        QSqlQueryModel *modelOFF=new QSqlQueryModel();
+        QSqlQuery qryOFF;
+        qryOFF.prepare("select ID_FOURNISSEUR from OFFRE");
+        qryOFF.exec();
+        modelOFF->setQuery(qryOFF);
+        ui->OF_UPDATE_COMBO_2->setModel(modelOFF);
+        ui->OF_DELETE_COMBO_2->setModel(modelOFF);
+
+}
+
 //----Ajouter Fournisseur
 void MainWindow::on_F_ADD_clicked()
 {
@@ -1793,28 +1831,32 @@ void MainWindow::on_F_ADD_clicked()
                             ui->F_TEL->text(),
                             ui->F_ADRESSE->text(),
                             ui->F_MAIL->text().toInt());
-    fournisseur.ajouter();
-    QSortFilterProxyModel *proxyModel = fournisseur.afficher();
-    ui->tabFournisseur->setSortingEnabled(true);
-    ui->tabFournisseur->setModel(proxyModel);
+    bool check = fournisseur.ajouter();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+    updateFournisseursTabsCombos();
+    //----------
 }
 //-- Modifier Fournisseur
 void MainWindow::on_F_UPDATE_clicked()
 {
     Fournisseur fournisseur(ui->F_NOM->text(),ui->F_TEL->text(),
                             ui->F_ADRESSE->text(),ui->F_MAIL->text().toUInt());
-    fournisseur.setId(ui->F_UPDATE_ID->text().toUInt());
-    fournisseur.modifier();
-    ui->tabFournisseur->setSortingEnabled(true);
-    ui->tabFournisseur->setModel(fournisseur.afficher());
+    fournisseur.setId(ui->comboF->currentText().toUInt());
+    bool check =  fournisseur.modifier();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+    updateFournisseursTabsCombos();
 }
 //--- Supprimer Fournisseur
 void MainWindow::on_pushButton_44_clicked()
 {
-    Fournisseur fournisseur(ui->textDelete_7->text().toUInt());
-    fournisseur.supprimer();
-    ui->tabFournisseur->setSortingEnabled(true);
-    ui->tabFournisseur->setModel(fournisseur.afficher());
+    Fournisseur fournisseur(ui->F_D_COMBO->currentText().toUInt());
+    bool check = fournisseur.supprimer();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+updateFournisseursTabsCombos();
+
 }
 
 //-- Ajouter Commande Fournisseur
@@ -1823,9 +1865,11 @@ void MainWindow::on_CF_ADD_clicked()
     CommandeFournisseur commandeFournisseur(ui->CF_ID_F->text().toInt(),
                                             ui->CF_ID_P->text().toUInt(),ui->CF_QTE->text().toUInt(),
                                             ui->CF_DATE_E->text(),ui->CF_DATE_R->text());
-    commandeFournisseur.ajouter();
-    ui->tabCommandeFournisseur->setSortingEnabled(true);
-    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+    bool check = commandeFournisseur.ajouter();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+updateFournisseursTabsCombos();
+
 }
 //-- Modifier Commande Fournisseur
 void MainWindow::on_pushButton_46_clicked()
@@ -1833,18 +1877,23 @@ void MainWindow::on_pushButton_46_clicked()
     CommandeFournisseur commandeFournisseur(ui->CF_ID_F->text().toInt(),ui->CF_ID_P->text().toUInt(),
                                             ui->CF_QTE->text().toUInt(),ui->CF_DATE_E->text(),ui->CF_DATE_R->text());
 
-    commandeFournisseur.setidCommande(ui->CF_UPDATE->text().toUInt());
-    commandeFournisseur.modifier();
-    ui->tabCommandeFournisseur->setSortingEnabled(true);
-    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+     commandeFournisseur.setidCommande(ui->CF_UPDATE_COMBO->currentText().toUInt());
+    bool check = commandeFournisseur.modifier();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+    updateFournisseursTabsCombos();
+
 }
 //-- Supprimer Commande Fournisseur
 void MainWindow::on_pushButton_47_clicked()
 {
-    CommandeFournisseur commandeFournisseur(ui->CF_DELETE->text().toUInt());
-    commandeFournisseur.supprimer();
-    ui->tabCommandeFournisseur->setSortingEnabled(true);
-    ui->tabCommandeFournisseur->setModel(commandeFournisseur.afficher());
+//    CommandeFournisseur commandeFournisseur(ui->CF_DELETE->text().toUInt());
+    CommandeFournisseur commandeFournisseur(ui->CF_DELETE_COMBO->currentText().toUInt());
+    bool check = commandeFournisseur.supprimer();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+    updateFournisseursTabsCombos();
+
 }
 
 //-- Send Mail
@@ -1852,29 +1901,36 @@ void MainWindow::on_sendBtn_2_clicked()
 {
 
 }
+
 //-- Ajouter Stock Fournisseur
 void MainWindow::on_OF_ADD_clicked()
 {
     OffreFournisseur offreFournisseur(ui->OF_ID_P->text().toUInt(),ui->OF_ID_F->text().toUInt(),ui->OF_PRIX->text().toUInt());
-    offreFournisseur.ajouter();
-    ui->tabOffreFournisseur->setSortingEnabled(true);
-    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+    bool check = offreFournisseur.ajouter();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+    updateFournisseursTabsCombos();
+
 }
 //-- Modifier Stock Fournisseur
 void MainWindow::on_OF_UPDATE_clicked()
 {
-    OffreFournisseur offreFournisseur(ui->OF_ID_P->text().toInt(),ui->OF_ID_F->text().toUInt(),ui->OF_PRIX->text().toUInt());
-    offreFournisseur.modifier();
-    ui->tabOffreFournisseur->setSortingEnabled(true);
-    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+    OffreFournisseur offreFournisseur(ui->OF_UPDATE_COMBO->currentText().toInt(),ui->OF_UPDATE_COMBO_2->currentText().toUInt(),ui->OF_PRIX->text().toUInt());
+    bool check = offreFournisseur.modifier();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+    updateFournisseursTabsCombos();
+
 }
 //-- Supprimer Stock Fournisseur
 void MainWindow::on_pushButton_50_clicked()
 {
-    OffreFournisseur offreFournisseur(ui->OF_DELETE_F->text().toUInt(), ui->OF_DELETE_P->text().toUInt());
-    offreFournisseur.supprimer();
-    ui->tabOffreFournisseur->setSortingEnabled(true);
-    ui->tabOffreFournisseur->setModel(offreFournisseur.afficher());
+    OffreFournisseur offreFournisseur(ui->OF_DELETE_COMBO_2->currentText().toUInt(), ui->OF_DELETE_COMBO->currentText().toUInt());
+    bool check = offreFournisseur.supprimer();
+    if(check) QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Succes de l'operation"),  QMessageBox::Cancel);
+    else QMessageBox::critical(nullptr,QObject::tr("Ajouter"),QObject::tr("Erreur dans l'operation"),  QMessageBox::Cancel);
+    updateFournisseursTabsCombos();
+
 }
 
 void MainWindow::on_pushButton_45_clicked()
@@ -1954,10 +2010,12 @@ void MainWindow::on_pushButton_56_clicked()
     ui->tabFournisseur->setModel(model );
 }
 
-void MainWindow::on_pdf_f_clicked()//PDF Fournisseur
+void MainWindow::on_pdf_f_clicked()//PDF Fournisseur IMAGE PDF
 {
     QString str;
-                 str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
+                 str.append("<html><head></head><body>"
+                            "<center><img src=\"C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
+                            "<center>"+QString("Les commandes demandées"));
                  str.append("<table border=1><tr>") ;
                  str.append("<td>"+QString("ID_COMMANDE")+"</td>") ;
                  str.append("<td>"+QString("ID_FOURNISSEUR")+"</td>") ;
@@ -2001,4 +2059,20 @@ void MainWindow::on_pdf_f_clicked()//PDF Fournisseur
               QTextDocument doc;
               doc.setHtml(str) ;
               doc.print(&printer);
+}
+
+
+void MainWindow::on_F_act_clicked()
+{
+    updateFournisseursTabsCombos();
+}
+
+void MainWindow::on_actOF_clicked()
+{
+    updateFournisseursTabsCombos();
+}
+
+void MainWindow::on_CF_Act_clicked()
+{
+     updateFournisseursTabsCombos();
 }

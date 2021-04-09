@@ -24,6 +24,8 @@ public:
 private slots:
     void sendMail();
     void mailSent(QString);
+    void sendMail2();
+    void mailSent2(QString);
 //----------------------------------------MENU---------------------------------------------------
     void on_pushButton_2_clicked();
 
@@ -234,7 +236,7 @@ private slots:
 
 
 
-
+    void updateFournisseursTabsCombos();
 
    // void on_STATF_clicked();
 
@@ -247,6 +249,13 @@ private slots:
     void on_libelle_clicked();
 
     void on_nombredechaises_clicked();
+
+    void on_F_act_clicked();
+
+
+    void on_actOF_clicked();
+
+    void on_CF_Act_clicked();
 
 private:
     Ui::MainWindow *ui;
