@@ -3,12 +3,13 @@
 
 #include <QMainWindow>
 #include "stock.h"
-#include"smtp.h"
+#include "smtp.h"
 #include "produit.h"
 #include <QMediaPlayer>
 #include <QSystemTrayIcon>
 #include "smtp.h"
 #include <QPropertyAnimation>
+
 namespace Ui {
 class MainWindow;
 }
@@ -72,6 +73,12 @@ private slots:
    //void on_tableView_A_clicked();
 
     void on_rechercherStock_clicked();
+
+    void on_PDF_STOCK_clicked();
+
+    void on_Afficher_Produit_clicked();
+
+    void on_Afficher_Stock_clicked();
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -130,6 +137,8 @@ private slots:
     void on_tri_aziz_1_clicked();
 
     void on_afficher_menu_clicked();
+
+    void on_tableView_8_clicked();
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
     void on_pushButton_31_clicked();
@@ -149,6 +158,8 @@ private slots:
     void on_pushButton_38_clicked();
 
     void on_pushButton_39_clicked();
+
+    void on_tableView_7_clicked();
 
 //-------------------------------------------------------------------------------------------------------------------------
 
@@ -256,6 +267,47 @@ private slots:
     void on_actOF_clicked();
 
     void on_CF_Act_clicked();
+
+
+    void on_recher_clicked();
+
+
+
+
+
+    void on_recher_2_clicked();
+
+    void on_pushButton_DB_clicked();
+
+    void on_pushButton_deb1_clicked();
+
+    void on_pushButton_prix_clicked();
+
+    void on_pushButton_ntab_clicked();
+
+
+
+
+
+    //void on_pushButton_pdf_clicked();
+
+    void on_sendBtn_2F_clicked();
+
+
+
+
+
+   // void on_STATF_clicked();
+
+    void on_buttonStock_clicked();
+
+    void on_pushButton_441_clicked();
+
+    void on_idDeCommande_clicked();
+
+    void on_libelle_clicked();
+
+    void on_nombredechaises_clicked();
 
 private:
     Ui::MainWindow *ui;

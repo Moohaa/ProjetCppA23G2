@@ -44,6 +44,7 @@
 #include <QtPrintSupport/QPrintDialog>
 #include <QPushButton>
 #include<QFileInfo>
+#include <QMovie>
 
 Login::Login(QWidget *parent)
     : QMainWindow(parent)
@@ -58,6 +59,40 @@ Login::Login(QWidget *parent)
             model->setQuery(qry);
             ui->liste_droit->setModel(model);
             ui->liste_droit_3->setModel(model);
+
+
+            mSystemTrayIcon = new QSystemTrayIcon(this);
+            mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
+            mSystemTrayIcon->setVisible(true);
+
+
+    media = new QMediaPlayer (this);
+    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->play();
+
+    QPixmap pix150("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo.png");
+           QPixmap pix1("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/calque 0.png");
+           QPixmap pix2("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/man1.png");
+           QPixmap pix3("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/padlock_78356.png");
+           QPixmap pix4("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/add-user-2-256.png");
+           QPixmap pix5("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/mui.png");
+
+           ui->hola->setPixmap(pix1);
+           ui->music->setToolTip("Music");
+           ui->label_30->setPixmap(pix150);
+           ui->label_32->setPixmap(pix3);
+           ui->label_33->setPixmap(pix3);
+           ui->label_34->setPixmap(pix2);
+           ui->label_35->setPixmap(pix4);
+           ui->label_31->setPixmap(pix4);
+           ui->music->setPixmap(pix5);
+
+           myMoviebg = new QMovie(this);
+           myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/gif.mp4");
+
+                  ui->gif->setMovie(myMoviebg);
+
+                      myMoviebg->start();
 
 }
 
@@ -155,7 +190,7 @@ void Login::on_pushButton_clicked()
     }
 
 
-void Login::on_tab_affiche_doubleClicked(const QModelIndex &index)
+void Login::on_tab_affiche_doubleClicked()
 {
 
     int row =ui->tab_affiche->selectionModel()->currentIndex().row();
@@ -413,7 +448,7 @@ void Login::on_modifier_droit_clicked()
       }
 }
 
-void Login::on_tab_droit_doubleClicked(const QModelIndex &index)
+void Login::on_tab_droit_doubleClicked()
 {
     int row =ui->tab_droit->selectionModel()->currentIndex().row();
     ui->modif_code->setText(ui->tab_droit->model()->index(row,2).data().toString());
@@ -716,4 +751,20 @@ void Login::on_pushButton_7_clicked()
                                                       "Click OK to exit."), QMessageBox::Ok);
             }
 
+}
+//--------------------------------------------~MUSIC_PLAY~-------------------------------------------------------
+
+void Login::on_play1_clicked()
+{
+    media->play() ;
+}
+
+void Login::on_pause1_clicked()
+{
+    media->pause();
+}
+
+void Login::on_mute1_clicked()
+{
+    media->setMuted(true);
 }

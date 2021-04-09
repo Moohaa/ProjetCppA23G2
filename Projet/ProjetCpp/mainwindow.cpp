@@ -1,6 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "login.h"
+#include <QCloseEvent>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QSortFilterProxyModel>
+#include <QAbstractSocket>//mail
+
 #include "produit.h"
 #include "stock.h"
 #include "transaction.h"
@@ -10,6 +17,36 @@
 #include "table.h"
 #include "commande.h"
 #include "smtp.h"
+#include "fournisseur.h"
+#include "offrefournisseur.h"
+#include "commandefournisseur.h"
+
+#include <QMap>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
+
+#include "produit.h"
+#include "stock.h"
+#include "transaction.h"
+#include "evaluation.h"
+#include "plat.h"
+#include "menu.h"
+#include "table.h"
+#include "commande.h"
+#include "smtp.h"
+#include "smtp.h"
+#include "stat.h"
+#include<QAbstractSocket>
 #include "fournisseur.h"
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
@@ -54,6 +91,12 @@
 #include <QIcon>
 #include <QDesktopWidget>
 //#include <QIconDragEvent>
+
+
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
 #include <QtCharts/QHorizontalStackedBarSeries>
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QCategoryAxis>
@@ -79,6 +122,10 @@
 #include <QObject>
 //#include <QPrinter>
 #include <QFileDialog>
+
+//#include <QPrinter>
+#include <QFileDialog>
+
 #include <QPlainTextEdit>
 #include <QPropertyAnimation>
 #include <QVideoWidget>
@@ -195,7 +242,6 @@ updateFournisseursTabsCombos();
 
 
 
-
 }
 
 MainWindow::~MainWindow()
@@ -227,6 +273,13 @@ void MainWindow::on_pushButton_11_clicked()
 }
 
 //--------------------------------~PRODUIT~----------------------------------------------
+
+void MainWindow::on_Afficher_Produit_clicked()//afficher Stock
+{
+    produit p;
+        ui->tableView_A->setModel(p.afficher());
+}
+
 void MainWindow::on_pushButton_clicked()//Ajouter Produit
 {
     produit p;
@@ -238,9 +291,6 @@ void MainWindow::on_pushButton_clicked()//Ajouter Produit
     ui->tableView_A->setModel(p.afficher());
 
     bool test= p.ajouter();
-
-
-                ui->tableView_A->setModel(p.afficher());
 
                 if(test){
                     QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);}
@@ -265,6 +315,7 @@ void MainWindow::on_tableView_A_doubleClicked() // modifier produit depuis l'aff
     int row =ui->tableView_A->selectionModel()->currentIndex().row();
     //ui->stackedWidget->setCurrentIndex(2);
     ui->lineEdit->setText(ui->tableView_A->model()->index(row,0).data().toString());
+    ui->textEdit_2->setText(ui->tableView_A->model()->index(row,0).data().toString());
     ui->comboBox_3->setCurrentText(ui->tableView_A->model()->index(row,2).data().toString());
     ui->lineEdit_2->setText(ui->tableView_A->model()->index(row,1).data().toString());
 
@@ -336,7 +387,7 @@ void MainWindow::on_TRI_clicked()//tri Produit
 
 }*/
 
-void MainWindow::on_recherche_produit_clicked()
+void MainWindow::on_recherche_produit_clicked()//rechercher un produit
 {//
     produit p;
      QString textA;
@@ -431,6 +482,12 @@ void   MainWindow::mailSent2(QString)
     ui->subject_2->clear();
     ui->msg_2->clear();
     ui->paswd_2->clear();
+}
+
+void MainWindow::on_Afficher_Stock_clicked()//afficher Stock
+{
+    stock s;
+        ui->tableView_B->setModel(s.afficher_stock());
 }
 
 void MainWindow::on_pushButton_3_clicked()//Ajouter Stock
@@ -537,6 +594,7 @@ QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(modelS);
     s.setID_STOCK(ui->lineEdit_21->text().toInt());
 
     ui->lineEdit_21->setText(ui->tableView_B->model()->index(row,0).data().toString());
+    ui->textDelete->setText(ui->tableView_B->model()->index(row,0).data().toString());
     ui->comboBox->setCurrentText(ui->tableView_B->model()->index(row,1).data().toString());
     ui->spinBox->setValue(ui->tableView_B->model()->index(row,2).data().toInt());
     ui->comboBox_2->setCurrentText(ui->tableView_B->model()->index(row,3).data().toString());
@@ -649,7 +707,55 @@ void MainWindow::on_rechercherStock_clicked()//recherche stock
          s.rechercher_cr3(table,text1);
          }
 }
+void MainWindow::on_PDF_STOCK_clicked()//PDF STOCK
+{
+    QString str;
+                 str.append("<html><head></head><body><center>"+QString("Les Donnée du Stockage"));
+                 str.append("<table border=1><tr>") ;
+                 str.append("<td>"+QString("ID_STOCK")+"</td>") ;
+                 str.append("<td>"+QString("CATEGORIE_STOCK")+"</td>") ;
+                 str.append("<td>"+QString("TEMPERATURE")+"</td>") ;
+                 str.append("<td>"+QString("EMPLACEMENT")+"</td>") ;
+                 str.append("<td>"+QString("DATE_STOCK")+"</td>") ;
+                 str.append("<td>"+QString("QUANTITE")+"</td>") ;
+                 str.append("<td>"+QString("ID_PRODUIT")+"</td>") ;
 
+
+                 QSqlQuery* query=new QSqlQuery();
+                 query->exec("SELECT * FROM STOCKAGE");
+
+                 while(query->next())
+                 {
+                 str.append("<tr><td>");
+                 str.append(query->value(0).toString()) ;
+                 str.append("</td><td>") ;
+                 str.append(query->value(1).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(2).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(3).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(4).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(5).toString());
+                 str.append("</td></td>");
+                 }
+              str.append("</table></center></body></html>") ;
+
+              QPrinter printer ;
+              printer.setOrientation(QPrinter::Portrait);
+              printer.setOutputFormat(QPrinter::PdfFormat);
+              printer.setPaperSize(QPrinter::A4) ;
+
+              QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+              if (path.isEmpty()) return ;
+              printer.setOutputFileName(path) ;
+
+              QTextDocument doc;
+              doc.setHtml(str) ;
+              doc.print(&printer);
+}
 
 //--------------------------------------------~MUSIC_PLAY~-------------------------------------------------------
 
@@ -1546,8 +1652,10 @@ Table t;
          ui->find->setText("");
 } */
 
-void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer donnee table
+void MainWindow::on_tableView_7_clicked()//recuperer donnee table
 {
+
+
         int row =ui->tableView_7->selectionModel()->currentIndex().row();
             //ui->stackedWidget->setCurrentIndex(2);
             ui->lineEdit_28->setText(ui->tableView_7->model()->index(row,0).data().toString());
@@ -1555,6 +1663,23 @@ void MainWindow::on_tableView_7_clicked(const QModelIndex &index)//recuperer don
             ui->comboBox_8->setCurrentText(ui->tableView_7->model()->index(row,2).data().toString());
              ui->comboBox_9->setCurrentText(ui->tableView_7->model()->index(row,3).data().toString());
             ui->lineEdit_30->setText(ui->tableView_7->model()->index(row,4).data().toString());
+
+           ui->lineEdit_31->setText("");
+
+}
+
+void MainWindow::on_buttonStock_clicked()//ACtualiser
+{
+
+    Commande c;
+        ui->tableView_8->setModel(c.afficher());
+
+}
+
+void MainWindow::on_pushButton_441_clicked()//actualiser
+{
+    Table t;
+            ui->tableView_7->setModel(t.afficher());
 }
 
 void MainWindow::on_recher_clicked()//rechercher commande par id
@@ -1590,7 +1715,7 @@ void MainWindow::on_libelle_clicked()//trier commande par libelle
       c.tri_LIBELLE(table);
 }
 
-void MainWindow::on_tableView_8_clicked(const QModelIndex &index)//recupereer donnee commande
+void MainWindow::on_tableView_8_clicked()//recupereer donnee commande
 {
     int row =ui->tableView_8->selectionModel()->currentIndex().row();
         //ui->stackedWidget->setCurrentIndex(2);
