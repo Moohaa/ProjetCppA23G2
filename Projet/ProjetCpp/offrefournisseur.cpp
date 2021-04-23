@@ -122,11 +122,12 @@ int OffreFournisseur::lastIdProduit()
     }
     return lastId;
 }
-/*
+
 QVBoxLayout *OffreFournisseur::stat()
 {
     int countFournisseur = this->lastIdFournisseur();
     int countProduit = this->lastIdProduit();
+
     QStringList categories;
     QSqlQuery fournisseurQuery;
     QSqlQuery produitQuery;
@@ -134,13 +135,13 @@ QVBoxLayout *OffreFournisseur::stat()
 
     for (int j = 1; j <= countProduit; j++)
     {
-        checkCount.prepare("SELECT COUNT(ID_PRODUIT) FROM OFFRE WHERE ID_PRODUIT=?");
+        /*checkCount.prepare("SELECT COUNT(ID_PRODUIT) FROM OFFRE WHERE ID_PRODUIT=?");
         checkCount.addBindValue(j);
         checkCount.exec();
         checkCount.first();
-
+        qDebug() << " j " << j << " " << checkCount.value(0).toInt()<<"//" ;
         if (checkCount.value(0).toInt() > 0)
-        {
+        {*/
             produitQuery.prepare("SELECT NOM_PRODUIT FROM PRODUIT WHERE ID_PRODUIT=?");
             produitQuery.addBindValue(QString::fromStdString(std::to_string(j)));
             produitQuery.exec();
@@ -149,7 +150,7 @@ QVBoxLayout *OffreFournisseur::stat()
             {
                 categories << produitQuery.value(0).toString();
             }
-        }
+        //}
     }
 
     QBarSeries *series = new QBarSeries();
@@ -214,7 +215,7 @@ QVBoxLayout *OffreFournisseur::stat()
     mainLayout->addWidget(chartView);
     return mainLayout;
 }
-*/
+
 QSortFilterProxyModel *OffreFournisseur::searchProduit(int produit)
 {
     QSqlQueryModel *model = new QSqlQueryModel();

@@ -1975,11 +1975,11 @@ void MainWindow::on_pushButton_50_clicked()
 }
 
 void MainWindow::on_pushButton_45_clicked()
-{/*
+{
     delete ui->widget->layout();
     OffreFournisseur offre;
     QVBoxLayout * mainLayout = offre.stat();
-    ui->widget->setLayout(mainLayout);*/
+    ui->widget->setLayout(mainLayout);
     return;
 }
 

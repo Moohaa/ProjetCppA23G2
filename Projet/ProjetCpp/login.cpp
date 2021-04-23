@@ -64,9 +64,9 @@ Login::Login(QWidget *parent)
 
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
-            mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
+            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
-
+/*
             //-------------------------
             QMediaPlayer *player = new QMediaPlayer;
             QMediaPlaylist *playlist  = new QMediaPlaylist;
@@ -79,15 +79,15 @@ Login::Login(QWidget *parent)
                 qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();
             //-------------------------
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
-    media->play();
+    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->play();*/
 
-    QPixmap pix150("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo.png");
-           QPixmap pix1("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/calque 0.png");
-           QPixmap pix2("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/man1.png");
-           QPixmap pix3("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/padlock_78356.png");
-           QPixmap pix4("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/add-user-2-256.png");
-           QPixmap pix5("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/mui.png");
+    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo.png");
+           QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/calque 0.png");
+           QPixmap pix2("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/man1.png");
+           QPixmap pix3("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/padlock_78356.png");
+           QPixmap pix4("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/add-user-2-256.png");
+           QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui.png");
 
            ui->hola->setPixmap(pix1);
            ui->music->setToolTip("Music");
@@ -142,7 +142,7 @@ void Login::on_Login_connexion_clicked()
             ui->stackedWidget->setCurrentIndex(9);
             MainWindow *w =new MainWindow(this);
             QSplashScreen *splash= new QSplashScreen;
-            splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
+            splash->setPixmap(QPixmap("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png"));
             splash->show();
 
             QTimer::singleShot(2500,splash,SLOT(close()));
@@ -152,7 +152,7 @@ void Login::on_Login_connexion_clicked()
             //ui->stackedWidget->setCurrentIndex(3);
              MainWindow *w =new MainWindow(this);
              QSplashScreen *splash= new QSplashScreen;
-             splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
+             splash->setPixmap(QPixmap("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png"));
              splash->show();
 
              QTimer::singleShot(2500,splash,SLOT(close()));

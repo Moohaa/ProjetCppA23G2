@@ -29,6 +29,7 @@ OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     droitacces.cpp \
     fournisseur.cpp \
     login.cpp \
@@ -49,6 +50,7 @@ SOURCES += \
     transaction.cpp
 
 HEADERS += \
+    arduino.h \
     droitacces.h \
     fournisseur.h \
     connection.h \
