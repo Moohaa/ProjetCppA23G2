@@ -2331,7 +2331,7 @@ border-radius:10px;
         </property>
         <widget class="QWidget" name="tab_22">
          <attribute name="title">
-          <string>Ajouter</string>
+          <string>Ajouter et modifier</string>
          </attribute>
          <widget class="QLabel" name="label_31">
           <property name="geometry">
@@ -2687,7 +2687,7 @@ border-radius:10px;
         </widget>
         <widget class="QWidget" name="tab_24">
          <attribute name="title">
-          <string>Mail</string>
+          <string>Mailing</string>
          </attribute>
          <widget class="QWidget" name="layoutWidget_2">
           <property name="geometry">
@@ -2830,11 +2830,11 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_26">
          <attribute name="title">
-          <string>Ajouter</string>
+          <string>Ajouter et modifier</string>
          </attribute>
          <widget class="QGroupBox" name="groupBox_8">
           <property name="geometry">
@@ -3152,7 +3152,7 @@ border-radius:10px;
            <string>Libellé</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_43">
+         <widget class="QPushButton" name="buttonStock_2">
           <property name="geometry">
            <rect>
             <x>490</x>
@@ -3738,7 +3738,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab_32">
          <attribute name="title">
@@ -4698,7 +4698,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -6141,7 +6141,7 @@ border-radius:10px;
      <x>0</x>
      <y>0</y>
      <width>1296</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

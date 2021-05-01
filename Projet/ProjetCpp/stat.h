@@ -19,6 +19,7 @@ public:
     explicit stati(QWidget *parent = nullptr);
        int Statistique_partie2() ;
        int Statistique_partie3() ;
+        int Statistique_partie4() ;
 
 
      void paintEvent(QPaintEvent *) ;
@@ -34,5 +35,27 @@ private:
 
 
 
+
+#endif // STAT_H
+#ifndef STAT_H
+#define STAT_H
+
+#include <QDialog>
+
+namespace Ui {
+class stat;
+}
+
+class stat : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit stat(QWidget *parent = nullptr);
+    ~stat();
+
+private:
+    Ui::stat *ui;
+};
 
 #endif // STAT_H

@@ -16,7 +16,7 @@ class Commande
   QString LIBELLE ;
   QString DESCRIPTION;
   float PRIX;
-  int NUM_TABLE;
+ int NUM_TABLE;
 
 
 

@@ -218,8 +218,6 @@ private slots:
 
 
 
-
-
     //void on_pushButton_pdf_clicked();
 
     void on_sendBtn_2F_clicked();
@@ -230,7 +228,7 @@ private slots:
 
     void on_STATF_clicked();
 
-    void on_buttonStock_clicked();
+    void on_buttonStock_2_clicked();
 
     void on_pushButton_441_clicked();
 

@@ -44,7 +44,8 @@ SOURCES += \
     produit.cpp\
     mainwindow.cpp \
     table.cpp \
-    transaction.cpp
+    transaction.cpp \
+    stat.cpp
 
 HEADERS += \
     droitacces.h \
@@ -63,11 +64,13 @@ HEADERS += \
     produit.h\
     mainwindow.h \
     table.h \
-    transaction.h
+    transaction.h \
+    stat.h
 
 FORMS += \
         mainwindow.ui\
-		login.ui
+		login.ui \
+    stat.ui
 
 QMAKE_CXXFLAGS += -std=gnu++11
 QMAKE_CXXFLAGS += -std=gnu++14

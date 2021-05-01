@@ -1115,8 +1115,8 @@ if(c.check()==0 )
 {QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("cette commande existe déjà"),  QMessageBox::Cancel); }
 else if(c.check_tab()==0)
 {QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("cette table est déjà associée à une commande"),  QMessageBox::Cancel); }
-  else if(c.check_tabcom()!=0)
-{QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("impossible d'associer cette commande a une table qui  n'existe pas !"),  QMessageBox::Cancel);}
+ /* else if(c.check_tabcom()!=0)
+{QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("impossible d'associer cette commande a une table qui  n'existe pas !"),  QMessageBox::Cancel);}*/
 else { c.ajouter();
 ui->tableView_8->setModel(c.afficher());
 QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Ajout effectué"),  QMessageBox::Cancel);}
@@ -1325,7 +1325,7 @@ c.setLIBELLE(ui->lineEdit_31->text());
 
 }
 
-void MainWindow::on_buttonStock_clicked()//ACtualiser
+void MainWindow::on_buttonStock_2_clicked()//ACtualiser
 {
 
     Commande c;
@@ -1399,58 +1399,6 @@ Commande c;;
 
 
 
-/*void MainWindow::on_pushButton_pdf_clicked()
-{
-    QString str;
-                 str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
-                 str.append("<table border=1><tr>") ;
-                 str.append("<td>"+QString("ID_COMMANDE")+"</td>") ;
-                 str.append("<td>"+QString("QUANTITE")+"</td>") ;
-                 str.append("<td>"+QString("LIBELLE")+"</td>") ;
-                 str.append("<td>"+QString("DESCRIPTION")+"</td>") ;
-                 str.append("<td>"+QString("PRIX")+"</td>") ;
-                 str.append("<td>"+QString("NUM_TABLE")+"</td>") ;
-
-
-                 QSqlQuery* query=new QSqlQuery();
-                 query->exec("SELECTID_COMMANDE,QUANTITE,LIBELLE,DESCRIPTION,PRIX,NUM_TABLE FROM COMMANDE");
-
-                 while(query->next())
-                 {
-                 str.append("<tr><td>");
-                 str.append(query->value(0).toString()) ;
-                 str.append("</td><td>") ;
-                 str.append(query->value(1).toString());
-                 str.append("</td><td>") ;
-                 str.append(query->value(2).toString());
-                 str.append("</td><td>") ;
-                 str.append(query->value(3).toString());
-                 str.append("</td><td>") ;
-                 str.append(query->value(4).toString());
-                 str.append("</td><td>") ;
-                 str.append(query->value(5).toString());
-                 str.append("</td></tr>");
-
-
-
-
-                 }
-              str.append("</table></center></body></html>") ;
-
-             QPrinter printer ;
-              printer.setOrientation(QPrinter::Portrait);
-              printer.setOutputFormat(QPrinter::PdfFormat);
-              printer.setPaperSize(QPrinter::A4) ;
-
-            QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
-
-              if (path.isEmpty()) return ;
-              printer.setOutputFileName(path) ;
-
-              QTextDocument doc;
-              doc.setHtml(str) ;
-              doc.print(&printer);
-}*/
 
 void MainWindow::on_sendBtn_2F_clicked()
 {
@@ -1483,11 +1431,12 @@ void   MainWindow::mailSent(QString status)
 
 
 
-/*
+
 void MainWindow::on_STATF_clicked()
 {
     stati s;
-}*/
+    s.exec();
+}
 //--------------------MAHMOUD-----------------------------
 //----Ajouter Fournisseur
 void MainWindow::on_F_ADD_clicked()
@@ -1694,7 +1643,7 @@ void MainWindow::on_pdf_f_clicked()//PDF Fournisseur
                  }
               str.append("</table></center></body></html>") ;
 
-              QPrinter printer ;
+              QPrinter printer;
               printer.setOrientation(QPrinter::Portrait);
               printer.setOutputFormat(QPrinter::PdfFormat);
               printer.setPaperSize(QPrinter::A4) ;
