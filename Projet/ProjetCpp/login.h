@@ -13,6 +13,7 @@
 #include<QParallelAnimationGroup>
 #include <QMediaPlayer>
 #include"fournisseur.h"
+#include <QSystemTrayIcon>
 QT_BEGIN_NAMESPACE
 namespace Ui { class Login; }
 QT_END_NAMESPACE
@@ -35,7 +36,7 @@ private slots:
 
     void on_pushButton_clicked();
 
-    void on_tab_affiche_doubleClicked(const QModelIndex &index);
+    void on_tab_affiche_doubleClicked();
 
     void on_modifier_utilisateur_clicked();
 
@@ -53,7 +54,7 @@ private slots:
 
     void on_modifier_droit_clicked();
 
-    void on_tab_droit_doubleClicked(const QModelIndex &index);
+    void on_tab_droit_doubleClicked();
 
     void on_pushButton_3_clicked();
 
@@ -81,10 +82,19 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_play1_clicked();
+
+    void on_mute1_clicked();
+
+    void on_pause1_clicked();
+
 private:
     Ui::Login *ui;
     QPropertyAnimation *animation,*animation1;
     Utilisateur tmputilisateur,tmpdroit_u;
     droit_acces tmpdroit;
+    QMediaPlayer *media;
+    QMovie *myMoviebg;
+    QSystemTrayIcon *mSystemTrayIcon;
 };
 #endif // LOGIN_H

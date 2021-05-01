@@ -1,4 +1,6 @@
 #include "login.h"
+#include <QSplashScreen>
+#include <QTimer>
 #include "ui_login.h"
 #include "mainwindow.h"
 #include <QMessageBox>
@@ -42,6 +44,9 @@
 #include <QtPrintSupport/QPrintDialog>
 #include <QPushButton>
 #include<QFileInfo>
+#include <QMovie>
+#include <QVideoWidget>
+#include <QMediaPlaylist>
 
 Login::Login(QWidget *parent)
     : QMainWindow(parent)
@@ -56,6 +61,50 @@ Login::Login(QWidget *parent)
             model->setQuery(qry);
             ui->liste_droit->setModel(model);
             ui->liste_droit_3->setModel(model);
+
+
+            mSystemTrayIcon = new QSystemTrayIcon(this);
+            mSystemTrayIcon->setIcon(QIcon("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/hat.png"));
+            mSystemTrayIcon->setVisible(true);
+
+            //-------------------------
+            QMediaPlayer *player = new QMediaPlayer;
+            QMediaPlaylist *playlist  = new QMediaPlaylist;
+                player->setVideoOutput(ui->video);
+                playlist->addMedia(QUrl::fromLocalFile(("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/video.mp4")));
+            playlist->setPlaybackMode(QMediaPlaylist::Loop);
+                player->setVolume(0);
+                player->setPlaylist(playlist);
+                player->play();
+                qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();
+            //-------------------------
+    media = new QMediaPlayer (this);
+    media->setMedia( QUrl::fromLocalFile("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/theme.mp3"));
+    media->play();
+
+    QPixmap pix150("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/koujniti_logo.png");
+           QPixmap pix1("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/calque 0.png");
+           QPixmap pix2("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/man1.png");
+           QPixmap pix3("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/padlock_78356.png");
+           QPixmap pix4("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/add-user-2-256.png");
+           QPixmap pix5("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/mui.png");
+
+           ui->hola->setPixmap(pix1);
+           ui->music->setToolTip("Music");
+           ui->label_30->setPixmap(pix150);
+           ui->label_32->setPixmap(pix3);
+           ui->label_33->setPixmap(pix3);
+           ui->label_34->setPixmap(pix2);
+           ui->label_35->setPixmap(pix4);
+           ui->label_31->setPixmap(pix4);
+           ui->music->setPixmap(pix5);
+
+           myMoviebg = new QMovie(this);
+           myMoviebg = new QMovie("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/gif.mp4");
+
+                  ui->gif->setMovie(myMoviebg);
+
+                      myMoviebg->start();
 
 }
 
@@ -90,12 +139,24 @@ void Login::on_Login_connexion_clicked()
     if(email==qry.value(3).toString() && mdp==qry.value(4).toString())
     {
         if(qry.value(5).toString() == "Gerant"){
-            ui->stackedWidget->setCurrentIndex(11);
+            ui->stackedWidget->setCurrentIndex(9);
             MainWindow *w =new MainWindow(this);
+            QSplashScreen *splash= new QSplashScreen;
+            splash->setPixmap(QPixmap("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/koujinti.png"));
+            splash->show();
+
+            QTimer::singleShot(2500,splash,SLOT(close()));
+            QTimer::singleShot(2500,w,SLOT(show()));
             w->show();
         }else{
             //ui->stackedWidget->setCurrentIndex(3);
              MainWindow *w =new MainWindow(this);
+             QSplashScreen *splash= new QSplashScreen;
+             splash->setPixmap(QPixmap("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/koujinti.png"));
+             splash->show();
+
+             QTimer::singleShot(2500,splash,SLOT(close()));
+             QTimer::singleShot(2500,w,SLOT(show()));
              w->show();
              this->setVisible(false);
         }
@@ -108,7 +169,7 @@ void Login::on_Login_connexion_clicked()
 
 void Login::on_affiche_utilisateur_clicked()
 {
-   ui->stackedWidget->setCurrentIndex(6);
+   ui->stackedWidget->setCurrentIndex(5);
 ui->tab_affiche->setModel(tmputilisateur.afficher_utilisateur());
 }
 
@@ -141,7 +202,7 @@ void Login::on_pushButton_clicked()
     }
 
 
-void Login::on_tab_affiche_doubleClicked(const QModelIndex &index)
+void Login::on_tab_affiche_doubleClicked()
 {
 
     int row =ui->tab_affiche->selectionModel()->currentIndex().row();
@@ -257,7 +318,7 @@ void Login::on_inscription_inscrit_2_clicked()
           bool test=u.Ajouter_utilisateur();
       if(test)
       {
-           ui->stackedWidget->setCurrentIndex(4);
+           ui->stackedWidget->setCurrentIndex(3);
 
 
           QMessageBox::information(nullptr, QObject::tr("Ajouter un utilisateur"),
@@ -399,7 +460,7 @@ void Login::on_modifier_droit_clicked()
       }
 }
 
-void Login::on_tab_droit_doubleClicked(const QModelIndex &index)
+void Login::on_tab_droit_doubleClicked()
 {
     int row =ui->tab_droit->selectionModel()->currentIndex().row();
     ui->modif_code->setText(ui->tab_droit->model()->index(row,2).data().toString());
@@ -415,7 +476,7 @@ void Login::on_pushButton_3_clicked()
 
 void Login::on_pushButton_5_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(13);
+    ui->stackedWidget->setCurrentIndex(10);
     ui->affiche_droit->setModel(tmpdroit.afficher_droit());
 }
 
@@ -479,12 +540,12 @@ void Login::on_ajout_droit_clicked()
 
 void Login::on_pushButton_4_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(8);
+    ui->stackedWidget->setCurrentIndex(7);
 }
 
 void Login::on_pushButton_2_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(7);
+    ui->stackedWidget->setCurrentIndex(6);
     ui->aff_droitutilisateur->setModel(tmputilisateur.afficher_droitutilisateur());
 }
 
@@ -620,7 +681,7 @@ void Login::on_Supp_droitut_clicked()
 
 void Login::on_pushButton_6_clicked()
 {
-   ui->stackedWidget->setCurrentIndex(5);
+   ui->stackedWidget->setCurrentIndex(4);
    int row =ui->tab_affiche->selectionModel()->currentIndex().row();
    QString id=ui->tab_affiche->model()->index(row,0).data().toString();
    ui->line_id->setText(id);
@@ -702,4 +763,20 @@ void Login::on_pushButton_7_clicked()
                                                       "Click OK to exit."), QMessageBox::Ok);
             }
 
+}
+//--------------------------------------------~MUSIC_PLAY~-------------------------------------------------------
+
+void Login::on_play1_clicked()
+{
+    media->play() ;
+}
+
+void Login::on_pause1_clicked()
+{
+    media->pause();
+}
+
+void Login::on_mute1_clicked()
+{
+    media->setMuted(true);
 }

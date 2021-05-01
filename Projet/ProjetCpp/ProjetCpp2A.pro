@@ -4,8 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech
+QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech multimediawidgets
 CONFIG += console stl
+  PRECOMPILED_HEADER = "includes.h"
+    CONFIG += precompile_header
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,11 +29,14 @@ OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     droitacces.cpp \
     fournisseur.cpp \
     login.cpp \
     main.cpp \
     connection.cpp \
+    qcustomplot.cpp \
+    statevaluation.cpp \
     utilisateur.cpp \
     commande.cpp \
     commandefournisseur.cpp \
@@ -47,10 +52,14 @@ SOURCES += \
     transaction.cpp
 
 HEADERS += \
+    arduino.h \
     droitacces.h \
     fournisseur.h \
     connection.h \
+    includes.h \
     login.h \
+    qcustomplot.h \
+    statevaluation.h \
     utilisateur.h \
     commande.h \
     commandefournisseur.h \
@@ -67,7 +76,10 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui\
-                login.ui
+		login.ui \
+    statevaluation.ui
+
+RC_ICONS = hat.ico
 
 QMAKE_CXXFLAGS += -std=gnu++11
 QMAKE_CXXFLAGS += -std=gnu++14
