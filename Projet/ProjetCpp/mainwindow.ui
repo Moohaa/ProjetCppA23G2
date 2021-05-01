@@ -412,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -3558,7 +3558,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -4011,7 +4011,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_32">
          <attribute name="title">
@@ -4374,14 +4374,27 @@ color : white;</string>
          <widget class="QPushButton" name="CF_Act">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>440</y>
+            <x>720</x>
+            <y>280</y>
             <width>81</width>
             <height>31</height>
            </rect>
           </property>
           <property name="text">
            <string>Actualiser</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pdf_f">
+          <property name="geometry">
+           <rect>
+            <x>610</x>
+            <y>450</y>
+            <width>201</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generer liste des commandes</string>
           </property>
          </widget>
         </widget>
@@ -4512,24 +4525,6 @@ color : white;</string>
             </layout>
            </item>
           </layout>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="tab_31">
-         <attribute name="title">
-          <string>Facture</string>
-         </attribute>
-         <widget class="QPushButton" name="pdf_f">
-          <property name="geometry">
-           <rect>
-            <x>70</x>
-            <y>30</y>
-            <width>201</width>
-            <height>22</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Generation Des Factures(PDF)</string>
-          </property>
          </widget>
         </widget>
        </widget>

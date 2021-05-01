@@ -2056,18 +2056,18 @@ void MainWindow::on_pdf_f_clicked()//PDF Fournisseur IMAGE PDF
     QString str;
                  str.append("<html><head></head><body>"
                             "<center><img src=\"C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
-                            "<center>"+QString("Les commandes demandées"));
+                            "<center>"+QString("Liste des commandes passées"));
                  str.append("<table border=1><tr>") ;
                  str.append("<td>"+QString("ID_COMMANDE")+"</td>") ;
-                 str.append("<td>"+QString("ID_FOURNISSEUR")+"</td>") ;
-                 str.append("<td>"+QString("ID_PRODUIT")+"</td>") ;
+                 str.append("<td>"+QString("NOM_PRODUIT")+"</td>") ;
+                 str.append("<td>"+QString("NOM_FOURNISSEUR")+"</td>") ;
                  str.append("<td>"+QString("QUANTITE")+"</td>") ;
                  str.append("<td>"+QString("DATE_ENVOI")+"</td>") ;
                  str.append("<td>"+QString("DATE_RECEPTION")+"</td>") ;
 
 
                  QSqlQuery* query=new QSqlQuery();
-                 query->exec("SELECT * FROM COMMANDE_FOURNISSEUR");
+                 query->exec("SELECT ID_COMMANDE, NOM_PRODUIT ,NOM as NOM_FOURNISSEUR , QUANTITE , DATE_ENVOI , DATE_RECEPTION FROM COMMANDE_FOURNISSEUR INNER JOIN FOURNISSEUR ON COMMANDE_FOURNISSEUR.ID_FOURNISSEUR=FOURNISSEUR.ID_FOURNISSEUR INNER JOIN PRODUIT ON PRODUIT.ID_PRODUIT=COMMANDE_FOURNISSEUR.ID_PRODUIT");
 
                  while(query->next())
                  {
