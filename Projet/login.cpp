@@ -1,10 +1,10 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "login.h"
+#include "ui_login.h"
+
 #include <QMessageBox>
 #include "utilisateur.h"
 #include "droitacces.h"
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "login.h"
 #include <QDateTime>
 #include <QMessageBox>
 #include "string.h"
@@ -44,9 +44,9 @@
 #include <QPushButton>
 #include<QFileInfo>
 //
-MainWindow::MainWindow(QWidget *parent)
+Login::Login(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::Login)
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
@@ -60,19 +60,19 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
-MainWindow::~MainWindow()
+Login::~Login()
 {
     delete ui;
 }
 
 
 
-void MainWindow::on_Login_ins_clicked()
+void Login::on_Login_ins_clicked()
 {
         ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_Login_connexion_clicked()
+void Login::on_Login_connexion_clicked()
 {
        QString email=ui->login_email->text();
        QString mdp=ui->login_mdp->text();
@@ -102,13 +102,13 @@ void MainWindow::on_Login_connexion_clicked()
 
 }
 
-void MainWindow::on_affiche_utilisateur_clicked()
+void Login::on_affiche_utilisateur_clicked()
 {
    ui->stackedWidget->setCurrentIndex(6);
 ui->tab_affiche->setModel(tmputilisateur.afficher_utilisateur());
 }
 
-void MainWindow::on_pushButton_clicked()
+void Login::on_pushButton_clicked()
 {
         int row =ui->tab_affiche->selectionModel()->currentIndex().row();
         QString id=ui->tab_affiche->model()->index(row,0).data().toString();
@@ -137,7 +137,7 @@ void MainWindow::on_pushButton_clicked()
     }
 
 
-void MainWindow::on_tab_affiche_doubleClicked(const QModelIndex &index)
+void Login::on_tab_affiche_doubleClicked(const QModelIndex &index)
 {
 
     int row =ui->tab_affiche->selectionModel()->currentIndex().row();
@@ -154,7 +154,7 @@ void MainWindow::on_tab_affiche_doubleClicked(const QModelIndex &index)
 
 
 
-void MainWindow::on_modifier_utilisateur_clicked()
+void Login::on_modifier_utilisateur_clicked()
 {
     int id=ui->inscription_id_3->text().toInt();
     QString nom=ui->inscription_nom_3->text();
@@ -192,7 +192,7 @@ ui->stackedWidget->setCurrentIndex(5);
       }
 }
 
-void MainWindow::on_ajouter_droit_clicked()
+void Login::on_ajouter_droit_clicked()
 {
     int code_droit=ui->inscription_id_3->text().toInt();
     QString libelle_droit=ui->inscription_nom->text();
@@ -227,7 +227,7 @@ void MainWindow::on_ajouter_droit_clicked()
 }
 
 
-void MainWindow::on_inscription_inscrit_2_clicked()
+void Login::on_inscription_inscrit_2_clicked()
 {
 
     QString nom=ui->inscription_nom_2->text();
@@ -266,7 +266,7 @@ void MainWindow::on_inscription_inscrit_2_clicked()
       }
 }
 
-void MainWindow::on_inscription_inscrit_clicked()
+void Login::on_inscription_inscrit_clicked()
 {
     QString nom=ui->inscription_nom->text();
       QString prenom=ui->inscription_prenom->text();
@@ -305,7 +305,7 @@ void MainWindow::on_inscription_inscrit_clicked()
 }
 
 
-void MainWindow::on_liste_droit_currentIndexChanged(const QString &arg1)
+void Login::on_liste_droit_currentIndexChanged(const QString &arg1)
 {
     QString nom=arg1;
      QSqlQuery qry;
@@ -320,7 +320,7 @@ void MainWindow::on_liste_droit_currentIndexChanged(const QString &arg1)
  }
 }
 
-void MainWindow::on_ajoute_droit_clicked()
+void Login::on_ajoute_droit_clicked()
 {
     Utilisateur u;
       QString Code_droit=ui->codedroit_inscri->text();
@@ -338,7 +338,7 @@ void MainWindow::on_ajoute_droit_clicked()
 
 }
 
-void MainWindow::on_supp_droit_clicked()
+void Login::on_supp_droit_clicked()
 {
     int row =ui->tab_droit->selectionModel()->currentIndex().row();
     QString id=ui->tab_droit->model()->index(row,2).data().toString();
@@ -366,7 +366,7 @@ void MainWindow::on_supp_droit_clicked()
 }
 }
 
-void MainWindow::on_modifier_droit_clicked()
+void Login::on_modifier_droit_clicked()
 {
     int code=ui->modif_code->text().toInt();
     QString libelle=ui->modif_lib->text();;
@@ -395,7 +395,7 @@ void MainWindow::on_modifier_droit_clicked()
       }
 }
 
-void MainWindow::on_tab_droit_doubleClicked(const QModelIndex &index)
+void Login::on_tab_droit_doubleClicked(const QModelIndex &index)
 {
     int row =ui->tab_droit->selectionModel()->currentIndex().row();
     ui->modif_code->setText(ui->tab_droit->model()->index(row,2).data().toString());
@@ -403,19 +403,19 @@ void MainWindow::on_tab_droit_doubleClicked(const QModelIndex &index)
 
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void Login::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
 
-void MainWindow::on_pushButton_5_clicked()
+void Login::on_pushButton_5_clicked()
 {
     ui->stackedWidget->setCurrentIndex(13);
     ui->affiche_droit->setModel(tmpdroit.afficher_droit());
 }
 
-void MainWindow::on_supprimer_droit_clicked()
+void Login::on_supprimer_droit_clicked()
 {
     int row =ui->affiche_droit->selectionModel()->currentIndex().row();
     QString id=ui->affiche_droit->model()->index(row,0).data().toString();
@@ -442,7 +442,7 @@ void MainWindow::on_supprimer_droit_clicked()
 }
 }
 
-void MainWindow::on_ajout_droit_clicked()
+void Login::on_ajout_droit_clicked()
 {
     int code=ui->ajout_codedroit->text().toInt();
       QString libelle=ui->ajout_libelledroit->text();
@@ -473,18 +473,18 @@ void MainWindow::on_ajout_droit_clicked()
 }
 }
 
-void MainWindow::on_pushButton_4_clicked()
+void Login::on_pushButton_4_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void Login::on_pushButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
     ui->aff_droitutilisateur->setModel(tmputilisateur.afficher_droitutilisateur());
 }
 
-void MainWindow::on_tri_clicked()
+void Login::on_tri_clicked()
 {
         Utilisateur u;
         /*QString critere=ui->cb_historique->currentText();*/
@@ -516,7 +516,7 @@ void MainWindow::on_tri_clicked()
              {ui->tab_affiche->setModel(u.trie2_role_des());}
 }
 
-void MainWindow::on_recherche_clicked()
+void Login::on_recherche_clicked()
 {
     Utilisateur u;
         QString text;
@@ -586,7 +586,7 @@ void MainWindow::on_recherche_clicked()
                   }
 }}
 
-void MainWindow::on_Supp_droitut_clicked()
+void Login::on_Supp_droitut_clicked()
 {
     int row =ui->aff_droitutilisateur->selectionModel()->currentIndex().row();
     QString id=ui->aff_droitutilisateur->model()->index(row,0).data().toString();
@@ -614,7 +614,7 @@ void MainWindow::on_Supp_droitut_clicked()
 }
 }
 
-void MainWindow::on_pushButton_6_clicked()
+void Login::on_pushButton_6_clicked()
 {
    ui->stackedWidget->setCurrentIndex(5);
    int row =ui->tab_affiche->selectionModel()->currentIndex().row();
@@ -624,7 +624,7 @@ void MainWindow::on_pushButton_6_clicked()
 
 }
 
-void MainWindow::on_ajoute_droit_3_clicked()
+void Login::on_ajoute_droit_3_clicked()
 {
     Utilisateur u;
       QString Code_droit=ui->codedroit_inscri_3->text();
@@ -642,7 +642,7 @@ void MainWindow::on_ajoute_droit_3_clicked()
  ui->AJT_DROIT->setModel(tmpdroit_u.afficher_droit_1(id));
 }
 
-void MainWindow::on_liste_droit_3_currentIndexChanged(const QString &arg2)
+void Login::on_liste_droit_3_currentIndexChanged(const QString &arg2)
 {
     QString nom=arg2;
      QSqlQuery qry;
@@ -658,7 +658,7 @@ void MainWindow::on_liste_droit_3_currentIndexChanged(const QString &arg2)
 }
 
 
-void MainWindow::on_pushButton_7_clicked()
+void Login::on_pushButton_7_clicked()
 {
 
     QTableView *table;

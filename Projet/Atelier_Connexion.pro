@@ -38,20 +38,20 @@ CONFIG += c++11
 SOURCES += \
     droitacces.cpp \
     fournisseur.cpp \
+    login.cpp \
         main.cpp \
-        mainwindow.cpp \
     connection.cpp \
     utilisateur.cpp
 
 HEADERS += \
     droitacces.h \
     fournisseur.h \
-        mainwindow.h \
     connection.h \
+    login.h \
     utilisateur.h
 
 FORMS += \
-        mainwindow.ui
+    login.ui
 
 
 
