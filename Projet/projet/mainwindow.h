@@ -1,0 +1,203 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include "stock.h"
+#include"smtp.h"
+#include "produit.h"
+#include <QMediaPlayer>
+#include <QTableView>
+#include "transactionmain.h"
+#include "arduino.h"
+
+namespace Ui {
+class MainWindow;
+}
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+
+private slots:
+    void  mailSent(QString status);
+//---------------------------------------------~MARIEM~-----------------------------------------------------
+    void on_pushButton_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_TRI_clicked();
+
+    void on_TRI_2_clicked();
+
+    void on_tableView_B_doubleClicked();
+
+    void on_tableView_A_doubleClicked();
+
+    void on_play_clicked();
+
+    void on_pause_clicked();
+
+    void on_mute_clicked();
+
+    void on_tableView_B_clicked();
+
+    void on_tableView_A_clicked();
+
+//----------------------------------------MENU---------------------------------------------------
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
+
+//----------------------------------------AHMED------------------------------------------------
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_13_clicked();
+
+    void on_pushButton_14_clicked();
+
+    void on_pushButton_15_clicked();
+
+    void on_pushButton_16_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_18_clicked();
+
+//------------------------------------------AZIZ----------------------------------------------------
+    void on_pushButton_21_clicked();
+
+    void on_pushButton_22_clicked();
+
+    void on_pushButton_23_clicked();
+
+    void on_pushButton_24_clicked();
+
+    void on_pushButton_25_clicked();
+
+    void on_pushButton_26_clicked();
+
+    void on_pushButton_27_clicked();
+
+    void on_pushButton_28_clicked();
+
+    void on_pushButton_29_clicked();
+
+    void on_pushButton_30_clicked();
+
+    void on_tableView_3_clicked(const QModelIndex &index);
+
+    void on_tableView_4_clicked(const QModelIndex &index);
+
+//--------------------------------------------FADWA-------------------------------------------------------------------
+
+    void on_pushButton_fadwa1_clicked();
+
+    void on_pushButton_fadwa2_clicked();
+
+    void on_pushButton_fadwa3_clicked();
+
+    void on_pushButton_fadwa4_clicked();
+
+    void on_pushButton_fadwa5_clicked();
+
+    void on_pushButton_fadwa6_clicked();
+
+
+
+    void on_pushButton_fadwa7_clicked();
+
+    void on_pushButton_fadwa8_clicked();
+
+    void on_pushButton_fadwa9_clicked();
+
+//-------------------------------------------------------------------------------------------------------------------------
+    void on_tableView_7F_clicked(const QModelIndex &index);
+
+    void on_recher_clicked();
+
+    void on_pushButton_fadwa40_clicked();
+
+    void on_pushButton_fadwa41_clicked();
+
+    void on_tableView_8F_clicked(const QModelIndex &index);
+
+    void on_pushButton_fadwa42_clicked();
+
+    void on_recher_2_clicked();
+
+    void on_pushButton_fadwa43_clicked();
+
+    void on_pushButton_fadwa44_clicked();
+
+
+
+    void on_pushButton_DB_clicked();
+
+    void on_pushButton_deb1_clicked();
+
+    void on_pushButton_prix_clicked();
+
+    void on_pushButton_ntab_clicked();
+
+
+
+
+
+
+
+    void on_sendBtn_2F_clicked();
+
+
+
+
+
+    void on_STATF_clicked();
+
+    void on_pushButton_exc_clicked();
+     void update_label();
+
+
+
+     void on_AllumeLED1_clicked();
+
+     void on_AllumeLED2_clicked();
+
+     //void on_msgLDC_clicked();
+
+     void on_pushButton_pdfFADWA_clicked();
+
+     void on_pushButton_annuler1_clicked();
+
+     void on_pushButton_annuler2_clicked();
+
+private:
+    Ui::MainWindow *ui;
+    QMediaPlayer *media;
+    arduino A;
+    QByteArray data; // variable contenant les données reçue
+
+        QString datastring ;
+
+};
+
+#endif // MAINWINDOW_H
