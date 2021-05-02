@@ -3,10 +3,13 @@
 
 #include <QMainWindow>
 #include "stock.h"
-#include"smtp.h"
+#include "smtp.h"
 #include "produit.h"
 #include <QMediaPlayer>
 #include <QSystemTrayIcon>
+#include "smtp.h"
+#include <QPropertyAnimation>
+#include "arduino.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,7 +24,12 @@ public:
     ~MainWindow();
 
 private slots:
-
+    void sendMail();
+    void mailSent(QString);
+    void sendMail2();
+    void mailSent2(QString);
+    void sendMail3();
+    void mailSent3(QString);
 //----------------------------------------MENU---------------------------------------------------
     void on_pushButton_2_clicked();
 
@@ -33,8 +41,10 @@ private slots:
 
     void on_pushButton_11_clicked();
 
-    void  mailSent(QString status);
 //---------------------------------------------~MARIEM~-----------------------------------------------------
+
+    void on_recherche_produit_clicked();
+
     void on_pushButton_clicked();
 
     void on_pushButton_3_clicked();
@@ -51,8 +61,6 @@ private slots:
 
     void on_TRI_2_clicked();
 
-    void on_TRI_3_clicked();
-
     void on_tableView_B_doubleClicked();
 
     void on_tableView_A_doubleClicked();
@@ -63,14 +71,17 @@ private slots:
 
     void on_mute_clicked();
 
-    //void on_tableView_B_clicked();
+    void on_tableView_B_clicked();
 
-    void on_tableView_A_clicked();
+   //void on_tableView_A_clicked();
 
     void on_rechercherStock_clicked();
 
-    void on_TRI_4_clicked();
+    void on_PDF_STOCK_clicked();
 
+    void on_Afficher_Produit_clicked();
+
+    void on_Afficher_Stock_clicked();
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -129,6 +140,9 @@ private slots:
     void on_tri_aziz_1_clicked();
 
     void on_afficher_menu_clicked();
+
+    void on_tableView_8_clicked();
+
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
     void on_pushButton_31_clicked();
@@ -148,6 +162,8 @@ private slots:
     void on_pushButton_38_clicked();
 
     void on_pushButton_39_clicked();
+
+    void on_tableView_7_clicked();
 
 //-------------------------------------------------------------------------------------------------------------------------
 
@@ -198,7 +214,7 @@ private slots:
 
     void on_pushButton_43_clicked();
 
-    //void on_rechercher_3_clicked();
+    void on_rechercher_3_clicked();
 
     void on_rechercher_4_clicked();
 
@@ -207,12 +223,12 @@ private slots:
     void on_pushButton_59_clicked();
 
     void on_rechercher_5_clicked();
-    void on_tableView_7_clicked(const QModelIndex &index);
+   // void on_tableView_7_clicked(const QModelIndex &index);
 
     void on_recher_clicked();
 
 
-    void on_tableView_8_clicked(const QModelIndex &index);
+    //void on_tableView_8_clicked(const QModelIndex &index);
 
 
     void on_recher_2_clicked();
@@ -235,7 +251,7 @@ private slots:
 
 
 
-
+    void updateFournisseursTabsCombos();
 
    // void on_STATF_clicked();
 
@@ -249,12 +265,31 @@ private slots:
 
     void on_nombredechaises_clicked();
 
+    void on_F_act_clicked();
+
+
+    void on_actOF_clicked();
+
+    void on_CF_Act_clicked();
+
+   // void on_rcpt_3a_editingFinished();
+  // -------------------------------------------------------ARDUINO---------------------------------------------------------
+    void update_label();   // slot permettant la mise à jour du label état de la lampe 1,
+        // ce slot est lancé à chaque réception d'un message de Arduino
+
+    void on_Arduinobutt1_clicked();
+
+    void on_stat_plat_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
     QMovie *myMoviebg;
     QSystemTrayIcon *mSystemTrayIcon;
-
+    QPropertyAnimation *animation;
+    QByteArray data; // variable contenant les données reçue
+    Arduino A; // objet temporaire
+    QString datastring ;
 };
 
 #endif // MAINWINDOW_H

@@ -90,7 +90,7 @@ background: rgb(175, 31, 36);
      <rect>
       <x>310</x>
       <y>60</y>
-      <width>1091</width>
+      <width>1071</width>
       <height>741</height>
      </rect>
     </property>
@@ -98,14 +98,14 @@ background: rgb(175, 31, 36);
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Calque 0.png</pixmap>
+     <pixmap>Calque 0.png</pixmap>
     </property>
    </widget>
    <widget class="QPushButton" name="play">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>580</y>
+      <x>60</x>
+      <y>520</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -147,8 +147,8 @@ border-radius:10px;
    <widget class="QPushButton" name="mute">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>580</y>
+      <x>160</x>
+      <y>520</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -190,8 +190,8 @@ border-radius:10px;
    <widget class="QPushButton" name="pause">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>580</y>
+      <x>220</x>
+      <y>520</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -233,8 +233,8 @@ border-radius:10px;
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>210</y>
+      <x>20</x>
+      <y>150</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -270,14 +270,14 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Menu et Plats</string>
+     <string>  Menu et Plats</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>280</y>
+      <x>20</x>
+      <y>220</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -313,14 +313,14 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Tables et Commandes</string>
+     <string>              Tables et Commandes</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_9">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>350</y>
+      <x>20</x>
+      <y>290</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -356,14 +356,14 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Produits et Stocks</string>
+     <string>        Produits et Stocks</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>420</y>
+      <x>20</x>
+      <y>360</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -399,7 +399,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Gest des Fournisseurs</string>
+     <string>                Gest des Fournisseurs</string>
     </property>
    </widget>
    <widget class="QStackedWidget" name="stackedWidget">
@@ -408,20 +408,20 @@ border-radius:10px;
       <x>320</x>
       <y>70</y>
       <width>941</width>
-      <height>721</height>
+      <height>691</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>921</width>
-        <height>701</height>
+        <x>0</x>
+        <y>0</y>
+        <width>941</width>
+        <height>691</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -472,7 +472,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -483,8 +483,8 @@ border-radius:10px;
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>911</width>
-          <height>541</height>
+          <width>941</width>
+          <height>601</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -527,7 +527,7 @@ border-radius:10px;
            </rect>
           </property>
           <property name="text">
-           <string>ID STOCK</string>
+           <string>ID Produit</string>
           </property>
          </widget>
          <widget class="QGroupBox" name="groupBox">
@@ -663,8 +663,8 @@ border-radius:10px;
          <widget class="QTableView" name="tableView_A">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>110</y>
+            <x>130</x>
+            <y>150</y>
             <width>651</width>
             <height>191</height>
            </rect>
@@ -674,7 +674,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>500</x>
-            <y>350</y>
+            <y>390</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -687,7 +687,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>370</x>
-            <y>350</y>
+            <y>390</y>
             <width>113</width>
             <height>31</height>
            </rect>
@@ -697,7 +697,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>320</x>
-            <y>360</y>
+            <y>400</y>
             <width>21</width>
             <height>16</height>
            </rect>
@@ -709,8 +709,8 @@ border-radius:10px;
          <widget class="QPushButton" name="TRI">
           <property name="geometry">
            <rect>
-            <x>550</x>
-            <y>70</y>
+            <x>650</x>
+            <y>100</y>
             <width>131</width>
             <height>41</height>
            </rect>
@@ -722,11 +722,17 @@ border-radius:10px;
          <widget class="QComboBox" name="choixTrie">
           <property name="geometry">
            <rect>
-            <x>280</x>
-            <y>80</y>
-            <width>261</width>
-            <height>24</height>
+            <x>480</x>
+            <y>100</y>
+            <width>161</width>
+            <height>41</height>
            </rect>
+          </property>
+          <property name="toolTipDuration">
+           <number>-1</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
           </property>
           <item>
            <property name="text">
@@ -744,13 +750,101 @@ border-radius:10px;
            </property>
           </item>
          </widget>
+         <widget class="QPushButton" name="recherche_produit">
+          <property name="geometry">
+           <rect>
+            <x>390</x>
+            <y>10</y>
+            <width>131</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Rechercher</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="recherche_produit_2">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>10</y>
+            <width>161</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="rehcerche_produit">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>171</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Entrer le donnée a chercher :</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="produit1">
+          <property name="geometry">
+           <rect>
+            <x>540</x>
+            <y>20</y>
+            <width>99</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par ID</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="produit2">
+          <property name="geometry">
+           <rect>
+            <x>650</x>
+            <y>20</y>
+            <width>99</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Nom</string>
+          </property>
+         </widget>
+         <widget class="QRadioButton" name="produit3">
+          <property name="geometry">
+           <rect>
+            <x>760</x>
+            <y>20</y>
+            <width>111</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Par Categorie</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Afficher_Produit">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>130</y>
+            <width>80</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Afficher</string>
+          </property>
+         </widget>
         </widget>
        </widget>
        <widget class="QLabel" name="label_34">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>550</y>
+          <y>600</y>
           <width>71</width>
           <height>61</height>
          </rect>
@@ -759,14 +853,14 @@ border-radius:10px;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../../stocks1.png</pixmap>
+         <pixmap>stock.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="label_35">
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>570</y>
+          <y>610</y>
           <width>351</width>
           <height>31</height>
          </rect>
@@ -789,8 +883,8 @@ color : white;</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>1191</width>
-          <height>611</height>
+          <width>921</width>
+          <height>601</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -803,10 +897,10 @@ color : white;</string>
          <widget class="QGroupBox" name="groupBox_3">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>20</y>
+            <x>10</x>
+            <y>10</y>
             <width>861</width>
-            <height>501</height>
+            <height>481</height>
            </rect>
           </property>
           <property name="title">
@@ -841,8 +935,8 @@ color : white;</string>
           <widget class="QPushButton" name="pushButton_3">
            <property name="geometry">
             <rect>
-             <x>250</x>
-             <y>440</y>
+             <x>220</x>
+             <y>410</y>
              <width>361</width>
              <height>51</height>
             </rect>
@@ -868,7 +962,7 @@ color : white;</string>
            <property name="geometry">
             <rect>
              <x>390</x>
-             <y>70</y>
+             <y>60</y>
              <width>131</width>
              <height>21</height>
             </rect>
@@ -893,8 +987,8 @@ color : white;</string>
           <widget class="QLabel" name="label_21">
            <property name="geometry">
             <rect>
-             <x>500</x>
-             <y>380</y>
+             <x>390</x>
+             <y>340</y>
              <width>131</width>
              <height>21</height>
             </rect>
@@ -911,6 +1005,12 @@ color : white;</string>
              <width>171</width>
              <height>41</height>
             </rect>
+           </property>
+           <property name="toolTipDuration">
+            <number>-1</number>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
            </property>
            <item>
             <property name="text">
@@ -974,6 +1074,9 @@ color : white;</string>
              <height>41</height>
             </rect>
            </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
            <item>
             <property name="text">
              <string>Etage 1</string>
@@ -1032,8 +1135,8 @@ color : white;</string>
           <widget class="QLineEdit" name="lineEdit_23">
            <property name="geometry">
             <rect>
-             <x>630</x>
-             <y>370</y>
+             <x>490</x>
+             <y>330</y>
              <width>191</width>
              <height>41</height>
             </rect>
@@ -1043,7 +1146,7 @@ color : white;</string>
            <property name="geometry">
             <rect>
              <x>490</x>
-             <y>40</y>
+             <y>30</y>
              <width>344</width>
              <height>271</height>
             </rect>
@@ -1054,7 +1157,7 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>280</x>
-            <y>530</y>
+            <y>500</y>
             <width>111</width>
             <height>41</height>
            </rect>
@@ -1067,7 +1170,7 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>120</x>
-            <y>540</y>
+            <y>510</y>
             <width>141</width>
             <height>31</height>
            </rect>
@@ -1077,7 +1180,7 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>40</x>
-            <y>540</y>
+            <y>510</y>
             <width>61</width>
             <height>21</height>
            </rect>
@@ -1137,26 +1240,13 @@ color : white;</string>
            <string>ID</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="TRI_2">
-          <property name="geometry">
-           <rect>
-            <x>650</x>
-            <y>410</y>
-            <width>131</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Trier le tableau</string>
-          </property>
-         </widget>
          <widget class="QPushButton" name="rechercherStock">
           <property name="geometry">
            <rect>
-            <x>750</x>
+            <x>400</x>
             <y>20</y>
             <width>131</width>
-            <height>31</height>
+            <height>41</height>
            </rect>
           </property>
           <property name="text">
@@ -1166,7 +1256,7 @@ color : white;</string>
          <widget class="QRadioButton" name="radioButton">
           <property name="geometry">
            <rect>
-            <x>370</x>
+            <x>550</x>
             <y>30</y>
             <width>99</width>
             <height>22</height>
@@ -1179,7 +1269,7 @@ color : white;</string>
          <widget class="QRadioButton" name="radioButton_2">
           <property name="geometry">
            <rect>
-            <x>490</x>
+            <x>660</x>
             <y>30</y>
             <width>111</width>
             <height>22</height>
@@ -1192,7 +1282,7 @@ color : white;</string>
          <widget class="QRadioButton" name="radioButton_3">
           <property name="geometry">
            <rect>
-            <x>620</x>
+            <x>780</x>
             <y>30</y>
             <width>131</width>
             <height>22</height>
@@ -1205,76 +1295,91 @@ color : white;</string>
          <widget class="QLineEdit" name="rechercherStock_2">
           <property name="geometry">
            <rect>
-            <x>120</x>
+            <x>200</x>
+            <y>20</y>
+            <width>171</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="TRI_2">
+          <property name="geometry">
+           <rect>
+            <x>480</x>
+            <y>360</y>
+            <width>181</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Trier le tableau</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="Trie">
+          <property name="geometry">
+           <rect>
+            <x>680</x>
+            <y>370</y>
+            <width>191</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Par ID Stock</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Par Quantité</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Par Emplacement</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_102">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
             <y>30</y>
-            <width>221</width>
-            <height>24</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="TRI_3">
-          <property name="geometry">
-           <rect>
-            <x>650</x>
-            <y>370</y>
-            <width>131</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Trier le tableau</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="tri_par_quantite">
-          <property name="geometry">
-           <rect>
-            <x>800</x>
-            <y>410</y>
-            <width>81</width>
+            <width>171</width>
             <height>16</height>
            </rect>
           </property>
           <property name="text">
-           <string>Par Quantite</string>
+           <string>Entrer le donnée a chercher :</string>
           </property>
          </widget>
-         <widget class="QLabel" name="tri_par_id">
+         <widget class="QPushButton" name="PDF_STOCK">
           <property name="geometry">
            <rect>
-            <x>800</x>
-            <y>370</y>
-            <width>101</width>
-            <height>16</height>
+            <x>680</x>
+            <y>530</y>
+            <width>231</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
-           <string>Par Id du Stock</string>
+           <string>Géneration du PDF</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="TRI_4">
+         <widget class="QPushButton" name="Afficher_Stock">
           <property name="geometry">
            <rect>
-            <x>650</x>
-            <y>450</y>
-            <width>131</width>
-            <height>21</height>
+            <x>10</x>
+            <y>70</y>
+            <width>80</width>
+            <height>25</height>
            </rect>
           </property>
           <property name="text">
-           <string>Trier le tableau</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="tri_par_quantite_2">
-          <property name="geometry">
-           <rect>
-            <x>800</x>
-            <y>450</y>
-            <width>111</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Par Emplacement</string>
+           <string>Afficher</string>
           </property>
          </widget>
         </widget>
@@ -1285,10 +1390,10 @@ color : white;</string>
          <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>30</y>
-            <width>701</width>
-            <height>451</height>
+            <x>10</x>
+            <y>10</y>
+            <width>891</width>
+            <height>551</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="formLayout">
@@ -1337,7 +1442,7 @@ color : white;</string>
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QLineEdit" name="uname_3"/>
+            <widget class="QLineEdit" name="uname"/>
            </item>
            <item row="3" column="0">
             <widget class="QLabel" name="label_16">
@@ -1412,7 +1517,7 @@ color : white;</string>
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>630</y>
+          <y>610</y>
           <width>351</width>
           <height>31</height>
          </rect>
@@ -1429,7 +1534,7 @@ color : white;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>610</y>
+          <y>600</y>
           <width>71</width>
           <height>61</height>
          </rect>
@@ -1438,7 +1543,7 @@ color : white;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../stock.png</pixmap>
+         <pixmap>stock.png</pixmap>
         </property>
        </widget>
       </widget>
@@ -1448,10 +1553,10 @@ color : white;</string>
      <widget class="QTabWidget" name="tabWidget_7">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>771</width>
-        <height>561</height>
+        <x>0</x>
+        <y>0</y>
+        <width>941</width>
+        <height>691</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1693,24 +1798,24 @@ border-radius:10px;
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>651</width>
-          <height>521</height>
+          <width>941</width>
+          <height>571</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_15">
          <attribute name="title">
-          <string>Ajouter</string>
+          <string>Ajouter/modifier </string>
          </attribute>
          <widget class="QGroupBox" name="groupBox_6">
           <property name="geometry">
            <rect>
             <x>20</x>
             <y>20</y>
-            <width>581</width>
-            <height>241</height>
+            <width>881</width>
+            <height>301</height>
            </rect>
           </property>
           <property name="title">
@@ -1858,6 +1963,52 @@ border-radius:10px;
            </property>
           </widget>
          </widget>
+         <widget class="QLabel" name="label_822">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>360</y>
+            <width>271</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 63 16pt &quot;Yu Gothic UI Semibold&quot;;
+color : white;</string>
+          </property>
+          <property name="text">
+           <string>GESTION DES PLATS</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_60">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>330</y>
+            <width>71</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>pl.png</pixmap>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Arduinobutt1">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>410</y>
+            <width>141</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Alerte reçu</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab_16">
          <attribute name="title">
@@ -1872,12 +2023,18 @@ border-radius:10px;
             <height>281</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                 stop: 0 #FF92BB, stop: 1 red);
+  background: black;
+     border: 2px outset red;</string>
+          </property>
          </widget>
          <widget class="QLineEdit" name="textDelete_5">
           <property name="geometry">
            <rect>
-            <x>390</x>
-            <y>340</y>
+            <x>380</x>
+            <y>310</y>
             <width>113</width>
             <height>20</height>
            </rect>
@@ -1886,8 +2043,8 @@ border-radius:10px;
          <widget class="QLabel" name="label_59">
           <property name="geometry">
            <rect>
-            <x>320</x>
-            <y>340</y>
+            <x>310</x>
+            <y>310</y>
             <width>61</width>
             <height>20</height>
            </rect>
@@ -1899,8 +2056,8 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_23">
           <property name="geometry">
            <rect>
-            <x>510</x>
-            <y>340</y>
+            <x>500</x>
+            <y>310</y>
             <width>131</width>
             <height>23</height>
            </rect>
@@ -1913,7 +2070,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>520</x>
-            <y>420</y>
+            <y>490</y>
             <width>121</width>
             <height>23</height>
            </rect>
@@ -1926,7 +2083,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>400</x>
-            <y>420</y>
+            <y>490</y>
             <width>113</width>
             <height>20</height>
            </rect>
@@ -1936,7 +2093,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>130</x>
-            <y>350</y>
+            <y>370</y>
             <width>121</width>
             <height>23</height>
            </rect>
@@ -1949,7 +2106,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>20</x>
-            <y>290</y>
+            <y>310</y>
             <width>251</width>
             <height>31</height>
            </rect>
@@ -1962,7 +2119,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>320</x>
-            <y>380</y>
+            <y>450</y>
             <width>111</width>
             <height>22</height>
            </rect>
@@ -1975,7 +2132,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>450</x>
-            <y>380</y>
+            <y>450</y>
             <width>81</width>
             <height>22</height>
            </rect>
@@ -1988,7 +2145,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>550</x>
-            <y>380</y>
+            <y>450</y>
             <width>81</width>
             <height>22</height>
            </rect>
@@ -2001,33 +2158,33 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>330</y>
+            <y>350</y>
             <width>111</width>
             <height>22</height>
            </rect>
           </property>
           <property name="text">
-           <string>Croissant</string>
+           <string>ASC</string>
           </property>
          </widget>
          <widget class="QRadioButton" name="tri_azizB">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>370</y>
+            <y>390</y>
             <width>111</width>
             <height>22</height>
            </rect>
           </property>
           <property name="text">
-           <string>Decroissant</string>
+           <string>DESC</string>
           </property>
          </widget>
          <widget class="QPushButton" name="tri_aziz">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>410</y>
+            <x>20</x>
+            <y>460</y>
             <width>161</width>
             <height>23</height>
            </rect>
@@ -2039,8 +2196,8 @@ border-radius:10px;
          <widget class="QPushButton" name="tri_aziz_1">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>450</y>
+            <x>20</x>
+            <y>500</y>
             <width>161</width>
             <height>23</height>
            </rect>
@@ -2052,14 +2209,249 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_26">
           <property name="geometry">
            <rect>
-            <x>470</x>
-            <y>280</y>
+            <x>490</x>
+            <y>270</y>
             <width>141</width>
             <height>23</height>
            </rect>
           </property>
           <property name="text">
            <string>Actualiser</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_35">
+         <attribute name="title">
+          <string>Notification par mail</string>
+         </attribute>
+         <widget class="QListWidget" name="listWidget">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>20</y>
+            <width>911</width>
+            <height>491</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_132">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>84</y>
+            <width>53</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Username:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_133">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>26</y>
+            <width>63</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Smtp-server:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_134">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>142</y>
+            <width>59</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Recipant to:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_135">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>113</y>
+            <width>50</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Password:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="uname_2a">
+          <property name="geometry">
+           <rect>
+            <x>109</x>
+            <y>84</y>
+            <width>820</width>
+            <height>20</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_136">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>55</y>
+            <width>59</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Server port:</string>
+          </property>
+         </widget>
+         <widget class="QPlainTextEdit" name="msg_3a">
+          <property name="geometry">
+           <rect>
+            <x>109</x>
+            <y>200</y>
+            <width>820</width>
+            <height>141</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="rcpt_3a">
+          <property name="geometry">
+           <rect>
+            <x>109</x>
+            <y>142</y>
+            <width>820</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>koujinti@googlegroups.com</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="paswd_3a">
+          <property name="geometry">
+           <rect>
+            <x>109</x>
+            <y>113</y>
+            <width>820</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="server_3a">
+          <property name="geometry">
+           <rect>
+            <x>109</x>
+            <y>26</y>
+            <width>820</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>smtp.gmail.com</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="subject_3a">
+          <property name="geometry">
+           <rect>
+            <x>109</x>
+            <y>171</y>
+            <width>820</width>
+            <height>20</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_137">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>171</y>
+            <width>40</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Subject:</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="port_3a">
+          <property name="geometry">
+           <rect>
+            <x>109</x>
+            <y>55</y>
+            <width>820</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>465</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_138">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>200</y>
+            <width>46</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Message:</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="sendBtn_3">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>360</y>
+            <width>301</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Envoyer </string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="exitBtn_3">
+          <property name="geometry">
+           <rect>
+            <x>560</x>
+            <y>360</y>
+            <width>301</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Exit </string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_38">
+         <attribute name="title">
+          <string>Statistique</string>
+         </attribute>
+         <widget class="QPushButton" name="stat_plat">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>140</y>
+            <width>301</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Consulter les statistiques </string>
           </property>
          </widget>
         </widget>
@@ -2074,24 +2466,24 @@ border-radius:10px;
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>651</width>
-          <height>431</height>
+          <width>931</width>
+          <height>661</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_18">
          <attribute name="title">
-          <string>Ajouter</string>
+          <string>Ajouter/modifier</string>
          </attribute>
          <widget class="QGroupBox" name="groupBox_7">
           <property name="geometry">
            <rect>
             <x>10</x>
             <y>10</y>
-            <width>581</width>
-            <height>241</height>
+            <width>891</width>
+            <height>301</height>
            </rect>
           </property>
           <property name="title">
@@ -2149,10 +2541,10 @@ border-radius:10px;
           <widget class="QPushButton" name="pushButton_27">
            <property name="geometry">
             <rect>
-             <x>130</x>
-             <y>160</y>
-             <width>161</width>
-             <height>41</height>
+             <x>140</x>
+             <y>210</y>
+             <width>311</width>
+             <height>51</height>
             </rect>
            </property>
            <property name="text">
@@ -2163,9 +2555,9 @@ border-radius:10px;
            <property name="geometry">
             <rect>
              <x>430</x>
-             <y>50</y>
-             <width>113</width>
-             <height>20</height>
+             <y>40</y>
+             <width>131</width>
+             <height>31</height>
             </rect>
            </property>
            <property name="text">
@@ -2175,8 +2567,8 @@ border-radius:10px;
           <widget class="QPushButton" name="pushButton_28">
            <property name="geometry">
             <rect>
-             <x>394</x>
-             <y>110</y>
+             <x>580</x>
+             <y>40</y>
              <width>131</width>
              <height>31</height>
             </rect>
@@ -2246,6 +2638,39 @@ border-radius:10px;
            </property>
           </widget>
          </widget>
+         <widget class="QLabel" name="label_823">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>350</y>
+            <width>271</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 63 16pt &quot;Yu Gothic UI Semibold&quot;;
+color : white;</string>
+          </property>
+          <property name="text">
+           <string>GESTION DES MENUS</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_86">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>330</y>
+            <width>71</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>icons8-restaurant-menu-64.png</pixmap>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab_19">
          <attribute name="title">
@@ -2260,14 +2685,20 @@ border-radius:10px;
             <height>281</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                 stop: 0 #FF92BB, stop: 1 red);
+  background: black;
+     border: 2px outset red;</string>
+          </property>
          </widget>
          <widget class="QLineEdit" name="textDelete_6">
           <property name="geometry">
            <rect>
             <x>380</x>
-            <y>300</y>
-            <width>113</width>
-            <height>20</height>
+            <y>330</y>
+            <width>111</width>
+            <height>31</height>
            </rect>
           </property>
          </widget>
@@ -2275,7 +2706,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>350</x>
-            <y>300</y>
+            <y>330</y>
             <width>21</width>
             <height>20</height>
            </rect>
@@ -2287,7 +2718,7 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_29">
           <property name="geometry">
            <rect>
-            <x>380</x>
+            <x>500</x>
             <y>330</y>
             <width>111</width>
             <height>31</height>
@@ -2300,8 +2731,8 @@ border-radius:10px;
          <widget class="QLabel" name="label_95">
           <property name="geometry">
            <rect>
-            <x>500</x>
-            <y>300</y>
+            <x>610</x>
+            <y>320</y>
             <width>71</width>
             <height>41</height>
            </rect>
@@ -2316,14 +2747,14 @@ border-radius:10px;
          <widget class="QPushButton" name="afficher_menu">
           <property name="geometry">
            <rect>
-            <x>510</x>
-            <y>260</y>
-            <width>111</width>
+            <x>480</x>
+            <y>270</y>
+            <width>151</width>
             <height>31</height>
            </rect>
           </property>
           <property name="text">
-           <string>afficher menu</string>
+           <string>Actualiser</string>
           </property>
          </widget>
         </widget>
@@ -2397,7 +2828,7 @@ border-radius:10px;
            </rect>
           </property>
           <property name="text">
-           <string>Générer en PDF</string>
+           <string>Générer PDF</string>
           </property>
          </widget>
         </widget>
@@ -2410,9 +2841,9 @@ border-radius:10px;
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>10</y>
-        <width>851</width>
-        <height>681</height>
+        <y>0</y>
+        <width>941</width>
+        <height>691</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2474,8 +2905,8 @@ border-radius:10px;
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>841</width>
-          <height>631</height>
+          <width>891</width>
+          <height>531</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -2654,18 +3085,18 @@ border-radius:10px;
          <widget class="QTableView" name="tableView_7">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>531</width>
-            <height>191</height>
+            <x>0</x>
+            <y>60</y>
+            <width>721</width>
+            <height>241</height>
            </rect>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_33">
           <property name="geometry">
            <rect>
-            <x>550</x>
-            <y>50</y>
+            <x>730</x>
+            <y>160</y>
             <width>101</width>
             <height>23</height>
            </rect>
@@ -2677,8 +3108,8 @@ border-radius:10px;
          <widget class="QLineEdit" name="lineEdit_32">
           <property name="geometry">
            <rect>
-            <x>550</x>
-            <y>20</y>
+            <x>730</x>
+            <y>130</y>
             <width>91</width>
             <height>20</height>
            </rect>
@@ -2687,8 +3118,8 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_34">
           <property name="geometry">
            <rect>
-            <x>580</x>
-            <y>240</y>
+            <x>620</x>
+            <y>360</y>
             <width>211</width>
             <height>31</height>
            </rect>
@@ -2700,8 +3131,8 @@ border-radius:10px;
          <widget class="QLabel" name="label_73">
           <property name="geometry">
            <rect>
-            <x>570</x>
-            <y>200</y>
+            <x>520</x>
+            <y>340</y>
             <width>91</width>
             <height>16</height>
            </rect>
@@ -2719,8 +3150,8 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_35">
           <property name="geometry">
            <rect>
-            <x>580</x>
-            <y>290</y>
+            <x>620</x>
+            <y>400</y>
             <width>211</width>
             <height>31</height>
            </rect>
@@ -2732,9 +3163,9 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_36">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>270</y>
-            <width>161</width>
+            <x>40</x>
+            <y>360</y>
+            <width>211</width>
             <height>31</height>
            </rect>
           </property>
@@ -2745,8 +3176,8 @@ border-radius:10px;
          <widget class="QLineEdit" name="find">
           <property name="geometry">
            <rect>
-            <x>130</x>
-            <y>230</y>
+            <x>160</x>
+            <y>320</y>
             <width>113</width>
             <height>20</height>
            </rect>
@@ -2755,9 +3186,9 @@ border-radius:10px;
          <widget class="QPushButton" name="nombredechaises">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>310</y>
-            <width>161</width>
+            <x>40</x>
+            <y>400</y>
+            <width>211</width>
             <height>31</height>
            </rect>
           </property>
@@ -2768,9 +3199,9 @@ border-radius:10px;
          <widget class="QLabel" name="label_80">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>230</y>
-            <width>81</width>
+            <x>40</x>
+            <y>320</y>
+            <width>101</width>
             <height>16</height>
            </rect>
           </property>
@@ -2787,10 +3218,10 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_441">
           <property name="geometry">
            <rect>
-            <x>620</x>
-            <y>150</y>
-            <width>75</width>
-            <height>23</height>
+            <x>10</x>
+            <y>20</y>
+            <width>111</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -2800,9 +3231,9 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_DB">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>352</y>
-            <width>161</width>
+            <x>40</x>
+            <y>442</y>
+            <width>211</width>
             <height>31</height>
            </rect>
           </property>
@@ -2813,8 +3244,8 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_deb1">
           <property name="geometry">
            <rect>
-            <x>584</x>
-            <y>350</y>
+            <x>624</x>
+            <y>440</y>
             <width>211</width>
             <height>31</height>
            </rect>
@@ -2844,8 +3275,8 @@ border-radius:10px;
          <widget class="QWidget" name="layoutWidget_2">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>0</y>
+            <x>80</x>
+            <y>20</y>
             <width>701</width>
             <height>451</height>
            </rect>
@@ -2889,7 +3320,7 @@ border-radius:10px;
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QLabel" name="label_84">
+            <widget class="QLabel" name="label_842">
              <property name="text">
               <string>Username:</string>
              </property>
@@ -2899,7 +3330,7 @@ border-radius:10px;
             <widget class="QLineEdit" name="uname_4F"/>
            </item>
            <item row="3" column="0">
-            <widget class="QLabel" name="label_85">
+            <widget class="QLabel" name="label_852">
              <property name="text">
               <string>Password:</string>
              </property>
@@ -2916,7 +3347,7 @@ border-radius:10px;
             </widget>
            </item>
            <item row="4" column="0">
-            <widget class="QLabel" name="label_86">
+            <widget class="QLabel" name="label_861">
              <property name="text">
               <string>Recipant to:</string>
              </property>
@@ -3179,12 +3610,15 @@ border-radius:10px;
             <height>291</height>
            </rect>
           </property>
+          <property name="text" stdset="0">
+           <string>Libellé</string>
+          </property>
          </widget>
          <widget class="QLineEdit" name="lineEdit_40">
           <property name="geometry">
            <rect>
             <x>640</x>
-            <y>120</y>
+            <y>210</y>
             <width>101</width>
             <height>20</height>
            </rect>
@@ -3194,7 +3628,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>630</x>
-            <y>150</y>
+            <y>240</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -3206,9 +3640,9 @@ border-radius:10px;
          <widget class="QPushButton" name="recher">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>490</y>
-            <width>111</width>
+            <x>260</x>
+            <y>390</y>
+            <width>221</width>
             <height>31</height>
            </rect>
           </property>
@@ -3219,8 +3653,8 @@ border-radius:10px;
          <widget class="QLineEdit" name="lineEdit_31">
           <property name="geometry">
            <rect>
-            <x>110</x>
-            <y>440</y>
+            <x>120</x>
+            <y>400</y>
             <width>113</width>
             <height>20</height>
            </rect>
@@ -3229,10 +3663,10 @@ border-radius:10px;
          <widget class="QLabel" name="label_72">
           <property name="geometry">
            <rect>
-            <x>590</x>
-            <y>460</y>
-            <width>81</width>
-            <height>16</height>
+            <x>620</x>
+            <y>380</y>
+            <width>91</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="font">
@@ -3249,9 +3683,9 @@ border-radius:10px;
          <widget class="QPushButton" name="idDeCommande">
           <property name="geometry">
            <rect>
-            <x>630</x>
-            <y>500</y>
-            <width>131</width>
+            <x>740</x>
+            <y>390</y>
+            <width>171</width>
             <height>31</height>
            </rect>
           </property>
@@ -3262,8 +3696,8 @@ border-radius:10px;
          <widget class="QPushButton" name="libelle">
           <property name="geometry">
            <rect>
-            <x>630</x>
-            <y>540</y>
+            <x>760</x>
+            <y>430</y>
             <width>131</width>
             <height>31</height>
            </rect>
@@ -3276,7 +3710,7 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>440</y>
+            <y>400</y>
             <width>101</width>
             <height>20</height>
            </rect>
@@ -3294,9 +3728,9 @@ border-radius:10px;
          <widget class="QPushButton" name="recher_2">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>540</y>
-            <width>111</width>
+            <x>320</x>
+            <y>470</y>
+            <width>101</width>
             <height>31</height>
            </rect>
           </property>
@@ -3307,8 +3741,8 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_43">
           <property name="geometry">
            <rect>
-            <x>490</x>
-            <y>10</y>
+            <x>10</x>
+            <y>20</y>
             <width>101</width>
             <height>31</height>
            </rect>
@@ -3320,9 +3754,9 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_prix">
           <property name="geometry">
            <rect>
-            <x>630</x>
-            <y>590</y>
-            <width>131</width>
+            <x>790</x>
+            <y>470</y>
+            <width>81</width>
             <height>31</height>
            </rect>
           </property>
@@ -3333,9 +3767,9 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_ntab">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>580</y>
-            <width>111</width>
+            <x>290</x>
+            <y>430</y>
+            <width>161</width>
             <height>31</height>
            </rect>
           </property>
@@ -3348,7 +3782,7 @@ border-radius:10px;
            <rect>
             <x>660</x>
             <y>20</y>
-            <width>121</width>
+            <width>231</width>
             <height>31</height>
            </rect>
           </property>
@@ -3364,9 +3798,9 @@ border-radius:10px;
          <widget class="QPushButton" name="STATF">
           <property name="geometry">
            <rect>
-            <x>280</x>
-            <y>140</y>
-            <width>151</width>
+            <x>30</x>
+            <y>30</y>
+            <width>241</width>
             <height>51</height>
            </rect>
           </property>
@@ -3385,8 +3819,8 @@ border-radius:10px;
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>921</width>
-        <height>641</height>
+        <width>941</width>
+        <height>691</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -3437,7 +3871,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -3448,12 +3882,12 @@ border-radius:10px;
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>911</width>
-          <height>541</height>
+          <width>941</width>
+          <height>591</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_29">
          <attribute name="title">
@@ -3462,7 +3896,7 @@ border-radius:10px;
          <widget class="QPushButton" name="F_UPDATE">
           <property name="geometry">
            <rect>
-            <x>460</x>
+            <x>420</x>
             <y>440</y>
             <width>131</width>
             <height>41</height>
@@ -3470,16 +3904,6 @@ border-radius:10px;
           </property>
           <property name="text">
            <string>Modifier</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="F_UPDATE_ID">
-          <property name="geometry">
-           <rect>
-            <x>306</x>
-            <y>440</y>
-            <width>141</width>
-            <height>41</height>
-           </rect>
           </property>
          </widget>
          <widget class="QLabel" name="label_271">
@@ -3533,8 +3957,8 @@ border-radius:10px;
           <widget class="QPushButton" name="F_ADD">
            <property name="geometry">
             <rect>
-             <x>200</x>
-             <y>270</y>
+             <x>280</x>
+             <y>250</y>
              <width>201</width>
              <height>61</height>
             </rect>
@@ -3592,16 +4016,6 @@ border-radius:10px;
             <string>MAIL</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="F_MAIL">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>190</y>
-             <width>251</width>
-             <height>41</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_117">
            <property name="geometry">
             <rect>
@@ -3615,11 +4029,21 @@ border-radius:10px;
             <string>TELEPHONE</string>
            </property>
           </widget>
+          <widget class="QSpinBox" name="F_MAIL">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>200</y>
+             <width>251</width>
+             <height>31</height>
+            </rect>
+           </property>
+          </widget>
          </widget>
          <widget class="QComboBox" name="comboF">
           <property name="geometry">
            <rect>
-            <x>80</x>
+            <x>300</x>
             <y>450</y>
             <width>111</width>
             <height>31</height>
@@ -3637,15 +4061,15 @@ border-radius:10px;
             <x>10</x>
             <y>20</y>
             <width>871</width>
-            <height>191</height>
+            <height>281</height>
            </rect>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_44">
           <property name="geometry">
            <rect>
-            <x>200</x>
-            <y>230</y>
+            <x>190</x>
+            <y>470</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -3654,21 +4078,11 @@ border-radius:10px;
            <string>Supprimer</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="textDelete_7">
-          <property name="geometry">
-           <rect>
-            <x>70</x>
-            <y>230</y>
-            <width>113</width>
-            <height>31</height>
-           </rect>
-          </property>
-         </widget>
          <widget class="QLabel" name="label_961">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>240</y>
+            <x>10</x>
+            <y>480</y>
             <width>21</width>
             <height>16</height>
            </rect>
@@ -3677,176 +4091,196 @@ border-radius:10px;
            <string>ID</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_962">
+         <widget class="QComboBox" name="F_D_COMBO">
           <property name="geometry">
            <rect>
-            <x>570</x>
-            <y>300</y>
-            <width>31</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Nom</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_53">
-          <property name="geometry">
-           <rect>
-            <x>750</x>
-            <y>290</y>
-            <width>121</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Nom</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="FSN">
-          <property name="geometry">
-           <rect>
-            <x>620</x>
-            <y>290</y>
-            <width>113</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_963">
-          <property name="geometry">
-           <rect>
-            <x>530</x>
-            <y>350</y>
-            <width>61</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Telephone</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_54">
-          <property name="geometry">
-           <rect>
-            <x>750</x>
-            <y>340</y>
-            <width>121</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Telephone</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="FST">
-          <property name="geometry">
-           <rect>
-            <x>620</x>
-            <y>340</y>
-            <width>113</width>
+            <x>60</x>
+            <y>470</y>
+            <width>111</width>
             <height>31</height>
            </rect>
           </property>
          </widget>
-         <widget class="QLabel" name="label_964">
+         <widget class="QGroupBox" name="groupBox_12">
           <property name="geometry">
            <rect>
-            <x>550</x>
-            <y>390</y>
-            <width>41</width>
-            <height>20</height>
+            <x>560</x>
+            <y>310</y>
+            <width>341</width>
+            <height>201</height>
            </rect>
           </property>
-          <property name="text">
-           <string>Email</string>
+          <property name="title">
+           <string>Rechercher</string>
           </property>
+          <widget class="QLabel" name="label_962">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>30</y>
+             <width>31</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Nom</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_53">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>20</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Nom</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_965">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>170</y>
+             <width>51</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Adresse</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="FSE">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>110</y>
+             <width>113</width>
+             <height>31</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="FST">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>70</y>
+             <width>113</width>
+             <height>31</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_55">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>110</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Email</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="FSA">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>160</y>
+             <width>113</width>
+             <height>31</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_56">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>160</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Adresse</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_964">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>120</y>
+             <width>41</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Email</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_963">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>61</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Telephone</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="FSN">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>20</y>
+             <width>113</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_54">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>70</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Telephone</string>
+           </property>
+          </widget>
          </widget>
-         <widget class="QPushButton" name="pushButton_55">
+         <widget class="QPushButton" name="F_act">
           <property name="geometry">
            <rect>
-            <x>750</x>
-            <y>380</y>
-            <width>121</width>
+            <x>30</x>
+            <y>320</y>
+            <width>91</width>
             <height>31</height>
            </rect>
           </property>
           <property name="text">
-           <string>Email</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="FSE">
-          <property name="geometry">
-           <rect>
-            <x>620</x>
-            <y>380</y>
-            <width>113</width>
-            <height>31</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_965">
-          <property name="geometry">
-           <rect>
-            <x>540</x>
-            <y>440</y>
-            <width>51</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Adresse</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_56">
-          <property name="geometry">
-           <rect>
-            <x>750</x>
-            <y>430</y>
-            <width>121</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Adresse</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="FSA">
-          <property name="geometry">
-           <rect>
-            <x>620</x>
-            <y>430</y>
-            <width>113</width>
-            <height>31</height>
-           </rect>
+           <string>Actualiser</string>
           </property>
          </widget>
         </widget>
-       </widget>
-       <widget class="QLabel" name="label_971">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>550</y>
-          <width>71</width>
-          <height>61</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../stocks1.png</pixmap>
-        </property>
        </widget>
        <widget class="QLabel" name="label_981">
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>570</y>
+          <y>620</y>
           <width>351</width>
           <height>31</height>
          </rect>
@@ -3863,7 +4297,7 @@ color : white;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>550</y>
+          <y>600</y>
           <width>71</width>
           <height>61</height>
          </rect>
@@ -3872,7 +4306,7 @@ color : white;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../stock.png</pixmap>
+         <pixmap>stock.png</pixmap>
         </property>
        </widget>
       </widget>
@@ -3885,12 +4319,12 @@ color : white;</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>1191</width>
+          <width>831</width>
           <height>541</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab_32">
          <attribute name="title">
@@ -3997,26 +4431,6 @@ color : white;</string>
             </date>
            </property>
           </widget>
-          <widget class="QLineEdit" name="CF_QTE">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>130</y>
-             <width>191</width>
-             <height>41</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="CF_ID_F">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>20</y>
-             <width>191</width>
-             <height>41</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QDateTimeEdit" name="CF_DATE_R">
            <property name="geometry">
             <rect>
@@ -4067,16 +4481,6 @@ color : white;</string>
             <string>DATE_RECEPTION</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="CF_ID_P">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>80</y>
-             <width>191</width>
-             <height>41</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_125">
            <property name="geometry">
             <rect>
@@ -4090,28 +4494,48 @@ color : white;</string>
             <string>ID_PRODUIT</string>
            </property>
           </widget>
+          <widget class="QSpinBox" name="CF_ID_F">
+           <property name="geometry">
+            <rect>
+             <x>181</x>
+             <y>40</y>
+             <width>151</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="CF_ID_P">
+           <property name="geometry">
+            <rect>
+             <x>181</x>
+             <y>90</y>
+             <width>151</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="CF_QTE">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>140</y>
+             <width>151</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
          </widget>
          <widget class="QPushButton" name="pushButton_46">
           <property name="geometry">
            <rect>
-            <x>440</x>
-            <y>460</y>
+            <x>340</x>
+            <y>450</y>
             <width>111</width>
             <height>41</height>
            </rect>
           </property>
           <property name="text">
            <string>Modifier</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="CF_UPDATE">
-          <property name="geometry">
-           <rect>
-            <x>260</x>
-            <y>467</y>
-            <width>141</width>
-            <height>31</height>
-           </rect>
           </property>
          </widget>
          <widget class="QLabel" name="label_105">
@@ -4125,6 +4549,16 @@ color : white;</string>
           </property>
           <property name="text">
            <string>ID COMMANDE</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="CF_UPDATE_COMBO">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>460</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
           </property>
          </widget>
         </widget>
@@ -4153,16 +4587,6 @@ color : white;</string>
           </property>
           <property name="text">
            <string>Supprimer</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="CF_DELETE">
-          <property name="geometry">
-           <rect>
-            <x>50</x>
-            <y>280</y>
-            <width>113</width>
-            <height>31</height>
-           </rect>
           </property>
          </widget>
          <widget class="QLabel" name="label_106">
@@ -4248,6 +4672,29 @@ color : white;</string>
           </property>
           <property name="text">
            <string>Rechercher</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="CF_DELETE_COMBO">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>280</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="CF_Act">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>440</y>
+            <width>81</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Actualiser</string>
           </property>
          </widget>
         </widget>
@@ -4403,7 +4850,7 @@ color : white;</string>
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>570</y>
+          <y>620</y>
           <width>351</width>
           <height>31</height>
          </rect>
@@ -4420,7 +4867,7 @@ color : white;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>550</y>
+          <y>600</y>
           <width>71</width>
           <height>61</height>
          </rect>
@@ -4429,7 +4876,7 @@ color : white;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../stock.png</pixmap>
+         <pixmap>stock.png</pixmap>
         </property>
        </widget>
       </widget>
@@ -4442,12 +4889,12 @@ color : white;</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>911</width>
+          <width>931</width>
           <height>541</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_36">
          <attribute name="title">
@@ -4478,21 +4925,11 @@ color : white;</string>
             <string>ID_PRODUIT</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="OF_ID_P">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>40</y>
-             <width>251</width>
-             <height>41</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QPushButton" name="OF_ADD">
            <property name="geometry">
             <rect>
-             <x>200</x>
-             <y>270</y>
+             <x>140</x>
+             <y>190</y>
              <width>131</width>
              <height>61</height>
             </rect>
@@ -4502,16 +4939,6 @@ color : white;</string>
            </property>
            <property name="text">
             <string>Ajouter</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="OF_ID_F">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>90</y>
-             <width>251</width>
-             <height>41</height>
-            </rect>
            </property>
           </widget>
           <widget class="QLabel" name="label_120">
@@ -4525,16 +4952,6 @@ color : white;</string>
            </property>
            <property name="text">
             <string>ID_FOURNISSEUR</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="OF_PRIX">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>140</y>
-             <width>251</width>
-             <height>41</height>
-            </rect>
            </property>
           </widget>
           <widget class="QLabel" name="label_121">
@@ -4553,14 +4970,64 @@ color : white;</string>
           <widget class="QPushButton" name="OF_UPDATE">
            <property name="geometry">
             <rect>
-             <x>350</x>
-             <y>270</y>
+             <x>310</x>
+             <y>190</y>
              <width>151</width>
              <height>61</height>
             </rect>
            </property>
            <property name="text">
             <string>Modifier</string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="OF_UPDATE_COMBO">
+           <property name="geometry">
+            <rect>
+             <x>320</x>
+             <y>50</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="OF_UPDATE_COMBO_2">
+           <property name="geometry">
+            <rect>
+             <x>320</x>
+             <y>90</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="OF_ID_P">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>50</y>
+             <width>131</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="OF_ID_F">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>90</y>
+             <width>131</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="OF_PRIX">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>140</y>
+             <width>111</width>
+             <height>22</height>
+            </rect>
            </property>
           </widget>
          </widget>
@@ -4572,17 +5039,17 @@ color : white;</string>
          <widget class="QTableView" name="tabOffreFournisseur">
           <property name="geometry">
            <rect>
-            <x>20</x>
-            <y>20</y>
-            <width>861</width>
-            <height>391</height>
+            <x>10</x>
+            <y>10</y>
+            <width>911</width>
+            <height>401</height>
            </rect>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_50">
           <property name="geometry">
            <rect>
-            <x>210</x>
+            <x>200</x>
             <y>420</y>
             <width>121</width>
             <height>31</height>
@@ -4590,16 +5057,6 @@ color : white;</string>
           </property>
           <property name="text">
            <string>Supprimer</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="OF_DELETE_P">
-          <property name="geometry">
-           <rect>
-            <x>90</x>
-            <y>420</y>
-            <width>113</width>
-            <height>31</height>
-           </rect>
           </property>
          </widget>
          <widget class="QLabel" name="label_123">
@@ -4613,16 +5070,6 @@ color : white;</string>
           </property>
           <property name="text">
            <string>ID_Produit</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="OF_DELETE_F">
-          <property name="geometry">
-           <rect>
-            <x>90</x>
-            <y>460</y>
-            <width>113</width>
-            <height>31</height>
-           </rect>
           </property>
          </widget>
          <widget class="QLabel" name="label_127">
@@ -4710,6 +5157,26 @@ color : white;</string>
            </rect>
           </property>
          </widget>
+         <widget class="QComboBox" name="OF_DELETE_COMBO">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>420</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="OF_DELETE_COMBO_2">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>460</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab_28">
          <attribute name="title">
@@ -4730,8 +5197,8 @@ color : white;</string>
        <widget class="QLabel" name="label_118">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>550</y>
+          <x>10</x>
+          <y>600</y>
           <width>71</width>
           <height>61</height>
          </rect>
@@ -4740,14 +5207,14 @@ color : white;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../stock.png</pixmap>
+         <pixmap>stock.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="label_122">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>570</y>
+          <x>80</x>
+          <y>620</y>
           <width>351</width>
           <height>31</height>
          </rect>
@@ -4760,11 +5227,24 @@ color : white;</string>
          <string>GESTION DE FOURNISSEUR</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="actOF">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>570</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Actualiser</string>
+        </property>
+       </widget>
        <widget class="QPushButton" name="pushButton_45">
         <property name="geometry">
          <rect>
-          <x>490</x>
-          <y>560</y>
+          <x>450</x>
+          <y>570</y>
           <width>201</width>
           <height>31</height>
          </rect>
@@ -4780,10 +5260,10 @@ color : white;</string>
      <widget class="QTabWidget" name="tabWidget_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>911</width>
-        <height>611</height>
+        <x>0</x>
+        <y>0</y>
+        <width>941</width>
+        <height>691</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -4845,8 +5325,8 @@ border-radius:10px;
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>851</width>
-          <height>471</height>
+          <width>941</width>
+          <height>581</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -5210,9 +5690,9 @@ border-radius:10px;
          <widget class="QLabel" name="label_821">
           <property name="geometry">
            <rect>
-            <x>140</x>
-            <y>370</y>
-            <width>351</width>
+            <x>110</x>
+            <y>480</y>
+            <width>271</width>
             <height>31</height>
            </rect>
           </property>
@@ -5222,26 +5702,6 @@ color : white;</string>
           </property>
           <property name="text">
            <string>GESTION DE CAISSE</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_87">
-          <property name="geometry">
-           <rect>
-            <x>50</x>
-            <y>340</y>
-            <width>81</width>
-            <height>91</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font: 63 16pt &quot;Yu Gothic UI Semibold&quot;;
-color : white;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap>cash.png</pixmap>
           </property>
          </widget>
          <widget class="QLabel" name="label_92">
@@ -5258,6 +5718,26 @@ color : white;</string>
           </property>
           <property name="pixmap">
            <pixmap>modi.png</pixmap>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_87">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>450</y>
+            <width>81</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 63 16pt &quot;Yu Gothic UI Semibold&quot;;
+color : white;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>cash.png</pixmap>
           </property>
          </widget>
         </widget>
@@ -5319,8 +5799,8 @@ color : white;</string>
            <rect>
             <x>630</x>
             <y>20</y>
-            <width>111</width>
-            <height>22</height>
+            <width>171</width>
+            <height>21</height>
            </rect>
           </property>
           <property name="text">
@@ -5340,10 +5820,10 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_40">
           <property name="geometry">
            <rect>
-            <x>700</x>
+            <x>760</x>
             <y>110</y>
-            <width>91</width>
-            <height>22</height>
+            <width>121</width>
+            <height>21</height>
            </rect>
           </property>
           <property name="text">
@@ -5393,13 +5873,13 @@ color : white;</string>
            <string>Generation Des Factures(PDF)</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_851">
+         <widget class="QLabel" name="label_85">
           <property name="geometry">
            <rect>
             <x>20</x>
             <y>360</y>
             <width>71</width>
-            <height>101</height>
+            <height>71</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -5460,8 +5940,8 @@ color : white;</string>
            <rect>
             <x>240</x>
             <y>20</y>
-            <width>141</width>
-            <height>22</height>
+            <width>211</width>
+            <height>21</height>
            </rect>
           </property>
           <property name="text">
@@ -5473,8 +5953,8 @@ color : white;</string>
            <rect>
             <x>240</x>
             <y>60</y>
-            <width>141</width>
-            <height>22</height>
+            <width>211</width>
+            <height>21</height>
            </rect>
           </property>
           <property name="text">
@@ -5494,10 +5974,10 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_58">
           <property name="geometry">
            <rect>
-            <x>600</x>
+            <x>620</x>
             <y>110</y>
-            <width>91</width>
-            <height>22</height>
+            <width>131</width>
+            <height>21</height>
            </rect>
           </property>
           <property name="text">
@@ -5507,10 +5987,10 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_59">
           <property name="geometry">
            <rect>
-            <x>490</x>
+            <x>460</x>
             <y>110</y>
-            <width>101</width>
-            <height>22</height>
+            <width>151</width>
+            <height>21</height>
            </rect>
           </property>
           <property name="text">
@@ -5529,8 +6009,8 @@ color : white;</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>861</width>
-          <height>511</height>
+          <width>941</width>
+          <height>581</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -5793,8 +6273,8 @@ color : white;</string>
            <rect>
             <x>550</x>
             <y>380</y>
-            <width>75</width>
-            <height>23</height>
+            <width>91</width>
+            <height>21</height>
            </rect>
           </property>
           <property name="text">
@@ -5814,11 +6294,11 @@ color : white;</string>
            <string>ID</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_841">
+         <widget class="QLabel" name="label_84">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>400</y>
+            <x>20</x>
+            <y>460</y>
             <width>71</width>
             <height>91</height>
            </rect>
@@ -5837,8 +6317,8 @@ color : white;</string>
          <widget class="QLabel" name="label_866">
           <property name="geometry">
            <rect>
-            <x>180</x>
-            <y>440</y>
+            <x>100</x>
+            <y>490</y>
             <width>351</width>
             <height>31</height>
            </rect>
@@ -5854,7 +6334,7 @@ color : white;</string>
          <widget class="QLabel" name="label_93">
           <property name="geometry">
            <rect>
-            <x>630</x>
+            <x>640</x>
             <y>370</y>
             <width>61</width>
             <height>41</height>
@@ -5908,9 +6388,9 @@ color : white;</string>
          <widget class="QPushButton" name="rechercher_2">
           <property name="geometry">
            <rect>
-            <x>580</x>
+            <x>590</x>
             <y>20</y>
-            <width>111</width>
+            <width>161</width>
             <height>22</height>
            </rect>
           </property>
@@ -5921,9 +6401,9 @@ color : white;</string>
          <widget class="QLineEdit" name="lineEdit_10">
           <property name="geometry">
            <rect>
-            <x>120</x>
+            <x>80</x>
             <y>20</y>
-            <width>101</width>
+            <width>141</width>
             <height>21</height>
            </rect>
           </property>
@@ -6000,8 +6480,8 @@ color : white;</string>
          <widget class="QLabel" name="label_27">
           <property name="geometry">
            <rect>
-            <x>60</x>
-            <y>10</y>
+            <x>20</x>
+            <y>0</y>
             <width>51</width>
             <height>51</height>
            </rect>
@@ -6068,9 +6548,9 @@ color : white;</string>
          <widget class="QPushButton" name="rechercher_5">
           <property name="geometry">
            <rect>
-            <x>700</x>
+            <x>760</x>
             <y>20</y>
-            <width>111</width>
+            <width>151</width>
             <height>22</height>
            </rect>
           </property>
@@ -6083,12 +6563,27 @@ color : white;</string>
       </widget>
      </widget>
     </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QLabel" name="gif">
+      <property name="geometry">
+       <rect>
+        <x>-5</x>
+        <y>-5</y>
+        <width>971</width>
+        <height>741</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QPushButton" name="pushButton_11">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>490</y>
+      <x>20</x>
+      <y>430</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -6124,14 +6619,14 @@ border-radius:10px;
 }</string>
     </property>
     <property name="text">
-     <string>Caisse</string>
+     <string>   Caisse</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_94">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>570</y>
+      <x>-10</x>
+      <y>510</y>
       <width>61</width>
       <height>41</height>
      </rect>
@@ -6146,8 +6641,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_98">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>220</y>
+      <x>50</x>
+      <y>160</y>
       <width>61</width>
       <height>31</height>
      </rect>
@@ -6162,8 +6657,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_99">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>280</y>
+      <x>50</x>
+      <y>220</y>
       <width>61</width>
       <height>51</height>
      </rect>
@@ -6178,8 +6673,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_100">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>360</y>
+      <x>50</x>
+      <y>300</y>
       <width>47</width>
       <height>41</height>
      </rect>
@@ -6194,8 +6689,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_101">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>423</y>
+      <x>50</x>
+      <y>363</y>
       <width>47</width>
       <height>41</height>
      </rect>
@@ -6226,8 +6721,8 @@ border-radius:10px;
    <widget class="QLabel" name="label_97">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>495</y>
+      <x>50</x>
+      <y>435</y>
       <width>61</width>
       <height>41</height>
      </rect>
@@ -6245,7 +6740,7 @@ border-radius:10px;
       <x>-10</x>
       <y>0</y>
       <width>321</width>
-      <height>801</height>
+      <height>831</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -6253,6 +6748,16 @@ border-radius:10px;
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QVideoWidget" name="video" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>560</y>
+      <width>261</width>
+      <height>151</height>
+     </rect>
     </property>
    </widget>
    <zorder>label</zorder>
@@ -6277,6 +6782,7 @@ border-radius:10px;
    <zorder>label_101</zorder>
    <zorder>label_5</zorder>
    <zorder>label_97</zorder>
+   <zorder>video</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="mainToolBar">
@@ -6307,6 +6813,14 @@ border-radius:10px;
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>qvideowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

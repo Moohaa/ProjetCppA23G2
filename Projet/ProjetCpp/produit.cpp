@@ -99,19 +99,54 @@ bool produit::update()
                       edit.bindValue(":CATEGORIE_PRODUIT",res2);
                       return    edit.exec();
 }
-
-void produit::recherche(QTableView* table,QString CATEGORIE_PRODUIT){
+void produit::rechercher(QTableView *table, QString NOM_PRODUIT){
 
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;
-    query->prepare("select * from PRODUIT where CATEGORIE_PRODUIT='"+CATEGORIE_PRODUIT+"'");
-    query->bindValue(":CATEGORIE_PRODUIT",CATEGORIE_PRODUIT);
+    query->prepare("select * from PRODUIT where NOM_PRODUIT='"+NOM_PRODUIT+"'");
+    query->bindValue(":NOM_PRODUIT",NOM_PRODUIT);
     query->exec();
     model->setQuery(*query);
     table->setModel(model);
     table->show();
 }
 
+QSqlQueryModel * produit::rechercher_cr1(const QString &NOM_PRODUIT)
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+
+    model->setQuery("select * from PRODUIT where ((NOM_PRODUIT ) LIKE '%"+NOM_PRODUIT+"%')");
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_PRODUIT"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM_PRODUIT"));
+    model->setHeaderData(2, Qt::Horizontal,QObject::tr("CATEGORIE_PRODUIT"));
+
+
+    return model;
+}
+QSqlQueryModel * produit::rechercher_cr2(const QString &CATEGORIE_PRODUIT)
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+
+    model->setQuery("select * from PRODUIT where ((CATEGORIE_PRODUIT ) LIKE '%"+CATEGORIE_PRODUIT+"%')");
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr("ID_PRODUIT"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("NOM_PRODUIT"));
+    model->setHeaderData(2, Qt::Horizontal,QObject::tr("CATEGORIE_PRODUIT"));
+
+
+    return model;
+}
+
+void produit::rechercher_cr3(QTableView* table,int num1){
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from PRODUIT  where ID_PRODUIT=:ID_PRODUIT");
+    query->bindValue(":ID_PRODUIT",num1);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+
+}
 void produit::tri(QTableView* table){
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery *query=new QSqlQuery;

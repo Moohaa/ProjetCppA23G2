@@ -2,6 +2,7 @@
 #define SMTP_H
 
 
+
 #include <QtNetwork/QAbstractSocket>
 #include <QtNetwork/QSslSocket>
 #include <QString>
@@ -55,3 +56,4 @@ private:
 
 };
 #endif
+

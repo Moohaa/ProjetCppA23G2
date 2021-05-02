@@ -6,9 +6,13 @@
 #include <QDebug>
 #include <QSplashScreen>
 #include <QTimer>
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+
+
     qDebug() << "Projet C++, Application Desktop:";
     qDebug() << "Smart Restaurant";
     Connection c;
@@ -31,10 +35,11 @@ int main(int argc, char *argv[])
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
 }
-    else
+    else{
         QMessageBox::critical(nullptr, QObject::tr("database is not open"),
                     QObject::tr("connection failed.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
+                                "Click Cancel to exit."), QMessageBox::Cancel);}
+
 
 
     //delete (splash);

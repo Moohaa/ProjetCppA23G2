@@ -236,3 +236,29 @@ void plat::tri(QTableView* table){
     table->setModel(model);
     table->show();
 }
+int plat::check1() // check if it exsits or not  par id
+{
+    QString res1=getNOM_PLAT();
+ QString res2 =QString(res1);
+    QSqlQuery query;
+
+    query.prepare("select * from PLAT where NOM_PLAT=:NOM_PLAT");
+    query.bindValue(":NOM_PLAT",res2);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }}
