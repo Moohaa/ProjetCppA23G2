@@ -2294,6 +2294,7 @@ else
       qDebug () << data;
     data="";
 }
+
 QSystemTrayIcon *trayIcon = new QSystemTrayIcon(this);
                trayIcon->show();
                trayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/hat.png"));
