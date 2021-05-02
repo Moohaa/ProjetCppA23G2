@@ -6,6 +6,7 @@
 #include <QSqlTableModel>
 #include <QDate>
 #include <QTableView>
+#include <QFile>
 
 class stock
 {
@@ -42,7 +43,7 @@ public:
 
 
     bool ajouter_stock();
-    bool supprimer_stock();
+    bool supprimer_stock(int);
     bool update_stock();
     QSqlQueryModel * afficher_stock();
 
@@ -55,7 +56,16 @@ public:
     void tri_id(QTableView* table);
     void tri_etage(QTableView *table);
 
+    int check();
     int lastId();
+
+    void write(QString);
+    QString read();
+
+    bool update_consommer();
+private:
+    QString mFilename;
+
 
 };
 #endif // STOCK_H

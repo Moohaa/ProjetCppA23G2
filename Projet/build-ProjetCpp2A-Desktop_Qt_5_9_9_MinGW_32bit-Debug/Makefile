@@ -235,6 +235,7 @@ Makefile: ../ProjetCpp/ProjetCpp2A.pro C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/wi
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/yacc.prf \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/lex.prf \
 		../ProjetCpp/ProjetCpp2A.pro \
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5MultimediaWidgets.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Multimedia.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Charts.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl \
@@ -420,6 +421,7 @@ C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/exceptions.prf:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/yacc.prf:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/lex.prf:
 ../ProjetCpp/ProjetCpp2A.pro:
+C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5MultimediaWidgets.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Multimedia.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Charts.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl:

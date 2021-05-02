@@ -59,7 +59,7 @@ produit::produit(QString NOM_PRODUIT,QString CATEGORIE_PRODUIT){
         return query.exec();
 }
 
-    bool produit::supprimer(){
+    bool produit::supprimer(int ID_PRODUIT){
         QSqlQuery query;
         QString stringId = QString::number(ID_PRODUIT);
 
@@ -175,4 +175,32 @@ void produit::tri2(QTableView* table){
     model->setQuery(*query);
     table->setModel(model);
     table->show();
+}
+
+int produit::check() // check befor delete
+{
+    int res1=getID_PRODUIT();
+ QString res2 = QString::number(res1);
+    QSqlQuery query;
+
+    query.prepare("select * from PRODUIT where ID_PRODUIT =:ID_PRODUIT");
+    query.bindValue(":ID_PRODUIT",res2);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }
 }

@@ -1,9 +1,13 @@
 INPUT(
+./release/arduino.o
 ./release/droitacces.o
 ./release/fournisseur.o
 ./release/login.o
 ./release/main.o
 ./release/connection.o
+./release/notification.o
+./release/qcustomplot.o
+./release/statstock.o
 ./release/utilisateur.o
 ./release/commande.o
 ./release/commandefournisseur.o
@@ -18,6 +22,8 @@ INPUT(
 ./release/table.o
 ./release/transaction.o
 ./release/moc_login.o
+./release/moc_qcustomplot.o
+./release/moc_statstock.o
 ./release/moc_smtp.o
 ./release/moc_mainwindow.o
 );

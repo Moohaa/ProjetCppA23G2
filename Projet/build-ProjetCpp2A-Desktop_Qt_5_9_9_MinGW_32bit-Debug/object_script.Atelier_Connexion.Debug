@@ -1,9 +1,13 @@
 INPUT(
+./debug/arduino.o
 ./debug/droitacces.o
 ./debug/fournisseur.o
 ./debug/login.o
 ./debug/main.o
 ./debug/connection.o
+./debug/notification.o
+./debug/qcustomplot.o
+./debug/statstock.o
 ./debug/utilisateur.o
 ./debug/commande.o
 ./debug/commandefournisseur.o
@@ -18,6 +22,8 @@ INPUT(
 ./debug/table.o
 ./debug/transaction.o
 ./debug/moc_login.o
+./debug/moc_qcustomplot.o
+./debug/moc_statstock.o
 ./debug/moc_smtp.o
 ./debug/moc_mainwindow.o
 );

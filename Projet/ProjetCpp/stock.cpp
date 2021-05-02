@@ -6,8 +6,11 @@
 #include <QSqlTableModel>
 #include <QDebug>
 #include <QDate>
+#include <QTextStream>
 
-stock::stock(){}
+stock::stock(){
+    mFilename="C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/historique.txt";
+}
 
 
 stock::stock(int ID_STOCK){
@@ -84,7 +87,7 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QDate
 
 
 
-    bool stock::supprimer_stock(){
+    bool stock::supprimer_stock(int ID_STOCK){
         QSqlQuery query;
         QString stringId = QString::number(ID_STOCK);
 
@@ -92,12 +95,6 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QDate
         query.addBindValue(stringId);
 
         return query.exec();
-
-
-       /* QSqlQuery query;
-        query.prepare("DELETE FROM STOCKAGE WHERE ID_STOCK= :ID_STOCK ");
-        query.bindValue(":ID_UTILISATEUR", id);
-        return    query.exec();*/
     }
 
     QSqlQueryModel * stock::afficher_stock(){
@@ -122,12 +119,16 @@ stock::stock(QString CATEGORIE_STOCK,int TEMPERATURE, QString EMPLACEMENT, QDate
 
 bool stock::update_stock()
 {
+
+    double valueAsDouble= QUANTITE;
+    QString valueAsString = QString::number(valueAsDouble);
+
     QString res=QString::number(ID_STOCK);
     QString res1= QString(CATEGORIE_STOCK);
     QString res2= QString::number(TEMPERATURE);
     QString res3= QString(EMPLACEMENT);
     QDate res4= QDate(DATE_STOCK);
-    QString res5= QString::number(QUANTITE);
+    //QString res5= QString::number(QUANTITE);
     QString res6= QString::number(ID_PRODUIT);
 
     QSqlQuery edit;
@@ -148,7 +149,7 @@ bool stock::update_stock()
                       edit.bindValue(":TEMPERATURE",res2);
                       edit.bindValue(":EMPLACEMENT",res3);
                       edit.bindValue(":DATE_STOCK",res4);
-                      edit.bindValue(":QUANTITE",res5);
+                      edit.bindValue(":QUANTITE",valueAsDouble);
                       edit.bindValue(":ID_PRODUIT",res6);
 
 
@@ -234,5 +235,85 @@ void stock::tri_etage(QTableView *table)
     model->setQuery(*query);
     table->setModel(model);
     table->show();
+
+}
+
+int stock::check() // check befor delete
+{
+    int res1=getID_STOCK();
+ QString res2 = QString::number(res1);
+    QSqlQuery query;
+
+    query.prepare("select * from STOCKAGE where ID_STOCK =:ID_STOCK");
+    query.bindValue(":ID_STOCK",res2);
+
+
+    query.exec();
+
+    int count_user = 0;
+    while (query.next()) {
+        count_user++;
+    }
+
+    if (count_user == 1) {
+        return 0;
+    }
+    else if (count_user > 1 ) {
+        return 1;
+    }
+    else{
+        return 2;
+    }
+}
+QString stock::read()// lire l'historique
+{
+QFile mFile(mFilename);
+if (!mFile.open(QFile::ReadOnly | QFile::Text))
+{
+qDebug () <<"il ne peut pas";
+}
+QTextStream in (&mFile);
+QString text=mFile.readAll();
+mFile.close();
+return  text;
+}
+
+
+void stock::write(QString text)//ecrire dans l'historique
+{
+QString aux=read();
+
+QDateTime datetime = QDateTime::currentDateTime();
+QString date =datetime.toString();
+date+= " ";
+aux+=date;
+QFile mFile(mFilename);
+if (!mFile.open(QFile::WriteOnly | QFile::Text))
+{
+qDebug () <<"il ne peut pas";
+}
+QTextStream out (&mFile);
+
+
+aux+=text;
+out << aux << "\n";
+mFile.flush();
+mFile.close();
+
+}
+
+bool stock::update_consommer(){
+
+    QString res=QString::number(ID_STOCK);
+    QString res1= QString(QUANTITE);
+
+
+    QSqlQuery consomme;
+
+
+    consomme.prepare("UPDATE STOCKAGE SET QUANTITE =:QUANTITE where ID_STOCK=:ID_STOCK");
+    consomme.bindValue(":ID_STOCK",res);
+    consomme.bindValue(":QUANTITE",res1);
+    return consomme.exec();
 
 }

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1296</width>
-    <height>800</height>
+    <height>927</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -74,7 +74,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QGroupBox" name="groupBox">
@@ -1735,7 +1735,7 @@ border-radius:10px;
       <x>0</x>
       <y>0</y>
       <width>321</width>
-      <height>801</height>
+      <height>841</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1838,7 +1838,7 @@ font: 25 6pt &quot;Yu Gothic UI Light&quot;;</string>
       <x>320</x>
       <y>60</y>
       <width>981</width>
-      <height>741</height>
+      <height>781</height>
      </rect>
     </property>
     <property name="text">

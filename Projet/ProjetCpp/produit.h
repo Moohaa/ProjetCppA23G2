@@ -27,7 +27,7 @@ public:
 
 
     bool ajouter();
-    bool supprimer();
+    bool supprimer(int);
     bool update();
     QSqlQueryModel * afficher();
 
@@ -40,6 +40,7 @@ public:
     void tri(QTableView* table);
     void tri1(QTableView* table);
     void tri2(QTableView* table);
+    int check();
 
     int lastId();
 

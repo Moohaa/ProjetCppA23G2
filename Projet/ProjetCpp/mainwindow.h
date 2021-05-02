@@ -9,9 +9,11 @@
 #include <QSystemTrayIcon>
 #include "smtp.h"
 #include <QPropertyAnimation>
+#include "arduino.h"
 
 namespace Ui {
 class MainWindow;
+class QSystemTrayIcon;
 }
 
 class MainWindow : public QMainWindow
@@ -77,6 +79,14 @@ private slots:
     void on_Afficher_Produit_clicked();
 
     void on_Afficher_Stock_clicked();
+
+    void on_statis_clicked();
+
+    void setButtonIcon();
+
+    void on_historique_clicked();
+
+    void showTime();
 //----------------------------------------AHMED------------------------------------------------
     void on_pushButton_12_clicked();
 
@@ -157,8 +167,6 @@ private slots:
 
     void on_pushButton_39_clicked();
 
-    void on_tableView_7_clicked();
-
 //-------------------------------------------------------------------------------------------------------------------------
 
 
@@ -208,7 +216,7 @@ private slots:
 
     void on_pushButton_43_clicked();
 
-    //void on_rechercher_3_clicked();
+    void on_rechercher_3_clicked();
 
     void on_rechercher_4_clicked();
 
@@ -217,7 +225,7 @@ private slots:
     void on_pushButton_59_clicked();
 
     void on_rechercher_5_clicked();
-
+    void on_tableView_7_clicked();
 
     void on_recher_clicked();
 
@@ -259,12 +267,20 @@ private slots:
 
     void on_nombredechaises_clicked();
 
+
+
+    void on_arduinoM_M_clicked();
+
+    void on_consommer_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
     QMovie *myMoviebg;
     QSystemTrayIcon *mSystemTrayIcon;
     QPropertyAnimation *animation;
+    Arduino A;
+    QByteArray data;
 };
 
 #endif // MAINWINDOW_H

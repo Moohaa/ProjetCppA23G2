@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech
+QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech multimediawidgets
 CONFIG += console stl
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -27,11 +27,15 @@ OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     droitacces.cpp \
     fournisseur.cpp \
     login.cpp \
     main.cpp \
     connection.cpp \
+    notification.cpp \
+    qcustomplot.cpp \
+    statstock.cpp \
     utilisateur.cpp \
     commande.cpp \
     commandefournisseur.cpp \
@@ -47,10 +51,14 @@ SOURCES += \
     transaction.cpp
 
 HEADERS += \
+    arduino.h \
     droitacces.h \
     fournisseur.h \
     connection.h \
     login.h \
+    notification.h \
+    qcustomplot.h \
+    statstock.h \
     utilisateur.h \
     commande.h \
     commandefournisseur.h \
@@ -67,7 +75,8 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui\
-		login.ui
+		login.ui \
+    statstock.ui
 
 RC_ICONS = hat.ico
 

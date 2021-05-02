@@ -60,6 +60,7 @@ Login::Login(QWidget *parent)
             ui->liste_droit->setModel(model);
             ui->liste_droit_3->setModel(model);
 
+     setFixedSize(1296,880);  //fixe la taille de la fenêtre
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
             mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
@@ -88,7 +89,7 @@ Login::Login(QWidget *parent)
            ui->music->setPixmap(pix5);
 
            myMoviebg = new QMovie(this);
-           myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/gif.mp4");
+           myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
 
                   ui->gif->setMovie(myMoviebg);
 

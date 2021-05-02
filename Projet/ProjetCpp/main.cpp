@@ -14,21 +14,23 @@ int main(int argc, char *argv[])
 
     qDebug() << "Projet C++, Application Desktop:";
     qDebug() << "Smart Restaurant";
+
+    QSplashScreen *splash= new QSplashScreen;
+  splash->setPixmap(QPixmap("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png"));
+  splash->show();
+
     Connection c;
     bool test=c.createconnect();
     Login l;
     l.show();
-// MainWindow w;
-//    w.show();
- /*   QSplashScreen *splash= new QSplashScreen;
-    //splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
-    splash->show();
+
 
     QTimer::singleShot(2500,splash,SLOT(close()));
-    QTimer::singleShot(2500,&w,SLOT(show()));
-*/
+    QTimer::singleShot(2500,&l,SLOT(show()));
+
+
     if(test)
-    {//w.show();
+    {
         QMessageBox::information(nullptr, QObject::tr("database is open"),
                     QObject::tr("connection successful.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -40,6 +42,9 @@ int main(int argc, char *argv[])
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
 
-    //delete (splash);
+
+    delete (splash);
     return a.exec();
 }
+
+
