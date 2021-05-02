@@ -127,36 +127,36 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
-            mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
+            mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
 
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix150("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo.png");
-    QPixmap pix1("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
-    QPixmap pix2("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
-    QPixmap pix3("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
-    QPixmap pix4("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32.png");
-    QPixmap pix5("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/stars.png");
-    QPixmap pix6("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/cor.png");
-    QPixmap pix7("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/modi.png");
-    QPixmap pix8("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/mui.png");
-    QPixmap pix9("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48.png");
-    QPixmap pix10("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/casic.png");
-    QPixmap pix11("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/food.png");
-    QPixmap pix12("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/table.png");
-    QPixmap pix13("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/prod.png");
-    QPixmap pix14("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/prov.png");
+    QPixmap pix150("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/koujniti_logo.png");
+    QPixmap pix1("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/stock.png");
+    QPixmap pix3("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/cash.png");
+    QPixmap pix4("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/icons8-face-id-32.png");
+    QPixmap pix5("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/stars.png");
+    QPixmap pix6("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/cor.png");
+    QPixmap pix7("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/modi.png");
+    QPixmap pix8("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/mui.png");
+    QPixmap pix9("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/icons8-search-client-48.png");
+    QPixmap pix10("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/casic.png");
+    QPixmap pix11("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/food.png");
+    QPixmap pix12("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/table.png");
+    QPixmap pix13("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/prod.png");
+    QPixmap pix14("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/prov.png");
 
 
      setFixedSize(1296,880);  //fixe la taille de la fenêtre
 
 
      myMoviebg = new QMovie(this);
-     myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
+     myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/gif.gif");
 
        ui->gif->setMovie(myMoviebg);
 

@@ -63,20 +63,20 @@ Login::Login(QWidget *parent)
      setFixedSize(1296,880);  //fixe la taille de la fenêtre
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
-            mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
+            mSystemTrayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
 
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix150("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo.png");
-           QPixmap pix1("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/calque 0.png");
-           QPixmap pix2("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/man1.png");
-           QPixmap pix3("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/padlock_78356.png");
-           QPixmap pix4("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/add-user-2-256.png");
-           QPixmap pix5("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/mui.png");
+           QPixmap pix150("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/koujniti_logo.png");
+           QPixmap pix1("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/calque 0.png");
+           QPixmap pix2("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/man1.png");
+           QPixmap pix3("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/padlock_78356.png");
+           QPixmap pix4("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/add-user-2-256.png");
+           QPixmap pix5("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/mui.png");
 
            ui->hola->setPixmap(pix1);
            ui->music->setToolTip("Music");
@@ -89,7 +89,7 @@ Login::Login(QWidget *parent)
            ui->music->setPixmap(pix5);
 
            myMoviebg = new QMovie(this);
-           myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
+           myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetCppA23G2/Projet/ProjetCpp/gif.gif");
 
                   ui->gif->setMovie(myMoviebg);
 

@@ -9,7 +9,7 @@
 #include <QTextStream>
 
 stock::stock(){
-    mFilename="C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/historique.txt";
+    mFilename="C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/historique.txt";
 }
 
 

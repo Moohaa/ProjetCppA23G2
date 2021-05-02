@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     qDebug() << "Smart Restaurant";
 
     QSplashScreen *splash= new QSplashScreen;
-  splash->setPixmap(QPixmap("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png"));
+  splash->setPixmap(QPixmap("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/koujinti.png"));
   splash->show();
 
     Connection c;
