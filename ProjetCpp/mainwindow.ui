@@ -412,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -472,7 +472,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -488,7 +488,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
@@ -663,18 +663,18 @@ border-radius:10px;
          <widget class="QTableView" name="tableView_A">
           <property name="geometry">
            <rect>
-            <x>130</x>
-            <y>150</y>
-            <width>651</width>
-            <height>191</height>
+            <x>210</x>
+            <y>160</y>
+            <width>561</width>
+            <height>311</height>
            </rect>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_6">
           <property name="geometry">
            <rect>
-            <x>500</x>
-            <y>390</y>
+            <x>200</x>
+            <y>480</y>
             <width>121</width>
             <height>31</height>
            </rect>
@@ -686,8 +686,8 @@ border-radius:10px;
          <widget class="QLineEdit" name="textDelete_2">
           <property name="geometry">
            <rect>
-            <x>370</x>
-            <y>390</y>
+            <x>70</x>
+            <y>480</y>
             <width>113</width>
             <height>31</height>
            </rect>
@@ -696,8 +696,8 @@ border-radius:10px;
          <widget class="QLabel" name="label_15">
           <property name="geometry">
            <rect>
-            <x>320</x>
-            <y>400</y>
+            <x>20</x>
+            <y>490</y>
             <width>21</width>
             <height>16</height>
            </rect>
@@ -828,14 +828,14 @@ border-radius:10px;
          <widget class="QPushButton" name="Afficher_Produit">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>210</x>
             <y>130</y>
-            <width>80</width>
-            <height>25</height>
+            <width>151</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
-           <string>Afficher</string>
+           <string>Réinitialiser</string>
           </property>
          </widget>
         </widget>
@@ -888,7 +888,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
@@ -1471,13 +1471,32 @@ color : white;</string>
          <widget class="QLineEdit" name="hidden">
           <property name="geometry">
            <rect>
-            <x>820</x>
-            <y>540</y>
+            <x>800</x>
+            <y>310</y>
             <width>91</width>
             <height>31</height>
            </rect>
           </property>
          </widget>
+         <zorder>hidden</zorder>
+         <zorder>pushButton_7</zorder>
+         <zorder>textDelete</zorder>
+         <zorder>label_23</zorder>
+         <zorder>rechercherStock</zorder>
+         <zorder>radioButton</zorder>
+         <zorder>radioButton_2</zorder>
+         <zorder>radioButton_3</zorder>
+         <zorder>rechercherStock_2</zorder>
+         <zorder>TRI_2</zorder>
+         <zorder>Trie</zorder>
+         <zorder>label_102</zorder>
+         <zorder>Afficher_Stock</zorder>
+         <zorder>id_consomme</zorder>
+         <zorder>id_consomme_2</zorder>
+         <zorder>label_134</zorder>
+         <zorder>quantite_consomme</zorder>
+         <zorder>consommer</zorder>
+         <zorder>tableView_B</zorder>
         </widget>
         <widget class="QWidget" name="tab_38">
          <attribute name="title">
@@ -1486,9 +1505,9 @@ color : white;</string>
          <widget class="QTextEdit" name="textBrowser">
           <property name="geometry">
            <rect>
-            <x>200</x>
-            <y>20</y>
-            <width>681</width>
+            <x>30</x>
+            <y>110</y>
+            <width>871</width>
             <height>431</height>
            </rect>
           </property>
@@ -1498,12 +1517,12 @@ color : white;</string>
            <rect>
             <x>10</x>
             <y>20</y>
-            <width>181</width>
+            <width>881</width>
             <height>41</height>
            </rect>
           </property>
           <property name="text">
-           <string>       Historique</string>
+           <string>Afficher L' Historique</string>
           </property>
          </widget>
         </widget>
@@ -1703,14 +1722,14 @@ color : white;</string>
          <widget class="QPushButton" name="arduinoM_M">
           <property name="geometry">
            <rect>
-            <x>320</x>
-            <y>440</y>
-            <width>80</width>
-            <height>25</height>
+            <x>10</x>
+            <y>500</y>
+            <width>301</width>
+            <height>51</height>
            </rect>
           </property>
           <property name="text">
-           <string>arduino</string>
+           <string>activer arduino</string>
           </property>
          </widget>
         </widget>
@@ -1752,13 +1771,13 @@ color : white;</string>
         <property name="geometry">
          <rect>
           <x>700</x>
-          <y>620</y>
-          <width>231</width>
+          <y>610</y>
+          <width>221</width>
           <height>31</height>
          </rect>
         </property>
         <property name="text">
-         <string>Générer Les stock en PDF</string>
+         <string>Rapport Stockage en PDF</string>
         </property>
        </widget>
       </widget>

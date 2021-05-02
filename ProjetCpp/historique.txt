@@ -33,3 +33,11 @@ ven. avr. 30 12:37:56 2021 L'suppresion dans la base de donnees de id = 17 a ete
 ven. avr. 30 13:45:30 2021 L'ajout dans la base de donnees de id = 18 a ete effectuee avec succees
 ven. avr. 30 14:34:34 2021 L'ajout dans la base de donnees de id = 18 a ete effectuee avec succees
 ven. avr. 30 23:15:21 2021 L'ajout dans la base de donnees de id = 20 a ete effectuee avec succees
+dim. mai 2 05:26:40 2021 Alerte Quantite stock est Null celle de l'id = 24563240 a ete effectuee avec succees
+dim. mai 2 05:30:09 2021 Alerte Quantite stock est consomm? de id = 0 a ete effectuee avec succees
+dim. mai 2 05:36:36 2021 Alerte Quantite stock est consomm? de id = 0 a ete effectuee avec succees
+dim. mai 2 06:11:05 2021 La consommation de la quantit? de stock = 20 a ete effectuee avec succees
+dim. mai 2 06:24:30 2021 La consommation de la quantit? de stock = 0 a ete effectuee avec succees
+dim. mai 2 06:26:00 2021 La consommation de la quantit? de stock = 289 a ete effectuee avec succees
+dim. mai 2 06:27:39 2021 La consommation de la quantite de stock de 285 a ete effectuee et sauvegarde avec succees
+dim. mai 2 06:28:54 2021 La consommation de la quantite de stock de 5 a ete effectuee et sauvegarde avec succees

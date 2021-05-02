@@ -810,21 +810,6 @@ void MainWindow::on_historique_clicked()
     //myMovie->stop();
     ui->historique->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
 
-
-    QSqlQuery qry;
-    qry.prepare("select * from STOCKAGE where QUANTITE=0");
-
-   if (qry.exec())
-   {
-
-
-       while(qry.next())
-       {
-           mSystemTrayIcon->showMessage("alerte", "quantite nulle", QSystemTrayIcon::Critical, 10000);
-       mSystemTrayIcon->show();
-       }
-       }
-
 }
 
 
@@ -846,24 +831,14 @@ void MainWindow::on_consommer_clicked()//CONSOMMER UNE QUANTITE
     stock s;
 
        s.setID_STOCK(ui->id_consomme_2->text().toInt());
-<<<<<<< HEAD:Projet/ProjetCpp/mainwindow.cpp
-       //double a= s.getQUANTITE();
+
        double number=(ui->quantite_consomme->text().toDouble());
        double d=(ui->lineEdit_22->text().toDouble());
        d-=number;
  QString stringInt = QString::number(d);
  ui->hidden->hide();
-=======
-       double number=(ui->quantite_consomme->text().toDouble());
-       double a= s.getQUANTITE();
-       double d;
-       d=(a-number);
- QString stringInt = QString::number(d);
- //ui->hidden->hide();
->>>>>>> d3d7cfbbed93489f7b061ac54d17582412d7ae4e:ProjetCpp/mainwindow.cpp
         ui->hidden->setText(stringInt);
 
-       //s.setQUANTITE(d);
                    s.setCATEGORIE_STOCK(ui->comboBox->currentText());
                    s.setTEMPERATURE(ui->spinBox->text().toInt());
                    s.setEMPLACEMENT(ui->comboBox_2->currentText());
@@ -872,7 +847,38 @@ void MainWindow::on_consommer_clicked()//CONSOMMER UNE QUANTITE
                    s.setID_PRODUIT(ui->lineEdit_23->text().toInt());
     s.update_stock();
       ui->tableView_B->setModel(s.afficher_stock());
+      //    mail + historique
+notification no;
+int idS;
+QString textajouter;
+      if (s.getQUANTITE() < 50)
+      {
+          no.stock_manquant();
+     Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771", "smtp.gmail.com", 465);
+
+           smtp->sendMail("mariem.nacib@esprit.tn", "mariem.nacib@esprit.tn" , "STOCK LIMITE","vous n'avez plus de stock c'est moin de 50 produits");
+           QMessageBox::information(nullptr,QObject::tr("Consommation abuse"),QObject::tr("Le stock est moins de 50! "),  QMessageBox::Cancel);
+      }
+
+      QSqlQuery qry;
+      qry.prepare("select * from STOCKAGE");
+
+     if (qry.exec())
+     {
+
+
+         while(qry.next())
+         {
+             idS = qry.value(1).toInt();
+             //mSystemTrayIcon->showMessage("alerte", "quantite nulle", QSystemTrayIcon::Critical, 10000);
+         //mSystemTrayIcon->show();
+         }
+         textajouter="La consommation de la quantite de stock de "+QString::number(number)+" produits a ete effectuee et sauvegarde avec succees";
+         s.write(textajouter);
+         }
 }
+
+
 
 //--------------------------------------------~MUSIC_PLAY~-------------------------------------------------------
 
@@ -2247,6 +2253,11 @@ else
       qDebug () << data;
     data="";
 }
+QSystemTrayIcon *trayIcon = new QSystemTrayIcon(this);
+               trayIcon->show();
+               trayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
+               trayIcon->showMessage("Alerte Température Elevee", "Le ventilateur est Activé automatiquement !");
+               trayIcon->setVisible(true);
 }
 
 
