@@ -3434,7 +3434,7 @@ border-radius:10px;
             <height>291</height>
            </rect>
           </property>
-          <property name="text">
+          <property name="text" stdset="0">
            <string>Libellé</string>
           </property>
          </widget>
@@ -3716,7 +3716,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -4169,7 +4169,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab_32">
          <attribute name="title">
@@ -4685,6 +4685,24 @@ color : white;</string>
           </layout>
          </widget>
         </widget>
+        <widget class="QWidget" name="tab_31">
+         <attribute name="title">
+          <string>Facture</string>
+         </attribute>
+         <widget class="QPushButton" name="pdf_f">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>30</y>
+            <width>201</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generation Des Factures(PDF)</string>
+          </property>
+         </widget>
+        </widget>
        </widget>
        <widget class="QLabel" name="label_114">
         <property name="geometry">
@@ -4734,7 +4752,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_36">
          <attribute name="title">
@@ -5167,7 +5185,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_8">
        <attribute name="title">
@@ -5840,8 +5858,8 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_59">
           <property name="geometry">
            <rect>
-            <x>40</x>
-            <y>360</y>
+            <x>460</x>
+            <y>110</y>
             <width>151</width>
             <height>21</height>
            </rect>
