@@ -590,7 +590,7 @@ idS =qry.value(0).toInt();
         }
     }
         //qDebug () << value;
-    textajouter="L'suppresion dans la base de donnees de id = "+QString::number(idS)+" a ete effectuee avec succees";
+    textajouter="L'suppresion dans la base de donnees de id = "+QString::number(s.getID_STOCK())+" a ete effectuee avec succees";
      s.write(textajouter);
     }
       else
@@ -658,6 +658,47 @@ void MainWindow::on_pushButton_5_clicked()//modifier Stock
            //ui->calendarWidget->setSelectedDate("");
            ui->lineEdit_22->setText("");
            ui->lineEdit_23->setText("");
+
+           QString textajouter;
+
+       if ( s.getCATEGORIE_STOCK() =="" || s.getQUANTITE() == 0 || s.getID_STOCK() ==0 )
+       {
+           qDebug () <<"problem d ajout dans le base ";
+                 QMessageBox::critical(this,"Enregister","les valeurs sont null");
+       }
+       else
+       {
+
+               QSqlQuery qry;
+               qry.prepare("select * from STOCKAGE");
+               int idS;
+               if (qry.exec())
+               {
+                   while (qry.next())
+                   {
+                       idS =qry.value(0).toInt();
+                   }
+               }
+
+               textajouter="La modification dans la base de donnees de id = "+QString::number(s.getID_STOCK())+" a ete effectuee avec succees";
+               s.write(textajouter);
+              }
+       if (s.getQUANTITE() > 500)
+       {
+
+       Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771", "smtp.gmail.com", 465);
+
+            smtp->sendMail("mariem.nacib@esprit.tn", "mahmoud.cheikh@esprit.tn", "STOCK LIMITE", "vous ne pouvez pas stocker plus de 500 produits dans la catégorie '"+s.getCATEGORIE_STOCK()+"'");
+             QMessageBox::information(this,"message envoyee", "stock saturé verifier votre mail");//fonctionne
+       }
+       if (s.getQUANTITE() < 50)
+       {
+
+      Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771", "smtp.gmail.com", 465);
+
+            smtp->sendMail("mariem.nacib@esprit.tn", "mahmoud.cheikh@esprit.tn" , "STOCK LIMITE","vous n'avez plus de stock c'est moin de 50 produits dans la catégorie '"+s.getCATEGORIE_STOCK()+"'");
+             QMessageBox::information(this,"message envoyee", "stock manquant verifier votre mail");/// fonctionne
+       }
 
 }
 
@@ -2255,7 +2296,7 @@ else
 }
 QSystemTrayIcon *trayIcon = new QSystemTrayIcon(this);
                trayIcon->show();
-               trayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
+               trayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/hat.png"));
                trayIcon->showMessage("Alerte Température Elevee", "Le ventilateur est Activé automatiquement !");
                trayIcon->setVisible(true);
 }
