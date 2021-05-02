@@ -507,7 +507,7 @@ notification no;
         no.stock_exces();
     Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771", "smtp.gmail.com", 465);
 
-         smtp->sendMail("mariem.nacib@esprit.tn", "mahmoud.cheikh@esprit.tn", "STOCK LIMITE", "vous ne pouvez pas stocker plus de 500 produits");
+         smtp->sendMail("mariem.nacib@esprit.tn", "mahmoud.cheikh@esprit.tn", "STOCK LIMITE", "vous ne pouvez pas stocker plus de 500 produits dans la catégorie '"+s.getCATEGORIE_STOCK()+"'");
           QMessageBox::information(this,"message envoyee", "stock saturé verifier votre mail");//fonctionne
     }
     if (s.getQUANTITE() < 50)
@@ -515,7 +515,7 @@ notification no;
         no.stock_manquant();
    Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771", "smtp.gmail.com", 465);
 
-         smtp->sendMail("mariem.nacib@esprit.tn", "mahmoud.cheikh@esprit.tn" , "STOCK LIMITE","vous n'avez plus de stock c'est moin de 50 produits");
+         smtp->sendMail("mariem.nacib@esprit.tn", "mahmoud.cheikh@esprit.tn" , "STOCK LIMITE","vous n'avez plus de stock c'est moin de 50 produits dans la catégorie '"+s.getCATEGORIE_STOCK()+"'");
           QMessageBox::information(this,"message envoyee", "stock manquant verifier votre mail");/// fonctionne
     }
 
@@ -856,7 +856,7 @@ QString textajouter;
           no.stock_manquant();
      Smtp* smtp = new Smtp("mariem.nacib@esprit.tn", "191JFT2771", "smtp.gmail.com", 465);
 
-           smtp->sendMail("mariem.nacib@esprit.tn", "mariem.nacib@esprit.tn" , "STOCK LIMITE","vous n'avez plus de stock c'est moin de 50 produits");
+           smtp->sendMail("mariem.nacib@esprit.tn", "mariem.nacib@esprit.tn" , "STOCK LIMITE","vous n'avez plus de stock c'est moin de 50 produits dans la categorie '"+s.getCATEGORIE_STOCK()+"'");
            QMessageBox::information(nullptr,QObject::tr("Consommation abuse"),QObject::tr("Le stock est moins de 50! "),  QMessageBox::Cancel);
       }
 
