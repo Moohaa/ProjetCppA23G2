@@ -1,4 +1,6 @@
-/*#include "stat.h"
+#include "statfadwa.h"
+#include "ui_statfadwa.h"
+#include "stat.h"
 #include <QVector>
 #include<QObject>
 #include<QtWidgets>
@@ -7,19 +9,21 @@
 //#include"ui_dialog.h"
 #include<iostream>
 
-stati::stati(QWidget *parent) :
+statfadwa::statfadwa(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::stati)
+    ui(new Ui::statfadwa)
 {
     ui->setupUi(this);
 }
 
-stati::~stati()
+statfadwa::~statfadwa()
 {
     delete ui;
 }
 
-int stati::Statistique_partie2()
+
+
+int statfadwa::Statistique_partie2()
 {
     QSqlQuery query;
     int count=0 ;
@@ -34,7 +38,7 @@ return count ;
 
 
 }
-int stati::Statistique_partie3()
+int statfadwa::Statistique_partie3()
 {
     QSqlQuery query;
     int count=0 ;
@@ -49,7 +53,7 @@ return count ;
 
 
 }
-int stati::Statistique_partie4()
+int statfadwa::Statistique_partie4()
 {
     QSqlQuery query;
     int count=0 ;
@@ -61,7 +65,7 @@ int stati::Statistique_partie4()
 
 return count ;
 }
-int stati::Statistique_partie5()
+int statfadwa::Statistique_partie5()
 {
     QSqlQuery query;
     int count=0 ;
@@ -73,7 +77,7 @@ int stati::Statistique_partie5()
 
 return count ;
 }
-void stati::paintEvent(QPaintEvent *)
+void statfadwa::paintEvent(QPaintEvent *)
 {
 
     int b=Statistique_partie2();
@@ -128,8 +132,7 @@ void stati::paintEvent(QPaintEvent *)
 
 }
 
-void stati::on_pushButton_clicked()
+void statfadwa::on_pushButton_clicked()
 {
     hide();
 }
-*/

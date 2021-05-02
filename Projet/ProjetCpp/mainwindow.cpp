@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QLineEdit>
+#include "statfadwa.h"
 
 #include "produit.h"
 #include "stock.h"
@@ -115,8 +116,8 @@ MainWindow::MainWindow(QWidget *parent) :
 //-----------------------------------------------------------------------------------------------
 
     //ui->setupUi(this);
-     ui->lineEdit_28->setValidator(new QIntValidator(0,99999999,this));
-      ui->lineEdit_33->setValidator(new QIntValidator(0,99999999,this));
+     ui->lineEdit_28F->setValidator(new QIntValidator(0,99999999,this));
+      ui->lineEdit_33F->setValidator(new QIntValidator(0,99999999,this));
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
             mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/hat"));
@@ -677,15 +678,6 @@ void MainWindow::on_TRI_2_clicked()//tri stock
                }
 
 }
-
-
-
-void MainWindow::on_pushButton_43_clicked()//Afficher Stock
-{
-    stock s;
-        ui->tableView_B->setModel(s.afficher_stock());
-}
-
 
 void MainWindow::on_rechercherStock_clicked()//recherche stock
 {
@@ -1813,7 +1805,7 @@ void MainWindow::on_tableView_7F_clicked(const QModelIndex &index)//recuperer do
              ui->comboBox_9F->setCurrentText(ui->tableView_7F->model()->index(row,3).data().toString());
             ui->lineEdit_30F->setText(ui->tableView_7F->model()->index(row,4).data().toString());
 
-           ui->lineEdit_31->setText("");
+           ui->lineEdit_31F->setText("");
 
 }
 
@@ -1821,14 +1813,14 @@ void MainWindow::on_buttonStock_clicked()//ACtualiser
 {
 
     Commande c;
-        ui->tableView_8->setModel(c.afficher());
+        ui->tableView_8F->setModel(c.afficher());
 
 }
 
 void MainWindow::on_pushButton_441_clicked()//actualiser
 {
     Table t;
-            ui->tableView_7->setModel(t.afficher());
+            ui->tableView_7F->setModel(t.afficher());
 }
 
 void MainWindow::on_recher_clicked()//rechercher commande par id
@@ -1997,8 +1989,7 @@ void MainWindow::on_sendBtn_2F_clicked()
 
 void MainWindow::on_STATF_clicked()
 {
-    stati s;
-
+    statfadwa s;
     s.exec();
 }
 //--------------------MAHMOUD-----------------------------
@@ -2052,14 +2043,7 @@ void MainWindow::updateFournisseursTabsCombos(){
         ui->OF_UPDATE_COMBO_2->setModel(modelOFF);
         ui->OF_DELETE_COMBO_2->setModel(modelOFF);
 
-    if(status == "Message sent")
-       QMessageBox::warning( nullptr, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
 
-    ui->rcpt_2F->clear();
-    ui->subject_2F->clear();
-    //ui->fileF->clear();
-    ui->msg_2F->clear();
-    ui->paswd_2F->clear();
 }
 
 //----Ajouter Fournisseur
@@ -2355,7 +2339,7 @@ void MainWindow::on_pushButton_exc_clicked()
                 }
 }
 /*__________________________________________ arduino fedi_fadwa_______________________________________*/
-
+/*
 void MainWindow::update_label()// input arduino/Qt
 {
     data=A.read_from_arduino();
@@ -2375,7 +2359,7 @@ void MainWindow::update_label()// input arduino/Qt
 }
 
 
-
+*/
 void MainWindow::on_AllumeLED1_clicked()
 {
     A.write_to_arduino("1");

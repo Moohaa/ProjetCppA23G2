@@ -259,7 +259,7 @@ private slots:
 
     void updateFournisseursTabsCombos();
 
-   // void on_STATF_clicked();
+    void on_STATF_clicked();
 
     void on_buttonStock_clicked();
 
@@ -294,7 +294,6 @@ private slots:
     void on_excelbutton_clicked();
 
     void on_pushButton_exc_clicked();
-     void update_label();
 
 
 

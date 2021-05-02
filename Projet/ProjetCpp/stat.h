@@ -1,9 +1,10 @@
-#ifndef STAT_H
+/*#ifndef STAT_H
 #define STAT_H
 #include <QDialog>
 #include <QPainter>
 #include <QSqlQuery>
 #include <QDialog>
+
 #include "connection.h"
 using namespace std;
 
@@ -38,3 +39,4 @@ private:
 
 
 #endif // STAT_H
+*/

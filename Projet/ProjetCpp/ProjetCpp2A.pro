@@ -6,8 +6,6 @@
 
 QT       += core gui sql multimedia widgets serialport charts printsupport network texttospeech multimediawidgets
 CONFIG += console stl
-  PRECOMPILED_HEADER = "includes.h"
-    CONFIG += precompile_header
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -35,6 +33,7 @@ SOURCES += \
     login.cpp \
     main.cpp \
     connection.cpp \
+    statfadwa.cpp \
     utilisateur.cpp \
     commande.cpp \
     commandefournisseur.cpp \
@@ -60,8 +59,8 @@ HEADERS += \
     droitacces.h \
     fournisseur.h \
     connection.h \
-    includes.h \
     login.h \
+    statfadwa.h \
     utilisateur.h \
     commande.h \
     commandefournisseur.h \
@@ -80,7 +79,9 @@ HEADERS += \
 FORMS += \
         mainwindow.ui\
         login.ui \
-    statevaluation.ui
+    statevaluation.ui \
+    stat.ui \
+    statfadwa.ui
 
 RC_ICONS = hat.ico
 
