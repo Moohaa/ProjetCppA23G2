@@ -15,6 +15,7 @@
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
 #include "connection.h"
+#include "statevaluation.h"
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QPushButton>
@@ -69,6 +70,7 @@
 #include <QPropertyAnimation>
 #include <QVideoWidget>
 #include <QMediaPlaylist>
+#include "arduino.h"
 
 using namespace std;
 
@@ -79,7 +81,26 @@ MainWindow::MainWindow(QWidget *parent) :
 
 {
 
-    ui->setupUi(this);
+    //-----------------------------------------------------Config ARDUNIO-----------------------------------------------------
+
+
+        ui->setupUi(this);
+        int ret=A.connect_arduino(); // lancer la connexion à arduino
+        switch(ret){
+        case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+            break;
+        case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+           break;
+        case(-1):qDebug() << "arduino is not available";
+        }
+         QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+         //le slot update_label suite à la reception du signal readyRead (reception des données).
+
+
+
+//-----------------------------------------------------------------------------------------------
+
+    //ui->setupUi(this);
      ui->lineEdit_28->setValidator(new QIntValidator(0,99999999,this));
       ui->lineEdit_33->setValidator(new QIntValidator(0,99999999,this));
 
@@ -162,6 +183,9 @@ updateFournisseursTabsCombos();
     connect(ui->sendBtn_2, SIGNAL(clicked()),this, SLOT(sendMail2()));
     connect(ui->exitBtn_2, SIGNAL(clicked()),this, SLOT(close2()));
 
+    connect(ui->sendBtn_2F_2, SIGNAL(clicked()),this, SLOT(sendMail4()));
+    connect(ui->exitBtn_2F_2, SIGNAL(clicked()),this, SLOT(close4()));
+
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
     //ui->tableView_A->setModel(test.tri(ui->tableView_A->currentIndex().column()));
@@ -188,6 +212,27 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//-----------------------------------------ARDUNIO----------------------------------------------------------------
+
+void MainWindow::update_label()
+    {
+
+
+    data=A.read_from_arduino();
+
+
+if (datastring.length()<37)
+{
+    datastring+= QString::fromStdString(data.toStdString());
+    datastring.split(",");
+}
+else
+{
+      qDebug () << datastring;
+    datastring="";
+}
+
+    }
 //---------------------------------------------------~MENU PRINCIPALE~----------------------------------------------------
 
 void MainWindow::on_pushButton_2_clicked()
@@ -210,6 +255,7 @@ void MainWindow::on_pushButton_11_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
+
 
 //--------------------------------~PRODUIT~----------------------------------------------
 
@@ -646,6 +692,9 @@ void MainWindow::on_rechercherStock_clicked()//recherche stock
          s.rechercher_cr3(table,text1);
          }
 }
+
+
+
 void MainWindow::on_PDF_STOCK_clicked()//PDF STOCK
 {
     QString str;
@@ -740,24 +789,33 @@ void MainWindow::on_pushButton_12_clicked()//Ajouter Transaction
 
 void MainWindow::on_pushButton_14_clicked()//Supprimer Transaction
 {
-    Transaction Transaction(ui->textDelete_3->text().toUInt());
-    bool test= Transaction.supprimer();
+    //Transaction Transaction(ui->textDelete_3->text().toUInt());
+    //bool test= Transaction.supprimer();
+    Transaction t;
+    QMessageBox msgBox;
+        t.setID_FACTURE(ui->textDelete_3->text().toInt());
 
+        if(t.check()==0)
+    {
 
-    ui->tableView_2->setModel(Transaction.afficher());
+        bool test = t.supprimer(t.getID_FACTURE());
 
+        if(test)
+           {msgBox.setText("supression avec succés");
+               ui->tableView_2->setModel(t.afficher());
+              }}
+        else
+          msgBox.setText("n'existe pas");
+      msgBox.exec();
 
-    if(test){
-        QMessageBox::information(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
-    else if(test!=Transaction.supprimer())
-        QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
-}
+  }
+
 
 
 void MainWindow::on_pushButton_13_clicked() // ModifierTransaction
 {
 
-    Transaction t;
+  /*  Transaction t;
 
       t.setID_FACTURE(ui->textEdit_2->text().toInt());
       t.setNOM_CLIENT(ui->lineEdit_3->text());
@@ -777,6 +835,35 @@ void MainWindow::on_pushButton_13_clicked() // ModifierTransaction
       else
 
           QMessageBox::critical(nullptr,QObject::tr("Modifier  Facture"),QObject::tr("Modfication non effectuée"),  QMessageBox::Cancel);
+*/
+
+    Transaction t;
+
+
+
+           t.setID_FACTURE(ui->textEdit_2->text().toInt());
+                  if(t.check()==0)
+        {             t.setID_FACTURE(ui->textEdit_2->text().toInt());
+                      t.setNOM_CLIENT(ui->lineEdit_3->text());
+                      t.setNUM_CLIENT(ui->lineEdit_4->text());
+                      t.setADRESSE_CLIENT(ui->comboBox_4->currentText());
+                      t.setDATE_HEURE(ui->dateTimeEdit_2->date());
+                      t.setPRIX(ui->lineEdit_5->text().toInt());
+                      t.setID_UTILISATEUR(ui->lineEdit_7->text().toInt());
+       t.update();
+         ui->tableView_2->setModel(t.afficher());
+       QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
+                  else {   QMessageBox::information(nullptr,QObject::tr("erreur"),QObject::tr("impossible de modifier Un Id qui n'exist pas "),  QMessageBox::Cancel); }
+
+
+              ui->textEdit_2->setText("");
+               ui->lineEdit_3->setText("");
+               ui->lineEdit_4->setText("");
+               ui->comboBox_4->setCurrentText("");
+                //ui->dateTimeEdit_2->setDate("");
+                ui->lineEdit_5->setText("");
+                 ui->lineEdit_7->setText("");
+
 }
 
 void MainWindow::on_pushButton_40_clicked()// trier Transaction
@@ -820,8 +907,10 @@ void MainWindow::on_rechercher_clicked()//Rechercher Transaction
               t.recherche1(table,findText.toUInt());
 
 
+
   }
-  }
+}
+
 
 void MainWindow::on_pushButton_41_clicked() //Afficher Les Factures
 {
@@ -873,7 +962,10 @@ void MainWindow::on_rechercher_4_clicked() // Recherche Par Region
 void MainWindow::on_pushButton_42_clicked() // PDF
  {
     QString str;
-                 str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
+
+                 str.append("<html><head></head><body>"
+                            "<center><img src=\"C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
+                            "<center>"+QString("Les Factures Du Jour"));
                  str.append("<table border=1><tr>") ;
                  str.append("<td>"+QString("ID_FACTURE")+"</td>") ;
                  str.append("<td>"+QString("NOM_CLIENT")+"</td>") ;
@@ -881,7 +973,7 @@ void MainWindow::on_pushButton_42_clicked() // PDF
                  str.append("<td>"+QString("ADRESSE_CLIENT")+"</td>") ;
                  str.append("<td>"+QString("DATE_HEURE")+"</td>") ;
                  str.append("<td>"+QString("PRIX")+"</td>") ;
-                 str.append("<td>"+QString("ID_UTLISATEUR")+"</td>") ;
+
 
 
 
@@ -904,8 +996,7 @@ void MainWindow::on_pushButton_42_clicked() // PDF
                  str.append("</td><td>") ;
                  str.append(query->value(5).toString());
                  str.append("</td></td>");
-                 str.append(query->value(6).toString());
-                 str.append("</td></td>");
+
 
 
                  }
@@ -925,6 +1016,8 @@ void MainWindow::on_pushButton_42_clicked() // PDF
               doc.setHtml(str) ;
               doc.print(&printer);
 }
+
+
 //-----------------------------------~Evaluation~--------------------------------------
 void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
 {
@@ -946,24 +1039,44 @@ void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
 
 void MainWindow::on_pushButton_18_clicked()//Supprimer Evaluation
 {
-    Evaluation e(ui->textDelete_4->text().toUInt());
-    bool test = e.supprimer();
+    Evaluation e;
+    QMessageBox msgBox;
+        e.setID_NOTE(ui->textDelete_4->text().toInt());
 
-    ui->tableView->setModel(e.afficher());
+        if(e.check()==0)
+    {
+
+        bool test = e.supprimer(e.getID_NOTE());
+
+        if(test)
+           {msgBox.setText("supression avec succés");
+               ui->tableView->setModel(e.afficher());
+              }}
+        else
+          msgBox.setText("n'existe pas");
+      msgBox.exec();
 
 
-    if(test){
+    //Evaluation e(ui->textDelete_4->text().toUInt());
+    //bool test = e.supprimer();
+
+    //ui->tableView->setModel(e.afficher());
+
+
+   /* if(test){
         QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);}
     else
 
         QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);}
 
+*/
+}
 
 
 void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
 {
 
-    Evaluation e;
+   /* Evaluation e;
 
       e.setID_NOTE(ui->textEdit_4->text().toInt());
       e.setNOM_CLIENT(ui->lineEdit_8->text());
@@ -982,8 +1095,32 @@ void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
       else
           QMessageBox::critical(nullptr,QObject::tr("Modifier Eva"),QObject::tr("Modification non effectuée"),  QMessageBox::Cancel);
 }
+*/
 
 
+    Evaluation e;
+
+
+
+           e.setID_NOTE(ui->textEdit_4->text().toInt());
+                  if(e.check()==0)
+        {
+                      e.setNOM_CLIENT(ui->lineEdit_8->text());
+                      e.setNOTE_CLIENT(ui->comboBox_5->currentText().toUInt());
+                      e.setREMARQUE_CLIENT(ui->comboBox_6->currentText());
+                      e.setID_FACTURE(ui->lineEdit_9->text().toInt());
+       e.update();
+         ui->tableView->setModel(e.afficher());
+       QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
+                  else {   QMessageBox::information(nullptr,QObject::tr("erreur"),QObject::tr("impossible de modifier Un Id qui n'exist pas "),  QMessageBox::Cancel); }
+
+
+              ui->lineEdit_8->setText("");
+               ui->comboBox_5->setCurrentText("");
+               ui->comboBox_6->setCurrentText("");
+               ui->lineEdit_9->setText("");
+
+}
 
 void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation Par Button
 {
@@ -1008,6 +1145,7 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation Par Button
 
                 }
 
+
                  if(ui->radioButton_5->isChecked()==true)
                 {
                     text=ui->lineEdit_10->text();
@@ -1015,14 +1153,21 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation Par Button
 
                          {
 
+
                              ui->tableView->setModel(e.afficher());
 
+
+
+
                          }
+
 
                          else
 
                          {
                              ui->tableView->setModel(e.rechercher2(text));
+
+
 
                          }
 
@@ -1041,7 +1186,13 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation Par Button
                           else
 
                           {
+
                               ui->tableView->setModel(e.rechercher3(text));
+
+
+
+
+
 
                           }
         }
@@ -1083,6 +1234,72 @@ void MainWindow::on_pushButton_57_clicked()
     Evaluation e;
         ui->tableView->setModel(e.afficher());
 }
+
+void   MainWindow::sendMail4()
+{
+
+    Smtp* smtp = new Smtp("ahmedelmoez.noomen@esprit.tn","SolidOldSnake990", "smtp.gmail.com");
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+        smtp->sendMail("mariem.nacib@esprit.tn", ui->rcpt_2F_2->text() , ui->subject_2F_2->text(),ui->msg_2F_2->toPlainText());
+}
+
+void   MainWindow::mailSent4(QString)
+{
+    ui->rcpt_2F_2->clear();
+    ui->subject_2F_2->clear();
+    ui->msg_2F_2->clear();
+    ui->paswd_2F_2->clear();
+}
+
+
+
+void MainWindow::on_state_eva_clicked()
+{
+    statevaluation *e = new statevaluation();
+    e->show();
+}
+
+
+void MainWindow::on_excelbutton_clicked()
+{
+    QTableView *e;
+                e = ui->tableView;
+
+                QString filters("CSV files (.csv);;All files (.*)");
+                QString defaultFilter("CSV files (*.csv)");
+                QString fileName = QFileDialog::getSaveFileName(0, "Save file", QCoreApplication::applicationDirPath(),
+                                   filters, &defaultFilter);
+                QFile file(fileName);
+
+                QAbstractItemModel *model =  e->model();
+                if (file.open(QFile::WriteOnly | QFile::Truncate)) {
+                    QTextStream data(&file);
+                    QStringList strList;
+                    for (int i = 1; i < model->columnCount(); i++) {
+                        if (model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString().length() > 0)
+                            strList.append("\"" + model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString() + "\"");
+                        else
+                            strList.append("");
+                    }
+                    data << strList.join(";") << "\n";
+                    for (int i = 0; i < model->rowCount(); i++) {
+                        strList.clear();
+                        for (int j = 0; j < model->columnCount(); j++) {
+
+                            if (model->data(model->index(i, j)).toString().length() > 0)
+                                strList.append("\"" + model->data(model->index(i, j)).toString() + "\"");
+                            else
+                                strList.append("");
+                        }
+                        data << strList.join(";") + "\n";
+                    }
+                    file.close();
+                    QMessageBox::information(nullptr, QObject::tr("Export excel"),
+                                              QObject::tr("Export avec succes .\n"
+                                                          "Click OK to exit."), QMessageBox::Ok);
+                }
+}
+
 
 //-----------------------------------------AZIZ------------------------------------------------
 void MainWindow::on_pushButton_21_clicked()//ajouter plat
@@ -1706,6 +1923,127 @@ Table t;
          ui->find->setText("");
 }
 
+void MainWindow::on_buttonStock_clicked()//ACtualiser
+{
+
+    Commande c;
+        ui->tableView_8->setModel(c.afficher());
+
+}
+
+void MainWindow::on_pushButton_441_clicked()//actualiser
+{
+    Table t;
+            ui->tableView_7->setModel(t.afficher());
+}
+
+void MainWindow::on_recher_clicked()//rechercher commande par id
+{
+    QString ID_COMMANDE;
+QString find = ui->lineEdit_31->text();
+
+Commande c;
+
+    QTableView* table=ui->tableView_8;
+    c.setID_COMMANDE(ui->lineEdit_31->text().toInt());
+        if (c.check()==0) {
+            ID_COMMANDE= find;
+              c.recherche(table,ID_COMMANDE.toInt());}
+        else{
+           QMessageBox::critical (this, "Error", "Cette commande n'existe pas!");
+            }
+
+               ui->lineEdit_31->setText("");
+}
+
+void MainWindow::on_idDeCommande_clicked()//trier commande par id
+{
+  Commande c;
+    QTableView* table=ui->tableView_8;
+    c.tri_ID(table);
+}
+
+void MainWindow::on_libelle_clicked()//trier commande par libelle
+{
+    Commande c;
+      QTableView* table=ui->tableView_8;
+      c.tri_LIBELLE(table);
+}
+
+void MainWindow::on_tableView_8_clicked()//recupereer donnee commande
+{
+    int row =ui->tableView_8->selectionModel()->currentIndex().row();
+        //ui->stackedWidget->setCurrentIndex(2);
+        ui->lineEdit_33->setText(ui->tableView_8->model()->index(row,0).data().toString());
+        ui->lineEdit_38->setText(ui->tableView_8->model()->index(row,1).data().toString());
+        ui->lineEdit_37->setText(ui->tableView_8->model()->index(row,2).data().toString());
+         ui->lineEdit_36->setText(ui->tableView_8->model()->index(row,3).data().toString());
+        ui->lineEdit_35->setText(ui->tableView_8->model()->index(row,4).data().toString());
+          ui->lineEdit_34->setText(ui->tableView_8->model()->index(row,5).data().toString());
+}
+
+void MainWindow::on_nombredechaises_clicked()//recherche table par nbr chaises
+{
+    QString NB_CHAISES;
+    QString find =ui->find->text();
+Table t;
+    QTableView* table=ui->tableView_7;
+      t.setNB_CHAISES(ui->find->text().toInt());
+    if (t.check1()==0) {
+        /*QMessageBox::information(this, tr("Empty Field"),
+            tr("Entr//."));
+        ui->tableView_7->setModel(t.afficher());
+        return;*/
+
+      NB_CHAISES = find;
+        t.rechercheC(table,NB_CHAISES.toInt());}
+           else {QMessageBox::critical (this, "Error", "Ce nombre de chaises n'existe pas !");}
+
+          ui->find->setText("");
+}
+
+void MainWindow::on_recher_2_clicked()
+{
+    QString LIBELLE;
+QString find = ui->lineEdit_31->text();
+
+Commande c;
+QTableView* table=ui->tableView_8;
+c.setLIBELLE(ui->lineEdit_31->text());
+    if (c.checkL()==0) {
+       LIBELLE= find;
+          c.rechercheL(table,LIBELLE);}
+    else{
+       QMessageBox::critical (this, "Error", "Cette commande n'existe pas!");
+        }
+
+           ui->lineEdit_31->setText("");
+
+}
+
+
+void MainWindow::on_pushButton_DB_clicked()
+{
+
+    QString DEBARRASSAGE;
+    QString find =ui->find->text();
+Table t;
+    QTableView* table=ui->tableView_7;
+    t.setDEBARRASSAGE(ui->find->text().toInt());
+
+    if (find.isEmpty()) {
+        QMessageBox::information(this, tr("Empty Field"),
+            tr("Entr//."));
+        ui->tableView_8->setModel(t.afficher());
+        return;}
+        else{
+           DEBARRASSAGE = find;
+            t.rechercheD(table,DEBARRASSAGE.toInt());
+             }
+
+         ui->find->setText("");
+}
+
 void MainWindow::on_pushButton_deb1_clicked()
 {
     Table t;
@@ -2117,4 +2455,3 @@ void MainWindow::on_CF_Act_clicked()
 {
      updateFournisseursTabsCombos();
 }
-

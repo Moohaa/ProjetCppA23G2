@@ -9,6 +9,7 @@
 #include <QSystemTrayIcon>
 #include "smtp.h"
 #include <QPropertyAnimation>
+#include "arduino.h"
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +28,9 @@ private slots:
     void mailSent(QString);
     void sendMail2();
     void mailSent2(QString);
+
+    void sendMail4();
+    void mailSent4(QString);
 //----------------------------------------MENU---------------------------------------------------
     void on_pushButton_2_clicked();
 
@@ -267,7 +271,22 @@ private slots:
     void on_actOF_clicked();
 
     void on_CF_Act_clicked();
+//----------------------------------------------------------ARDUNIO------------------------------------------------
 
+
+    void update_label();   // slot permettant la mise à jour du label état de la lampe 1,
+    // ce slot est lancé à chaque réception d'un message de Arduino
+
+
+    //void on_pushButton_60_clicked();
+
+
+
+    void on_state_eva_clicked();
+
+    void on_pushButton_15_clicked();
+
+    void on_excelbutton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -275,6 +294,9 @@ private:
     QMovie *myMoviebg;
     QSystemTrayIcon *mSystemTrayIcon;
     QPropertyAnimation *animation;
+    QByteArray data; // variable contenant les données reçues
+    Arduino A; // objet temporaire
+    QString datastring;
 };
 
 #endif // MAINWINDOW_H

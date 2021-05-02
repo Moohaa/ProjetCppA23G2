@@ -215,7 +215,6 @@ QVBoxLayout *OffreFournisseur::stat()
     mainLayout->addWidget(chartView);
     return mainLayout;
 }
-
 QSortFilterProxyModel *OffreFournisseur::searchProduit(int produit)
 {
     QSqlQueryModel *model = new QSqlQueryModel();
