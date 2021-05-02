@@ -19,6 +19,8 @@ public:
     explicit stati(QWidget *parent = nullptr);
        int Statistique_partie2() ;
        int Statistique_partie3() ;
+      int  Statistique_partie4();
+      int  Statistique_partie5();
 
 
      void paintEvent(QPaintEvent *) ;

@@ -9,6 +9,8 @@
 #include <QSystemTrayIcon>
 #include "smtp.h"
 #include <QPropertyAnimation>
+#include <QTableView>
+#include "transactionmain.h"
 #include "arduino.h"
 
 namespace Ui {
@@ -145,27 +147,31 @@ private slots:
     void on_tableView_8_clicked();
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
-    void on_pushButton_31_clicked();
+    void on_pushButton_fadwa1_clicked();
 
-    void on_pushButton_32_clicked();
+    void on_pushButton_fadwa2_clicked();
 
-    void on_pushButton_33_clicked();
+    void on_pushButton_fadwa3_clicked();
 
-    void on_pushButton_34_clicked();
+    void on_pushButton_fadwa4_clicked();
 
-    void on_pushButton_35_clicked();
+    void on_pushButton_fadwa5_clicked();
 
-    void on_pushButton_36_clicked();
+    void on_pushButton_fadwa6_clicked();
 
     void on_pushButton_37_clicked();
 
-    void on_pushButton_38_clicked();
 
-    void on_pushButton_39_clicked();
+    void on_pushButton_fadwa7_clicked();
+
+    void on_pushButton_fadwa8_clicked();
+
+    void on_pushButton_fadwa9_clicked();
 
     void on_tableView_7_clicked();
 
 //-------------------------------------------------------------------------------------------------------------------------
+    void on_tableView_7F_clicked(const QModelIndex &index);
 
 
     void on_F_ADD_clicked();
@@ -175,6 +181,13 @@ private slots:
     void on_pushButton_44_clicked();
 
     void on_CF_ADD_clicked();
+    void on_pushButton_fadwa40_clicked();
+
+    void on_pushButton_fadwa41_clicked();
+
+    void on_tableView_8F_clicked(const QModelIndex &index);
+
+    void on_pushButton_fadwa42_clicked();
 
     void on_pushButton_46_clicked();
 
@@ -212,7 +225,7 @@ private slots:
 
     void on_pushButton_42_clicked();
 
-    void on_pushButton_43_clicked();
+    void on_pushButton_fadwa43_clicked();
 
     void on_rechercher_3_clicked();
 
@@ -229,6 +242,7 @@ private slots:
 
 
     //void on_tableView_8_clicked(const QModelIndex &index);
+    void on_pushButton_fadwa44_clicked();
 
 
     void on_recher_2_clicked();
@@ -241,15 +255,7 @@ private slots:
 
     void on_pushButton_ntab_clicked();
 
-
-
-
-
-    //void on_pushButton_pdf_clicked();
-
     void on_sendBtn_2F_clicked();
-
-
 
     void updateFournisseursTabsCombos();
 
@@ -286,6 +292,23 @@ private slots:
 
 
     void on_excelbutton_clicked();
+
+    void on_pushButton_exc_clicked();
+     void update_label();
+
+
+
+     void on_AllumeLED1_clicked();
+
+     void on_AllumeLED2_clicked();
+
+     //void on_msgLDC_clicked();
+
+     void on_pushButton_pdfFADWA_clicked();
+
+     void on_pushButton_annuler1_clicked();
+
+     void on_pushButton_annuler2_clicked();
 
 private:
     Ui::MainWindow *ui;

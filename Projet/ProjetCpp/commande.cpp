@@ -10,6 +10,11 @@
 #include <QDebug>
 #include <QString>
 #include <QObject>
+#include<QSqlRecord>
+#include<QDebug>
+#include<QString>
+#include<QObject>
+#include <QFile>
 
 Commande::Commande()
 {
@@ -67,7 +72,7 @@ QSqlQueryModel *Commande::afficher(){
     model->setHeaderData(1, Qt::Horizontal,QObject::tr("QUANTITE"));
     model->setHeaderData(2, Qt::Horizontal,QObject::tr("LIBELLE"));
     model->setHeaderData(3, Qt::Horizontal,QObject::tr("DESCRIPTION"));
-    model->setHeaderData(4, Qt::Horizontal,QObject::tr("PRIX"));
+    model->setHeaderData(4, Qt::Horizontal,QObject::tr("PRIX (DT)"));
      model->setHeaderData(5, Qt::Horizontal,QObject::tr("NUM_TABLE"));
 
 return model;
@@ -121,12 +126,9 @@ int Commande::check() // check if it exsits or not  par id
     if (count_user == 1) {
         return 0;
     }
-    else if (count_user > 1 ) {
+   else
         return 1;
-    }
-    else{
-        return 2;
-    }}
+  }
 int Commande::checkL() // check if it exsits or not  par id
 {
     QString res1=get_LIBELLE();
@@ -144,16 +146,13 @@ int Commande::checkL() // check if it exsits or not  par id
         count_user++;
     }
 
-    if (count_user == 1) {
+    if (count_user >= 1) {
         return 0;
     }
-    else if (count_user > 1 ) {
-        return 1;
+
+
     }
-    else{
-        return 2;
-    }}
-int Commande::check_tab() // check if it exsits or not  par id
+int Commande::check_tab() //
 {
     int res1=get_NUM_TABLE();
  QString res2 = QString::number(res1);
@@ -176,16 +175,15 @@ int Commande::check_tab() // check if it exsits or not  par id
     else if (count_user > 1 ) {
         return 1;
     }
-    else{
-        return 2;
-    }}
-int Commande::check_tabcom() // check if it exsits or not  par id
+
+    }
+/*int Commande::check_tabcom() //
 {
     int res1=get_NUM_TABLE();
  QString res2 = QString::number(res1);
     QSqlQuery query;
 
-    query.prepare("SELECT * from COMMANDE  INNER JOIN  TABLES   ON  TABLES.NUM_TABLE =:COMMANDE.NUM_TABLE");
+    query.prepare("SELECT NUM_TABLE from COMMANDE  INNER JOIN  TABLES   ON COMMANDE.NUM_TABLE=:TABLES.NUM_TABLE");
     query.bindValue(":COMMANDE.NUM_TABLE",res2);
 
 
@@ -196,15 +194,15 @@ int Commande::check_tabcom() // check if it exsits or not  par id
         count_user++;
     }
 
-    if (count_user == 1) {
+    if (count_user == 0) {
         return 0;
     }
-    else if (count_user > 1 ) {
+    else if (count_user >= 1 ) {
         return 1;
     }
     else{
         return 2;
-    }}
+    }}*/
 void Commande::recherche(QTableView* table,int ID_COMMANDE)//CHERCHER PAR ID COMMANDE
 {
  QSqlQueryModel *model= new QSqlQueryModel();
@@ -265,4 +263,3 @@ void Commande::tri_P(QTableView* table){
     table->setModel(model);
     table->show();
 }
-

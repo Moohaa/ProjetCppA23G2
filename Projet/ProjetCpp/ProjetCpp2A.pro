@@ -49,7 +49,8 @@ SOURCES += \
     produit.cpp\
     mainwindow.cpp \
     table.cpp \
-    transaction.cpp
+    transaction.cpp \
+    stat.cpp
 
 HEADERS += \
     arduino.h \
@@ -73,7 +74,8 @@ HEADERS += \
     produit.h\
     mainwindow.h \
     table.h \
-    transaction.h
+    transaction.h \
+    stat.h
 
 FORMS += \
         mainwindow.ui\
