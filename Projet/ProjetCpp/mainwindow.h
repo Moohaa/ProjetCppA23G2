@@ -90,7 +90,7 @@ private slots:
 
     void on_pushButton_14_clicked();
 
-    //void on_pushButton_15_clicked();
+
 
     void on_pushButton_16_clicked();
 
@@ -284,7 +284,6 @@ private slots:
 
     void on_state_eva_clicked();
 
-    void on_pushButton_15_clicked();
 
     void on_excelbutton_clicked();
 

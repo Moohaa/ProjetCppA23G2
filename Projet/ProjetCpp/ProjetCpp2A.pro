@@ -39,6 +39,8 @@ SOURCES += \
     commande.cpp \
     commandefournisseur.cpp \
     evaluation.cpp \
+    qcustomplot.cpp \
+    statevaluation.cpp \
     menu.cpp \
     offrefournisseur.cpp \
     plat.cpp \
@@ -51,6 +53,9 @@ SOURCES += \
 
 HEADERS += \
     arduino.h \
+    includes.h \
+    qcustomplot.h \
+    statevaluation.h \
     droitacces.h \
     fournisseur.h \
     connection.h \
@@ -72,7 +77,8 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui\
-		login.ui
+        login.ui \
+    statevaluation.ui
 
 RC_ICONS = hat.ico
 
