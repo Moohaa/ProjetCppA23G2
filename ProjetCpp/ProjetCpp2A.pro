@@ -41,7 +41,6 @@ SOURCES += \
     commande.cpp \
     commandefournisseur.cpp \
     evaluation.cpp \
-    qcustomplot.cpp \
     statevaluation.cpp \
     menu.cpp \
     offrefournisseur.cpp \
@@ -65,7 +64,6 @@ HEADERS += \
     login.h \
     statfadwa.h \
     notification.h \
-    qcustomplot.h \
     statstock.h \
     utilisateur.h \
     commande.h \

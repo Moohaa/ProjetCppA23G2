@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD:Projet/ProjetCpp/ProjetCpp2A.pro.user
-<!-- Written by QtCreator 4.11.0, 2021-05-02T23:01:58. -->
-=======
-<!-- Written by QtCreator 4.11.0, 2021-05-02T06:46:35. -->
->>>>>>> Mareim_NACIB:ProjetCpp/ProjetCpp2A.pro.user
+<!-- Written by QtCreator 4.11.0, 2021-05-02T23:31:56. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -291,8 +287,9 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/ProjetCpp2A.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/ProjetCpp2A.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ProjetCpp2A2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/QTP/ProjetCppA23G2/ProjetCpp/ProjetCpp2A.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/QTP/ProjetCppA23G2/ProjetCpp/ProjetCpp2A.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>

@@ -137,20 +137,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 
 {
-    int ret=A.connect_arduino(); // lancer la connexion à arduino
-    switch(ret){
-    case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
-        break;
-    case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
-       break;
-    case(-1):qDebug() << "arduino is not available";
-    }
 
     //-----------------------------------------------------Config ARDUNIO-----------------------------------------------------
 
 
         ui->setupUi(this);
-        int ret=A.connect_arduino(); // lancer la connexion à arduino
+        int ret=A.connect_arduino(); // lancer la connexion a arduino
         switch(ret){
         case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
             break;
@@ -180,32 +172,32 @@ MainWindow::MainWindow(QWidget *parent) :
     media->play();
 
     //-------------------------
-    QMediaPlayer *player = new QMediaPlayer;
+   /* QMediaPlayer *player = new QMediaPlayer;
     QMediaPlaylist *playlist  = new QMediaPlaylist;
-        player->setVideoOutput(ui->video);
+        //player->setVideoOutput(ui->video);
         playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/video.mp4")));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
         player->setVolume(0);
         player->setPlaylist(playlist);
         player->play();
         qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();
-    //-------------------------
+    //-------------------------*/
 
-    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo");
+    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo.png");
     QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
     QPixmap pix2("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
     QPixmap pix3("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
     QPixmap pix4("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
-    QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stars");
-    QPixmap pix6("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cor");
-    QPixmap pix7("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/modi");
-    QPixmap pix8("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui");
-    QPixmap pix9("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48");
-    QPixmap pix10("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/casic");
-    QPixmap pix11("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/food");
-    QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table");
-    QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod");
-    QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov");
+    QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stars.png");
+    QPixmap pix6("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cor.png");
+    QPixmap pix7("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/modi.png");
+    QPixmap pix8("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui.png");
+    QPixmap pix9("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48.png");
+    QPixmap pix10("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/casic.png");
+    QPixmap pix11("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/food.png");
+    QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table.png");
+    QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod.png");
+    QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov.png");
 
      setFixedSize(1296,880);  //fixe la taille de la fenêtre
 
@@ -227,8 +219,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_34->setPixmap(pix2);
     ui->label_85->setPixmap(pix3);
     ui->label_87->setPixmap(pix3);
-    ui->label_851->setPixmap(pix3);
-    ui->label_841->setPixmap(pix5);
+    //ui->label_851->setPixmap(pix3);
+   // ui->label_841->setPixmap(pix5);
     ui->label_42->setPixmap(pix4);
     ui->label_84->setPixmap(pix5);
     ui->label_89->setPixmap(pix5);
@@ -246,7 +238,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_99->setPixmap(pix12);
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
-updateFournisseursTabsCombos();
+    updateFournisseursTabsCombos();
 
    // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
 

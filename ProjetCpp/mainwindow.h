@@ -153,7 +153,7 @@ private slots:
 
     void on_afficher_menu_clicked();
 
-    void on_tableView_8_clicked();
+   // void on_tableView_8_clicked();
 //--------------------------------------------FADWA-------------------------------------------------------------------
 
     void on_pushButton_fadwa1_clicked();
@@ -168,7 +168,7 @@ private slots:
 
     void on_pushButton_fadwa6_clicked();
 
-    void on_pushButton_37_clicked();
+    //void on_pushButton_37_clicked();
 
 
     void on_pushButton_fadwa7_clicked();
@@ -236,7 +236,7 @@ private slots:
 
     void on_rechercher_3_clicked();
 
-    void on_rechercher_4_clicked();
+   // void on_rechercher_4_clicked();
 
     void on_pushButton_58_clicked();
 
@@ -272,11 +272,11 @@ private slots:
 
     void on_pushButton_441_clicked();
 
-    void on_idDeCommande_clicked();
+   // void on_idDeCommande_clicked();
 
-    void on_libelle_clicked();
+//    void on_libelle_clicked();
 
-    void on_nombredechaises_clicked();
+  //  void on_nombredechaises_clicked();
 
     void on_F_act_clicked();
 
