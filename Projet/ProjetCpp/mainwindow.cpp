@@ -964,7 +964,7 @@ void MainWindow::on_pushButton_42_clicked() // PDF
     QString str;
 
                  str.append("<html><head></head><body>"
-                            "<center><img src=\"C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
+                            "<center><img src=\"C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
                             "<center>"+QString("Les Factures Du Jour"));
                  str.append("<table border=1><tr>") ;
                  str.append("<td>"+QString("ID_FACTURE")+"</td>") ;
@@ -1800,127 +1800,6 @@ void MainWindow::on_tableView_7_clicked()//recuperer donnee table
 
            ui->lineEdit_31->setText("");
 
-}
-
-void MainWindow::on_buttonStock_clicked()//ACtualiser
-{
-
-    Commande c;
-        ui->tableView_8->setModel(c.afficher());
-
-}
-
-void MainWindow::on_pushButton_441_clicked()//actualiser
-{
-    Table t;
-            ui->tableView_7->setModel(t.afficher());
-}
-
-void MainWindow::on_recher_clicked()//rechercher commande par id
-{
-    QString ID_COMMANDE;
-QString find = ui->lineEdit_31->text();
-
-Commande c;
-
-    QTableView* table=ui->tableView_8;
-    c.setID_COMMANDE(ui->lineEdit_31->text().toInt());
-        if (c.check()==0) {
-            ID_COMMANDE= find;
-              c.recherche(table,ID_COMMANDE.toInt());}
-        else{
-           QMessageBox::critical (this, "Error", "Cette commande n'existe pas!");
-            }
-
-               ui->lineEdit_31->setText("");
-}
-
-void MainWindow::on_idDeCommande_clicked()//trier commande par id
-{
-  Commande c;
-    QTableView* table=ui->tableView_8;
-    c.tri_ID(table);
-}
-
-void MainWindow::on_libelle_clicked()//trier commande par libelle
-{
-    Commande c;
-      QTableView* table=ui->tableView_8;
-      c.tri_LIBELLE(table);
-}
-
-void MainWindow::on_tableView_8_clicked()//recupereer donnee commande
-{
-    int row =ui->tableView_8->selectionModel()->currentIndex().row();
-        //ui->stackedWidget->setCurrentIndex(2);
-        ui->lineEdit_33->setText(ui->tableView_8->model()->index(row,0).data().toString());
-        ui->lineEdit_38->setText(ui->tableView_8->model()->index(row,1).data().toString());
-        ui->lineEdit_37->setText(ui->tableView_8->model()->index(row,2).data().toString());
-         ui->lineEdit_36->setText(ui->tableView_8->model()->index(row,3).data().toString());
-        ui->lineEdit_35->setText(ui->tableView_8->model()->index(row,4).data().toString());
-          ui->lineEdit_34->setText(ui->tableView_8->model()->index(row,5).data().toString());
-}
-
-void MainWindow::on_nombredechaises_clicked()//recherche table par nbr chaises
-{
-    QString NB_CHAISES;
-    QString find =ui->find->text();
-Table t;
-    QTableView* table=ui->tableView_7;
-      t.setNB_CHAISES(ui->find->text().toInt());
-    if (t.check1()==0) {
-        /*QMessageBox::information(this, tr("Empty Field"),
-            tr("Entr//."));
-        ui->tableView_7->setModel(t.afficher());
-        return;*/
-
-      NB_CHAISES = find;
-        t.rechercheC(table,NB_CHAISES.toInt());}
-           else {QMessageBox::critical (this, "Error", "Ce nombre de chaises n'existe pas !");}
-
-          ui->find->setText("");
-}
-
-void MainWindow::on_recher_2_clicked()
-{
-    QString LIBELLE;
-QString find = ui->lineEdit_31->text();
-
-Commande c;
-QTableView* table=ui->tableView_8;
-c.setLIBELLE(ui->lineEdit_31->text());
-    if (c.checkL()==0) {
-       LIBELLE= find;
-          c.rechercheL(table,LIBELLE);}
-    else{
-       QMessageBox::critical (this, "Error", "Cette commande n'existe pas!");
-        }
-
-           ui->lineEdit_31->setText("");
-
-}
-
-
-void MainWindow::on_pushButton_DB_clicked()
-{
-
-    QString DEBARRASSAGE;
-    QString find =ui->find->text();
-Table t;
-    QTableView* table=ui->tableView_7;
-    t.setDEBARRASSAGE(ui->find->text().toInt());
-
-    if (find.isEmpty()) {
-        QMessageBox::information(this, tr("Empty Field"),
-            tr("Entr//."));
-        ui->tableView_8->setModel(t.afficher());
-        return;}
-        else{
-           DEBARRASSAGE = find;
-            t.rechercheD(table,DEBARRASSAGE.toInt());
-             }
-
-         ui->find->setText("");
 }
 
 void MainWindow::on_buttonStock_clicked()//ACtualiser
