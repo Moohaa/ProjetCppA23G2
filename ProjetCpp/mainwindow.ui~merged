@@ -7,7 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>1296</width>
+<<<<<<< HEAD
     <height>1020</height>
+=======
+    <height>880</height>
+>>>>>>> aziz_jaziri
    </rect>
   </property>
   <property name="windowTitle">
@@ -104,8 +108,13 @@ background: rgb(175, 31, 36);
    <widget class="QPushButton" name="play">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>70</x>
       <y>510</y>
+=======
+      <x>60</x>
+      <y>520</y>
+>>>>>>> aziz_jaziri
       <width>91</width>
       <height>31</height>
      </rect>
@@ -147,8 +156,13 @@ border-radius:10px;
    <widget class="QPushButton" name="mute">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>170</x>
       <y>510</y>
+=======
+      <x>160</x>
+      <y>520</y>
+>>>>>>> aziz_jaziri
       <width>51</width>
       <height>31</height>
      </rect>
@@ -190,8 +204,13 @@ border-radius:10px;
    <widget class="QPushButton" name="pause">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>230</x>
       <y>510</y>
+=======
+      <x>220</x>
+      <y>520</y>
+>>>>>>> aziz_jaziri
       <width>51</width>
       <height>31</height>
      </rect>
@@ -405,14 +424,26 @@ border-radius:10px;
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>330</x>
+=======
+      <x>320</x>
+>>>>>>> aziz_jaziri
       <y>70</y>
       <width>941</width>
       <height>691</height>
      </rect>
     </property>
     <property name="currentIndex">
+<<<<<<< HEAD
      <number>2</number>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+     <number>3</number>
+=======
+     <number>1</number>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -420,8 +451,18 @@ border-radius:10px;
        <rect>
         <x>0</x>
         <y>0</y>
+<<<<<<< HEAD
         <width>941</width>
         <height>691</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+        <width>921</width>
+        <height>701</height>
+=======
+        <width>941</width>
+        <height>691</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
        </rect>
       </property>
       <property name="styleSheet">
@@ -472,7 +513,11 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
+<<<<<<< HEAD
        <number>0</number>
+=======
+       <number>1</number>
+>>>>>>> aziz_jaziri
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -663,18 +708,30 @@ border-radius:10px;
          <widget class="QTableView" name="tableView_A">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>210</x>
             <y>160</y>
             <width>561</width>
             <height>311</height>
+=======
+            <x>130</x>
+            <y>150</y>
+            <width>651</width>
+            <height>191</height>
+>>>>>>> aziz_jaziri
            </rect>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_6">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>200</x>
             <y>480</y>
+=======
+            <x>500</x>
+            <y>390</y>
+>>>>>>> aziz_jaziri
             <width>121</width>
             <height>31</height>
            </rect>
@@ -686,8 +743,13 @@ border-radius:10px;
          <widget class="QLineEdit" name="textDelete_2">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>70</x>
             <y>480</y>
+=======
+            <x>370</x>
+            <y>390</y>
+>>>>>>> aziz_jaziri
             <width>113</width>
             <height>31</height>
            </rect>
@@ -696,8 +758,13 @@ border-radius:10px;
          <widget class="QLabel" name="label_15">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>20</x>
             <y>490</y>
+=======
+            <x>320</x>
+            <y>400</y>
+>>>>>>> aziz_jaziri
             <width>21</width>
             <height>16</height>
            </rect>
@@ -825,6 +892,7 @@ border-radius:10px;
            <string>Par Categorie</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="Afficher_Produit">
           <property name="geometry">
            <rect>
@@ -839,6 +907,27 @@ border-radius:10px;
           </property>
          </widget>
         </widget>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+           <widget class="QPushButton" name="Afficher_Produit">
+=======
+         <widget class="QPushButton" name="Afficher_Produit">
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>130</y>
+            <width>80</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Afficher</string>
+          </property>
+         </widget>
+        </widget>
+
+>>>>>>> aziz_jaziri
        </widget>
        <widget class="QLabel" name="label_34">
         <property name="geometry">
@@ -888,7 +977,11 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
+<<<<<<< HEAD
          <number>0</number>
+=======
+         <number>2</number>
+>>>>>>> aziz_jaziri
         </property>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
@@ -976,7 +1069,11 @@ color : white;</string>
             <rect>
              <x>40</x>
              <y>340</y>
+<<<<<<< HEAD
              <width>101</width>
+=======
+             <width>131</width>
+>>>>>>> aziz_jaziri
              <height>21</height>
             </rect>
            </property>
@@ -1014,6 +1111,7 @@ color : white;</string>
            </property>
            <item>
             <property name="text">
+<<<<<<< HEAD
              <string>viandes </string>
             </property>
            </item>
@@ -1055,16 +1153,27 @@ color : white;</string>
            <item>
             <property name="text">
              <string>boissons et liquides</string>
+=======
+             <string>Fruit</string>
+>>>>>>> aziz_jaziri
             </property>
            </item>
            <item>
             <property name="text">
+<<<<<<< HEAD
              <string>legumes et fruits</string>
+=======
+             <string>Liquide</string>
+>>>>>>> aziz_jaziri
             </property>
            </item>
            <item>
             <property name="text">
+<<<<<<< HEAD
              <string/>
+=======
+             <string>Legume</string>
+>>>>>>> aziz_jaziri
             </property>
            </item>
           </widget>
@@ -1248,7 +1357,11 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>210</x>
+<<<<<<< HEAD
             <y>500</y>
+=======
+            <y>450</y>
+>>>>>>> aziz_jaziri
             <width>131</width>
             <height>41</height>
            </rect>
@@ -1261,7 +1374,11 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>70</x>
+<<<<<<< HEAD
             <y>510</y>
+=======
+            <y>450</y>
+>>>>>>> aziz_jaziri
             <width>113</width>
             <height>31</height>
            </rect>
@@ -1271,7 +1388,11 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>20</x>
+<<<<<<< HEAD
             <y>510</y>
+=======
+            <y>460</y>
+>>>>>>> aziz_jaziri
             <width>31</width>
             <height>16</height>
            </rect>
@@ -1359,9 +1480,15 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>680</x>
+<<<<<<< HEAD
             <y>360</y>
             <width>191</width>
             <height>41</height>
+=======
+            <y>370</y>
+            <width>191</width>
+            <height>31</height>
+>>>>>>> aziz_jaziri
            </rect>
           </property>
           <property name="currentIndex">
@@ -1396,6 +1523,7 @@ color : white;</string>
            <string>Entrer le donnée a chercher :</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="Afficher_Stock">
           <property name="geometry">
            <rect>
@@ -1523,6 +1651,32 @@ color : white;</string>
           </property>
           <property name="text">
            <string>Afficher L' Historique</string>
+=======
+         <widget class="QPushButton" name="PDF_STOCK">
+          <property name="geometry">
+           <rect>
+            <x>680</x>
+            <y>530</y>
+            <width>231</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Géneration du PDF</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Afficher_Stock">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>70</y>
+            <width>80</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Afficher</string>
+>>>>>>> aziz_jaziri
           </property>
          </widget>
         </widget>
@@ -1655,6 +1809,7 @@ color : white;</string>
           </layout>
          </widget>
         </widget>
+<<<<<<< HEAD
         <widget class="QWidget" name="tab_35">
          <attribute name="title">
           <string>Statistiques</string>
@@ -1733,6 +1888,8 @@ color : white;</string>
           </property>
          </widget>
         </widget>
+=======
+>>>>>>> aziz_jaziri
        </widget>
        <widget class="QLabel" name="label_29">
         <property name="geometry">
@@ -1767,6 +1924,7 @@ color : white;</string>
          <pixmap>stock.png</pixmap>
         </property>
        </widget>
+<<<<<<< HEAD
        <widget class="QPushButton" name="PDF_STOCK">
         <property name="geometry">
          <rect>
@@ -1780,6 +1938,8 @@ color : white;</string>
          <string>Rapport Stockage en PDF</string>
         </property>
        </widget>
+=======
+>>>>>>> aziz_jaziri
       </widget>
      </widget>
     </widget>
@@ -1789,8 +1949,18 @@ color : white;</string>
        <rect>
         <x>0</x>
         <y>0</y>
+<<<<<<< HEAD
         <width>941</width>
         <height>691</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+        <width>771</width>
+        <height>671</height>
+=======
+        <width>941</width>
+        <height>691</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
        </rect>
       </property>
       <property name="styleSheet">
@@ -1841,7 +2011,11 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
+<<<<<<< HEAD
        <number>0</number>
+=======
+       <number>1</number>
+>>>>>>> aziz_jaziri
       </property>
       <widget class="QWidget" name="tab_14">
        <attribute name="title">
@@ -2032,16 +2206,36 @@ border-radius:10px;
          <rect>
           <x>0</x>
           <y>0</y>
+<<<<<<< HEAD
           <width>941</width>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+          <width>651</width>
+=======
+          <width>941</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
           <height>571</height>
          </rect>
         </property>
         <property name="currentIndex">
+<<<<<<< HEAD
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_15">
+         <attribute name="title">
+          <string>Ajouter</string>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+         <number>0</number>
+=======
          <number>2</number>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
         </property>
         <widget class="QWidget" name="tab_15">
          <attribute name="title">
           <string>Ajouter/modifier </string>
+>>>>>>> aziz_jaziri
          </attribute>
          <widget class="QGroupBox" name="groupBox_6">
           <property name="geometry">
@@ -2197,6 +2391,24 @@ border-radius:10px;
            </property>
           </widget>
          </widget>
+<<<<<<< HEAD
+        </widget>
+        <widget class="QWidget" name="tab_16">
+         <attribute name="title">
+          <string>Consulter</string>
+         </attribute>
+         <widget class="QTableView" name="tableView_3">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>591</width>
+            <height>281</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="textDelete_5">
+=======
          <widget class="QLabel" name="label_822">
           <property name="geometry">
            <rect>
@@ -2265,6 +2477,7 @@ color : white;</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="textDelete_5">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>380</x>
@@ -2313,6 +2526,22 @@ color : white;</string>
            <string>Rechercher</string>
           </property>
          </widget>
+<<<<<<< HEAD
+=======
+         <widget class="QLabel" name="label_60">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>330</y>
+            <width>91</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Specialité plat:</string>
+          </property>
+         </widget>
+>>>>>>> aziz_jaziri
          <widget class="QLineEdit" name="lineEdit_24">
           <property name="geometry">
            <rect>
@@ -2398,7 +2627,15 @@ color : white;</string>
            </rect>
           </property>
           <property name="text">
+<<<<<<< HEAD
            <string>ASC</string>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+           <string>id menu</string>
+=======
+           <string>ASC</string>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
           </property>
          </widget>
          <widget class="QRadioButton" name="tri_azizB">
@@ -2411,7 +2648,15 @@ color : white;</string>
            </rect>
           </property>
           <property name="text">
+<<<<<<< HEAD
            <string>DESC</string>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+           <string>ASC</string>
+=======
+           <string>DESC</string>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
           </property>
          </widget>
          <widget class="QPushButton" name="tri_aziz">
@@ -2443,8 +2688,13 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_26">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
+            <x>620</x>
+            <y>10</y>
+=======
             <x>490</x>
             <y>270</y>
+>>>>>>> aziz_jaziri
             <width>141</width>
             <height>23</height>
            </rect>
@@ -2454,6 +2704,8 @@ color : white;</string>
           </property>
          </widget>
         </widget>
+<<<<<<< HEAD
+=======
         <widget class="QWidget" name="tab_35">
          <attribute name="title">
           <string>Notification par mail</string>
@@ -2689,6 +2941,20 @@ color : white;</string>
           </property>
          </widget>
         </widget>
+>>>>>>> aziz_jaziri
+       </widget>
+       <widget class="QPushButton" name="pushButton_26">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>600</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Réinitialiser </string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_17">
@@ -2705,11 +2971,19 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
+<<<<<<< HEAD
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="tab_18">
+         <attribute name="title">
+          <string>Ajouter</string>
+=======
          <number>2</number>
         </property>
         <widget class="QWidget" name="tab_18">
          <attribute name="title">
           <string>Ajouter/modifier</string>
+>>>>>>> aziz_jaziri
          </attribute>
          <widget class="QGroupBox" name="groupBox_7">
           <property name="geometry">
@@ -2872,6 +3146,8 @@ color : white;</string>
            </property>
           </widget>
          </widget>
+<<<<<<< HEAD
+=======
          <widget class="QLabel" name="label_823">
           <property name="geometry">
            <rect>
@@ -2905,6 +3181,7 @@ color : white;</string>
            <pixmap>icons8-restaurant-menu-64.png</pixmap>
           </property>
          </widget>
+>>>>>>> aziz_jaziri
         </widget>
         <widget class="QWidget" name="tab_19">
          <attribute name="title">
@@ -2919,18 +3196,26 @@ color : white;</string>
             <height>281</height>
            </rect>
           </property>
+<<<<<<< HEAD
+=======
           <property name="styleSheet">
            <string notr="true">selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
                                  stop: 0 #FF92BB, stop: 1 red);
   background: black;
      border: 2px outset red;</string>
           </property>
+>>>>>>> aziz_jaziri
          </widget>
          <widget class="QLineEdit" name="textDelete_6">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
+            <x>382</x>
+            <y>300</y>
+=======
             <x>380</x>
             <y>330</y>
+>>>>>>> aziz_jaziri
             <width>111</width>
             <height>31</height>
            </rect>
@@ -2940,7 +3225,11 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>350</x>
+<<<<<<< HEAD
+            <y>300</y>
+=======
             <y>330</y>
+>>>>>>> aziz_jaziri
             <width>21</width>
             <height>20</height>
            </rect>
@@ -2953,7 +3242,11 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>500</x>
+<<<<<<< HEAD
+            <y>300</y>
+=======
             <y>330</y>
+>>>>>>> aziz_jaziri
             <width>111</width>
             <height>31</height>
            </rect>
@@ -2965,8 +3258,13 @@ color : white;</string>
          <widget class="QLabel" name="label_95">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
+            <x>620</x>
+            <y>300</y>
+=======
             <x>610</x>
             <y>320</y>
+>>>>>>> aziz_jaziri
             <width>71</width>
             <height>41</height>
            </rect>
@@ -2981,14 +3279,24 @@ color : white;</string>
          <widget class="QPushButton" name="afficher_menu">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
+            <x>680</x>
+            <y>20</y>
+            <width>201</width>
+=======
             <x>480</x>
             <y>270</y>
             <width>151</width>
+>>>>>>> aziz_jaziri
             <height>31</height>
            </rect>
           </property>
           <property name="text">
+<<<<<<< HEAD
+           <string>afficher menu</string>
+=======
            <string>Actualiser</string>
+>>>>>>> aziz_jaziri
           </property>
          </widget>
         </widget>
@@ -3076,8 +3384,18 @@ color : white;</string>
        <rect>
         <x>0</x>
         <y>0</y>
+<<<<<<< HEAD
         <width>941</width>
         <height>691</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+        <width>851</width>
+        <height>681</height>
+=======
+        <width>941</width>
+        <height>691</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
        </rect>
       </property>
       <property name="styleSheet">
@@ -3128,7 +3446,11 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
+<<<<<<< HEAD
        <number>1</number>
+=======
+       <number>0</number>
+>>>>>>> aziz_jaziri
       </property>
       <widget class="QWidget" name="tab_21">
        <attribute name="title">
@@ -3139,6 +3461,7 @@ border-radius:10px;
          <rect>
           <x>0</x>
           <y>0</y>
+<<<<<<< HEAD
           <width>891</width>
           <height>531</height>
          </rect>
@@ -3149,6 +3472,23 @@ border-radius:10px;
         <widget class="QWidget" name="tab_22">
          <attribute name="title">
           <string>Ajouter et modifier</string>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+          <width>841</width>
+          <height>631</height>
+=======
+          <width>891</width>
+          <height>531</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="tab_22">
+         <attribute name="title">
+          <string>Ajouter</string>
+>>>>>>> aziz_jaziri
          </attribute>
          <widget class="QLabel" name="label_31">
           <property name="geometry">
@@ -3215,7 +3555,11 @@ border-radius:10px;
            <string>Debarrassage( 0 ou 1)</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLineEdit" name="lineEdit_28F">
+=======
+         <widget class="QLineEdit" name="lineEdit_28">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>160</x>
@@ -3225,7 +3569,11 @@ border-radius:10px;
            </rect>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLineEdit" name="lineEdit_29F">
+=======
+         <widget class="QLineEdit" name="lineEdit_29">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>160</x>
@@ -3235,7 +3583,11 @@ border-radius:10px;
            </rect>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QComboBox" name="comboBox_8F">
+=======
+         <widget class="QComboBox" name="comboBox_8">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>160</x>
@@ -3255,7 +3607,11 @@ border-radius:10px;
            </property>
           </item>
          </widget>
+<<<<<<< HEAD
          <widget class="QComboBox" name="comboBox_9F">
+=======
+         <widget class="QComboBox" name="comboBox_9">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>160</x>
@@ -3275,7 +3631,11 @@ border-radius:10px;
            </property>
           </item>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa1">
+=======
+         <widget class="QPushButton" name="pushButton_31">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -3288,7 +3648,11 @@ border-radius:10px;
            <string>Ajouter</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLineEdit" name="lineEdit_30F">
+=======
+         <widget class="QLineEdit" name="lineEdit_30">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>160</x>
@@ -3298,7 +3662,11 @@ border-radius:10px;
            </rect>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa2">
+=======
+         <widget class="QPushButton" name="pushButton_32">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>310</x>
@@ -3311,6 +3679,7 @@ border-radius:10px;
            <string>Modifier</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_annuler2">
           <property name="geometry">
            <rect>
@@ -3324,11 +3693,14 @@ border-radius:10px;
            <string>Annuler</string>
           </property>
          </widget>
+=======
+>>>>>>> aziz_jaziri
         </widget>
         <widget class="QWidget" name="tab_23">
          <attribute name="title">
           <string>Consulter</string>
          </attribute>
+<<<<<<< HEAD
          <widget class="QTableView" name="tableView_7F">
           <property name="geometry">
            <rect>
@@ -3344,6 +3716,23 @@ border-radius:10px;
            <rect>
             <x>640</x>
             <y>200</y>
+=======
+         <widget class="QTableView" name="tableView_7">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>60</y>
+            <width>721</width>
+            <height>241</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_33">
+          <property name="geometry">
+           <rect>
+            <x>730</x>
+            <y>160</y>
+>>>>>>> aziz_jaziri
             <width>101</width>
             <height>23</height>
            </rect>
@@ -3352,21 +3741,42 @@ border-radius:10px;
            <string>Supprimer</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLineEdit" name="lineEdit_32F">
           <property name="geometry">
            <rect>
             <x>640</x>
             <y>150</y>
+=======
+         <widget class="QLineEdit" name="lineEdit_32">
+          <property name="geometry">
+           <rect>
+            <x>730</x>
+            <y>130</y>
+>>>>>>> aziz_jaziri
             <width>91</width>
             <height>20</height>
            </rect>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa4">
           <property name="geometry">
            <rect>
             <x>560</x>
             <y>390</y>
+=======
+         <widget class="QPushButton" name="pushButton_34">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>580</x>
+            <y>240</y>
+=======
+            <x>620</x>
+            <y>360</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>211</width>
             <height>31</height>
            </rect>
@@ -3378,8 +3788,18 @@ border-radius:10px;
          <widget class="QLabel" name="label_73">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>570</x>
             <y>340</y>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>570</x>
+            <y>200</y>
+=======
+            <x>520</x>
+            <y>340</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>91</width>
             <height>16</height>
            </rect>
@@ -3394,11 +3814,24 @@ border-radius:10px;
            <string>Trier par :</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa5">
           <property name="geometry">
            <rect>
             <x>560</x>
             <y>430</y>
+=======
+         <widget class="QPushButton" name="pushButton_35">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>580</x>
+            <y>290</y>
+=======
+            <x>620</x>
+            <y>400</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>211</width>
             <height>31</height>
            </rect>
@@ -3407,12 +3840,27 @@ border-radius:10px;
            <string>Nombre de chaises</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa6">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>380</y>
             <width>161</width>
+=======
+         <widget class="QPushButton" name="pushButton_36">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>10</x>
+            <y>270</y>
+            <width>161</width>
+=======
+            <x>40</x>
+            <y>360</y>
+            <width>211</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>31</height>
            </rect>
           </property>
@@ -3420,22 +3868,50 @@ border-radius:10px;
            <string> Numéro de table</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLineEdit" name="findF">
           <property name="geometry">
            <rect>
             <x>130</x>
             <y>340</y>
+=======
+         <widget class="QLineEdit" name="find">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>130</x>
+            <y>230</y>
+=======
+            <x>160</x>
+            <y>320</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>113</width>
             <height>20</height>
            </rect>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa42">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>420</y>
             <width>161</width>
+=======
+         <widget class="QPushButton" name="nombredechaises">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>10</x>
+            <y>310</y>
+            <width>161</width>
+=======
+            <x>40</x>
+            <y>400</y>
+            <width>211</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>31</height>
            </rect>
           </property>
@@ -3446,9 +3922,21 @@ border-radius:10px;
          <widget class="QLabel" name="label_80">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>10</x>
             <y>340</y>
             <width>81</width>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>10</x>
+            <y>230</y>
+            <width>81</width>
+=======
+            <x>40</x>
+            <y>320</y>
+            <width>101</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>16</height>
            </rect>
           </property>
@@ -3462,6 +3950,7 @@ border-radius:10px;
            <string>Chercher par :</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa44">
           <property name="geometry">
            <rect>
@@ -3469,6 +3958,22 @@ border-radius:10px;
             <y>22</y>
             <width>111</width>
             <height>31</height>
+=======
+         <widget class="QPushButton" name="pushButton_441">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>620</x>
+            <y>150</y>
+            <width>75</width>
+            <height>23</height>
+=======
+            <x>10</x>
+            <y>20</y>
+            <width>111</width>
+            <height>31</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
            </rect>
           </property>
           <property name="text">
@@ -3478,9 +3983,21 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_DB">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>0</x>
             <y>470</y>
             <width>161</width>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>10</x>
+            <y>352</y>
+            <width>161</width>
+=======
+            <x>40</x>
+            <y>442</y>
+            <width>211</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>31</height>
            </rect>
           </property>
@@ -3491,8 +4008,18 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_deb1">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>560</x>
             <y>480</y>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>584</x>
+            <y>350</y>
+=======
+            <x>624</x>
+            <y>440</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>211</width>
             <height>31</height>
            </rect>
@@ -3501,6 +4028,7 @@ border-radius:10px;
            <string>Etat de débarrassage</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_pdfFADWA">
           <property name="geometry">
            <rect>
@@ -3528,16 +4056,40 @@ border-radius:10px;
          <zorder>pushButton_DB</zorder>
          <zorder>pushButton_deb1</zorder>
          <zorder>pushButton_pdfFADWA</zorder>
+=======
+         <zorder>pushButton_441</zorder>
+         <zorder>tableView_7</zorder>
+         <zorder>pushButton_33</zorder>
+         <zorder>lineEdit_32</zorder>
+         <zorder>pushButton_34</zorder>
+         <zorder>label_73</zorder>
+         <zorder>pushButton_35</zorder>
+         <zorder>pushButton_36</zorder>
+         <zorder>find</zorder>
+         <zorder>nombredechaises</zorder>
+         <zorder>label_80</zorder>
+         <zorder>pushButton_DB</zorder>
+         <zorder>pushButton_deb1</zorder>
+>>>>>>> aziz_jaziri
         </widget>
         <widget class="QWidget" name="tab_24">
          <attribute name="title">
           <string>Mail</string>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+>>>>>>> aziz_jaziri
          </attribute>
          <widget class="QWidget" name="layoutWidget_2">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>80</x>
             <y>20</y>
+=======
+            <x>0</x>
+            <y>0</y>
+>>>>>>> aziz_jaziri
             <width>701</width>
             <height>451</height>
            </rect>
@@ -3581,7 +4133,11 @@ border-radius:10px;
             </widget>
            </item>
            <item row="2" column="0">
+<<<<<<< HEAD
             <widget class="QLabel" name="label_842">
+=======
+            <widget class="QLabel" name="label_84">
+>>>>>>> aziz_jaziri
              <property name="text">
               <string>Username:</string>
              </property>
@@ -3591,7 +4147,11 @@ border-radius:10px;
             <widget class="QLineEdit" name="uname_4F"/>
            </item>
            <item row="3" column="0">
+<<<<<<< HEAD
             <widget class="QLabel" name="label_852">
+=======
+            <widget class="QLabel" name="label_85">
+>>>>>>> aziz_jaziri
              <property name="text">
               <string>Password:</string>
              </property>
@@ -3608,7 +4168,11 @@ border-radius:10px;
             </widget>
            </item>
            <item row="4" column="0">
+<<<<<<< HEAD
             <widget class="QLabel" name="label_861">
+=======
+            <widget class="QLabel" name="label_86">
+>>>>>>> aziz_jaziri
              <property name="text">
               <string>Recipant to:</string>
              </property>
@@ -3658,6 +4222,7 @@ border-radius:10px;
           </layout>
          </widget>
         </widget>
+<<<<<<< HEAD
         <widget class="QWidget" name="tab_29">
          <attribute name="title">
           <string>gestion des appels de tables</string>
@@ -3788,6 +4353,155 @@ border-radius:10px;
             <string>Allumer</string>
            </property>
           </widget>
+=======
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_25">
+       <attribute name="title">
+        <string>Gestion des commandes</string>
+       </attribute>
+       <widget class="QTabWidget" name="tabWidget_12">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>821</width>
+          <height>661</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_26">
+         <attribute name="title">
+          <string>Ajouter</string>
+=======
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+         </attribute>
+         <widget class="QWidget" name="layoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>20</y>
+            <width>701</width>
+            <height>451</height>
+           </rect>
+          </property>
+          <layout class="QFormLayout" name="formLayout_21">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::ExpandingFieldsGrow</enum>
+           </property>
+           <property name="rowWrapPolicy">
+            <enum>QFormLayout::WrapLongRows</enum>
+           </property>
+           <property name="verticalSpacing">
+            <number>9</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_81">
+             <property name="text">
+              <string>Smtp-server:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEdit_39F">
+             <property name="text">
+              <string>smtp.gmail.com</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_831">
+             <property name="text">
+              <string>Server port:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="port_2F">
+             <property name="text">
+              <string>465</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_842">
+             <property name="text">
+              <string>Username:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="uname_4F"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_852">
+             <property name="text">
+              <string>Password:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="paswd_2F">
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_861">
+             <property name="text">
+              <string>Recipant to:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="rcpt_2F"/>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_871">
+             <property name="text">
+              <string>Subject:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="subject_2F"/>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_88">
+             <property name="text">
+              <string>Message:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QPlainTextEdit" name="msg_2F"/>
+           </item>
+           <item row="7" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_21">
+             <item>
+              <widget class="QPushButton" name="sendBtn_2F">
+               <property name="text">
+                <string>    Envoyer    </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="exitBtn_2F">
+               <property name="text">
+                <string>     Exit    </string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+>>>>>>> aziz_jaziri
          </widget>
         </widget>
        </widget>
@@ -3802,6 +4516,7 @@ border-radius:10px;
           <x>0</x>
           <y>0</y>
           <width>821</width>
+<<<<<<< HEAD
           <height>631</height>
          </rect>
         </property>
@@ -3811,6 +4526,17 @@ border-radius:10px;
         <widget class="QWidget" name="tab_26">
          <attribute name="title">
           <string>Ajouter et modifier</string>
+=======
+          <height>661</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_26">
+         <attribute name="title">
+          <string>Ajouter</string>
+>>>>>>> aziz_jaziri
          </attribute>
          <widget class="QGroupBox" name="groupBox_8">
           <property name="geometry">
@@ -3902,7 +4628,11 @@ border-radius:10px;
             <string>Num Table</string>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QLineEdit" name="lineEdit_33F">
+=======
+          <widget class="QLineEdit" name="lineEdit_33">
+>>>>>>> aziz_jaziri
            <property name="geometry">
             <rect>
              <x>150</x>
@@ -3912,7 +4642,11 @@ border-radius:10px;
             </rect>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QLineEdit" name="lineEdit_34F">
+=======
+          <widget class="QLineEdit" name="lineEdit_34">
+>>>>>>> aziz_jaziri
            <property name="geometry">
             <rect>
              <x>150</x>
@@ -3922,7 +4656,11 @@ border-radius:10px;
             </rect>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QLineEdit" name="lineEdit_35F">
+=======
+          <widget class="QLineEdit" name="lineEdit_35">
+>>>>>>> aziz_jaziri
            <property name="geometry">
             <rect>
              <x>150</x>
@@ -3932,7 +4670,11 @@ border-radius:10px;
             </rect>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QLineEdit" name="lineEdit_36F">
+=======
+          <widget class="QLineEdit" name="lineEdit_36">
+>>>>>>> aziz_jaziri
            <property name="geometry">
             <rect>
              <x>150</x>
@@ -3942,7 +4684,11 @@ border-radius:10px;
             </rect>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QLineEdit" name="lineEdit_37F">
+=======
+          <widget class="QLineEdit" name="lineEdit_37">
+>>>>>>> aziz_jaziri
            <property name="geometry">
             <rect>
              <x>150</x>
@@ -3952,7 +4698,11 @@ border-radius:10px;
             </rect>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QLineEdit" name="lineEdit_38F">
+=======
+          <widget class="QLineEdit" name="lineEdit_38">
+>>>>>>> aziz_jaziri
            <property name="geometry">
             <rect>
              <x>150</x>
@@ -3962,7 +4712,11 @@ border-radius:10px;
             </rect>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QPushButton" name="pushButton_fadwa7">
+=======
+          <widget class="QPushButton" name="pushButton_37">
+>>>>>>> aziz_jaziri
            <property name="geometry">
             <rect>
              <x>20</x>
@@ -3975,7 +4729,11 @@ border-radius:10px;
             <string>Ajouter</string>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QPushButton" name="pushButton_fadwa8">
+=======
+          <widget class="QPushButton" name="pushButton_38">
+>>>>>>> aziz_jaziri
            <property name="geometry">
             <rect>
              <x>220</x>
@@ -3988,6 +4746,7 @@ border-radius:10px;
             <string>Modifier</string>
            </property>
           </widget>
+<<<<<<< HEAD
           <widget class="QPushButton" name="pushButton_annuler1">
            <property name="geometry">
             <rect>
@@ -4001,13 +4760,19 @@ border-radius:10px;
             <string>Annuler</string>
            </property>
           </widget>
+=======
+>>>>>>> aziz_jaziri
          </widget>
         </widget>
         <widget class="QWidget" name="tab_27">
          <attribute name="title">
           <string>Consulter</string>
          </attribute>
+<<<<<<< HEAD
          <widget class="QTableView" name="tableView_8F">
+=======
+         <widget class="QTableView" name="tableView_8">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -4020,21 +4785,45 @@ border-radius:10px;
            <string>Libellé</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLineEdit" name="lineEdit_40F">
           <property name="geometry">
            <rect>
             <x>640</x>
             <y>210</y>
+=======
+         <widget class="QLineEdit" name="lineEdit_40">
+          <property name="geometry">
+           <rect>
+            <x>640</x>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <y>120</y>
+=======
+            <y>210</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>101</width>
             <height>20</height>
            </rect>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa9">
           <property name="geometry">
            <rect>
             <x>630</x>
             <y>240</y>
+=======
+         <widget class="QPushButton" name="pushButton_39">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <y>150</y>
+=======
+            <y>240</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>121</width>
             <height>31</height>
            </rect>
@@ -4044,10 +4833,18 @@ border-radius:10px;
           </property>
          </widget>
          <widget class="QPushButton" name="recher">
+<<<<<<< HEAD
           <property name="geometry">
            <rect>
             <x>10</x>
             <y>420</y>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>490</y>
+>>>>>>> aziz_jaziri
             <width>111</width>
             <height>31</height>
            </rect>
@@ -4056,11 +4853,19 @@ border-radius:10px;
            <string>ID de commande</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLineEdit" name="lineEdit_31F">
           <property name="geometry">
            <rect>
             <x>110</x>
             <y>380</y>
+=======
+         <widget class="QLineEdit" name="lineEdit_31">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>440</y>
+>>>>>>> aziz_jaziri
             <width>113</width>
             <height>20</height>
            </rect>
@@ -4069,10 +4874,48 @@ border-radius:10px;
          <widget class="QLabel" name="label_72">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>580</x>
             <y>380</y>
             <width>81</width>
             <height>16</height>
+=======
+            <x>590</x>
+            <y>460</y>
+            <width>81</width>
+            <height>16</height>
+=======
+          <property name="geometry">
+           <rect>
+            <x>260</x>
+            <y>390</y>
+            <width>221</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>ID de commande</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_31">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>400</y>
+            <width>113</width>
+            <height>20</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_72">
+          <property name="geometry">
+           <rect>
+            <x>620</x>
+            <y>380</y>
+            <width>91</width>
+            <height>31</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
            </rect>
           </property>
           <property name="font">
@@ -4086,12 +4929,27 @@ border-radius:10px;
            <string>Trier par  :</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa40">
           <property name="geometry">
            <rect>
             <x>630</x>
             <y>410</y>
             <width>131</width>
+=======
+         <widget class="QPushButton" name="idDeCommande">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>630</x>
+            <y>500</y>
+            <width>131</width>
+=======
+            <x>740</x>
+            <y>390</y>
+            <width>171</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>31</height>
            </rect>
           </property>
@@ -4099,11 +4957,24 @@ border-radius:10px;
            <string>ID de commande</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa41">
           <property name="geometry">
            <rect>
             <x>630</x>
             <y>470</y>
+=======
+         <widget class="QPushButton" name="libelle">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>630</x>
+            <y>540</y>
+=======
+            <x>760</x>
+            <y>430</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>131</width>
             <height>31</height>
            </rect>
@@ -4116,7 +4987,15 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>10</x>
+<<<<<<< HEAD
             <y>380</y>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <y>440</y>
+=======
+            <y>400</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>101</width>
             <height>20</height>
            </rect>
@@ -4130,12 +5009,20 @@ border-radius:10px;
           <property name="text">
            <string>Chercher par :</string>
           </property>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+>>>>>>> aziz_jaziri
          </widget>
          <widget class="QPushButton" name="recher_2">
           <property name="geometry">
            <rect>
             <x>10</x>
+<<<<<<< HEAD
             <y>460</y>
+=======
+            <y>540</y>
+>>>>>>> aziz_jaziri
             <width>111</width>
             <height>31</height>
            </rect>
@@ -4144,7 +5031,11 @@ border-radius:10px;
            <string>Libellé</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pushButton_fadwa43">
+=======
+         <widget class="QPushButton" name="pushButton_43">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>490</x>
@@ -4161,8 +5052,91 @@ border-radius:10px;
           <property name="geometry">
            <rect>
             <x>630</x>
+<<<<<<< HEAD
             <y>520</y>
+=======
+            <y>590</y>
+>>>>>>> aziz_jaziri
             <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+<<<<<<< HEAD
+           <string>Libellé</string>
+=======
+           <string>Prix</string>
+>>>>>>> aziz_jaziri
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_ntab">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+<<<<<<< HEAD
+            <y>510</y>
+=======
+            <y>580</y>
+>>>>>>> aziz_jaziri
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Numéro de table</string>
+          </property>
+         </widget>
+<<<<<<< HEAD
+         <widget class="QPushButton" name="pushButton_exc">
+          <property name="geometry">
+           <rect>
+            <x>640</x>
+            <y>20</y>
+            <width>151</width>
+=======
+         <widget class="QPushButton" name="pushButton_pdf">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>20</y>
+            <width>121</width>
+=======
+         </widget>
+         <widget class="QPushButton" name="recher_2">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>470</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Libellé</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_43">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>101</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+=======
+           <string>Actualiser</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_prix">
+          <property name="geometry">
+           <rect>
+            <x>790</x>
+            <y>470</y>
+            <width>81</width>
             <height>31</height>
            </rect>
           </property>
@@ -4173,9 +5147,9 @@ border-radius:10px;
          <widget class="QPushButton" name="pushButton_ntab">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>510</y>
-            <width>111</width>
+            <x>290</x>
+            <y>430</y>
+            <width>161</width>
             <height>31</height>
            </rect>
           </property>
@@ -4183,17 +5157,23 @@ border-radius:10px;
            <string>Numéro de table</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_exc">
+         <widget class="QPushButton" name="pushButton_pdf">
           <property name="geometry">
            <rect>
-            <x>640</x>
+            <x>660</x>
             <y>20</y>
-            <width>151</width>
+            <width>231</width>
+>>>>>>> aziz_jaziri
             <height>31</height>
            </rect>
           </property>
           <property name="text">
+<<<<<<< HEAD
            <string>generer un fichier excel</string>
+=======
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+           <string>generer un pdf</string>
+>>>>>>> aziz_jaziri
           </property>
          </widget>
         </widget>
@@ -4204,14 +5184,30 @@ border-radius:10px;
          <widget class="QPushButton" name="STATF">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>30</x>
             <y>30</y>
             <width>241</width>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>280</x>
+            <y>140</y>
+            <width>151</width>
+=======
+            <x>30</x>
+            <y>30</y>
+            <width>241</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>51</height>
            </rect>
           </property>
           <property name="text">
+<<<<<<< HEAD
            <string>afficher les statistiques</string>
+=======
+           <string>afficher les statistique</string>
+>>>>>>> aziz_jaziri
           </property>
          </widget>
         </widget>
@@ -4225,8 +5221,18 @@ border-radius:10px;
        <rect>
         <x>0</x>
         <y>0</y>
+<<<<<<< HEAD
         <width>941</width>
         <height>691</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+        <width>961</width>
+        <height>671</height>
+=======
+        <width>941</width>
+        <height>691</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
        </rect>
       </property>
       <property name="styleSheet">
@@ -4277,7 +5283,11 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
+<<<<<<< HEAD
        <number>0</number>
+=======
+       <number>2</number>
+>>>>>>> aziz_jaziri
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -4900,6 +5910,43 @@ color : white;</string>
             <string>ID_PRODUIT</string>
            </property>
           </widget>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+          <widget class="QSpinBox" name="CF_ID_F">
+           <property name="geometry">
+            <rect>
+             <x>181</x>
+             <y>40</y>
+             <width>151</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="CF_ID_P">
+=======
+          <widget class="QLabel" name="label_125">
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+           <property name="geometry">
+            <rect>
+             <x>181</x>
+             <y>90</y>
+             <width>151</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="CF_QTE">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>140</y>
+             <width>151</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+>>>>>>> aziz_jaziri
           <widget class="QSpinBox" name="CF_ID_F">
            <property name="geometry">
             <rect>
@@ -5077,6 +6124,9 @@ color : white;</string>
            </rect>
           </property>
           <property name="text">
+<<<<<<< HEAD
+           <string>Rechercher</string>
+=======
            <string>Rechercher</string>
           </property>
          </widget>
@@ -5093,8 +6143,37 @@ color : white;</string>
          <widget class="QPushButton" name="CF_Act">
           <property name="geometry">
            <rect>
+            <x>20</x>
+            <y>440</y>
+            <width>81</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Actualiser</string>
+>>>>>>> aziz_jaziri
+          </property>
+         </widget>
+         <widget class="QComboBox" name="CF_DELETE_COMBO">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>280</y>
+            <width>111</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="CF_Act">
+          <property name="geometry">
+           <rect>
+<<<<<<< HEAD
             <x>720</x>
             <y>280</y>
+=======
+            <x>20</x>
+            <y>440</y>
+>>>>>>> aziz_jaziri
             <width>81</width>
             <height>31</height>
            </rect>
@@ -5103,6 +6182,7 @@ color : white;</string>
            <string>Actualiser</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="pdf_f">
           <property name="geometry">
            <rect>
@@ -5116,6 +6196,8 @@ color : white;</string>
            <string>Generer liste des commandes</string>
           </property>
          </widget>
+=======
+>>>>>>> aziz_jaziri
         </widget>
         <widget class="QWidget" name="tab_34">
          <attribute name="title">
@@ -5246,6 +6328,27 @@ color : white;</string>
           </layout>
          </widget>
         </widget>
+<<<<<<< HEAD
+=======
+        <widget class="QWidget" name="tab_31">
+         <attribute name="title">
+          <string>Facture</string>
+         </attribute>
+         <widget class="QPushButton" name="pdf_f">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>30</y>
+            <width>201</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generation Des Factures(PDF)</string>
+          </property>
+         </widget>
+        </widget>
+>>>>>>> aziz_jaziri
        </widget>
        <widget class="QLabel" name="label_114">
         <property name="geometry">
@@ -5295,7 +6398,11 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
+<<<<<<< HEAD
          <number>1</number>
+=======
+         <number>2</number>
+>>>>>>> aziz_jaziri
         </property>
         <widget class="QWidget" name="tab_36">
          <attribute name="title">
@@ -5641,6 +6748,7 @@ color : white;</string>
          <string>Actualiser</string>
         </property>
        </widget>
+<<<<<<< HEAD
        <widget class="QPushButton" name="actOF">
         <property name="geometry">
          <rect>
@@ -5654,6 +6762,8 @@ color : white;</string>
          <string>Actualiser</string>
         </property>
        </widget>
+=======
+>>>>>>> aziz_jaziri
        <widget class="QPushButton" name="pushButton_45">
         <property name="geometry">
          <rect>
@@ -5676,8 +6786,18 @@ color : white;</string>
        <rect>
         <x>0</x>
         <y>0</y>
+<<<<<<< HEAD
         <width>941</width>
         <height>691</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+        <width>911</width>
+        <height>611</height>
+=======
+        <width>941</width>
+        <height>691</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
        </rect>
       </property>
       <property name="styleSheet">
@@ -5704,6 +6824,10 @@ QPushButton{
 
     background-color: rgb(255, 170, 127);
 	background: rgb(85, 0, 0);
+<<<<<<< HEAD
+=======
+
+>>>>>>> aziz_jaziri
 	border-radius:10px;
 }
 QPushButton:hover
@@ -5727,7 +6851,11 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
+<<<<<<< HEAD
        <number>1</number>
+=======
+       <number>0</number>
+>>>>>>> aziz_jaziri
       </property>
       <widget class="QWidget" name="tab_8">
        <attribute name="title">
@@ -5743,7 +6871,11 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
+<<<<<<< HEAD
          <number>1</number>
+=======
+         <number>0</number>
+>>>>>>> aziz_jaziri
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -6161,7 +7293,11 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_14">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>710</x>
+=======
+            <x>650</x>
+>>>>>>> aziz_jaziri
             <y>360</y>
             <width>111</width>
             <height>23</height>
@@ -6174,7 +7310,11 @@ color : white;</string>
          <widget class="QLineEdit" name="textDelete_3">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>580</x>
+=======
+            <x>530</x>
+>>>>>>> aziz_jaziri
             <y>360</y>
             <width>113</width>
             <height>20</height>
@@ -6186,7 +7326,11 @@ color : white;</string>
            <rect>
             <x>40</x>
             <y>140</y>
+<<<<<<< HEAD
             <width>851</width>
+=======
+            <width>751</width>
+>>>>>>> aziz_jaziri
             <height>211</height>
            </rect>
           </property>
@@ -6194,9 +7338,15 @@ color : white;</string>
          <widget class="QLabel" name="label_42">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>540</x>
             <y>360</y>
             <width>31</width>
+=======
+            <x>490</x>
+            <y>360</y>
+            <width>41</width>
+>>>>>>> aziz_jaziri
             <height>31</height>
            </rect>
           </property>
@@ -6210,7 +7360,11 @@ color : white;</string>
          <widget class="QPushButton" name="rechercher">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>670</x>
+=======
+            <x>630</x>
+>>>>>>> aziz_jaziri
             <y>20</y>
             <width>171</width>
             <height>21</height>
@@ -6223,7 +7377,11 @@ color : white;</string>
          <widget class="QLineEdit" name="lineEdit_6">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>470</x>
+=======
+            <x>430</x>
+>>>>>>> aziz_jaziri
             <y>20</y>
             <width>191</width>
             <height>21</height>
@@ -6233,10 +7391,23 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_40">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>700</x>
+            <y>110</y>
+            <width>91</width>
+            <height>22</height>
+=======
+>>>>>>> aziz_jaziri
             <x>760</x>
             <y>110</y>
             <width>121</width>
             <height>21</height>
+<<<<<<< HEAD
+=======
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
            </rect>
           </property>
           <property name="text">
@@ -6247,7 +7418,11 @@ color : white;</string>
           <property name="geometry">
            <rect>
             <x>100</x>
+<<<<<<< HEAD
             <y>470</y>
+=======
+            <y>400</y>
+>>>>>>> aziz_jaziri
             <width>351</width>
             <height>31</height>
            </rect>
@@ -6286,11 +7461,19 @@ color : white;</string>
            <string>Generation Des Factures(PDF)</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLabel" name="label_85">
           <property name="geometry">
            <rect>
             <x>20</x>
             <y>430</y>
+=======
+         <widget class="QLabel" name="label_851">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>360</y>
+>>>>>>> aziz_jaziri
             <width>71</width>
             <height>71</height>
            </rect>
@@ -6309,9 +7492,15 @@ color : white;</string>
          <widget class="QLabel" name="label_91">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>830</x>
             <y>360</y>
             <width>41</width>
+=======
+            <x>750</x>
+            <y>360</y>
+            <width>71</width>
+>>>>>>> aziz_jaziri
             <height>41</height>
            </rect>
           </property>
@@ -6325,7 +7514,11 @@ color : white;</string>
          <widget class="QLabel" name="label_96">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>840</x>
+=======
+            <x>740</x>
+>>>>>>> aziz_jaziri
             <y>0</y>
             <width>51</width>
             <height>51</height>
@@ -6353,8 +7546,18 @@ color : white;</string>
            <rect>
             <x>240</x>
             <y>20</y>
+<<<<<<< HEAD
             <width>211</width>
             <height>21</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <width>141</width>
+            <height>22</height>
+=======
+            <width>211</width>
+            <height>21</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
            </rect>
           </property>
           <property name="text">
@@ -6366,8 +7569,18 @@ color : white;</string>
            <rect>
             <x>240</x>
             <y>60</y>
+<<<<<<< HEAD
             <width>211</width>
             <height>21</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <width>141</width>
+            <height>22</height>
+=======
+            <width>211</width>
+            <height>21</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
            </rect>
           </property>
           <property name="text">
@@ -6387,10 +7600,24 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_58">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>210</x>
             <y>360</y>
             <width>131</width>
             <height>21</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>600</x>
+            <y>110</y>
+            <width>91</width>
+            <height>22</height>
+=======
+            <x>620</x>
+            <y>110</y>
+            <width>131</width>
+            <height>21</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
            </rect>
           </property>
           <property name="text">
@@ -6400,10 +7627,24 @@ color : white;</string>
          <widget class="QPushButton" name="pushButton_59">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>40</x>
             <y>360</y>
             <width>151</width>
             <height>21</height>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>490</x>
+            <y>110</y>
+            <width>101</width>
+            <height>22</height>
+=======
+            <x>460</x>
+            <y>110</y>
+            <width>151</width>
+            <height>21</height>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
            </rect>
           </property>
           <property name="text">
@@ -6427,7 +7668,11 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
+<<<<<<< HEAD
          <number>0</number>
+=======
+         <number>1</number>
+>>>>>>> aziz_jaziri
         </property>
         <widget class="QWidget" name="tab_12">
          <attribute name="title">
@@ -6707,7 +7952,11 @@ color : white;</string>
            <string>ID</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QLabel" name="label_84">
+=======
+         <widget class="QLabel" name="label_841">
+>>>>>>> aziz_jaziri
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -6770,7 +8019,11 @@ color : white;</string>
            <rect>
             <x>50</x>
             <y>100</y>
+<<<<<<< HEAD
             <width>751</width>
+=======
+            <width>761</width>
+>>>>>>> aziz_jaziri
             <height>201</height>
            </rect>
           </property>
@@ -6801,9 +8054,21 @@ color : white;</string>
          <widget class="QPushButton" name="rechercher_2">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>590</x>
             <y>20</y>
             <width>161</width>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>580</x>
+            <y>20</y>
+            <width>111</width>
+=======
+            <x>590</x>
+            <y>20</y>
+            <width>161</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>22</height>
            </rect>
           </property>
@@ -6814,9 +8079,21 @@ color : white;</string>
          <widget class="QLineEdit" name="lineEdit_10">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>80</x>
             <y>20</y>
             <width>141</width>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>120</x>
+            <y>20</y>
+            <width>101</width>
+=======
+            <x>80</x>
+            <y>20</y>
+            <width>141</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>21</height>
            </rect>
           </property>
@@ -6893,8 +8170,18 @@ color : white;</string>
          <widget class="QLabel" name="label_27">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>20</x>
             <y>0</y>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>60</x>
+            <y>10</y>
+=======
+            <x>20</x>
+            <y>0</y>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <width>51</width>
             <height>51</height>
            </rect>
@@ -6955,15 +8242,31 @@ color : white;</string>
            </rect>
           </property>
           <property name="text">
+<<<<<<< HEAD
            <string>Par Num D'Evaluation</string>
+=======
+           <string>Remarque Du Mr /Mme</string>
+>>>>>>> aziz_jaziri
           </property>
          </widget>
          <widget class="QPushButton" name="rechercher_5">
           <property name="geometry">
            <rect>
+<<<<<<< HEAD
             <x>760</x>
             <y>20</y>
             <width>151</width>
+=======
+<<<<<<< HEAD:ProjetCpp/mainwindow - Copie (2).ui
+            <x>700</x>
+            <y>20</y>
+            <width>111</width>
+=======
+            <x>760</x>
+            <y>20</y>
+            <width>151</width>
+>>>>>>> aziz_jaziri:ProjetCpp/mainwindow.ui
+>>>>>>> aziz_jaziri
             <height>22</height>
            </rect>
           </property>
@@ -6971,6 +8274,7 @@ color : white;</string>
            <string>Trier Selon</string>
           </property>
          </widget>
+<<<<<<< HEAD
          <widget class="QPushButton" name="state_eva">
           <property name="geometry">
            <rect>
@@ -7126,6 +8430,8 @@ color : white;</string>
            </item>
           </layout>
          </widget>
+=======
+>>>>>>> aziz_jaziri
         </widget>
        </widget>
       </widget>
@@ -7135,10 +8441,17 @@ color : white;</string>
      <widget class="QLabel" name="gif">
       <property name="geometry">
        <rect>
+<<<<<<< HEAD
         <x>10</x>
         <y>0</y>
         <width>941</width>
         <height>691</height>
+=======
+        <x>-5</x>
+        <y>-5</y>
+        <width>971</width>
+        <height>741</height>
+>>>>>>> aziz_jaziri
        </rect>
       </property>
       <property name="text">
@@ -7193,8 +8506,13 @@ border-radius:10px;
    <widget class="QLabel" name="label_94">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>10</x>
       <y>500</y>
+=======
+      <x>-10</x>
+      <y>510</y>
+>>>>>>> aziz_jaziri
       <width>61</width>
       <height>41</height>
      </rect>
@@ -7318,6 +8636,7 @@ border-radius:10px;
      <string/>
     </property>
    </widget>
+<<<<<<< HEAD
    <widget class="QLabel" name="cadre_time">
     <property name="geometry">
      <rect>
@@ -7349,6 +8668,17 @@ border-radius:10px;
     <property name="text">
      <string/>
     </property>
+=======
+   <widget class="QVideoWidget" name="video" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>560</y>
+      <width>261</width>
+      <height>151</height>
+     </rect>
+    </property>
+>>>>>>> aziz_jaziri
    </widget>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
@@ -7373,8 +8703,11 @@ border-radius:10px;
    <zorder>label_5</zorder>
    <zorder>label_97</zorder>
    <zorder>video</zorder>
+<<<<<<< HEAD
    <zorder>cadre_time</zorder>
    <zorder>Time</zorder>
+=======
+>>>>>>> aziz_jaziri
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="mainToolBar">
@@ -7415,4 +8748,8 @@ border-radius:10px;
  </customwidgets>
  <resources/>
  <connections/>
+<<<<<<< HEAD
 </ui>
+=======
+</ui>
+>>>>>>> aziz_jaziri

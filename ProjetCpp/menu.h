@@ -36,7 +36,7 @@ public:
     bool modifier();
     void recherche(QTableView* table,int n);
     int lastId();
-
+    int check1();
 };
 
 #endif // FOURNISSEUR_H

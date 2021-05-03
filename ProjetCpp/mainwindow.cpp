@@ -59,6 +59,8 @@
 #include <QDebug>
 #include "connection.h"
 #include "statevaluation.h"
+#include "connection.h"
+#include "statplat.h"
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QPushButton>
@@ -116,6 +118,10 @@
 #include <QObject>
 //#include <QPrinter>
 
+#include<QDialog>
+#include <QString>
+#include <QObject>
+#include <QPrinter>
 #include <QFileDialog>
 #include <QPlainTextEdit>
 #include <QPropertyAnimation>
@@ -202,16 +208,6 @@ MainWindow::MainWindow(QWidget *parent) :
      setFixedSize(1296,880);  //fixe la taille de la fenêtre
 
 
-     myMoviebg = new QMovie(this);
-     myMoviebg = new QMovie("C:/QTP/ProjetCppA23G2/Projet/ProjetCppgif5.gif");
-
-     myMoviebg = new QMovie(this);
-     myMoviebg = new QMovie("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/gif.gif");
-
-       ui->gif->setMovie(myMoviebg);
-
-    myMoviebg->start();
-
     ui->label_94->setToolTip("Music");
     ui->label_5->setPixmap(pix150);
     ui->label_3->setPixmap(pix1);
@@ -221,6 +217,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_87->setPixmap(pix3);
     //ui->label_851->setPixmap(pix3);
    // ui->label_841->setPixmap(pix5);
+    ui->label_85->setPixmap(pix3);
+    ui->label_87->setPixmap(pix3);
     ui->label_42->setPixmap(pix4);
     ui->label_84->setPixmap(pix5);
     ui->label_89->setPixmap(pix5);
@@ -238,7 +236,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_99->setPixmap(pix12);
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
-    updateFournisseursTabsCombos();
+    ui->label_60->setPixmap(pix15);
+    ui->label_86->setPixmap(pix16);
+updateFournisseursTabsCombos();
 
    // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
 
@@ -249,6 +249,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->sendBtn_2F_2, SIGNAL(clicked()),this, SLOT(sendMail4()));
     connect(ui->exitBtn_2F_2, SIGNAL(clicked()),this, SLOT(close4()));
+    connect(ui->sendBtn_3, SIGNAL(clicked()),this, SLOT(sendMail3()));
+    connect(ui->exitBtn_3, SIGNAL(clicked()),this, SLOT(close3()));
 
      produit test;
     ui->tableView_A->setModel(test.afficher()); //Afficher Produit
@@ -303,27 +305,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//-----------------------------------------ARDUNIO----------------------------------------------------------------
-
-void MainWindow::update_label()
-    {
-
-
-    data=A.read_from_arduino();
-
-
-if (datastring.length()<37)
-{
-    datastring+= QString::fromStdString(data.toStdString());
-    datastring.split(",");
-}
-else
-{
-      qDebug () << datastring;
-    datastring="";
-}
-
-    }
 //---------------------------------------------------~MENU PRINCIPALE~----------------------------------------------------
 
 void MainWindow::on_pushButton_2_clicked()
@@ -346,7 +327,6 @@ void MainWindow::on_pushButton_11_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
-
 
 //--------------------------------~PRODUIT~----------------------------------------------
 
@@ -602,7 +582,6 @@ notification no;
                 ui->tableView_B->setModel(s.afficher_stock());
 
                 if(test){
-
                     QMessageBox::information(nullptr,QObject::tr("Ajouter"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);}
 
                 else
@@ -839,6 +818,15 @@ void MainWindow::on_TRI_2_clicked()//tri stock
 
 }
 
+
+
+void MainWindow::on_pushButton_43_clicked()//Afficher Stock
+{
+    stock s;
+        ui->tableView_B->setModel(s.afficher_stock());
+}
+
+
 void MainWindow::on_rechercherStock_clicked()//recherche stock
 {
     stock s;
@@ -850,7 +838,6 @@ void MainWindow::on_rechercherStock_clicked()//recherche stock
          {
          text1=ui->rechercherStock_2->text().toUInt();
          s.rechercher_cr1(table,text1);
-
          }
 
              if(ui->radioButton_2->isChecked()==true)
@@ -1093,28 +1080,6 @@ void MainWindow::on_pushButton_14_clicked()//Supprimer Transaction
 void MainWindow::on_pushButton_13_clicked() // ModifierTransaction
 {
 
-  /*  Transaction t;
-
-      t.setID_FACTURE(ui->textEdit_2->text().toInt());
-      t.setNOM_CLIENT(ui->lineEdit_3->text());
-      t.setNUM_CLIENT(ui->lineEdit_4->text());
-      t.setADRESSE_CLIENT(ui->comboBox_4->currentText());
-      t.setDATE_HEURE(ui->dateTimeEdit_2->date());
-      t.setPRIX(ui->lineEdit_5->text().toInt());
-      t.setID_UTILISATEUR(ui->lineEdit_7->text().toInt());
-
-      bool test= t.update();
-
-
-      ui->tableView_2->setModel(t.afficher());
-
-      if(test){
-          QMessageBox::information(nullptr,QObject::tr("Modifier  Facture"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
-      else
-
-          QMessageBox::critical(nullptr,QObject::tr("Modifier  Facture"),QObject::tr("Modfication non effectuée"),  QMessageBox::Cancel);
-*/
-
     Transaction t;
 
 
@@ -1211,12 +1176,10 @@ void MainWindow::on_rechercher_3_clicked() // Recherche Par Nom
         } else {
             findText = text;
             t.recherche2(table,findText);
-
-
 }
 }
 
-/*void MainWindow::on_rechercher_4_clicked() // Recherche Par Region
+void MainWindow::on_rechercher_4_clicked() // Recherche Par Region
 {
     QString findText;
         QString text = ui->lineEdit_42->text();
@@ -1233,7 +1196,7 @@ void MainWindow::on_rechercher_3_clicked() // Recherche Par Nom
 
 
 }
-}*/
+}
 
 
 
@@ -1251,7 +1214,6 @@ void MainWindow::on_pushButton_42_clicked() // PDF
                  str.append("<td>"+QString("ADRESSE_CLIENT")+"</td>") ;
                  str.append("<td>"+QString("DATE_HEURE")+"</td>") ;
                  str.append("<td>"+QString("PRIX")+"</td>") ;
-
 
 
 
@@ -1276,7 +1238,6 @@ void MainWindow::on_pushButton_42_clicked() // PDF
                  str.append("</td></td>");
 
 
-
                  }
               str.append("</table></center></body></html>") ;
 
@@ -1294,8 +1255,6 @@ void MainWindow::on_pushButton_42_clicked() // PDF
               doc.setHtml(str) ;
               doc.print(&printer);
 }
-
-
 //-----------------------------------~Evaluation~--------------------------------------
 void MainWindow::on_pushButton_16_clicked()//Ajouter Evaluation
 {
@@ -1353,33 +1312,7 @@ void MainWindow::on_pushButton_18_clicked()//Supprimer Evaluation
 
 void MainWindow::on_pushButton_17_clicked() // Modifier Evaluation
 {
-
-   /* Evaluation e;
-
-      e.setID_NOTE(ui->textEdit_4->text().toInt());
-      e.setNOM_CLIENT(ui->lineEdit_8->text());
-      e.setNOTE_CLIENT(ui->comboBox_5->currentText().toUInt());
-      e.setREMARQUE_CLIENT(ui->comboBox_6->currentText());
-      e.setID_FACTURE(ui->lineEdit_9->text().toInt());
-      bool test = e.update();
-      ui->tableView->setModel(e.afficher());
-      if(test){
-          QMessageBox::information(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp effectuée"),  QMessageBox::Cancel);
-      }
-      else
-          QMessageBox::critical(nullptr,QObject::tr("Supprimer Eva"),QObject::tr("Supp non effectuée"),  QMessageBox::Cancel);
-      if(test){
-          QMessageBox::information(nullptr,QObject::tr("Modifier Eva"),QObject::tr("Modification effectuée"),  QMessageBox::Cancel);}
-      else
-          QMessageBox::critical(nullptr,QObject::tr("Modifier Eva"),QObject::tr("Modification non effectuée"),  QMessageBox::Cancel);
-}
-*/
-
-
     Evaluation e;
-
-
-
            e.setID_NOTE(ui->textEdit_4->text().toInt());
                   if(e.check()==0)
         {
@@ -1423,7 +1356,6 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation Par Button
 
                 }
 
-
                  if(ui->radioButton_5->isChecked()==true)
                 {
                     text=ui->lineEdit_10->text();
@@ -1431,21 +1363,14 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation Par Button
 
                          {
 
-
                              ui->tableView->setModel(e.afficher());
 
-
-
-
                          }
-
 
                          else
 
                          {
                              ui->tableView->setModel(e.rechercher2(text));
-
-
 
                          }
 
@@ -1464,13 +1389,7 @@ void MainWindow::on_rechercher_2_clicked() // Recherche Evaluation Par Button
                           else
 
                           {
-
                               ui->tableView->setModel(e.rechercher3(text));
-
-
-
-
-
 
                           }
         }
@@ -1615,23 +1534,21 @@ void MainWindow::on_pushButton_22_clicked()//modifier plat
 }
 
 void MainWindow::on_pushButton_23_clicked()//supprimer plat
-{
+{  QMessageBox msgBox;
     QSqlQuery query;
      plat p;
         plat plat(ui->textDelete_5->text());
+        if(plat.check1()==0){
+             bool test =plat.supprimer();
 
-  bool test=plat.supprimer();
+                 if(test)
+                    {msgBox.setText("supression avec succés");
+                        ui->tableView_3->setModel(plat.afficher());
+                       }}
+                 else
+                   msgBox.setText("nom plat n'existe pas");
+               msgBox.exec();
 
-        ui->tableView_3->setModel(plat.afficher());
-        /* if(ui->textDelete_3->text()!=p.getNOM_PLAT()){
-             QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
-         else
-             QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);*/
-
-        if(test){
- QMessageBox::information(nullptr,QObject::tr("Supprimer"),QObject::tr("suppression effectuée"),  QMessageBox::Cancel);}
-     else
- QMessageBox::critical(nullptr,QObject::tr("Supprimer"),QObject::tr("suppression non effectuée"),  QMessageBox::Cancel);
 
 
 }
@@ -1652,7 +1569,11 @@ void MainWindow::on_pushButton_27_clicked()//ajouter menu
     ui->tableView_4->setModel(m.afficher());
     if(ui->lineEdit_25->text()!=0){
 QMessageBox::information(nullptr,QObject::tr("AJOUT"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);
-      m.ajouter();}
+      m.ajouter();
+      Smtp* smtp = new Smtp("mohamedaziz.jaziri1@esprit.tn","Radiajaziri2000", "smtp.gmail.com", 465);
+smtp->sendMail("mohamedaziz.jaziri1@esprit.tn","koujinti@googlegroups.com", "Nouveau Menu !", "Venez découvrir notre nouveau menu ! chez Koujinti  Nom du menu:'"+m.getNOM_MENU()+"' Catégorie du menu:'"+m.getCATEGORIE_MENU()+"'");
+            QMessageBox::information(this,"nouveau menu créer ! ", "notification envoyée au clients !! ");//fonctionne
+    }
 
  else if(ui->lineEdit_25->text()==0)
 
@@ -1661,19 +1582,21 @@ QMessageBox::critical(nullptr,QObject::tr("AJOUT"),QObject::tr("Ajout non effect
 }
 
 void MainWindow::on_pushButton_29_clicked()//supprimer menu
-{
+{ QMessageBox msgBox;
     QSqlQuery query;
     menu m;
        menu menu(ui->textDelete_6->text().toUInt());
+       if(menu.check1()==0){
+           bool test =menu.supprimer();
 
-      bool test= menu.supprimer();
+               if(test)
+                  {msgBox.setText("supression avec succés");
+                      ui->tableView_4->setModel(menu.afficher());
+                     }}
+               else
+                 msgBox.setText("ID n'existe pas");
+             msgBox.exec();
 
-      ui->tableView_4->setModel(menu.afficher());
-       if(test){
-           QMessageBox::information(nullptr,QObject::tr("ok"),QObject::tr("Suppression effectuée"),  QMessageBox::Cancel);}
-       else
-
-           QMessageBox::critical(nullptr,QObject::tr("ok"),QObject::tr("Suppression non effectuée"),  QMessageBox::Cancel);
 }
 
 void MainWindow::on_pushButton_28_clicked()//modifier menu
@@ -1698,13 +1621,10 @@ void MainWindow::on_pushButton_24_clicked()//rechercher plat
         {
         text=ui->lineEdit_24->text();
              if(text == "")
-
              {
         ui->tableView_3->setModel(p.afficher());
              }
-
              else
-
              {
       ui->tableView_3->setModel(p.chercher_ut(text));
 
@@ -1729,8 +1649,17 @@ void MainWindow::on_pushButton_24_clicked()//rechercher plat
              if (ui->radioButton_9->isChecked()==true)
          {
          text1=ui->lineEdit_24->text().toUInt();
-         p.chercher_ut2(table,text1); }
 
+         if(text == "")
+
+         {
+ui->tableView_3->setModel(p.afficher());
+         }
+
+         else
+         {
+p.chercher_ut2(table,text1);
+          }}
 
 }
 
@@ -1794,79 +1723,81 @@ void MainWindow::on_tableView_4_clicked()//recuperation donnée menu
 
 }
 void MainWindow::on_PDF_aziz_clicked()//pdf
-{
-    QString str;
-    int spec=ui->lineEdit_27->text().toUInt();
-               str.append("<html><head></head><body><center>"+QString("LE MENU"));
-               str.append("<table border=1><tr>") ;
-               str.append("<td>"+QString("ID_MENU")+"</td>") ;
-               str.append("<td>"+QString("DATE_MENU")+"</td>") ;
-               str.append("<td>"+QString("NOM_MENU")+"</td>") ;
-               str.append("<td>"+QString("CATEGORIE_MENU")+"</td>") ;
+{      QString Str;
+       int spec=ui->lineEdit_27->text().toUInt();
+      Str.append("<html><head></head><body>"
+ "<p align=\"center\">" "<img  src=\"C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo\"/>""</p>"
+     "<h1 align=\"center\" style=\"color:red;\">KOUJINTI</h1>"
+        "<center>"+QString("LE MENU"));
+                  Str.append("<table border=1 style=\"background-color: #eee;\" \"font-family:arial,sans-serif;\" \"border-collapse:collapse;\" \"width=100%\" ><tr>") ;
+                  Str.append("<td>"+QString("ID_MENU")+"</td>") ;
+                  Str.append("<td>"+QString("DATE_MENU")+"</td>") ;
+                  Str.append("<td>"+QString("NOM_MENU")+"</td>") ;
+                  Str.append("<td>"+QString("CATEGORIE_MENU")+"</td>") ;
 
-               QSqlQuery* query=new QSqlQuery();
-               QSqlQuery* query1=new QSqlQuery();
+                  QSqlQuery* query=new QSqlQuery();
+                  QSqlQuery* query1=new QSqlQuery();
 
-               query->prepare("select * from MENU  where ID_MENU=:ID_MENU");
-               query->bindValue(":ID_MENU",spec);
-               query->exec();
-               query1->prepare("select * from PLAT  where ID_MENU=:ID_MENU");
-               query1->bindValue(":ID_MENU",spec);
-               query1->exec();
-               while((query->next()))
-               {
-               str.append("<tr><td>");
-               str.append(query->value(0).toString()) ;
-               str.append("</td><td>") ;
-               str.append(query->value(1).toString());
-               str.append("</td><td>") ;
-               str.append(query->value(2).toString());
-               str.append("</td><td>") ;
-               str.append(query->value(3).toString());
-               str.append("</td></td>") ;
-               str.append(query->value(4).toString());
-               str.append("</td></tr>") ;
-               }
+                  query->prepare("select * from MENU  where ID_MENU=:ID_MENU");
+                  query->bindValue(":ID_MENU",spec);
+                  query->exec();
+                  query1->prepare("select * from PLAT  where ID_MENU=:ID_MENU");
+                  query1->bindValue(":ID_MENU",spec);
+                  query1->exec();
+                  while((query->next()))
+                  {
+                  Str.append("<tr><td>");
+                  Str.append(query->value(0).toString()) ;
+                  Str.append("</td><td>") ;
+                  Str.append(query->value(1).toString());
+                  Str.append("</td><td>") ;
+                  Str.append(query->value(2).toString());
+                  Str.append("</td><td>") ;
+                  Str.append(query->value(3).toString());
+                  Str.append("</td></td>") ;
+                  Str.append(query->value(4).toString());
+                  Str.append("</td></tr>") ;
+                  }
 
-            str.append("</table></center></body></html>") ;
+               Str.append("</table></center></body></html>") ;
 
-            str.append("<html><head></head><body><center>"+QString("PLATS"));
-            str.append("<table border=1><tr>") ;
-            str.append("<td>"+QString("NOM_PLAT")+"</td>") ;
-            str.append("<td>"+QString("INGREDIENTS_PLAT")+"</td>") ;
-            str.append("<td>"+QString("SPECIALITE_PLAT")+"</td>") ;
-            str.append("<td>"+QString("PRIX_PLAT")+"</td>") ;
-             str.append("<td>"+QString("ID_MENU")+"</td>") ;
-             while((query1->next()))
-             {
-                 str.append("<tr><td>");
-             str.append(query1->value(0).toString());
-             str.append("</td><td>") ;
-             str.append(query1->value(1).toString());
-             str.append("</td><td>") ;
-             str.append(query1->value(2).toString());
-             str.append("</td><td>") ;
-             str.append(query1->value(3).toString());
-             str.append("</td><td>") ;
-             str.append(query1->value(4).toString());
-             str.append("</td></tr>") ;
+               Str.append("<html><head></head><body><center>"+QString("PLATS"));
+               Str.append("<table border=1 style=\"background-color: #eee;\" \"font-family:arial,sans-serif;\" \"border-collapse:collapse;\" \"width=100%\" ><tr>") ;
+               Str.append("<td>"+QString("NOM_PLAT")+"</td>") ;
+               Str.append("<td>"+QString("INGREDIENTS_PLAT")+"</td>") ;
+               Str.append("<td>"+QString("SPECIALITE_PLAT")+"</td>") ;
+               Str.append("<td>"+QString("PRIX_PLAT")+"</td>") ;
+                Str.append("<td>"+QString("ID_MENU")+"</td>") ;
+                while((query1->next()))
+                {
+                    Str.append("<tr><td>");
+                Str.append(query1->value(0).toString());
+                Str.append("</td><td>") ;
+                Str.append(query1->value(1).toString());
+                Str.append("</td><td>") ;
+                Str.append(query1->value(2).toString());
+                Str.append("</td><td>") ;
+                Str.append(query1->value(3).toString());
+                Str.append("</td><td>") ;
+                Str.append(query1->value(4).toString());
+                Str.append("</td></tr>") ;
 
-             }
-             str.append("</table></center></body></html>") ;
+                }
+                Str.append("</table></center></body></html>") ;
 
-            QPrinter printer ;
-            printer.setOrientation(QPrinter::Portrait);
-            printer.setOutputFormat(QPrinter::PdfFormat);
-            printer.setPaperSize(QPrinter::A4) ;
+                QPrinter printer ;
+                           printer.setOrientation(QPrinter::Portrait);
+                           printer.setOutputFormat(QPrinter::PdfFormat);
+                           printer.setPaperSize(QPrinter::A4) ;
 
-            QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+                           QString path=QFileDialog::getSaveFileName(NULL,"Convertir en PDF","..","PDF(*.pdf)");
 
-            if (path.isEmpty()) return ;
-            printer.setOutputFileName(path) ;
+                           if (path.isEmpty()) return ;
+                           printer.setOutputFileName(path) ;
 
-            QTextDocument doc;
-            doc.setHtml(str) ;
-            doc.print(&printer);
+                           QTextDocument doc;
+                           doc.setHtml(Str) ;
+                           doc.print(&printer);
 }
 void MainWindow::on_tri_aziz_1_clicked()//trier les plat par ID_MENU
 { plat p;
@@ -1877,6 +1808,25 @@ void MainWindow::on_tri_aziz_clicked()
 {
     plat p;
         p.tri(ui->tableView_3);
+}
+void   MainWindow::sendMail3()
+{
+    Smtp* smtp = new Smtp("mohamedaziz.jaziri1@esprit.tn","Radiajaziri2000", "smtp.gmail.com");
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+   smtp->sendMail("mohamedaziz.jaziri1@esprit.tn",ui->rcpt_3a->text(), ui->subject_3a->text(),ui->msg_3a->toPlainText());
+}
+
+void   MainWindow::mailSent3(QString)//mailing
+{
+    ui->rcpt_3a->clear();
+    ui->subject_3a->clear();
+    ui->msg_3a->clear();
+    ui->paswd_3a->clear();
+}
+void MainWindow::on_stat_plat_clicked()//statistiques
+{
+    statPlat *p = new statPlat ();
+    p->show();
 }
 //------------------------------------------FADWA--------------------------------------------------------------------
 void MainWindow::on_pushButton_fadwa1_clicked()//AJOUTER TAB
@@ -2232,11 +2182,64 @@ Commande c;;
 
 
 
+
+void MainWindow::on_pushButton_pdf_clicked()
+{
+    QString str;
+                 str.append("<html><head></head><body><center>"+QString("Les Factures Du Caisse"));
+                 str.append("<table border=1><tr>") ;
+                 str.append("<td>"+QString("ID_COMMANDE")+"</td>") ;
+                 str.append("<td>"+QString("QUANTITE")+"</td>") ;
+                 str.append("<td>"+QString("LIBELLE")+"</td>") ;
+                 str.append("<td>"+QString("DESCRIPTION")+"</td>") ;
+                 str.append("<td>"+QString("PRIX")+"</td>") ;
+                 str.append("<td>"+QString("NUM_TABLE")+"</td>") ;
+
+
+                 QSqlQuery* query=new QSqlQuery();
+                 query->exec("SELECTID_COMMANDE,QUANTITE,LIBELLE,DESCRIPTION,PRIX,NUM_TABLE FROM COMMANDE");
+
+                 while(query->next())
+                 {
+                 str.append("<tr><td>");
+                 str.append(query->value(0).toString()) ;
+                 str.append("</td><td>") ;
+                 str.append(query->value(1).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(2).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(3).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(4).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(5).toString());
+                 str.append("</td></tr>");
+
+
+
+
+                 }
+              str.append("</table></center></body></html>") ;
+
+             QPrinter printer ;
+              printer.setOrientation(QPrinter::Portrait);
+              printer.setOutputFormat(QPrinter::PdfFormat);
+              printer.setPaperSize(QPrinter::A4) ;
+
+            QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+              if (path.isEmpty()) return ;
+              printer.setOutputFileName(path) ;
+
+              QTextDocument doc;
+              doc.setHtml(str) ;
+              doc.print(&printer);
+}
+
 void MainWindow::on_sendBtn_2F_clicked()
 {
     Smtp* smtp = new Smtp("fadwa.berrich@esprit.tn","192JFT4518", "smtp.gmail.com");
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
-
 
         smtp->sendMail("fadwa.berrich@esprit.tn", ui->rcpt_2F->text() , ui->subject_2F->text(),ui->msg_2F->toPlainText());
 }
@@ -2298,7 +2301,6 @@ void MainWindow::updateFournisseursTabsCombos(){
         modelOFF->setQuery(qryOFF);
         ui->OF_UPDATE_COMBO_2->setModel(modelOFF);
         ui->OF_DELETE_COMBO_2->setModel(modelOFF);
-
 
 }
 
@@ -2613,9 +2615,13 @@ void MainWindow::update_label()// input arduino/Qt
     if(data=="1"){QMessageBox::information(nullptr,QObject::tr("Alerte table"),QObject::tr("la table num 1 vous appelle !"),  QMessageBox::Cancel);}
     else if(data=="2"){QMessageBox::information(nullptr,QObject::tr("Alerte table"),QObject::tr("la table num 2 vous appelle !"),  QMessageBox::Cancel);}
 }
-
-
 */
+void MainWindow::on_Arduinobutt1_clicked()
+{
+      A.write_to_arduino("2");
+}
+
+
 void MainWindow::on_AllumeLED1_clicked()
 {
     A.write_to_arduino("1");

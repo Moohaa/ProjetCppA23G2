@@ -37,6 +37,8 @@ SOURCES += \
     notification.cpp \
     qcustomplot.cpp \
     statstock.cpp \
+    qcustomplot.cpp \
+    statplat.cpp \
     utilisateur.cpp \
     commande.cpp \
     commandefournisseur.cpp \
@@ -61,6 +63,7 @@ HEADERS += \
     droitacces.h \
     fournisseur.h \
     connection.h \
+    statplat.h \
     login.h \
     statfadwa.h \
     notification.h \

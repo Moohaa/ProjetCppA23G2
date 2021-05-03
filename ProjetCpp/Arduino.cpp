@@ -1,6 +1,5 @@
 #include "arduino.h"
 #include <QDebug>
-
 Arduino::Arduino()
 {
     data="";
