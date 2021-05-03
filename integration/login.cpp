@@ -65,6 +65,7 @@
 #include "fournisseur.h"
 #include "offrefournisseur.h"
 #include "commandefournisseur.h"
+#include "stat_evaluation_fedi.h"
 #include "connection.h"
 #include "notification.h"
 #include <QCloseEvent>
@@ -121,6 +122,11 @@
 #include <QPropertyAnimation>
 #include <QVideoWidget>
 #include <QMediaPlaylist>
+#include <QtCharts>
+#include <QtWidgets/QApplication>
+#include <QtCharts/QChartView>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
 Login::Login(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Login)
@@ -932,4 +938,10 @@ void Login::on_sendBtn_2F_clicked()
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
         smtp->sendMail("fedi.hannachi@esprit.tn", ui->rcpt_2F->text() , ui->subject_2F->text(),ui->msg_2F->toPlainText());
+}
+
+void Login::on_pushButton_10_clicked()
+{
+    stat_evaluation_fedi *p = new stat_evaluation_fedi ();
+      p->show();
 }

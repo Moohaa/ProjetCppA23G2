@@ -270,11 +270,6 @@ private slots:
     void on_CF_Act_clicked();
 
 
-    void on_messanger_button_clicked();
-
-    void on_pushButton_15_clicked();
-
-
 
 private:
     Ui::MainWindow *ui;

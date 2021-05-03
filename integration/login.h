@@ -93,11 +93,12 @@ private slots:
     void on_pushButton_9_clicked();
 
 
-    void on_pushButton_10_clicked();
 
     void on_pushButton_11_clicked();
 
     void on_sendBtn_2F_clicked();
+
+    void on_pushButton_10_clicked();
 
 private:
     Ui::Login *ui;

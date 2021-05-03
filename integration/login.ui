@@ -74,7 +74,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QGroupBox" name="groupBox">
@@ -469,12 +469,12 @@ border-radius:10px;
        </item>
        <item>
         <property name="text">
-         <string>Gestionniare commande</string>
+         <string>G commande</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Gestionnaire fournisseur</string>
+         <string>G fournisseur</string>
         </property>
        </item>
       </widget>
@@ -1226,6 +1226,19 @@ border-radius:10px;
       </property>
       <property name="text">
        <string>Actualiser</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_10">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>40</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Statistiques</string>
       </property>
      </widget>
     </widget>

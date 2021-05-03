@@ -34,9 +34,9 @@ SOURCES += \
     login.cpp \
     main.cpp \
     connection.cpp \
-    messanger.cpp \
-    messangerconnection.cpp \
     notification.cpp \
+    qcustomplot.cpp \
+    stat_evaluation_fedi.cpp \
     utilisateur.cpp \
     commande.cpp \
     commandefournisseur.cpp \
@@ -57,9 +57,9 @@ HEADERS += \
     connection.h \
     includes.h \
     login.h \
-    messanger.h \
-    messangerconnection.h \
     notification.h \
+    qcustomplot.h \
+    stat_evaluation_fedi.h \
     utilisateur.h \
     commande.h \
     commandefournisseur.h \
@@ -77,8 +77,7 @@ HEADERS += \
 FORMS += \
         mainwindow.ui\
 		login.ui \
-    messanger.ui \
-    messangerconnection.ui
+    stat_evaluation_fedi.ui
 
 RC_ICONS = hat.ico
 
