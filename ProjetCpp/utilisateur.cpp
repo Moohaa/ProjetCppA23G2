@@ -2,6 +2,12 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QString>
+#include <QSqlQuery>
+#include <QVariant>
+#include <QDebug>
+#include <string>
+#include <iostream>
+#include <QThread>
 #include "QMessageBox"
 Utilisateur::Utilisateur()
 {
@@ -347,3 +353,4 @@ bool Utilisateur::affecter_nvdroit(QString code,QString id)
     Query.bindValue(":code",code);
     return Query.exec();
 }
+

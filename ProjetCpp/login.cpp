@@ -10,6 +10,8 @@
 #include <QDateTime>
 #include <QMessageBox>
 #include "string.h"
+#include "messanger.h"
+#include "smtp.h"
 #include <QDateTime>
 #include <QCalendarWidget>
 #include <QFile>
@@ -47,7 +49,84 @@
 #include <QMovie>
 #include <QVideoWidget>
 #include <QMediaPlaylist>
-
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "login.h"
+#include "produit.h"
+#include "stock.h"
+#include "transaction.h"
+#include "evaluation.h"
+#include "plat.h"
+#include "menu.h"
+#include "table.h"
+#include "commande.h"
+#include "smtp.h"
+#include "stat.h"
+#include "fournisseur.h"
+#include "offrefournisseur.h"
+#include "commandefournisseur.h"
+#include "stat_evaluation_fedi.h"
+#include "connection.h"
+#include "notification.h"
+#include <QCloseEvent>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QSortFilterProxyModel>
+#include <QAbstractSocket>//mail
+#include <QMap>
+#include<QAbstractSocket>
+#include <string>
+#include <QLabel>
+#include <QDate>
+#include <QtWidgets/QMessageBox>
+#include <QMainWindow>
+#include <QCalendarWidget>
+#include <QPixmap>
+#include <QMediaPlayer>
+#include <QMovie>
+#include <QSsl>
+#include <QSslSocket>
+#include <QNetworkAccessManager>
+#include <QPrinter>
+#include <QSystemTrayIcon>
+#include <QIcon>
+#include <QDesktopWidget>
+//#include <QIconDragEvent>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtWidgets>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QVariant>
+#include <QTableView>
+#include <QSqlTableModel>
+#include <QSqlRecord>
+#include <QDebug>
+#include <QString>
+#include <QObject>
+//#include <QPrinter>
+#include <QFileDialog>
+#include <QPlainTextEdit>
+#include <QPropertyAnimation>
+#include <QVideoWidget>
+#include <QMediaPlaylist>
+#include <QtCharts>
+#include <QtWidgets/QApplication>
+#include <QtCharts/QChartView>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
 Login::Login(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Login)
@@ -62,12 +141,25 @@ Login::Login(QWidget *parent)
             ui->liste_droit->setModel(model);
             ui->liste_droit_3->setModel(model);
 
-     setFixedSize(1296,880);  //fixe la taille de la fenêtre
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
             mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
 
+            //-------------------------
+            QMediaPlayer *player = new QMediaPlayer;
+            QMediaPlaylist *playlist  = new QMediaPlaylist;
+                player->setVideoOutput(ui->video);
+                playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/ProjetCpp/video.mp4")));
+            playlist->setPlaybackMode(QMediaPlaylist::Loop);
+                player->setVolume(0);
+                player->setPlaylist(playlist);
+                player->play();
+                qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();
+            //-------------------------
+    media = new QMediaPlayer (this);
+    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/ProjetCpp/theme.mp3"));
+    media->play();
 
     QPixmap pix150("C:/QTP/ProjetCppA23G2/ProjetCpp/koujniti_logo.png");
            QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/calque 0.png");
@@ -86,6 +178,12 @@ Login::Login(QWidget *parent)
            ui->label_31->setPixmap(pix4);
            ui->music->setPixmap(pix5);
 
+           myMoviebg = new QMovie(this);
+           myMoviebg = new QMovie("C:/QTP/ProjetCppA23G2/ProjetCpp/gif.mp4");
+
+                  ui->gif->setMovie(myMoviebg);
+
+                      myMoviebg->start();
 
 }
 
@@ -120,10 +218,10 @@ void Login::on_Login_connexion_clicked()
     if(email==qry.value(3).toString() && mdp==qry.value(4).toString())
     {
         if(qry.value(5).toString() == "Gerant"){
-            ui->stackedWidget->setCurrentIndex(9);
+            ui->stackedWidget->setCurrentIndex(10);
             MainWindow *w =new MainWindow(this);
             QSplashScreen *splash= new QSplashScreen;
-            splash->setPixmap(QPixmap("C:/QTP/ProjetCppA23G2/ProjetCpp/koujinti.png"));
+            splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
             splash->show();
 
             QTimer::singleShot(2500,splash,SLOT(close()));
@@ -133,7 +231,7 @@ void Login::on_Login_connexion_clicked()
             //ui->stackedWidget->setCurrentIndex(3);
              MainWindow *w =new MainWindow(this);
              QSplashScreen *splash= new QSplashScreen;
-             splash->setPixmap(QPixmap("C:/QTP/ProjetCppA23G2/ProjetCpp/koujinti.png"));
+             splash->setPixmap(QPixmap("C:/Users/PC/Desktop/Projet C++/Photos/koujinti.png"));
              splash->show();
 
              QTimer::singleShot(2500,splash,SLOT(close()));
@@ -168,11 +266,14 @@ void Login::on_pushButton_clicked()
         {
         if(test)
         {
+            notification no;
+            no.notification_supprimer();
             ui->tab_affiche->setModel(tmputilisateur.afficher_utilisateur());
             QMessageBox::information(nullptr, QObject::tr("Supprimer un utilisateur"),
                         QObject::tr("utilisateur  supprimé.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
                     ui->tab_affiche->setModel(tmputilisateur.afficher_utilisateur());
+
 
         }
         else
@@ -223,6 +324,7 @@ void Login::on_modifier_utilisateur_clicked()
           bool test=u.modifier_utilisateur(id,nom,prenom,email,mdp,role);
       if(test)
       {
+          notification no;
 
 
 
@@ -230,6 +332,7 @@ void Login::on_modifier_utilisateur_clicked()
                             QObject::tr("UTILISATEUR modifie.\n"
                                         "Cliquez sur  cancel Pour Quitter."), QMessageBox::Cancel);
           ui->tab_affiche->setModel(tmputilisateur.afficher_utilisateur());
+          no.notification_modifier();
 
 
    }
@@ -294,17 +397,20 @@ void Login::on_inscription_inscrit_2_clicked()
       }
       else
    {
+          notification no;
           int id=u.lastId();
          Utilisateur u( id,nom, prenom , email, mdp ,role);
           bool test=u.Ajouter_utilisateur();
       if(test)
       {
+
            ui->stackedWidget->setCurrentIndex(3);
-
-
+          no.ajout_notification();
           QMessageBox::information(nullptr, QObject::tr("Ajouter un utilisateur"),
                             QObject::tr("UTILISATEUR ajoutée.\n"
                                         "Cliquez sur  cancel Pour Quitter."), QMessageBox::Cancel);
+
+
 
    }
 
@@ -457,7 +563,7 @@ void Login::on_pushButton_3_clicked()
 
 void Login::on_pushButton_5_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(10);
+    ui->stackedWidget->setCurrentIndex(11);
     ui->affiche_droit->setModel(tmpdroit.afficher_droit());
 }
 
@@ -521,12 +627,12 @@ void Login::on_ajout_droit_clicked()
 
 void Login::on_pushButton_4_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(7);
+    ui->stackedWidget->setCurrentIndex(8);
 }
 
 void Login::on_pushButton_2_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(6);
+    ui->stackedWidget->setCurrentIndex(7);
     ui->aff_droitutilisateur->setModel(tmputilisateur.afficher_droitutilisateur());
 }
 
@@ -760,4 +866,82 @@ void Login::on_pause1_clicked()
 void Login::on_mute1_clicked()
 {
     media->setMuted(true);
+}
+
+void Login::on_pushButton_8_clicked()
+{
+
+    QString str;
+    str.append("<html><head></head><body>"
+               "<center><img src=\"C:/QTP/ProjetCppA23G2/ProjetCpp/man1.png\"><br><br><br>"
+               "<center>"+QString("Les Employees de notre restaurant"));
+                 str.append("<table border=1><tr>") ;
+                 str.append("<td>"+QString("ID_UTILISATEUR")+"</td>") ;
+                 str.append("<td>"+QString("NOM_UTILISATEUR")+"</td>") ;
+                 str.append("<td>"+QString("PRENOM_UTILISATEUR")+"</td>") ;
+                 str.append("<td>"+QString("email_UTILISATEUR")+"</td>") ;
+                 str.append("<td>"+QString("mdp_UTILISATEUR")+"</td>") ;
+                 str.append("<td>"+QString("role_UTILISATEUR")+"</td>") ;
+
+                 QSqlQuery* query=new QSqlQuery();
+                 query->exec("SELECT * FROM UTILISATEURS");
+
+                 while(query->next())
+                 {
+                 str.append("<tr><td>");
+                 str.append(query->value(0).toString()) ;
+                 str.append("</td><td>") ;
+                 str.append(query->value(1).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(2).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(3).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(4).toString());
+                 str.append("</td><td>") ;
+                 str.append(query->value(5).toString());
+                 str.append("</td></td>");
+                 }
+              str.append("</table></center></body></html>") ;
+
+              QPrinter printer ;
+              printer.setOrientation(QPrinter::Portrait);
+              printer.setOutputFormat(QPrinter::PdfFormat);
+              printer.setPaperSize(QPrinter::A4) ;
+
+              QString path=QFileDialog::getSaveFileName(NULL,"Convertir a PDF","..","PDF(*.pdf)");
+
+              if (path.isEmpty()) return ;
+              printer.setOutputFileName(path) ;
+
+              QTextDocument doc;
+              doc.setHtml(str) ;
+              doc.print(&printer);
+}
+
+void Login::on_pushButton_9_clicked()
+{
+    Utilisateur u;
+        ui->tab_affiche->setModel(u.afficher_utilisateur());
+}
+
+
+void Login::on_pushButton_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+
+}
+
+void Login::on_sendBtn_2F_clicked()
+{
+    Smtp* smtp = new Smtp("fedi.hannachi@esprit.tn","191JMT4861", "smtp.gmail.com");
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+        smtp->sendMail("fedi.hannachi@esprit.tn", ui->rcpt_2F->text() , ui->subject_2F->text(),ui->msg_2F->toPlainText());
+}
+
+void Login::on_pushButton_10_clicked()
+{
+    stat_evaluation_fedi *p = new stat_evaluation_fedi ();
+      p->show();
 }
