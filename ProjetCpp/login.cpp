@@ -143,14 +143,14 @@ Login::Login(QWidget *parent)
 
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
-            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/integration/hat.png"));
+            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/ProjetCpp/hat.png"));
             mSystemTrayIcon->setVisible(true);
 
             //-------------------------
             QMediaPlayer *player = new QMediaPlayer;
             QMediaPlaylist *playlist  = new QMediaPlaylist;
                 player->setVideoOutput(ui->video);
-                playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/integration/video.mp4")));
+                playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/ProjetCpp/video.mp4")));
             playlist->setPlaybackMode(QMediaPlaylist::Loop);
                 player->setVolume(0);
                 player->setPlaylist(playlist);
@@ -158,15 +158,15 @@ Login::Login(QWidget *parent)
                 qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();
             //-------------------------
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/integration/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/ProjetCpp/theme.mp3"));
     media->play();
 
-    QPixmap pix150("C:/QTP/ProjetCppA23G2/integration/koujniti_logo.png");
-           QPixmap pix1("C:/QTP/ProjetCppA23G2/integration/calque 0.png");
-           QPixmap pix2("C:/QTP/ProjetCppA23G2/integration/man1.png");
-           QPixmap pix3("C:/QTP/ProjetCppA23G2/integration/padlock_78356.png");
-           QPixmap pix4("C:/QTP/ProjetCppA23G2/integration/add-user-2-256.png");
-           QPixmap pix5("C:/QTP/ProjetCppA23G2/integration/mui.png");
+    QPixmap pix150("C:/QTP/ProjetCppA23G2/ProjetCpp/koujniti_logo.png");
+           QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/calque 0.png");
+           QPixmap pix2("C:/QTP/ProjetCppA23G2/ProjetCpp/man1.png");
+           QPixmap pix3("C:/QTP/ProjetCppA23G2/ProjetCpp/padlock_78356.png");
+           QPixmap pix4("C:/QTP/ProjetCppA23G2/ProjetCpp/add-user-2-256.png");
+           QPixmap pix5("C:/QTP/ProjetCppA23G2/ProjetCpp/mui.png");
 
            ui->hola->setPixmap(pix1);
            ui->music->setToolTip("Music");
@@ -179,7 +179,7 @@ Login::Login(QWidget *parent)
            ui->music->setPixmap(pix5);
 
            myMoviebg = new QMovie(this);
-           myMoviebg = new QMovie("C:/QTP/ProjetCppA23G2/integration/gif.mp4");
+           myMoviebg = new QMovie("C:/QTP/ProjetCppA23G2/ProjetCpp/gif.mp4");
 
                   ui->gif->setMovie(myMoviebg);
 
@@ -873,7 +873,7 @@ void Login::on_pushButton_8_clicked()
 
     QString str;
     str.append("<html><head></head><body>"
-               "<center><img src=\"C:/QTP/ProjetCppA23G2/integration/man1.png\"><br><br><br>"
+               "<center><img src=\"C:/QTP/ProjetCppA23G2/ProjetCpp/man1.png\"><br><br><br>"
                "<center>"+QString("Les Employees de notre restaurant"));
                  str.append("<table border=1><tr>") ;
                  str.append("<td>"+QString("ID_UTILISATEUR")+"</td>") ;

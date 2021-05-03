@@ -69,7 +69,6 @@
 #include <QPropertyAnimation>
 #include <QVideoWidget>
 #include <QMediaPlaylist>
-#include "messanger.h"
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -84,19 +83,19 @@ MainWindow::MainWindow(QWidget *parent) :
       ui->lineEdit_33->setValidator(new QIntValidator(0,99999999,this));
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
-            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/integration/hat"));
+            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/ProjetCpp/hat"));
             mSystemTrayIcon->setVisible(true);
 
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/integration/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/ProjetCpp/theme.mp3"));
     media->play();
 
     //-------------------------
     /*QMediaPlayer *player = new QMediaPlayer;
     QMediaPlaylist *playlist  = new QMediaPlaylist;
         player->setVideoOutput(ui->video);
-        playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/integration/video.mp4")));
+        playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/ProjetCpp/video.mp4")));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
         player->setVolume(0);
         player->setPlaylist(playlist);
@@ -104,27 +103,27 @@ MainWindow::MainWindow(QWidget *parent) :
         qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();*/
     //-------------------------
 
-    QPixmap pix150("C:/QTP/ProjetCppA23G2/integration/koujniti_logo");
-    QPixmap pix1("C:/QTP/ProjetCppA23G2/integration/Calque 0.png");
-    QPixmap pix2("C:/QTP/ProjetCppA23G2/integration/stock.png");
-    QPixmap pix3("C:/QTP/ProjetCppA23G2/integration/cash.png");
-    QPixmap pix4("C:/QTP/ProjetCppA23G2/integration/icons8-face-id-32");
-    QPixmap pix5("C:/QTP/ProjetCppA23G2/integration/stars");
-    QPixmap pix6("C:/QTP/ProjetCppA23G2/integration/cor");
-    QPixmap pix7("C:/QTP/ProjetCppA23G2/integration/modi");
-    QPixmap pix8("C:/QTP/ProjetCppA23G2/integration/mui");
-    QPixmap pix9("C:/QTP/ProjetCppA23G2/integration/icons8-search-client-48");
-    QPixmap pix10("C:/QTP/ProjetCppA23G2/integration/casic");
-    QPixmap pix11("C:/QTP/ProjetCppA23G2/integration/food");
-    QPixmap pix12("C:/QTP/ProjetCppA23G2/integration/table");
-    QPixmap pix13("C:/QTP/ProjetCppA23G2/integration/prod");
-    QPixmap pix14("C:/QTP/ProjetCppA23G2/integration/prov");
+    QPixmap pix150("C:/QTP/ProjetCppA23G2/ProjetCpp/koujniti_logo");
+    QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/QTP/ProjetCppA23G2/ProjetCpp/stock.png");
+    QPixmap pix3("C:/QTP/ProjetCppA23G2/ProjetCpp/cash.png");
+    QPixmap pix4("C:/QTP/ProjetCppA23G2/ProjetCpp/icons8-face-id-32");
+    QPixmap pix5("C:/QTP/ProjetCppA23G2/ProjetCpp/stars");
+    QPixmap pix6("C:/QTP/ProjetCppA23G2/ProjetCpp/cor");
+    QPixmap pix7("C:/QTP/ProjetCppA23G2/ProjetCpp/modi");
+    QPixmap pix8("C:/QTP/ProjetCppA23G2/ProjetCpp/mui");
+    QPixmap pix9("C:/QTP/ProjetCppA23G2/ProjetCpp/icons8-search-client-48");
+    QPixmap pix10("C:/QTP/ProjetCppA23G2/ProjetCpp/casic");
+    QPixmap pix11("C:/QTP/ProjetCppA23G2/ProjetCpp/food");
+    QPixmap pix12("C:/QTP/ProjetCppA23G2/ProjetCpp/table");
+    QPixmap pix13("C:/QTP/ProjetCppA23G2/ProjetCpp/prod");
+    QPixmap pix14("C:/QTP/ProjetCppA23G2/ProjetCpp/prov");
 
      setFixedSize(1296,801);  //fixe la taille de la fenêtre
 
 
      myMoviebg = new QMovie(this);
-     myMoviebg = new QMovie("C:/QTP/ProjetCppA23G2/integration/ProjetCppgif5.gif");
+     myMoviebg = new QMovie("C:/QTP/ProjetCppA23G2/ProjetCpp/ProjetCppgif5.gif");
 
        //ui->gif->setMovie(myMoviebg);
 
