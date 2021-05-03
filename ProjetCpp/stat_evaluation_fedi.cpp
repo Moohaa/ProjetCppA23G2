@@ -38,8 +38,8 @@ stat_evaluation_fedi::stat_evaluation_fedi(QWidget *parent) :
     ui->setupUi(this);
 
 
-    QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/calque 0.png");
-    ui->label->setPixmap(pix1);
+    //QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/calque 0.png");
+   // ui->label->setPixmap(pix1);
 
        // set dark background gradient:
                QLinearGradient gradient(35, 200, 140, 300);

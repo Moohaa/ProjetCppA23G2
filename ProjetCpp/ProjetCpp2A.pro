@@ -52,7 +52,8 @@ SOURCES += \
     mainwindow.cpp \
     table.cpp \
     transaction.cpp \
-    stat.cpp
+    stat.cpp \
+    stat_evaluation_fedi.cpp
 
 HEADERS += \
     arduino.h \
@@ -79,7 +80,8 @@ HEADERS += \
     mainwindow.h \
     table.h \
     transaction.h \
-    stat.h
+    stat.h \
+    stat_evaluation_fedi.h
 
 FORMS += \
         mainwindow.ui\
@@ -88,7 +90,9 @@ FORMS += \
     stat.ui \
     statfadwa.ui \
     statstock.ui \
-    statplat.ui
+    statplat.ui \
+    stat_evaluation_fedi.ui
+
 
 RC_ICONS = hat.ico
 

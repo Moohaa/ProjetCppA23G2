@@ -10,7 +10,6 @@
 #include <QDateTime>
 #include <QMessageBox>
 #include "string.h"
-#include "messanger.h"
 #include "smtp.h"
 #include <QDateTime>
 #include <QCalendarWidget>
