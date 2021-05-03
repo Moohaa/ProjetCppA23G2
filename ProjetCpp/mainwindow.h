@@ -179,8 +179,6 @@ private slots:
 
     void on_pushButton_fadwa9_clicked();
 
-    void on_tableView_7_clicked();
-
 //-------------------------------------------------------------------------------------------------------------------------
     void on_tableView_7F_clicked(const QModelIndex &index);
 
@@ -211,6 +209,10 @@ private slots:
     void on_OF_UPDATE_clicked();
 
     void on_pushButton_50_clicked();
+
+    void on_pushButton_43_clicked();
+
+    void on_pushButton_pdf_clicked();
 
     void on_pushButton_45_clicked();
 
@@ -291,10 +293,6 @@ private slots:
 //----------------------------------------------------------ARDUNIO------------------------------------------------
 
 
-    void update_label();   // slot permettant la mise à jour du label état de la lampe 1,
-    // ce slot est lancé à chaque réception d'un message de Arduino
-
-
     //void on_pushButton_60_clicked();
 
 
@@ -326,74 +324,23 @@ private slots:
 
     void on_consommer_clicked();
 
-    void on_rechercher_3_clicked();
+
 
     void on_rechercher_4_clicked();
 
-    void on_pushButton_58_clicked();
-
-    void on_pushButton_59_clicked();
-
-    void on_rechercher_5_clicked();
-   // void on_tableView_7_clicked(const QModelIndex &index);
-
-    void on_recher_clicked();
 
 
     //void on_tableView_8_clicked(const QModelIndex &index);
 
-
-    void on_recher_2_clicked();
-
-    void on_pushButton_DB_clicked();
-
-    void on_pushButton_deb1_clicked();
-
-    void on_pushButton_prix_clicked();
-
-    void on_pushButton_ntab_clicked();
-
-
-
-
-
-    //void on_pushButton_pdf_clicked();
-
-    void on_sendBtn_2F_clicked();
-
-
-
-    void updateFournisseursTabsCombos();
-
-   // void on_STATF_clicked();
-
-    void on_buttonStock_clicked();
-
-    void on_pushButton_441_clicked();
-
-    void on_idDeCommande_clicked();
-
-    void on_libelle_clicked();
-
-    void on_nombredechaises_clicked();
-
-    void on_F_act_clicked();
-
-
-    void on_actOF_clicked();
-
-    void on_CF_Act_clicked();
-
    // void on_rcpt_3a_editingFinished();
   // -------------------------------------------------------ARDUINO---------------------------------------------------------
-    void update_label();   // slot permettant la mise à jour du label état de la lampe 1,
+   // slot permettant la mise à jour du label état de la lampe 1,
         // ce slot est lancé à chaque réception d'un message de Arduino
 
     void on_Arduinobutt1_clicked();
 
     void on_stat_plat_clicked();
 
-    void on_sendBtn_3_clicked();
 
 private:
     Ui::MainWindow *ui;

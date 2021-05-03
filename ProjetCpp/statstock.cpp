@@ -38,7 +38,7 @@ statStock::statStock(QWidget *parent) :
     ui->setupUi(this);
 
 
-    QPixmap pix1("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/calque 0.png");
+    QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/calque 0.png");
     ui->label->setPixmap(pix1);
 
        // set dark background gradient:

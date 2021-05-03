@@ -37,7 +37,6 @@ SOURCES += \
     notification.cpp \
     qcustomplot.cpp \
     statstock.cpp \
-    qcustomplot.cpp \
     statplat.cpp \
     utilisateur.cpp \
     commande.cpp \
@@ -57,7 +56,6 @@ SOURCES += \
 
 HEADERS += \
     arduino.h \
-    includes.h \
     qcustomplot.h \
     statevaluation.h \
     droitacces.h \
@@ -89,8 +87,8 @@ FORMS += \
     statevaluation.ui \
     stat.ui \
     statfadwa.ui \
-		login.ui \
-    statstock.ui
+    statstock.ui \
+    statplat.ui
 
 RC_ICONS = hat.ico
 

@@ -20,7 +20,7 @@ statevaluation::statevaluation(QWidget *parent) :
     ui(new Ui::statevaluation)
 {
     ui->setupUi(this);
-    QPixmap pix1("C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/Calque 0.png");
 
     ui->label->setPixmap(pix1);
 

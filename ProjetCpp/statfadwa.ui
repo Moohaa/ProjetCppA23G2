@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>801</width>
-    <height>476</height>
+    <height>593</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="labelF">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>290</y>
+     <x>680</x>
+     <y>470</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QLabel" name="label_2F">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>320</y>
+     <x>680</x>
+     <y>500</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -42,8 +42,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>40</y>
+     <x>110</x>
+     <y>10</y>
      <width>541</width>
      <height>20</height>
     </rect>
@@ -63,8 +63,8 @@
   <widget class="QLabel" name="label_4F">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>380</y>
+     <x>680</x>
+     <y>560</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -76,8 +76,8 @@
   <widget class="QWidget" name="widget_2FF" native="true">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>290</y>
+     <x>650</x>
+     <y>470</y>
      <width>21</width>
      <height>21</height>
     </rect>
@@ -90,8 +90,8 @@ background-color: qlineargradient(spread:pad, x1:1, y1:0.011, x2:1, y2:0, stop:1
   <widget class="QWidget" name="widget_3FF" native="true">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>380</y>
+     <x>650</x>
+     <y>560</y>
      <width>21</width>
      <height>21</height>
     </rect>
@@ -106,8 +106,8 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.979
   <widget class="QWidget" name="widget_4FF" native="true">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>350</y>
+     <x>650</x>
+     <y>530</y>
      <width>21</width>
      <height>21</height>
     </rect>
@@ -120,8 +120,8 @@ background-color: qlineargradient(spread:pad, x1:0.975, y1:0.023, x2:1, y2:0, st
   <widget class="QLabel" name="label_3F">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>350</y>
+     <x>680</x>
+     <y>530</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -133,8 +133,8 @@ background-color: qlineargradient(spread:pad, x1:0.975, y1:0.023, x2:1, y2:0, st
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>320</y>
+     <x>650</x>
+     <y>500</y>
      <width>21</width>
      <height>21</height>
     </rect>

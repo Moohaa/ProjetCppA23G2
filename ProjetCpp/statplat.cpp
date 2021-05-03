@@ -1,5 +1,6 @@
-#include "statplat.h"
 #include "ui_statplat.h"
+
+#include "statplat.h"
 #include <QtSql>
 #include<QMap>
 #include <iostream>
@@ -15,13 +16,14 @@
 #include<QSharedDataPointer>
 #include<qsharedpointer.h>
 #include<qcustomplot.h>
+
 statPlat::statPlat(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::statPlat)
 {
     ui->setupUi(this);
 
-    QPixmap pix1("C:/Users/Lenovo/Desktop/ProjetCppA23G23/Projet/ProjetCpp/Calque 0.png");
+    QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/Calque 0.png");
 
     ui->label->setPixmap(pix1);
 

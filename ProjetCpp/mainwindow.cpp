@@ -169,19 +169,19 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
             mSystemTrayIcon = new QSystemTrayIcon(this);
-            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/hat"));
+            mSystemTrayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/ProjetCpp/hat"));
             mSystemTrayIcon->setVisible(true);
 
 
     media = new QMediaPlayer (this);
-    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/theme.mp3"));
+    media->setMedia( QUrl::fromLocalFile("C:/QTP/ProjetCppA23G2/ProjetCpp/theme.mp3"));
     media->play();
 
     //-------------------------
    /* QMediaPlayer *player = new QMediaPlayer;
     QMediaPlaylist *playlist  = new QMediaPlaylist;
         //player->setVideoOutput(ui->video);
-        playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/video.mp4")));
+        playlist->addMedia(QUrl::fromLocalFile(("C:/QTP/ProjetCppA23G2/ProjetCpp/video.mp4")));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
         player->setVolume(0);
         player->setPlaylist(playlist);
@@ -189,21 +189,21 @@ MainWindow::MainWindow(QWidget *parent) :
         qDebug() << "mediaStatus: " << player->mediaStatus() << "error: " << player->error();
     //-------------------------*/
 
-    QPixmap pix150("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo.png");
-    QPixmap pix1("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/Calque 0.png");
-    QPixmap pix2("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stock.png");
-    QPixmap pix3("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cash.png");
-    QPixmap pix4("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-face-id-32");
-    QPixmap pix5("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/stars.png");
-    QPixmap pix6("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/cor.png");
-    QPixmap pix7("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/modi.png");
-    QPixmap pix8("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/mui.png");
-    QPixmap pix9("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/icons8-search-client-48.png");
-    QPixmap pix10("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/casic.png");
-    QPixmap pix11("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/food.png");
-    QPixmap pix12("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/table.png");
-    QPixmap pix13("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prod.png");
-    QPixmap pix14("C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/prov.png");
+    QPixmap pix150("C:/QTP/ProjetCppA23G2/ProjetCpp/koujniti_logo.png");
+    QPixmap pix1("C:/QTP/ProjetCppA23G2/ProjetCpp/Calque 0.png");
+    QPixmap pix2("C:/QTP/ProjetCppA23G2/ProjetCpp/stock.png");
+    QPixmap pix3("C:/QTP/ProjetCppA23G2/ProjetCpp/cash.png");
+    QPixmap pix4("C:/QTP/ProjetCppA23G2/ProjetCpp/icons8-face-id-32");
+    QPixmap pix5("C:/QTP/ProjetCppA23G2/ProjetCpp/stars.png");
+    QPixmap pix6("C:/QTP/ProjetCppA23G2/ProjetCpp/cor.png");
+    QPixmap pix7("C:/QTP/ProjetCppA23G2/ProjetCpp/modi.png");
+    QPixmap pix8("C:/QTP/ProjetCppA23G2/ProjetCpp/mui.png");
+    QPixmap pix9("C:/QTP/ProjetCppA23G2/ProjetCpp/icons8-search-client-48.png");
+    QPixmap pix10("C:/QTP/ProjetCppA23G2/ProjetCpp/casic.png");
+    QPixmap pix11("C:/QTP/ProjetCppA23G2/ProjetCpp/food.png");
+    QPixmap pix12("C:/QTP/ProjetCppA23G2/ProjetCpp/table.png");
+    QPixmap pix13("C:/QTP/ProjetCppA23G2/ProjetCpp/prod.png");
+    QPixmap pix14("C:/QTP/ProjetCppA23G2/ProjetCpp/prov.png");
 
      setFixedSize(1296,880);  //fixe la taille de la fenêtre
 
@@ -236,8 +236,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_99->setPixmap(pix12);
     ui->label_100->setPixmap(pix13);
     ui->label_101->setPixmap(pix14);
-    ui->label_60->setPixmap(pix15);
-    ui->label_86->setPixmap(pix16);
+    //ui->label_60->setPixmap(pix15);
+    //ui->label_86->setPixmap(pix16);
 updateFournisseursTabsCombos();
 
    // ui->label_28->setPixmap(pix2.scaled(100,100,Qt::KeepAspectRatio));
@@ -290,14 +290,14 @@ updateFournisseursTabsCombos();
   qryF.prepare("select ID_FOURNISSEUR from FOURNISSEUR");
   qryF.exec();
   modelF->setQuery(qryF);
-  ui->comboF->setModel(modelF);
+  ui->comboF->setModel(modelF);*/
 //------------------------------Mariem-------------------------------------------
-  //ui->cadre_time->setPixmap(pix150);
+  ui->cadre_time->setPixmap(pix150);
   QTimer * timer = new QTimer(this);
   connect(timer ,SIGNAL(timeout()),this,SLOT(showTime()));
   timer->start();
 
-*/
+
 }
 
 MainWindow::~MainWindow()
@@ -876,7 +876,7 @@ void MainWindow::on_PDF_STOCK_clicked()//PDF STOCK
 {
     QString str;
                  str.append("<html><head></head><body>"
-                            "<center><img src=\"C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
+                            "<center><img src=\"C:/QTP/ProjetCppA23G2/ProjetCpp/koujinti.png\"><br><br><br>"
                             "<center>"+QString("Les Donnée du Stockage"));
                  str.append("<table border=1><tr>") ;
                  str.append("<td>"+QString("ID_STOCK")+"</td>") ;
@@ -938,7 +938,7 @@ void MainWindow::on_historique_clicked()
     ui->textBrowser->show();
     ui->textBrowser->setPlainText(s.read());
     //myMovie->stop();
-    ui->historique->setIcon(QIcon("C:/Users/PC/Desktop/ProjetSmartRestaurant2A23/ProjetCppA23G2/Projet/ProjetCpp/hat.png"));
+    ui->historique->setIcon(QIcon("C:/QTP/ProjetCppA23G2/ProjetCpp/hat.png"));
 
 }
 
@@ -1205,7 +1205,7 @@ void MainWindow::on_pushButton_42_clicked() // PDF
     QString str;
 
                  str.append("<html><head></head><body>"
-                            "<center><img src=\"C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
+                            "<center><img src=\"C:/QTP/ProjetCppA23G2/ProjetCpp/koujinti.png\"><br><br><br>"
                             "<center>"+QString("Les Factures Du Jour"));
                  str.append("<table border=1><tr>") ;
                  str.append("<td>"+QString("ID_FACTURE")+"</td>") ;
@@ -1726,7 +1726,7 @@ void MainWindow::on_PDF_aziz_clicked()//pdf
 {      QString Str;
        int spec=ui->lineEdit_27->text().toUInt();
       Str.append("<html><head></head><body>"
- "<p align=\"center\">" "<img  src=\"C:/Users/Lenovo/Desktop/ProjetCppA23G2/Projet/ProjetCpp/koujniti_logo\"/>""</p>"
+ "<p align=\"center\">" "<img  src=\"C:/QTP/ProjetCppA23G2/ProjetCpp/koujniti_logo\"/>""</p>"
      "<h1 align=\"center\" style=\"color:red;\">KOUJINTI</h1>"
         "<center>"+QString("LE MENU"));
                   Str.append("<table border=1 style=\"background-color: #eee;\" \"font-family:arial,sans-serif;\" \"border-collapse:collapse;\" \"width=100%\" ><tr>") ;
@@ -2494,7 +2494,7 @@ void MainWindow::on_pdf_f_clicked()//PDF Fournisseur IMAGE PDF
 {
     QString str;
                  str.append("<html><head></head><body>"
-                            "<center><img src=\"C:/QTP/ProjetCppA23G2/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
+                            "<center><img src=\"C:/QTP/ProjetCppA23G2/ProjetCpp/koujinti.png\"><br><br><br>"
                             "<center>"+QString("Liste des commandes passées"));
                  str.append("<table border=1><tr>") ;
                  str.append("<td>"+QString("ID_COMMANDE")+"</td>") ;
@@ -2639,7 +2639,7 @@ void MainWindow::on_pushButton_pdfFADWA_clicked()
 QString str;
 
 str.append("<html><head></head><body>"
-           "<center><img src=\"C:/ProjetCppA23G2-MahmoudCheikh/Projet/ProjetCpp/koujinti.png\"><br><br><br>"
+           "<center><img src=\"C:/QTP/ProjetCppA23G2/ProjetCpp/koujinti.png\"><br><br><br>"
            "<center>"+QString("La liste des tables"));
 str.append("<table border=1><tr>") ;
 str.append("<td>"+QString("NUM_TABLE")+"</td>") ;
@@ -2725,7 +2725,7 @@ else
 
 QSystemTrayIcon *trayIcon = new QSystemTrayIcon(this);
                trayIcon->show();
-               trayIcon->setIcon(QIcon("C:/Users/PC/Desktop/ProjetCppA23G2/ProjetCpp/hat.png"));
+               trayIcon->setIcon(QIcon("C:/QTP/ProjetCppA23G2/ProjetCpp/hat.png"));
                trayIcon->showMessage("Alerte Température Elevee", "Le ventilateur est Activé automatiquement !");
                trayIcon->setVisible(true);
 }
