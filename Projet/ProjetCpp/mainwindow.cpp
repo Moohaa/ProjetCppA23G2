@@ -1178,8 +1178,7 @@ void MainWindow::on_pushButton_27_clicked()//ajouter menu
 QMessageBox::information(nullptr,QObject::tr("AJOUT"),QObject::tr("Ajout effectuée"),  QMessageBox::Cancel);
       m.ajouter();
       Smtp* smtp = new Smtp("mohamedaziz.jaziri1@esprit.tn","Radiajaziri2000", "smtp.gmail.com", 465);
-
-           smtp->sendMail("mohamedaziz.jaziri1@esprit.tn","koujinti@googlegroups.com", "Nouveau Menu !", "Venez découvrir notre nouveau menu ! chez Koujinti ");
+smtp->sendMail("mohamedaziz.jaziri1@esprit.tn","koujinti@googlegroups.com", "Nouveau Menu !", "Venez découvrir notre nouveau menu ! chez Koujinti  Nom du menu:'"+m.getNOM_MENU()+"' Catégorie du menu:'"+m.getCATEGORIE_MENU()+"'");
             QMessageBox::information(this,"nouveau menu créer ! ", "notification envoyée au clients !! ");//fonctionne
     }
 
@@ -2197,10 +2196,13 @@ void MainWindow::update_label()
               }
 }
 
-
+//holla
 void MainWindow::on_Arduinobutt1_clicked()
 {
       A.write_to_arduino("2");
 }
+
+
+
 
 

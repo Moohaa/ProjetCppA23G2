@@ -281,6 +281,8 @@ private slots:
 
     void on_stat_plat_clicked();
 
+    void on_sendBtn_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *media;
