@@ -46,3 +46,4 @@ dim. mai 2 14:00:39 2021 La consommation de la quantite de stock de 33 produits 
 dim. mai 2 14:01:17 2021 La modification dans la base de donnees de id = 4 a ete effectuee avec succees
 dim. mai 2 14:01:43 2021 L'suppresion dans la base de donnees de id = 20 a ete effectuee avec succees
 lun. mai 3 03:04:19 2021 La consommation de la quantite de stock de 1 produits a ete effectuee et sauvegarde avec succees
+mer. mai 5 16:32:27 2021 L'ajout dans la base de donnees de id = 1 a ete effectuee avec succees
