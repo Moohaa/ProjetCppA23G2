@@ -217,13 +217,27 @@ QVBoxLayout *OffreFournisseur::stat()
 }
 QSortFilterProxyModel *OffreFournisseur::searchProduit(int produit)
 {
+
+
+
     QSqlQueryModel *model = new QSqlQueryModel();
     QSqlQuery query;
-    QString string = "SELECT * FROM OFFRE WHERE ID_PRODUIT=" + QString::number(produit);
+    QString string = "SELECT PRODUIT.ID_PRODUIT, FOURNISSEUR.ID_FOURNISSEUR ,PRIX ,NOM as NOM_FOURNISSEUR ,TELEPHONE , ADRESSE , MAIL  , NOM_PRODUIT , CATEGORIE_PRODUIT FROM OFFRE INNER JOIN FOURNISSEUR ON OFFRE.ID_FOURNISSEUR=FOURNISSEUR.ID_FOURNISSEUR JOIN PRODUIT ON PRODUIT.ID_PRODUIT=OFFRE.ID_PRODUIT WHERE PRODUIT.ID_PRODUIT=" + QString::number(produit);
     model->setQuery(string);
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PRODUIT"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_FOURNISSEUR"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRIX"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("NOM_FOURNISSEUR"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("TELEPHONE"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("ADRESSE"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("MAIL"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("NOM_PRODUIT"));
+    model->setHeaderData(8, Qt::Horizontal, QObject::tr("CATEGORIE_PRODUIT"));
+    /*
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PRODUIT"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_FOURNISSEUR"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRIX"));
+    */
     QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
     proxyModel->setSourceModel(model);
     return proxyModel;
@@ -233,11 +247,21 @@ QSortFilterProxyModel *OffreFournisseur::searchFournisseur(int f)
 {
     QSqlQueryModel *model = new QSqlQueryModel();
     QSqlQuery query;
-    QString string = "SELECT * FROM OFFRE WHERE ID_FOURNISSEUR=" + QString::number(f);
+    QString string = "SELECT PRODUIT.ID_PRODUIT, FOURNISSEUR.ID_FOURNISSEUR ,PRIX ,NOM as NOM_FOURNISSEUR ,TELEPHONE , ADRESSE , MAIL  , NOM_PRODUIT , CATEGORIE_PRODUIT FROM OFFRE INNER JOIN FOURNISSEUR ON OFFRE.ID_FOURNISSEUR=FOURNISSEUR.ID_FOURNISSEUR JOIN PRODUIT ON PRODUIT.ID_PRODUIT=OFFRE.ID_PRODUIT WHERE FOURNISSEUR.ID_FOURNISSEUR=" + QString::number(f);
     model->setQuery(string);
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PRODUIT"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_FOURNISSEUR"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRIX"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("NOM_FOURNISSEUR"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("TELEPHONE"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("ADRESSE"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("MAIL"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("NOM_PRODUIT"));
+    model->setHeaderData(8, Qt::Horizontal, QObject::tr("CATEGORIE_PRODUIT"));
+    /*
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PRODUIT"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_FOURNISSEUR"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRIX"));*/
     QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(model);
     proxyModel->setSourceModel(model);
     return proxyModel;

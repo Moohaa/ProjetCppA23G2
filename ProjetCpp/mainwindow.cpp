@@ -2445,7 +2445,7 @@ void MainWindow::on_pushButton_52_clicked()
 void MainWindow::on_pushButton_49_clicked()
 {
     CommandeFournisseur c;
-        ui->tabOffreFournisseur->setSortingEnabled(true);
+        ui->tabCommandeFournisseur->setSortingEnabled(true);
         int x =ui->CF_S_P->text().toInt();
 
         QSortFilterProxyModel * model =  c.searchP(x);
@@ -2455,7 +2455,7 @@ void MainWindow::on_pushButton_49_clicked()
 void MainWindow::on_pushButton_48_clicked()
 {
     CommandeFournisseur c;
-        ui->tabOffreFournisseur->setSortingEnabled(true);
+        ui->tabCommandeFournisseur->setSortingEnabled(true);
         int x =ui->CF_S_F->text().toInt();
 
         QSortFilterProxyModel * model =  c.searchF(x);
