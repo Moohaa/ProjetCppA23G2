@@ -33,18 +33,23 @@ public:
 
     bool ajouter();
     bool update();
-    bool supprimer();
+    bool supprimer(int);
     QSqlQueryModel * afficher();
 
     int lastId();
 
      void rechercher1(QTableView* table,int NOTE_CLIENT);
      QSqlQueryModel * rechercher2(const QString &NOM_CLIENT);
-     QSqlQueryModel * rechercher3(const QString &REMARQUE_CLIENT);
+     QSqlQueryModel * rechercher3(const QString &ID_NOTE);
 
      void tri1(QTableView *table);
      void tri2(QTableView *table);
      void tri3(QTableView *table);
+     int check();
+     int checkH();
+
+
+
 };
 
 #endif // EVALUATION_H

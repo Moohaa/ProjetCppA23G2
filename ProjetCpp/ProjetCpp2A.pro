@@ -33,13 +33,16 @@ SOURCES += \
     login.cpp \
     main.cpp \
     connection.cpp \
+    statfadwa.cpp \
     notification.cpp \
     qcustomplot.cpp \
     statstock.cpp \
+    statplat.cpp \
     utilisateur.cpp \
     commande.cpp \
     commandefournisseur.cpp \
     evaluation.cpp \
+    statevaluation.cpp \
     menu.cpp \
     offrefournisseur.cpp \
     plat.cpp \
@@ -48,16 +51,21 @@ SOURCES += \
     produit.cpp\
     mainwindow.cpp \
     table.cpp \
-    transaction.cpp
+    transaction.cpp \
+    stat.cpp \
+    stat_evaluation_fedi.cpp
 
 HEADERS += \
     arduino.h \
+    qcustomplot.h \
+    statevaluation.h \
     droitacces.h \
     fournisseur.h \
     connection.h \
+    statplat.h \
     login.h \
+    statfadwa.h \
     notification.h \
-    qcustomplot.h \
     statstock.h \
     utilisateur.h \
     commande.h \
@@ -71,12 +79,20 @@ HEADERS += \
     produit.h\
     mainwindow.h \
     table.h \
-    transaction.h
+    transaction.h \
+    stat.h \
+    stat_evaluation_fedi.h
 
 FORMS += \
         mainwindow.ui\
-		login.ui \
-    statstock.ui
+        login.ui \
+    statevaluation.ui \
+    stat.ui \
+    statfadwa.ui \
+    statstock.ui \
+    statplat.ui \
+    stat_evaluation_fedi.ui
+
 
 RC_ICONS = hat.ico
 

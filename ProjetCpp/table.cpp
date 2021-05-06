@@ -126,9 +126,7 @@ int Table::check() // check if it exsits or not  par id
     else if (count_user > 1 ) {
         return 1;
     }
-    else{
-        return 2;
-    }}
+}
 int Table::check1() // check if it exsits or not  par id
 {
     int res1=get_NB_CHAISES();
@@ -152,9 +150,7 @@ int Table::check1() // check if it exsits or not  par id
     else if (count_user > 1 ) {
         return 1;
     }
-    else{
-        return 2;
-    }}
+}
  void Table::recherche(QTableView* table,int NUM_TABLE)//recherche table PAR SON NUM
  {
   QSqlQueryModel *model= new QSqlQueryModel();  //'"+ide+"%'  '"+spec+"'

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1296</width>
-    <height>927</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -74,7 +74,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QGroupBox" name="groupBox">
@@ -469,12 +469,12 @@ border-radius:10px;
        </item>
        <item>
         <property name="text">
-         <string>Gestionniare commande</string>
+         <string>G commande</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Gestionnaire fournisseur</string>
+         <string>G fournisseur</string>
         </property>
        </item>
       </widget>
@@ -769,7 +769,6 @@ border-radius:10px;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_10"/>
     <widget class="QWidget" name="page_9">
      <widget class="QComboBox" name="liste_droit">
       <property name="geometry">
@@ -950,8 +949,8 @@ border-radius:10px;
      <widget class="QLineEdit" name="line_id">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>20</y>
+        <x>800</x>
+        <y>30</y>
         <width>113</width>
         <height>20</height>
        </rect>
@@ -978,7 +977,7 @@ border-radius:10px;
      <widget class="QTableView" name="tab_affiche">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>90</y>
         <width>591</width>
         <height>371</height>
@@ -1053,8 +1052,8 @@ border-radius:10px;
      <widget class="QRadioButton" name="radio_id">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>120</y>
+        <x>810</x>
+        <y>260</y>
         <width>83</width>
         <height>18</height>
        </rect>
@@ -1066,8 +1065,8 @@ border-radius:10px;
      <widget class="QRadioButton" name="radio_role">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>160</y>
+        <x>810</x>
+        <y>320</y>
         <width>83</width>
         <height>18</height>
        </rect>
@@ -1079,8 +1078,8 @@ border-radius:10px;
      <widget class="QRadioButton" name="radio_nom">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>200</y>
+        <x>810</x>
+        <y>290</y>
         <width>83</width>
         <height>18</height>
        </rect>
@@ -1092,9 +1091,9 @@ border-radius:10px;
      <widget class="QPushButton" name="recherche">
       <property name="geometry">
        <rect>
-        <x>980</x>
-        <y>310</y>
-        <width>75</width>
+        <x>800</x>
+        <y>400</y>
+        <width>111</width>
         <height>23</height>
        </rect>
       </property>
@@ -1105,8 +1104,8 @@ border-radius:10px;
      <widget class="QLineEdit" name="rech_line">
       <property name="geometry">
        <rect>
-        <x>960</x>
-        <y>270</y>
+        <x>800</x>
+        <y>360</y>
         <width>113</width>
         <height>20</height>
        </rect>
@@ -1202,6 +1201,171 @@ border-radius:10px;
       <property name="text">
        <string>Excel</string>
       </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>390</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PDF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_9">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>40</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Actualiser</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_10">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>40</y>
+        <width>121</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Statistiques</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_10">
+     <widget class="QWidget" name="layoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>20</y>
+        <width>701</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_21">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
+       <property name="rowWrapPolicy">
+        <enum>QFormLayout::WrapLongRows</enum>
+       </property>
+       <property name="verticalSpacing">
+        <number>9</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_81">
+         <property name="text">
+          <string>Smtp-server:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit_39F">
+         <property name="text">
+          <string>smtp.gmail.com</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_831">
+         <property name="text">
+          <string>Server port:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="port_2F">
+         <property name="text">
+          <string>465</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_842">
+         <property name="text">
+          <string>Username:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="uname_4F"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_852">
+         <property name="text">
+          <string>Password:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="paswd_2F">
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_861">
+         <property name="text">
+          <string>Recipant to:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="rcpt_2F"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_871">
+         <property name="text">
+          <string>Subject:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="subject_2F"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_88">
+         <property name="text">
+          <string>Message:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QPlainTextEdit" name="msg_2F"/>
+       </item>
+       <item row="7" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_21">
+         <item>
+          <widget class="QPushButton" name="sendBtn_2F">
+           <property name="text">
+            <string>    Envoyer    </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="exitBtn_2F">
+           <property name="text">
+            <string>     Exit    </string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="page_11">
@@ -1521,7 +1685,6 @@ QComboBox { color: red }</string>
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_15"/>
     <widget class="QWidget" name="page_6">
      <widget class="QPushButton" name="affiche_utilisateur">
       <property name="geometry">
@@ -1578,28 +1741,35 @@ QComboBox { color: red }</string>
        <pixmap>gif.gif</pixmap>
       </property>
      </widget>
+     <widget class="QVideoWidget" name="video" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>931</width>
+        <height>541</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>310</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mail</string>
+      </property>
+     </widget>
+     <zorder>video</zorder>
      <zorder>gif</zorder>
      <zorder>affiche_utilisateur</zorder>
      <zorder>pushButton_5</zorder>
      <zorder>pushButton_4</zorder>
-    </widget>
-    <widget class="QWidget" name="page_30">
-     <widget class="QLabel" name="label_24">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>160</y>
-        <width>421</width>
-        <height>371</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../../Calque 0.png</pixmap>
-      </property>
-     </widget>
+     <zorder>pushButton_11</zorder>
     </widget>
     <widget class="QWidget" name="page_7">
      <widget class="QGroupBox" name="groupBox_6">
@@ -1735,7 +1905,7 @@ border-radius:10px;
       <x>0</x>
       <y>0</y>
       <width>321</width>
-      <height>841</height>
+      <height>801</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1835,10 +2005,10 @@ font: 25 6pt &quot;Yu Gothic UI Light&quot;;</string>
    <widget class="QLabel" name="hola">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>60</y>
+      <x>330</x>
+      <y>50</y>
       <width>981</width>
-      <height>781</height>
+      <height>741</height>
      </rect>
     </property>
     <property name="text">
@@ -2036,6 +2206,14 @@ border-radius:10px;
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>qvideowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

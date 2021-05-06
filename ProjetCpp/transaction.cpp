@@ -83,7 +83,35 @@ Transaction::Transaction(QString NOM_CLIENT,QString NUM_CLIENT ,QString ADRESSE_
         return query.exec();
 }
 
-    bool Transaction::supprimer(){
+    int Transaction::check() // check befor delete
+    {
+        int res1=getID_FACTURE();
+     QString res2 = QString::number(res1);
+        QSqlQuery query;
+
+        query.prepare("select * from TRANSACTION where ID_FACTURE =:ID_FACTURE");
+        query.bindValue(":ID_FACTURE",res2);
+
+
+        query.exec();
+
+        int count_user = 0;
+        while (query.next()) {
+            count_user++;
+        }
+
+        if (count_user == 1) {
+            return 0;
+        }
+        else if (count_user > 1 ) {
+            return 1;
+        }
+        else{
+            return 2;
+        }
+    }
+
+    bool Transaction::supprimer(int ID_FACTURE){
         QSqlQuery query;
         QString stringId = QString::number(ID_FACTURE);
 
@@ -95,7 +123,7 @@ Transaction::Transaction(QString NOM_CLIENT,QString NUM_CLIENT ,QString ADRESSE_
 
     bool Transaction::update()
     {
-        QString res=QString::number(ID_FACTURE);
+       /* QString res=QString::number(ID_FACTURE);
         QString res1= QString(NOM_CLIENT);
         QString res2= QString(NUM_CLIENT);
         QString res3= QString(ADRESSE_CLIENT);
@@ -116,7 +144,62 @@ Transaction::Transaction(QString NOM_CLIENT,QString NUM_CLIENT ,QString ADRESSE_
                           edit.bindValue(":ID_UTILISATEUR",res6);
 
                           return    edit.exec();
+                          */
+
+        QString res=QString::number(ID_FACTURE);
+                QString res1= QString(NOM_CLIENT);
+                QString res2= QString(NUM_CLIENT);
+                QString res3= QString(ADRESSE_CLIENT);
+                QDate res4= QDate(DATE_HEURE);
+                QString res5= QString::number(PRIX);
+                QString res6= QString::number(ID_UTILISATEUR);
+                QSqlQuery edit;
+
+
+
+                edit.prepare("update TRANSACTION set NOM_CLIENT = :NOM_CLIENT, NUM_CLIENT = :NUM_CLIENT , ADRESSE_CLIENT = :ADRESSE_CLIENT , DATE_HEURE = :DATE_HEURE , PRIX = :PRIX , ID_UTILISATEUR = :ID_UTILISATEUR   WHERE ID_FACTURE = :ID_FACTURE");
+
+                edit.bindValue(":ID_FACTURE",res);
+                edit.bindValue(":NOM_CLIENT",res1);
+                edit.bindValue(":NUM_CLIENT",res2);
+                edit.bindValue(":ADRESSE_CLIENT",res3);
+                edit.bindValue(":DATE_HEURE",res4);
+                edit.bindValue(":PRIX",res5);
+                edit.bindValue(":ID_UTILISATEUR",res6);
+
+
+                                 return    edit.exec();
+
     }
+
+
+    int Transaction::checkt() // check if it exsits or not  par id
+    {
+        int res=getID_FACTURE();
+     QString res2 = QString::number(res);
+        QSqlQuery query;
+
+        query.prepare("select * from TRANSACTION where ID_FACTURE =:ID_FACTURE");
+        query.bindValue(":ID_FACTURE",res2);
+
+
+        query.exec();
+
+        int count_user = 0;
+        while (query.next()) {
+            count_user++;
+        }
+
+        if (count_user == 1) {
+            return 0;
+        }
+        else if (count_user > 1 ) {
+            return 1;
+        }
+        else{
+            return 2;
+        }}
+
 
 
 QSqlQueryModel * Transaction::afficher(){

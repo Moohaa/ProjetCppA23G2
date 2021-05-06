@@ -39,7 +39,7 @@ public:
 
     bool ajouter();
     bool update();
-    bool supprimer();
+    bool supprimer(int);
     QSqlQueryModel * afficher();
 
     void trie(QTableView* table);
@@ -49,6 +49,8 @@ public:
     void recherche1(QTableView* table,int);
     void recherche2(QTableView* table,QString);
     void recherche3(QTableView* table,QString);
+    int check();
+    int checkt();
 
     int lastId();
 

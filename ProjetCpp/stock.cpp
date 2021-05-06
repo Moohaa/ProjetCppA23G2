@@ -152,7 +152,6 @@ bool stock::update_stock()
                       edit.bindValue(":QUANTITE",valueAsDouble);
                       edit.bindValue(":ID_PRODUIT",res6);
 
-
                       return edit.exec();
 }
 

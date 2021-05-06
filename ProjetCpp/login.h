@@ -1,4 +1,3 @@
-
 #ifndef LOGIN_H
 #define LOGIN_H
 #include <QMainWindow>
@@ -88,6 +87,18 @@ private slots:
     void on_mute1_clicked();
 
     void on_pause1_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+
+
+    void on_pushButton_11_clicked();
+
+    void on_sendBtn_2F_clicked();
+
+    void on_pushButton_10_clicked();
 
 private:
     Ui::Login *ui;

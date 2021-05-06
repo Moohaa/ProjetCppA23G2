@@ -46,7 +46,7 @@ void trie(QTableView* table);
 void tri(QTableView* table);
 QSqlQueryModel* tri();
 QSqlQueryModel* tri2();
-
+int check1();
 
 };
 

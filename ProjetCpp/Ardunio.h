@@ -12,7 +12,6 @@ public:     //méthodes de la classe Arduino
     int connect_arduino(); // permet de connecter le PC à Arduino
     int close_arduino(); // permet de femer la connexion
     QByteArray read_from_arduino();  //recevoir des données de la carte Arduino
-    int write_to_arduino(QByteArray d);
     QSerialPort* getserial();   // accesseur
     QString getarduino_port_name();
 private:
@@ -29,5 +28,3 @@ QByteArray data;  // contenant les données lues à partir d'Arduino
 
 
 #endif // ARDUINO_H
-
-

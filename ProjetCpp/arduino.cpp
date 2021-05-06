@@ -1,5 +1,5 @@
 #include "arduino.h"
-
+#include <QDebug>
 Arduino::Arduino()
 {
     data="";
@@ -61,11 +61,18 @@ int Arduino::close_arduino()
 {
     if(serial->isReadable()){
          data=serial->readAll();
-qDebug()<< data;
+
          //return data;
     }
     return data;
  }
 
 
-
+ int write_to_arduino(QByteArray d);
+  int Arduino::write_to_arduino(QByteArray d)
+ {
+     if(serial->isWritable()){
+        serial->write(d);
+     }//else
+     //{ QDebug()<<"couldn't write to serial!";}
+  }
