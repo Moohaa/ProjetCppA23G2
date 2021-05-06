@@ -412,7 +412,7 @@ border-radius:10px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QTabWidget" name="tabWidget">
@@ -472,7 +472,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -488,7 +488,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
@@ -888,7 +888,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>5</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
@@ -1714,26 +1714,26 @@ color : white;</string>
            <rect>
             <x>10</x>
             <y>500</y>
-            <width>301</width>
+            <width>211</width>
             <height>51</height>
            </rect>
           </property>
           <property name="text">
-           <string>activer La gestion de T°C</string>
+           <string>Actualiser</string>
           </property>
          </widget>
          <widget class="QLabel" name="label_A1">
           <property name="geometry">
            <rect>
-            <x>190</x>
-            <y>150</y>
+            <x>240</x>
+            <y>200</y>
             <width>201</width>
             <height>51</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">font: 63 14pt &quot;Yu Gothic UI Semibold&quot;;
-background color: rgb(255, 255, 255);</string>
+background-color: rgb(67, 0, 0);</string>
           </property>
           <property name="text">
            <string/>
@@ -1742,11 +1742,15 @@ background color: rgb(255, 255, 255);</string>
          <widget class="QLabel" name="label_A2">
           <property name="geometry">
            <rect>
-            <x>590</x>
-            <y>150</y>
-            <width>171</width>
-            <height>41</height>
+            <x>650</x>
+            <y>200</y>
+            <width>181</width>
+            <height>51</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 63 14pt &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(67, 0, 0);</string>
           </property>
           <property name="text">
            <string/>
@@ -1755,11 +1759,14 @@ background color: rgb(255, 255, 255);</string>
          <widget class="QLabel" name="label_139">
           <property name="geometry">
            <rect>
-            <x>70</x>
-            <y>170</y>
+            <x>120</x>
+            <y>220</y>
             <width>111</width>
             <height>21</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="text">
            <string>Température :</string>
@@ -1768,11 +1775,14 @@ background color: rgb(255, 255, 255);</string>
          <widget class="QLabel" name="label_140">
           <property name="geometry">
            <rect>
-            <x>460</x>
-            <y>160</y>
+            <x>520</x>
+            <y>220</y>
             <width>111</width>
             <height>21</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
           <property name="text">
            <string>Humidité :</string>
@@ -1781,24 +1791,32 @@ background color: rgb(255, 255, 255);</string>
          <widget class="QLabel" name="label_ON">
           <property name="geometry">
            <rect>
-            <x>330</x>
-            <y>440</y>
-            <width>101</width>
+            <x>270</x>
+            <y>430</y>
+            <width>151</width>
             <height>41</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+          </property>
           <property name="text">
-           <string>Etat Ventilateur</string>
+           <string>Etat du Ventilateur :</string>
           </property>
          </widget>
          <widget class="QLabel" name="label_OFF">
           <property name="geometry">
            <rect>
-            <x>550</x>
-            <y>440</y>
-            <width>61</width>
-            <height>41</height>
+            <x>450</x>
+            <y>430</y>
+            <width>151</width>
+            <height>51</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 63 14pt &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(67, 0, 0);
+</string>
           </property>
           <property name="text">
            <string/>
@@ -1913,7 +1931,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_14">
        <attribute name="title">
@@ -2109,7 +2127,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_15">
          <attribute name="title">
@@ -2777,7 +2795,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_18">
          <attribute name="title">
@@ -3200,7 +3218,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_21">
        <attribute name="title">
@@ -3878,7 +3896,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_26">
          <attribute name="title">
@@ -4349,7 +4367,7 @@ border-radius:10px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="TAB_F">
        <attribute name="title">
@@ -5808,7 +5826,7 @@ border-radius:10px;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -6492,7 +6510,7 @@ color : white;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_12">
          <attribute name="title">
